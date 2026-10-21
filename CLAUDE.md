@@ -8,7 +8,7 @@
 |---|---|---|
 | Сушка: база знаний и контент-банк | cf745c8d-7190-494f-85cc-4eda975057ca | https://claude.ai/artifact/ScoqRt7w65HRD6GHyaCBvR |
 | Массонабор: база знаний | a0bcfecd-ecd1-4394-b159-30cce28e123c | https://claude.ai/artifact/LrDr1qdy7CsRw8Hc48Wv6F |
-| Тренировочные планы | ещё не создана | |
+| Тренировочные планы | df8b4b3c-37a6-4b58-a865-951d329fc559 | https://claude.ai/artifact/Uc3TsqubfUobY37NfXqXHa |
 | Осанка и методы коррекции | ещё не создана | |
 
 Перед правкой документа: загрузить скилл docs, прочитать документ свежим чтением (`sinceRev`), менять только нужное.
