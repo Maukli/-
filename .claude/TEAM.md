@@ -11,6 +11,7 @@
 | program-builder | Сборка и аудит программ, баланс подходов | да |
 | kb-writer | Пишет и дописывает базы знаний | да |
 | fact-checker | Проверка цифр по источникам | нет |
+| consistency-auditor | Сверка нового раздела со старыми и со смежными базами, пересчёт арифметики, закрытые вопросы | нет |
 | style-editor | Финальная чистка стиля | да |
 | content-producer | Контент для Instagram | нет |
 
@@ -18,5 +19,5 @@
 1. director: что делаем и зачем.
 2. sports-scientist или posture-specialist: исследование и решение.
 3. program-builder или kb-writer: пишет раздел.
-4. fact-checker: цифры. style-editor: стиль.
+4. fact-checker: цифры. consistency-auditor: согласованность со старыми разделами и другими базами, арифметика. style-editor: стиль.
 5. team-lead: приёмка, при необходимости нанимает агента.
