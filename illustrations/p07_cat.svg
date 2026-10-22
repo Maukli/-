@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L5,2.5 L0,5 Z" fill="#1E88E5"/>
+</marker>
+</defs>
+<text x="40" y="60" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Поза кошки</text>
+<text x="40" y="95" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Ладони под плечами, колени под тазом, спина плавно вниз</text>
+
+<!-- mat -->
+<rect x="150" y="560" width="620" height="14" rx="7" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- ghost: rounded back -->
+<path d="M 362,382 Q 505,270 652,362" fill="none" stroke="#37474F" stroke-width="3" stroke-dasharray="8 7" opacity="0.35"/>
+<text x="420" y="285" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#90A4AE">округлённая спина</text>
+
+<!-- far arm (behind) -->
+<rect x="606" y="385" width="30" height="168" rx="15" fill="#CFD8DC" stroke="#37474F" stroke-width="3"/>
+<!-- far leg (behind) -->
+<rect x="342" y="405" width="50" height="150" rx="25" fill="#CFD8DC" stroke="#37474F" stroke-width="3"/>
+
+<!-- torso with sagging spine -->
+<path d="M 352,392 C 350,372 362,365 378,368 Q 515,445 650,358 C 668,352 682,372 680,395 C 678,420 668,438 650,445 Q 515,500 400,452 C 372,442 354,420 352,392 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- neck -->
+<path d="M 652,370 L 688,326 L 714,344 L 676,398 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- head looking up and forward -->
+<ellipse cx="716" cy="308" rx="30" ry="36" transform="rotate(30 716 308)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- ear -->
+<ellipse cx="704" cy="318" rx="6" ry="9" transform="rotate(30 704 318)" fill="#ECEFF1" stroke="#37474F" stroke-width="2"/>
+<!-- nose hint -->
+<path d="M 742,296 L 752,306 L 742,310" fill="none" stroke="#37474F" stroke-width="2.5" stroke-linejoin="round"/>
+
+<!-- near leg: thigh vertical, shin on floor -->
+<rect x="356" y="400" width="58" height="160" rx="28" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<rect x="228" y="528" width="180" height="32" rx="16" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<circle cx="385" cy="542" r="20" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- foot, top of foot on floor -->
+<path d="M 236,532 C 215,534 196,544 192,556 L 192,560 L 240,560 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- near arm: straight, wrist under shoulder -->
+<rect x="624" y="378" width="38" height="104" rx="19" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<rect x="627" y="462" width="32" height="92" rx="16" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- hand flat -->
+<path d="M 628,548 L 662,544 C 676,546 686,552 690,560 L 628,560 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- arrows -->
+<line x1="505" y1="482" x2="505" y2="530" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="450" y="608" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">живот вниз</text>
+<line x1="690" y1="410" x2="775" y2="410" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="700" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">грудь вперёд</text>
+</svg>

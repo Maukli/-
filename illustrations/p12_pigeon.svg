@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="4" markerHeight="4" refX="2.2" refY="2" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L4,2 L0,4 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="58" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Поза голубя</text>
+<text x="40" y="94" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Голень поперёк перед тазом, задняя нога прямая, корпус на предплечья</text>
+<g transform="translate(-75,-126) scale(1.2)">
+<!-- mat in perspective -->
+<polygon points="95,598 765,598 805,500 137,500" fill="#B0BEC5" stroke="#78909C" stroke-width="2.5" stroke-linejoin="round"/>
+<!-- back leg (far side), straight back, top of foot on floor -->
+<path d="M362,486 C320,494 280,505 240,513 C200,518 160,523 126,527 C112,527 100,530 90,536 C87,541 94,543 122,543 C160,543 200,542 240,541 C300,543 345,546 385,546 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7" stroke-linejoin="round"/>
+<path d="M243,516 C248,526 248,534 243,540" fill="none" stroke="#37474F" stroke-width="1.8"/>
+<!-- far arm -->
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<polyline points="640,452 646,530" stroke="#37474F" stroke-width="31"/>
+<polyline points="646,530 752,532" stroke="#37474F" stroke-width="27"/>
+<polyline points="640,452 646,530" stroke="#E3E8EB" stroke-width="25.5"/>
+<polyline points="646,530 752,532" stroke="#E3E8EB" stroke-width="21.5"/>
+</g>
+<ellipse cx="770" cy="532" rx="17" ry="9" fill="#E3E8EB" stroke="#37474F" stroke-width="2.7"/>
+<!-- torso and pelvis -->
+<path d="M350,505 C345,488 352,476 368,472 C395,464 430,470 470,467 C520,462 570,446 615,436 C640,431 660,442 662,460 C664,480 650,497 628,504 C590,511 550,505 515,505 C482,507 458,513 432,522 L402,547 C385,550 365,547 356,536 C350,526 350,515 350,505 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7" stroke-linejoin="round"/>
+<!-- rib cage hint -->
+<path d="M560,468 C585,478 605,490 615,503" fill="none" stroke="#90A4AE" stroke-width="1.8"/>
+<!-- front leg foot (far end of shin), neutral -->
+<path d="M535,512 C548,505 568,506 580,512 C584,517 578,523 566,525 C556,527 545,527 538,526 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7" stroke-linejoin="round"/>
+<!-- front shin across in front of pelvis, lying on floor -->
+<path d="M466,557 C488,541 512,524 534,511 C543,508 549,514 547,523 C527,544 507,563 490,582 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7" stroke-linejoin="round"/>
+<!-- front thigh (near side) -->
+<path d="M392,498 C422,503 458,523 487,552 C499,563 498,582 485,589 C470,595 454,591 438,580 C414,565 392,553 378,541 C371,522 377,503 392,498 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7" stroke-linejoin="round"/>
+<path d="M395,505 C385,515 382,528 386,540" fill="none" stroke="#37474F" stroke-width="1.8"/>
+<!-- near arm -->
+<g stroke-linecap="round" stroke-linejoin="round" fill="none">
+<polyline points="626,468 630,552" stroke="#37474F" stroke-width="33"/>
+<polyline points="630,552 738,556" stroke="#37474F" stroke-width="29"/>
+<polyline points="626,468 630,552" stroke="#ECEFF1" stroke-width="27.5"/>
+<polyline points="630,552 738,556" stroke="#ECEFF1" stroke-width="23.5"/>
+<!-- neck -->
+<polyline points="645,452 675,456" stroke="#37474F" stroke-width="27"/>
+<polyline points="645,452 675,456" stroke="#ECEFF1" stroke-width="21.5"/>
+</g>
+<path d="M612,452 C618,446 630,444 640,447" fill="none" stroke="#37474F" stroke-width="1.8"/>
+<ellipse cx="757" cy="557" rx="19" ry="10" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7"/>
+<!-- head lowered in line with spine -->
+<ellipse cx="700" cy="462" rx="30" ry="26" transform="rotate(12 700 462)" fill="#ECEFF1" stroke="#37474F" stroke-width="2.7"/>
+<path d="M694,455 q7,5 1,13" fill="none" stroke="#37474F" stroke-width="1.8"/>
+<!-- arrows -->
+<path d="M470,420 C580,385 710,395 785,482" fill="none" stroke="#1E88E5" stroke-width="5" stroke-linecap="round" marker-end="url(#ah)"/>
+<path d="M395,395 L395,450" fill="none" stroke="#1E88E5" stroke-width="5" stroke-linecap="round" marker-end="url(#ah)"/>
+</g>
+<!-- labels in final coordinates -->
+<text x="560" y="318" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">корпус вперёд и вниз</text>
+<text x="345" y="316" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">таз вниз</text>
+<text x="40" y="400" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">растяжка ягодичных передней ноги</text>
+<line x1="250" y1="408" x2="345" y2="462" stroke="#455A64" stroke-width="1.5"/>
+<text x="40" y="634" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">задняя нога прямая</text>
+<text x="440" y="634" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">передняя голень поперёк</text>
+<line x1="537" y1="614" x2="537" y2="540" stroke="#455A64" stroke-width="1.5"/>
+</svg>

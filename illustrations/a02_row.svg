@@ -9,100 +9,153 @@
 </g>
 
 <!-- floor -->
-<line x1="250" y1="600" x2="880" y2="600" stroke="#78909C" stroke-width="2"/>
+<line x1="300" y1="600" x2="880" y2="600" stroke="#78909C" stroke-width="2"/>
 <!-- machine -->
-<rect x="770" y="130" width="60" height="470" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="770" y="150" width="60" height="450" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- footplate -->
+<rect x="596" y="465" width="20" height="120" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="600" y="585" width="12" height="15" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- bench -->
+<rect x="310" y="470" width="180" height="20" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="330" y="490" width="14" height="110" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="456" y="490" width="14" height="110" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- cable -->
+<line x1="498" y1="343" x2="760" y2="322" stroke="#78909C" stroke-width="3"/>
 <circle cx="770" cy="322" r="17" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
 <circle cx="770" cy="322" r="4" fill="#78909C"/>
-<!-- footplate -->
-<rect x="585" y="470" width="22" height="115" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<rect x="596" y="585" width="10" height="15" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<!-- bench -->
-<rect x="250" y="470" width="230" height="20" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<rect x="270" y="490" width="14" height="110" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<rect x="446" y="490" width="14" height="110" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<!-- cable -->
-<line x1="476" y1="330" x2="770" y2="305" stroke="#78909C" stroke-width="3"/>
 
-<!-- legs -->
+<!-- leg -->
 <g stroke-linecap="round">
-<line x1="365" y1="452" x2="468" y2="425" stroke="#37474F" stroke-width="50"/>
-<line x1="468" y1="425" x2="560" y2="518" stroke="#37474F" stroke-width="38"/>
-<line x1="560" y1="518" x2="575" y2="488" stroke="#37474F" stroke-width="22"/>
-<line x1="365" y1="452" x2="468" y2="425" stroke="#ECEFF1" stroke-width="44"/>
-<line x1="468" y1="425" x2="560" y2="518" stroke="#ECEFF1" stroke-width="32"/>
-<line x1="560" y1="518" x2="575" y2="488" stroke="#ECEFF1" stroke-width="16"/>
+<line x1="385" y1="448" x2="515" y2="444" stroke="#37474F" stroke-width="46"/>
+<line x1="515" y1="444" x2="575" y2="510" stroke="#37474F" stroke-width="36"/>
+<line x1="385" y1="448" x2="515" y2="444" stroke="#ECEFF1" stroke-width="40"/>
+<line x1="515" y1="444" x2="575" y2="510" stroke="#ECEFF1" stroke-width="30"/>
 </g>
+<path d="M 562 500 C 572 490, 582 478, 588 470 L 596 468 L 596 540 L 582 540 C 572 535, 562 522, 562 500 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 508 424 C 516 420, 526 424, 530 430" fill="none" stroke="#37474F" stroke-width="2"/>
 
-<!-- torso -->
-<path d="M 335 470 C 330 420, 350 350, 395 300 C 410 284, 440 284, 452 300 C 462 330, 452 370, 435 405 C 425 432, 415 455, 410 470 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<!-- neck and head -->
-<path d="M 420 296 L 432 262 L 452 266 L 446 296 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<ellipse cx="450" cy="244" rx="25" ry="29" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<path d="M 474 238 L 481 250 L 474 253" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
-<path d="M 428 230 C 430 210, 465 208, 473 230" fill="none" stroke="#37474F" stroke-width="3"/>
+<!-- buttock -->
+<ellipse cx="378" cy="448" rx="30" ry="22" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
 
-<!-- trapezius (profile) -->
-<path d="M 400 296 C 380 310, 360 340, 350 375 C 344 395, 342 410, 343 420 L 360 412 C 362 390, 368 360, 385 335 C 395 320, 408 308, 425 300 Z" fill="#E53935" opacity="0.75"/>
+<!-- torso: leaning forward about 14 degrees from the hip, flat neutral back -->
+<path d="M 360 466 L 361 452 L 403 283 C 412 266, 448 264, 460 290 C 470 310, 470 330, 462 345 C 450 385, 432 425, 430 466 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
 
-<!-- arm -->
+<!-- neck in line with spine -->
+<path d="M 421 280 L 429 245 L 461 251 L 456 286 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- head, neutral, facing forward -->
+<ellipse cx="452" cy="220" rx="22" ry="26" transform="rotate(14 452 220)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 472 214 L 480 226 L 472 229" fill="#ECEFF1" stroke="#37474F" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="465" cy="212" r="2.5" fill="#37474F"/>
+<path d="M 444 214 C 438 216, 438 226, 444 228" fill="none" stroke="#37474F" stroke-width="2"/>
+<path d="M 432 214 C 432 196, 450 190, 466 197" fill="none" stroke="#37474F" stroke-width="3"/>
+
+<!-- middle and lower trapezius: narrow wedge between shoulder level and lower angle of scapula, close to spine -->
+<path d="M 405 286 L 421 292 L 394 368 L 385 370 Z" fill="#E53935" opacity="0.75"/>
+
+<!-- arm: upper arm abducted (short in profile), elbow behind torso at shoulder height, forearm bent forward to bar -->
 <g stroke-linecap="round">
-<line x1="418" y1="312" x2="360" y2="316" stroke="#37474F" stroke-width="34"/>
-<line x1="360" y1="316" x2="462" y2="330" stroke="#37474F" stroke-width="27"/>
-<line x1="418" y1="312" x2="360" y2="316" stroke="#ECEFF1" stroke-width="28"/>
-<line x1="360" y1="316" x2="462" y2="330" stroke="#ECEFF1" stroke-width="21"/>
+<line x1="432" y1="291" x2="380" y2="289" stroke="#37474F" stroke-width="34"/>
+<line x1="432" y1="291" x2="380" y2="289" stroke="#ECEFF1" stroke-width="28"/>
 </g>
-<!-- rear delt -->
-<ellipse cx="406" cy="312" rx="20" ry="16" fill="#E53935" opacity="0.75"/>
-<!-- bar end-on and hand -->
-<rect x="468" y="306" width="14" height="48" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<circle cx="472" cy="330" r="13" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- forearm, tapered -->
+<path d="M 384 280 L 490 334 L 482 350 L 372 302 A 13 13 0 0 1 384 280 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- elbow point -->
+<circle cx="379" cy="291" r="4" fill="#37474F"/>
+<!-- deltoid cap -->
+<path d="M 408 276 C 418 266, 444 266, 450 284" fill="none" stroke="#37474F" stroke-width="2"/>
+<!-- rear delt on back of shoulder -->
+<ellipse cx="414" cy="282" rx="15" ry="10" fill="#E53935" opacity="0.75"/>
+
+<!-- straight wide bar, seen in perspective, running toward viewer -->
+<path d="M 474 380 L 510 306" stroke="#78909C" stroke-width="13" stroke-linecap="round"/>
+<path d="M 474 380 L 510 306" stroke="#B0BEC5" stroke-width="8" stroke-linecap="round"/>
+<!-- fist on bar -->
+<ellipse cx="492" cy="343" rx="13" ry="14" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 484 336 L 499 339 M 483 344 L 498 347" stroke="#37474F" stroke-width="1.5"/>
+<text x="522" y="400" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#455A64">прямой гриф шире плеч</text>
+<line x1="520" y1="394" x2="482" y2="370" stroke="#455A64" stroke-width="1.5"/>
 
 <!-- arrows -->
-<line x1="590" y1="288" x2="500" y2="292" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="515" y="276" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">к груди</text>
-<line x1="345" y1="272" x2="285" y2="272" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="270" y="258" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">локти назад</text>
+<line x1="660" y1="300" x2="530" y2="310" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="560" y="282" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">тянем к груди</text>
+<line x1="378" y1="258" x2="318" y2="258" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="272" y="240" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">локти назад</text>
 
-<!-- labels main -->
+<!-- labels side view -->
 <g font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#263238">
-<text x="560" y="175">задняя дельта</text>
-<line x1="558" y1="170" x2="412" y2="308" stroke="#263238" stroke-width="1.5"/>
-<text x="30" y="160">средняя и нижняя</text>
-<text x="30" y="182">трапеция</text>
-<line x1="120" y1="190" x2="354" y2="382" stroke="#263238" stroke-width="1.5"/>
+<text x="300" y="150">задняя дельта</text>
+<line x1="372" y1="156" x2="412" y2="276" stroke="#263238" stroke-width="1.5"/>
+<text x="30" y="196">средняя и нижняя</text>
+<text x="30" y="218">трапеция</text>
+<line x1="118" y1="222" x2="392" y2="340" stroke="#263238" stroke-width="1.5"/>
 </g>
 
-<!-- inset back view -->
-<rect x="20" y="330" width="220" height="300" rx="8" fill="#ffffff" stroke="#B0BEC5" stroke-width="2"/>
-<text x="130" y="356" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#455A64">вид сзади</text>
+<!-- inset: back view -->
+<rect x="20" y="290" width="270" height="345" rx="8" fill="#ffffff" stroke="#B0BEC5" stroke-width="2"/>
+<text x="32" y="314" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#455A64">вид сзади</text>
+<text x="280" y="314" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#1E88E5">сводим лопатки</text>
+
+<!-- forearms going forward, away from viewer (foreshortened) -->
 <g stroke-linecap="round">
-<line x1="62" y1="420" x2="40" y2="480" stroke="#37474F" stroke-width="28"/>
-<line x1="198" y1="420" x2="220" y2="480" stroke="#37474F" stroke-width="28"/>
-<line x1="62" y1="420" x2="40" y2="480" stroke="#ECEFF1" stroke-width="22"/>
-<line x1="198" y1="420" x2="220" y2="480" stroke="#ECEFF1" stroke-width="22"/>
+<line x1="46" y1="392" x2="56" y2="381" stroke="#37474F" stroke-width="22"/>
+<line x1="264" y1="392" x2="254" y2="381" stroke="#37474F" stroke-width="22"/>
+<line x1="46" y1="392" x2="56" y2="381" stroke="#ECEFF1" stroke-width="16"/>
+<line x1="264" y1="392" x2="254" y2="381" stroke="#ECEFF1" stroke-width="16"/>
+<!-- upper arms abducted 90 degrees, elbows at shoulder level -->
+<line x1="104" y1="394" x2="46" y2="394" stroke="#37474F" stroke-width="28"/>
+<line x1="206" y1="394" x2="264" y2="394" stroke="#37474F" stroke-width="28"/>
+<line x1="104" y1="394" x2="46" y2="394" stroke="#ECEFF1" stroke-width="22"/>
+<line x1="206" y1="394" x2="264" y2="394" stroke="#ECEFF1" stroke-width="22"/>
 </g>
-<path d="M 130 398 L 120 398 L 118 410 L 142 410 L 140 398 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<circle cx="130" cy="384" r="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<path d="M 75 408 Q 130 398 185 408 L 205 425 L 172 590 L 88 590 L 55 425 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<!-- scapulae outlines -->
-<path d="M 78 428 L 112 432 L 104 492 Z" fill="none" stroke="#78909C" stroke-width="2"/>
-<path d="M 182 428 L 148 432 L 156 492 Z" fill="none" stroke="#78909C" stroke-width="2"/>
+<path d="M 40 390 C 36 394, 38 400, 44 402" fill="none" stroke="#37474F" stroke-width="2"/>
+<path d="M 270 390 C 274 394, 272 400, 266 402" fill="none" stroke="#37474F" stroke-width="2"/>
+
+<!-- torso back -->
+<path d="M 92 384 Q 155 372 218 384 L 226 408 L 200 532 L 110 532 L 84 408 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- neck and head -->
+<path d="M 143 378 L 145 356 L 165 356 L 167 378 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="155" cy="342" rx="18" ry="21" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 138 336 C 140 318, 170 318, 172 336" fill="none" stroke="#37474F" stroke-width="2"/>
 <!-- spine -->
-<line x1="130" y1="412" x2="130" y2="585" stroke="#78909C" stroke-width="2" stroke-dasharray="4 4"/>
-<!-- rhomboids -->
-<path d="M 112 432 L 130 420 L 130 478 L 104 492 Z" fill="#E53935" opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
-<path d="M 148 432 L 130 420 L 130 478 L 156 492 Z" fill="#E53935" opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
-<!-- middle and lower trapezius -->
-<path d="M 90 426 L 130 416 L 170 426 L 150 452 L 130 545 L 110 452 Z" fill="#E53935" opacity="0.55"/>
+<line x1="155" y1="380" x2="155" y2="528" stroke="#78909C" stroke-width="2" stroke-dasharray="4 4"/>
+
+<!-- middle trapezius: horizontal from spine to acromion -->
+<path d="M 155 386 L 155 424 L 128 412 L 100 404 L 98 390 Z" fill="#E53935" opacity="0.55"/>
+<path d="M 155 386 L 155 424 L 182 412 L 210 404 L 212 390 Z" fill="#E53935" opacity="0.55"/>
+<!-- lower trapezius: wedge down to T12 -->
+<path d="M 128 412 L 155 426 L 155 528 Z" fill="#E53935" opacity="0.55"/>
+<path d="M 182 412 L 155 426 L 155 528 Z" fill="#E53935" opacity="0.55"/>
+
+<!-- scapulae, retracted -->
+<path d="M 129 404 L 100 408 L 132 478 Z" fill="none" stroke="#78909C" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 181 404 L 210 408 L 178 478 Z" fill="none" stroke="#78909C" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- rhomboids: paired, spine to medial border of scapula, fibers oblique down and out -->
+<path d="M 153 392 L 153 450 L 133 476 L 129 406 Z" fill="#E53935" opacity="0.8" stroke="#B71C1C" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M 157 392 L 157 450 L 177 476 L 181 406 Z" fill="#E53935" opacity="0.8" stroke="#B71C1C" stroke-width="1.5" stroke-linejoin="round"/>
+<g stroke="#B71C1C" stroke-width="1">
+<line x1="153" y1="404" x2="130" y2="420"/>
+<line x1="153" y1="418" x2="131" y2="438"/>
+<line x1="153" y1="432" x2="132" y2="456"/>
+<line x1="157" y1="404" x2="180" y2="420"/>
+<line x1="157" y1="418" x2="179" y2="438"/>
+<line x1="157" y1="432" x2="178" y2="456"/>
+</g>
 <!-- rear delts -->
-<ellipse cx="62" cy="424" rx="13" ry="15" fill="#E53935" opacity="0.75"/>
-<ellipse cx="198" cy="424" rx="13" ry="15" fill="#E53935" opacity="0.75"/>
+<ellipse cx="96" cy="392" rx="13" ry="11" fill="#E53935" opacity="0.75"/>
+<ellipse cx="214" cy="392" rx="13" ry="11" fill="#E53935" opacity="0.75"/>
+
 <!-- scapula squeeze arrows -->
-<line x1="68" y1="520" x2="100" y2="520" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<line x1="192" y1="520" x2="160" y2="520" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="130" y="614" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#1E88E5">сводим лопатки</text>
-<!-- rhomboid label -->
-<text x="250" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#263238">ромбовидные</text>
-<line x1="248" y1="554" x2="148" y2="465" stroke="#263238" stroke-width="1.5"/>
+<line x1="42" y1="452" x2="86" y2="452" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<line x1="268" y1="452" x2="224" y2="452" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+
+<!-- inset labels -->
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="15" fill="#263238">
+<text x="280" y="588" text-anchor="end">ромбовидные</text>
+<line x1="236" y1="575" x2="172" y2="452" stroke="#263238" stroke-width="1.2"/>
+<text x="32" y="562">средняя трапеция</text>
+<line x1="70" y1="549" x2="110" y2="400" stroke="#263238" stroke-width="1.2"/>
+<text x="155" y="614" text-anchor="middle">нижняя трапеция</text>
+<line x1="155" y1="600" x2="156" y2="512" stroke="#263238" stroke-width="1.2"/>
+</g>
 </svg>

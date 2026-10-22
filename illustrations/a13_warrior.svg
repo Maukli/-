@@ -7,43 +7,58 @@
 <text x="40" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Колено 90 градусов, задняя нога прямая, таз подкручен, руки вверх</text>
 
 <!-- mat -->
-<rect x="190" y="600" width="480" height="12" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="180" y="601" width="520" height="12" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
 
-<g stroke-linecap="round" stroke-linejoin="round">
-<!-- back arm (behind) -->
-<g stroke="#37474F" fill="none"><line x1="446" y1="312" x2="448" y2="218" stroke-width="28"/><line x1="448" y1="218" x2="450" y2="144" stroke-width="24"/></g>
-<g stroke="#ECEFF1" fill="none"><line x1="446" y1="312" x2="448" y2="218" stroke-width="22"/><line x1="448" y1="218" x2="450" y2="144" stroke-width="18"/></g>
-<ellipse cx="451" cy="126" rx="9" ry="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#ECEFF1">
+<!-- back leg: one straight line hip-knee-ankle -->
+<path d="M443,437 L351,503 L258,562 L266,579 L366,529 L470,484 Z"/>
+<!-- back foot on the ball, heel up, toes forward -->
+<path d="M256,560 Q244,566 248,578 L284,597 Q300,602 316,601 Q324,597 318,591 L290,584 Q280,576 272,566 Z"/>
+<path d="M286,586 L300,600" fill="none" stroke-width="1.5"/>
 
-<!-- back leg -->
-<g stroke="#37474F" fill="none"><line x1="445" y1="468" x2="353" y2="527" stroke-width="46"/><line x1="353" y1="527" x2="258" y2="586" stroke-width="34"/></g>
-<g stroke="#ECEFF1" fill="none"><line x1="445" y1="468" x2="353" y2="527" stroke-width="40"/><line x1="353" y1="527" x2="258" y2="586" stroke-width="28"/></g>
-<path d="M240,588 Q244,572 262,574 L298,592 Q304,601 294,602 L252,601 Q238,600 240,588 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- torso in profile, pelvis tucked: flat low back, round buttock -->
+<path d="M452,292 Q446,340 448,380 Q446,410 438,432 Q430,462 446,478 Q466,488 488,474 L492,448 Q498,426 494,404 Q490,388 496,368 Q510,330 494,292 Z"/>
+<!-- groin crease of back leg -->
+<path d="M470,484 Q480,478 486,470" fill="none" stroke-width="2"/>
 
-<!-- torso -->
-<path d="M420,488 Q406,470 412,440 Q418,410 424,392 Q418,350 426,318 Q438,294 462,294 Q486,300 484,338 Q478,372 480,402 Q492,440 490,484 Q456,504 420,488 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- front leg: thigh horizontal, shin vertical -->
+<path d="M458,430 Q530,426 600,432 Q620,436 620,458 Q616,480 612,500 L610,572 L612,580 L648,588 Q658,594 650,601 L594,601 Q586,598 588,586 L590,570 Q582,520 586,484 Q560,480 520,481 L478,482 Q462,470 458,430 Z"/>
 
-<!-- front leg -->
-<g stroke="#37474F" fill="none"><line x1="462" y1="466" x2="565" y2="468" stroke-width="48"/><line x1="565" y1="468" x2="568" y2="584" stroke-width="34"/></g>
-<g stroke="#ECEFF1" fill="none"><line x1="462" y1="466" x2="565" y2="468" stroke-width="42"/><line x1="565" y1="468" x2="568" y2="584" stroke-width="28"/></g>
-<path d="M552,600 Q548,584 556,578 Q572,574 584,586 L616,592 Q624,600 614,601 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- neck -->
+<path d="M464,300 L466,266 L488,264 L490,298 Z"/>
+<!-- head in profile, facing right -->
+<path d="M476,212 Q508,210 512,240 L518,254 Q518,258 512,259 Q512,270 506,274 Q496,280 482,278 Q456,276 452,246 Q452,214 476,212 Z"/>
+<circle cx="502" cy="238" r="2.2" fill="#37474F" stroke="none"/>
+<path d="M500,268 Q506,269 509,266" fill="none" stroke-width="2"/>
 
-<!-- neck and head -->
-<rect x="441" y="270" width="22" height="34" rx="6" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<path d="M450,222 Q478,222 480,250 L486,262 Q484,266 479,266 Q478,284 458,288 Q426,288 422,256 Q422,224 450,222 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
-<ellipse cx="447" cy="257" rx="5" ry="8" fill="none" stroke="#37474F" stroke-width="2"/>
-
-<!-- front arm -->
-<g stroke="#37474F" fill="none"><line x1="458" y1="312" x2="466" y2="218" stroke-width="28"/><line x1="466" y1="218" x2="470" y2="144" stroke-width="24"/></g>
-<g stroke="#ECEFF1" fill="none"><line x1="458" y1="312" x2="466" y2="218" stroke-width="22"/><line x1="466" y1="218" x2="470" y2="144" stroke-width="18"/></g>
-<ellipse cx="471" cy="126" rx="9" ry="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- arm up in profile (near arm covers far arm), beside the ear -->
+<path d="M458,312 Q456,260 462,214 L466,150 L486,150 L486,214 Q488,262 492,300 Z"/>
+<!-- elbow fold -->
+<path d="M464,216 Q472,212 485,216" fill="none" stroke-width="1.5"/>
+<!-- hands palms together, seen from the side -->
+<path d="M465,152 L463,110 Q464,94 476,92 Q488,94 489,110 L488,152 Z"/>
+<path d="M484,124 Q491,128 489,142" fill="none" stroke-width="1.5"/>
+<!-- shoulder -->
+<path d="M458,312 Q456,294 472,288 Q490,288 494,304" fill="none" stroke-width="2"/>
 </g>
 
+<!-- knee angle -->
+<path d="M560,457 A40,40 0 0 0 587,494" fill="none" stroke="#455A64" stroke-width="2.5"/>
+<text x="628" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">90 градусов</text>
+
 <!-- arrows -->
-<path d="M330,410 Q370,420 392,452" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="150" y="400" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">таз вперёд и вниз</text>
-<line x1="525" y1="200" x2="525" y2="120" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="540" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">руки вверх</text>
-<text x="590" y="440" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">90 градусов</text>
-<text x="215" y="635" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">нога прямая</text>
+<path d="M482,462 L540,526" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="362" y="584" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">таз вперёд и вниз</text>
+<path d="M428,430 L428,470" fill="none" stroke="#1E88E5" stroke-width="4" marker-end="url(#ah)"/>
+<text x="300" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#1E88E5">копчик вниз</text>
+<line x1="530" y1="200" x2="530" y2="124" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="548" y="170" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">руки вверх</text>
+
+<!-- back leg label along the leg -->
+<text x="0" y="0" transform="translate(268,520) rotate(-33)" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">задняя нога прямая</text>
+
+<!-- stretch zone callout -->
+<line x1="250" y1="620" x2="418" y2="508" stroke="#455A64" stroke-width="1.5"/>
+<circle cx="418" cy="508" r="3" fill="#455A64"/>
+<text x="40" y="640" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">тянется: передняя часть бедра и пах задней ноги</text>
 </svg>

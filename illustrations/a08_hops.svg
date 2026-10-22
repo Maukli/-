@@ -1,40 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="650" viewBox="0 0 900 650">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
 <rect width="900" height="650" fill="#ffffff"/>
 <defs>
   <marker id="ah" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto" markerUnits="strokeWidth">
     <path d="M0,0.3 L4,2 L0,3.7 Z" fill="#1E88E5"/>
   </marker>
-  <g id="body" stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
-    <!-- left arm (viewer left), out for balance -->
-    <path d="M548 245 Q520 270 512 302 L500 362 Q497 372 506 374 Q514 374 515 364 L530 306 Q545 285 562 268 Z"/>
-    <ellipse cx="503" cy="380" rx="9" ry="12"/>
-    <!-- right arm, slightly out and down -->
-    <path d="M652 245 Q676 270 684 312 L690 372 Q690 381 682 381 Q674 381 674 372 L667 318 Q658 290 640 270 Z"/>
-    <ellipse cx="683" cy="388" rx="9" ry="12"/>
-    <!-- support leg (right) -->
-    <path d="M605 405 Q648 400 652 425 L645 480 Q646 495 642 505 L638 575 Q637 588 628 590 L612 590 Q608 580 610 570 L612 505 Q606 490 608 480 L602 430 Z"/>
-    <!-- support foot (seen from behind, heel) -->
-    <path d="M608 584 L640 584 Q648 592 644 600 L604 600 Q600 592 608 584 Z"/>
-    <!-- free leg (left), lifted, bent at knee -->
-    <path d="M550 405 Q560 398 598 410 L592 440 L585 488 Q583 500 580 506 L592 548 Q595 560 586 562 Q578 562 574 552 L556 506 Q550 494 552 482 L548 430 Z"/>
-    <!-- free foot sole seen from behind -->
-    <path d="M574 548 Q584 542 596 550 L604 572 Q600 580 590 578 L576 562 Z"/>
-    <!-- pelvis / buttocks -->
-    <path d="M562 360 L638 360 Q660 378 660 408 Q656 440 626 438 Q606 436 600 424 Q594 436 574 438 Q544 440 540 408 Q540 378 562 360 Z"/>
-    <path d="M600 372 L600 424" fill="none" stroke-width="2"/>
-    <!-- torso from behind -->
-    <path d="M548 240 Q540 236 546 230 L585 220 L615 220 L654 230 Q660 236 652 240 Q646 300 634 340 L638 362 L562 362 L566 340 Q554 300 548 240 Z"/>
-    <!-- spine and shoulder blades -->
-    <path d="M600 232 L600 352" fill="none" stroke-width="2" stroke="#90A4AE"/>
-    <path d="M572 252 Q566 275 578 296" fill="none" stroke-width="2" stroke="#90A4AE"/>
-    <path d="M628 252 Q634 275 622 296" fill="none" stroke-width="2" stroke="#90A4AE"/>
-    <!-- neck -->
-    <path d="M589 200 L611 200 L614 224 L586 224 Z"/>
-    <!-- head -->
-    <ellipse cx="600" cy="176" rx="26" ry="31"/>
-    <ellipse cx="573" cy="180" rx="4" ry="8"/>
-    <ellipse cx="627" cy="180" rx="4" ry="8"/>
-  </g>
 </defs>
 
 <text x="30" y="50" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Прыжки с ноги на ногу</text>
@@ -43,33 +12,88 @@
 <!-- floor -->
 <line x1="40" y1="601" x2="860" y2="601" stroke="#78909C" stroke-width="3"/>
 
-<!-- ghost: takeoff position (mirrored) -->
-<g opacity="0.3" transform="translate(830,0) scale(-1,1)">
-  <use xlink:href="#body"/>
+<!-- ===== PUSH-OFF FIGURE (ghost): half squat on left leg, weight shifts right ===== -->
+<g opacity="0.42" stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
+  <!-- far arm swings toward jump -->
+  <path d="M362 290 L414 268 L456 250" fill="none" stroke="#37474F" stroke-width="25"/>
+  <path d="M362 290 L414 268 L456 250" fill="none" stroke="#ECEFF1" stroke-width="19"/>
+  <ellipse cx="462" cy="247" rx="10" ry="9"/>
+  <!-- push leg (left): foot flat, knee bent, leg inclined toward jump -->
+  <path d="M332 416 L366 446 Q332 482 294 506 Q270 514 262 496 Q264 478 282 468 Q308 448 332 416 Z"/>
+  <path d="M262 494 Q262 524 274 578 L296 578 Q300 548 296 522 Q294 500 284 488 Z"/>
+  <path d="M272 572 L298 572 Q306 584 302 598 L244 598 Q240 590 250 586 Q264 582 272 572 Z"/>
+  <!-- neck and head -->
+  <path d="M352 244 L374 244 L376 270 L350 270 Z"/>
+  <ellipse cx="362" cy="226" rx="23" ry="27"/>
+  <ellipse cx="370" cy="228" rx="4" ry="7"/>
+  <!-- torso, leaning toward jump -->
+  <path d="M352 262 Q388 264 396 300 Q402 350 384 400 Q392 432 380 452 Q360 466 336 458 L320 440 Q326 400 326 360 Q326 322 334 290 Q338 270 352 262 Z"/>
+  <!-- free leg (right): already off the floor, moving toward jump -->
+  <path d="M344 420 Q370 418 392 436 Q414 456 418 476 Q414 494 398 494 Q376 480 352 462 Z"/>
+  <path d="M398 470 Q418 472 422 486 L430 556 L410 560 Q404 530 394 494 Z"/>
+  <path d="M410 552 L432 552 Q438 562 430 570 L394 578 Q386 574 392 566 Z"/>
+  <!-- near arm swings toward jump -->
+  <path d="M372 294 L422 290 L466 276" fill="none" stroke="#37474F" stroke-width="25"/>
+  <path d="M372 294 L422 290 L466 276" fill="none" stroke="#ECEFF1" stroke-width="19"/>
+  <ellipse cx="473" cy="274" rx="10" ry="9"/>
 </g>
+<text x="300" y="630" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#78909C">толчок</text>
 
-<!-- main figure: landing -->
-<g transform="translate(-30,0)">
-  <use xlink:href="#body"/>
-  <!-- gluteus medius on support side -->
-  <path d="M614 368 Q634 358 654 370 Q662 388 660 408 Q648 404 640 396 Q626 384 614 368 Z" fill="#E53935" fill-opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
-  <!-- knee over foot alignment -->
-  <line x1="626" y1="455" x2="626" y2="598" stroke="#78909C" stroke-width="2" stroke-dasharray="6 5"/>
+<!-- ===== LANDING FIGURE: on right leg, knee bent, hips back, torso forward ===== -->
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
+  <!-- far arm (left) swings forward and down -->
+  <path d="M572 266 L540 318 L552 366" fill="none" stroke="#37474F" stroke-width="25"/>
+  <path d="M572 266 L540 318 L552 366" fill="none" stroke="#ECEFF1" stroke-width="19"/>
+  <ellipse cx="554" cy="374" rx="9" ry="11"/>
+  <!-- free leg (left): bent, swept back behind support leg, toe off the floor -->
+  <path d="M626 398 L662 404 Q690 446 692 474 Q688 494 668 494 Q648 462 628 430 Z"/>
+  <path d="M668 494 Q680 502 694 494 L752 468 L746 442 Q712 444 680 464 Q664 474 668 494 Z"/>
+  <path d="M744 442 Q760 438 768 452 L792 476 Q794 488 782 488 L748 470 Z"/>
+  <!-- support shin (right) -->
+  <path d="M590 492 L620 576 L642 578 Q644 556 650 530 Q648 505 622 494 Z"/>
+  <!-- support foot -->
+  <path d="M618 572 L644 572 Q654 584 650 598 L588 598 Q582 590 594 586 Q608 582 618 572 Z"/>
+  <!-- support thigh, knee bent about 30 degrees -->
+  <path d="M598 404 Q592 444 586 478 Q588 500 606 502 L624 494 Q644 468 670 432 L640 396 Z"/>
+  <path d="M594 486 Q602 494 612 490" fill="none" stroke-width="2"/>
+  <!-- neck and head, looking forward and down -->
+  <path d="M548 228 L570 222 L580 250 L552 258 Z"/>
+  <ellipse cx="548" cy="210" rx="23" ry="27" transform="rotate(-15 548 210)"/>
+  <ellipse cx="557" cy="213" rx="4" ry="7" transform="rotate(-15 557 213)"/>
+  <!-- torso leaning forward about 25 degrees, pelvis pushed back -->
+  <path d="M560 242 Q596 236 616 264 Q632 296 638 326 Q644 352 664 372 Q686 396 678 426 Q668 448 640 446 L604 424 Q600 400 590 380 Q574 356 564 334 Q550 306 546 284 Q544 258 560 242 Z"/>
+  <path d="M600 272 Q594 290 606 304" fill="none" stroke-width="2" stroke="#90A4AE"/>
+  <path d="M618 272 Q630 300 634 330" fill="none" stroke-width="2" stroke="#90A4AE"/>
+  <!-- near arm (right) swings back -->
+  <path d="M590 262 L630 300 L674 304" fill="none" stroke="#37474F" stroke-width="25"/>
+  <path d="M590 262 L630 300 L674 304" fill="none" stroke="#ECEFF1" stroke-width="19"/>
+  <ellipse cx="682" cy="304" rx="11" ry="9"/>
 </g>
+<text x="620" y="630" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#78909C">приземление</text>
+
+<path d="M574 352 Q612 352 652 362" fill="none" stroke="#90A4AE" stroke-width="2"/>
+<path d="M594 436 Q630 450 662 444" fill="none" stroke="#90A4AE" stroke-width="2"/>
+<!-- gluteus medius: fan from iliac crest down to greater trochanter, above gluteus maximus -->
+<path d="M604 368 Q630 352 660 366 Q656 384 642 404 Q636 410 630 404 Q614 388 604 368 Z" fill="#E53935" fill-opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
+<!-- upper edge of gluteus maximus -->
+<path d="M660 368 Q652 390 640 406" fill="none" stroke="#37474F" stroke-width="2"/>
+
+<!-- knee over foot alignment -->
+<line x1="603" y1="476" x2="603" y2="598" stroke="#455A64" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="662" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">колено над стопой</text>
 
 <!-- muscle label -->
-<line x1="628" y1="392" x2="680" y2="440" stroke="#37474F" stroke-width="1.5"/>
-<circle cx="628" cy="392" r="3" fill="#37474F"/>
-<text x="684" y="438" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">средняя</text>
-<text x="684" y="462" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">ягодичная мышца</text>
+<line x1="636" y1="382" x2="696" y2="340" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="636" cy="382" r="3" fill="#37474F"/>
+<text x="700" y="334" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">средняя</text>
+<text x="700" y="358" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">ягодичная мышца</text>
 
-<!-- knee cue -->
-<text x="626" y="525" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">колено над стопой</text>
+<!-- jump arrow: from push pelvis to landing support foot -->
+<path d="M345 420 C420 260 540 300 574 586" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="455" y="320" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">прыжок в сторону</text>
 
-<!-- jump arrow -->
-<path d="M320 285 Q415 160 505 275" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="415" y="190" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">прыжок в сторону</text>
-<!-- soft landing arrow -->
-<path d="M650 140 L650 205" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="664" y="170" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">мягко вниз</text>
+<!-- sit-down arrow near support hip -->
+<path d="M705 380 L705 428" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="720" y="398" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">присесть при</text>
+<text x="720" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">приземлении</text>
 </svg>

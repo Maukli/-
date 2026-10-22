@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+  <marker id="ah" markerWidth="22" markerHeight="22" refX="4" refY="11" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,2 L18,11 L0,20 Z" fill="#1E88E5"/>
+  </marker>
+</defs>
+<text x="40" y="58" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Четвёрка лёжа</text>
+<text x="40" y="94" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Лодыжка на колене, тянем опорное бедро к груди</text>
+
+<g transform="translate(-30,-90) scale(1.2)">
+<!-- mat -->
+<rect x="50" y="520" width="680" height="16" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="3"/>
+
+<!-- far arm -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M205,480 L276,398 L366,372" stroke="#37474F" stroke-width="30"/>
+  <path d="M205,480 L276,398 L366,372" stroke="#CFD8DC" stroke-width="24"/>
+</g>
+<!-- far (support) leg: outline then fill -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M392,492 L350,318" stroke="#37474F" stroke-width="58"/>
+  <path d="M350,318 L512,318" stroke="#37474F" stroke-width="42"/>
+  <path d="M512,322 L524,282" stroke="#37474F" stroke-width="28"/>
+  <path d="M392,492 L350,318" stroke="#CFD8DC" stroke-width="52"/>
+  <path d="M350,318 L512,318" stroke="#CFD8DC" stroke-width="36"/>
+  <path d="M512,322 L524,282" stroke="#CFD8DC" stroke-width="22"/>
+</g>
+<!-- far hand fingers visible behind thigh -->
+<ellipse cx="404" cy="380" rx="12" ry="10" fill="#CFD8DC" stroke="#37474F" stroke-width="3"/>
+
+<!-- torso -->
+<path d="M178,480 C190,456 228,450 262,455 C300,460 330,470 362,467 C398,463 426,480 426,505 L426,520 L184,520 C174,512 170,496 178,480 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- neck -->
+<path d="M150,482 L182,478 L186,516 L152,518 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- head -->
+<ellipse cx="126" cy="489" rx="34" ry="30" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M112,460 L106,450 L118,456" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M140,490 C146,484 150,492 144,498" fill="none" stroke="#37474F" stroke-width="2.5"/>
+
+<!-- near (working) thigh -->
+<g fill="none" stroke-linecap="round">
+  <path d="M398,496 L520,402" stroke="#37474F" stroke-width="54"/>
+  <path d="M398,496 L520,402" stroke="#ECEFF1" stroke-width="48"/>
+</g>
+<!-- near arm -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M212,486 L290,404 L388,394" stroke="#37474F" stroke-width="32"/>
+  <path d="M212,486 L290,404 L388,394" stroke="#ECEFF1" stroke-width="26"/>
+</g>
+<ellipse cx="396" cy="394" rx="14" ry="12" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- near shin and foot resting on support thigh below knee -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M520,402 L368,352" stroke="#37474F" stroke-width="40"/>
+  <path d="M368,352 L326,340" stroke="#37474F" stroke-width="26"/>
+  <path d="M520,402 L368,352" stroke="#ECEFF1" stroke-width="34"/>
+  <path d="M368,352 L326,340" stroke="#ECEFF1" stroke-width="20"/>
+</g>
+<circle cx="370" cy="353" r="5" fill="#90A4AE"/>
+<circle cx="520" cy="402" r="5" fill="#90A4AE"/>
+
+<!-- arrow: knee of support leg toward chest -->
+<path d="M386,275 A220,220 0 0 0 280,305" fill="none" stroke="#1E88E5" stroke-width="4.2" stroke-linecap="round" marker-end="url(#ah)"/>
+</g>
+<text x="60" y="236" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">тянем бедро к груди</text>
+</svg>

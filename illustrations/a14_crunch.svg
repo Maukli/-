@@ -1,48 +1,101 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
 <rect width="900" height="650" fill="#ffffff"/>
 <defs>
-<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1E88E5"/></marker>
+<marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3.6" markerHeight="3.6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/></marker>
 </defs>
-<text x="40" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Скручивания с блином</text>
-<text x="40" y="90" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Лопатки отрываем от пола, поясница прижата. 4 по 20-25</text>
+<text x="40" y="60" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Скручивания с блином</text>
+<text x="40" y="96" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Отрываем лопатки, поясница на полу. 4 по 20-25 до жжения</text>
+
 <!-- mat -->
-<rect x="150" y="515" width="620" height="14" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
-<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
-<!-- far leg (slightly behind) -->
-<path d="M488 478 L582 392 Q598 384 606 400 L672 494 Q676 506 664 508 L652 508 L590 422 L505 505 Z" fill="#E3E7EA"/>
-<!-- torso -->
-<path d="M282 438 Q300 424 322 428 Q342 430 352 438 Q395 462 455 469 Q495 473 508 488 Q514 506 492 513 L395 513 Q352 510 322 480 Q300 462 282 452 Z"/>
-<!-- near thigh -->
-<path d="M478 476 Q520 440 572 396 Q592 382 606 396 Q612 410 600 420 L520 500 Q505 514 486 510 Z"/>
-<!-- near shin -->
-<path d="M584 404 Q596 386 612 398 L676 492 L652 500 Z"/>
-<!-- foot -->
-<path d="M650 492 L680 488 Q706 498 712 510 Q712 514 704 514 L650 514 Q644 504 650 492 Z"/>
-<!-- neck -->
-<path d="M268 420 L292 408 L304 432 L282 446 Z"/>
-<!-- head -->
-<ellipse cx="262" cy="405" rx="27" ry="31" transform="rotate(-25 262 405)"/>
-<path d="M283 398 Q292 402 289 410" fill="none" stroke-width="2"/>
+<rect x="140" y="520" width="640" height="14" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- far arm (behind) -->
+<line x1="372" y1="404" x2="452" y2="318" stroke="#37474F" stroke-width="25" stroke-linecap="round"/>
+<line x1="372" y1="404" x2="452" y2="318" stroke="#E2E7EA" stroke-width="19" stroke-linecap="round"/>
+<!-- ===== outlines (merged silhouette) ===== -->
+<!-- neck outline -->
+<path id="neck" d="M322,446 L284,420 C282,410 300,404 312,406 L342,408 Z" fill="#37474F" stroke="#37474F" stroke-width="6" stroke-linejoin="round"/>
+<!-- torso outline -->
+<path d="M551,502 C553,512 546,520 528,520 L432,520 C418,520 406,512 394,504 L367,491 C352,484 338,479 326,472 C314,465 312,452 320,443 C324,430 330,416 340,408 C350,400 364,397 378,399 C392,402 402,410 410,420 C418,436 428,446 440,454 C450,460 462,464 476,465 C488,465 498,463 506,462 C524,466 546,482 551,502 Z" fill="#37474F" stroke="#37474F" stroke-width="6" stroke-linejoin="round"/>
+<!-- thigh + shin outline -->
+<line x1="508" y1="492" x2="585" y2="402" stroke="#37474F" stroke-width="44" stroke-linecap="round"/>
+<line x1="585" y1="402" x2="648" y2="500" stroke="#37474F" stroke-width="34" stroke-linecap="round"/>
+<!-- foot outline -->
+<path d="M632,500 C632,486 656,486 668,498 L700,508 C709,511 709,520 700,520 L636,520 C629,520 628,510 632,500 Z" fill="#37474F" stroke="#37474F" stroke-width="6" stroke-linejoin="round"/>
+
+<!-- ===== fills ===== -->
+<path d="M322,446 L284,420 C282,410 300,404 312,406 L342,408 Z" fill="#ECEFF1"/>
+<path d="M551,502 C553,512 546,520 528,520 L432,520 C418,520 406,512 394,504 L367,491 C352,484 338,479 326,472 C314,465 312,452 320,443 C324,430 330,416 340,408 C350,400 364,397 378,399 C392,402 402,410 410,420 C418,436 428,446 440,454 C450,460 462,464 476,465 C488,465 498,463 506,462 C524,466 546,482 551,502 Z" fill="#ECEFF1"/>
+<line x1="508" y1="492" x2="585" y2="402" stroke="#ECEFF1" stroke-width="38" stroke-linecap="round"/>
+<line x1="585" y1="402" x2="648" y2="500" stroke="#ECEFF1" stroke-width="28" stroke-linecap="round"/>
+<path d="M632,500 C632,486 656,486 668,498 L700,508 C709,511 709,520 700,520 L636,520 C629,520 628,510 632,500 Z" fill="#ECEFF1"/>
+
+<!-- body detail lines -->
+<!-- hip crease (where thigh begins) -->
+<path d="M506,463 C514,474 520,486 522,498" fill="none" stroke="#37474F" stroke-width="2.5"/>
+<!-- buttock -->
+<!-- rib cage lower margin -->
+<!-- knee -->
+<path d="M576,404 C582,396 592,396 596,404" fill="none" stroke="#90A4AE" stroke-width="2"/>
+
+<!-- target muscle: rectus abdominis upper (sternum to navel) -->
+<path d="M404,413 C410,420 413,428 418,436 C428,449 440,457 456,463 L452,478 C436,473 422,465 410,455 C402,446 397,436 392,424 Z" fill="#E53935" opacity="0.75"/>
+<!-- lower part, pale -->
+<path d="M456,463 C472,466 490,465 504,462 L503,476 C488,479 468,480 452,478 Z" fill="#E53935" opacity="0.2"/>
+<!-- tendinous intersections -->
+<line x1="408" y1="428" x2="398" y2="440" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+<line x1="424" y1="444" x2="416" y2="458" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+<line x1="440" y1="455" x2="435" y2="470" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+
+<!-- head (chin slightly to chest) -->
+<g transform="rotate(-45 288 396)">
+<ellipse cx="288" cy="396" rx="29" ry="35" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
 </g>
-<!-- target muscle -->
-<path d="M352 440 Q395 463 446 469 L446 486 Q396 482 350 458 Z" fill="#E53935" opacity="0.75"/>
-<!-- arms and plate -->
-<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
-<path d="M302 438 Q312 424 328 428 L382 404 Q392 402 396 412 L392 420 L336 448 Q314 456 302 438 Z"/>
-<path d="M382 404 L428 384 Q438 382 440 392 L438 398 L392 420 Z"/>
-<ellipse cx="452" cy="388" rx="13" ry="44" fill="#B0BEC5" stroke="#78909C"/>
-<ellipse cx="452" cy="388" rx="5" ry="9" fill="#ffffff" stroke="#78909C" stroke-width="2"/>
-<ellipse cx="440" cy="390" rx="9" ry="11"/>
+<!-- ear -->
+<ellipse cx="281" cy="401" rx="6" ry="8" transform="rotate(-45 281 401)" fill="none" stroke="#37474F" stroke-width="2"/>
+<!-- eye -->
+<circle cx="297" cy="381" r="2.8" fill="#37474F"/>
+<!-- brow -->
+<path d="M291,374 C295,370 300,370 303,373" fill="none" stroke="#37474F" stroke-width="2"/>
+<!-- nose -->
+<path d="M307,377 L315,382 L310,388" fill="none" stroke="#37474F" stroke-width="2" stroke-linejoin="round"/>
+<!-- mouth -->
+<path d="M309,395 C312,396 314,398 315,400" fill="none" stroke="#37474F" stroke-width="2"/>
+
+<!-- plate: held flat over chest, face toward chest, perpendicular to arms -->
+<g transform="rotate(43 448 314)">
+<rect x="386" y="304" width="124" height="20" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="3"/>
+<line x1="436" y1="304" x2="436" y2="324" stroke="#78909C" stroke-width="2"/>
+<line x1="460" y1="304" x2="460" y2="324" stroke="#78909C" stroke-width="2"/>
 </g>
-<!-- arrow -->
-<path d="M222 478 Q196 400 250 345" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
-<text x="60" y="300" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">поднимаем голову и лопатки</text>
-<!-- lower back note -->
-<line x1="420" y1="510" x2="430" y2="560" stroke="#455A64" stroke-width="1.5"/>
-<text x="380" y="580" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">поясница на полу</text>
+<!-- near arm (straight, from shoulder to plate) -->
+<line x1="356" y1="410" x2="438" y2="322" stroke="#37474F" stroke-width="25" stroke-linecap="round"/>
+<line x1="356" y1="410" x2="438" y2="322" stroke="#ECEFF1" stroke-width="19" stroke-linecap="round"/>
+<!-- shoulder joint at top of torso -->
+<ellipse cx="356" cy="410" rx="16" ry="19" transform="rotate(-40 356 410)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- elbow mark -->
+<path d="M392,376 C396,380 402,381 406,379" fill="none" stroke="#90A4AE" stroke-width="2"/>
+<!-- hands gripping plate in its center -->
+<ellipse cx="446" cy="314" rx="13" ry="11" transform="rotate(-47 446 314)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M440,306 L452,320" stroke="#37474F" stroke-width="2"/>
+
+<!-- arrow: lift upper back -->
+<path d="M240,490 Q196,420 236,352" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="40" y="300" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">поднимаем голову</text>
+<text x="40" y="322" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">и лопатки</text>
+
+<!-- gap note -->
+<line x1="362" y1="489" x2="300" y2="575" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="362" cy="489" r="3" fill="#37474F"/>
+<text x="150" y="597" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">лопатки над полом</text>
+
 <!-- muscle label -->
-<line x1="400" y1="470" x2="600" y2="250" stroke="#263238" stroke-width="1.5"/>
-<circle cx="400" cy="470" r="3" fill="#263238"/>
-<text x="560" y="220" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Прямая мышца живота</text>
-<text x="560" y="244" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">(верхняя часть)</text>
+<line x1="580" y1="282" x2="420" y2="440" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="420" cy="440" r="3" fill="#37474F"/>
+<text x="560" y="250" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Прямая мышца живота</text>
+<text x="560" y="274" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">(верхняя часть)</text>
+
+<!-- lumbar note -->
+<line x1="470" y1="575" x2="470" y2="522" stroke="#37474F" stroke-width="1.5"/>
+<text x="420" y="597" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">поясница прижата к полу</text>
 </svg>

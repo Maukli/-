@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="58" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Растяжка широчайшей в собаке мордой вниз</text>
+<text x="40" y="92" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Таз высоко, кисть на кисть, тянем таз назад и вверх</text>
+<!-- mat -->
+<rect x="90" y="560" width="680" height="14" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- torso + leg -->
+<path d="M305.7,373.5 L431.7,229.7 Q460,190 483.9,240.5 L560,382.6 Q612,448 640.3,528.8 Q654,540 650,552 Q648,558 640,558 L590,559 Q578,557 584,550 L619.7,541.2 L526.8,402.9 L470,309 Q467,302 462,306 L360.8,422.8 Q338,438 312,410 Q296,390 305.7,373.5 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- neck -->
+<path d="M332,412 L320,458" stroke="#37474F" stroke-width="34" stroke-linecap="round"/>
+<path d="M332,412 L320,458" stroke="#ECEFF1" stroke-width="28" stroke-linecap="round"/>
+<!-- head -->
+<ellipse cx="318.5" cy="465.5" rx="34" ry="44" transform="rotate(40 318.5 465.5)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M339,490 q8,3 3,11" fill="none" stroke="#37474F" stroke-width="2.5" stroke-linecap="round"/>
+<ellipse cx="325" cy="466" rx="6" ry="9" transform="rotate(40 325 466)" fill="#ECEFF1" stroke="#37474F" stroke-width="2"/>
+<!-- near arm, one straight line from hip through shoulder to wrist -->
+<path d="M316.1,382.8 L257.6,458.8 L196,532 L214,548 L280,478.8 Q318.5,449 348.9,412.2 A22,22 0 0 0 316.1,382.8 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- lower hand flat on floor -->
+<path d="M228,546 Q232,560 214,560 L138,560 Q124,558 132,550 L196,545 Z" fill="#DDE3E7" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- upper hand on top -->
+<path d="M222,530 Q230,546 208,547 L152,547 Q138,545 146,537 L198,530 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M156,541 L180,541" stroke="#37474F" stroke-width="1.5" stroke-linecap="round"/>
+<!-- arrow -->
+<path d="M472,198 L556,116" stroke="#1E88E5" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+<text x="578" y="150" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">таз назад и вверх</text>
+<text x="60" y="615" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">одна кисть поверх другой</text>
+<path d="M150,597 L168,552" stroke="#78909C" stroke-width="1.5"/>
+</svg>

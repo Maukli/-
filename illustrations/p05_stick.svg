@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/>
+</marker>
+<g id="arm">
+<line x1="0" y1="0" x2="180" y2="0" stroke="#37474F" stroke-width="26" stroke-linecap="round"/>
+<line x1="0" y1="0" x2="180" y2="0" stroke="#ECEFF1" stroke-width="20" stroke-linecap="round"/>
+<path d="M88,-10 Q92,0 88,10" fill="none" stroke="#37474F" stroke-width="2"/>
+<line x1="196" y1="-34" x2="196" y2="34" stroke="#78909C" stroke-width="15" stroke-linecap="round"/>
+<line x1="196" y1="-34" x2="196" y2="34" stroke="#B0BEC5" stroke-width="10" stroke-linecap="round"/>
+<circle cx="194" cy="0" r="12" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+</g>
+</defs>
+<text x="30" y="48" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Проводки с палкой</text>
+<text x="30" y="80" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Широкий хват, прямые руки: вперёд, над головой, за спину</text>
+<line x1="300" y1="631" x2="620" y2="631" stroke="#B0BEC5" stroke-width="3"/>
+<g transform="translate(455,630) scale(0.85) translate(-455,-630)">
+<!-- ghost arms -->
+<g opacity="0.3">
+<use href="#arm" transform="translate(455,275) rotate(0)"/>
+<use href="#arm" transform="translate(455,275) rotate(-150)"/>
+<use href="#arm" transform="translate(455,275) rotate(128)"/>
+</g>
+<!-- legs -->
+<g stroke-linecap="round">
+<line x1="458" y1="522" x2="452" y2="608" stroke="#37474F" stroke-width="34"/>
+<line x1="458" y1="522" x2="452" y2="608" stroke="#ECEFF1" stroke-width="28"/>
+<line x1="452" y1="428" x2="458" y2="522" stroke="#37474F" stroke-width="46"/>
+<line x1="452" y1="428" x2="458" y2="522" stroke="#ECEFF1" stroke-width="40"/>
+</g>
+<path d="M438,606 Q440,630 452,630 L500,630 Q506,622 494,616 L466,606 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M448,515 Q458,520 470,515" fill="none" stroke="#37474F" stroke-width="2"/>
+<!-- torso -->
+<path d="M434,272 C420,320 424,372 426,415 C424,440 438,458 456,454 L474,446 C482,422 478,400 474,382 C486,352 490,312 476,274 C464,262 446,262 434,272 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- neck and head -->
+<path d="M444,246 L443,272 L467,272 L464,246 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<ellipse cx="455" cy="224" rx="25" ry="29" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M479,220 L486,232 L478,234" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- main arm overhead, over head near ear -->
+<use href="#arm" transform="translate(455,275) rotate(-104)"/>
+<circle cx="455" cy="275" r="15" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- arrow: front, over head, behind back -->
+<path d="M684,250 A 230 230 0 1 0 300,445" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+</g>
+<text x="665" y="215" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">прямые руки по дуге</text>
+<text x="250" y="510" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">и обратно</text>
+<text x="578" y="386" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">старт</text>
+<!-- labels with leaders -->
+<text x="30" y="205" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">пауза в трудной зоне</text>
+<line x1="150" y1="213" x2="298" y2="238" stroke="#455A64" stroke-width="1.5"/>
+<text x="120" y="470" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">за спиной</text>
+<line x1="210" y1="465" x2="348" y2="452" stroke="#455A64" stroke-width="1.5"/>
+<!-- inset: front view -->
+<rect x="650" y="372" width="235" height="268" rx="10" fill="#ffffff" stroke="#B0BEC5" stroke-width="2"/>
+<text x="664" y="398" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#455A64">вид спереди</text>
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round">
+<!-- arms -->
+<path d="M752,486 L716,426" stroke-width="13" stroke-linecap="round"/>
+<path d="M752,486 L716,426" stroke="#ECEFF1" stroke-width="8" stroke-linecap="round"/>
+<path d="M782,486 L818,426" stroke-width="13" stroke-linecap="round"/>
+<path d="M782,486 L818,426" stroke="#ECEFF1" stroke-width="8" stroke-linecap="round"/>
+<!-- legs -->
+<path d="M756,540 L752,604 L762,604 L767,548 L772,604 L782,604 L778,540 Z"/>
+<!-- torso -->
+<path d="M748,484 Q767,478 786,484 L782,515 L780,542 L754,542 L752,515 Z"/>
+<rect x="762" y="468" width="10" height="14" stroke-width="2"/>
+<circle cx="767" cy="457" r="12"/>
+</g>
+<line x1="700" y1="424" x2="834" y2="424" stroke="#78909C" stroke-width="8" stroke-linecap="round"/>
+<line x1="700" y1="424" x2="834" y2="424" stroke="#B0BEC5" stroke-width="4" stroke-linecap="round"/>
+<circle cx="716" cy="425" r="5" fill="#ECEFF1" stroke="#37474F" stroke-width="2"/>
+<circle cx="818" cy="425" r="5" fill="#ECEFF1" stroke="#37474F" stroke-width="2"/>
+<line x1="748" y1="484" x2="748" y2="440" stroke="#78909C" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="786" y1="484" x2="786" y2="440" stroke="#78909C" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="767" y="628" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">хват шире плеч</text>
+</svg>

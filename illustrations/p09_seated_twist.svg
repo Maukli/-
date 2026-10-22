@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="58" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Скрут сидя</text>
+<text x="40" y="92" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Стопа снаружи колена прямой ноги, локоть давит на колено</text>
+<!-- mat in slight top view -->
+<path d="M170,478 L790,478 L830,590 L120,590 Z" fill="#B0BEC5" stroke="#78909C" stroke-width="3" stroke-linejoin="round"/>
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#ECEFF1">
+<!-- foot of bent leg, planted beyond the straight leg (outside its knee) -->
+<path d="M492,488 Q500,474 516,476 Q540,482 556,492 Q562,500 552,503 L494,503 Q486,498 492,488 Z"/>
+<!-- straight far leg -->
+<path d="M330,488 Q400,484 470,494 Q540,500 600,500 L606,524 Q540,528 470,528 Q400,532 336,540 Z"/>
+<!-- knee hint -->
+<path d="M468,500 q8,12 2,24" fill="none"/>
+<!-- far foot pointing up -->
+<path d="M598,526 L600,474 Q604,462 616,468 L630,500 Q632,520 620,528 Z"/>
+<!-- torso + pelvis (pelvis profile, chest turned to viewer) -->
+<path d="M282,372 Q300,360 330,360 Q362,358 384,366 Q394,380 388,400 Q378,430 372,462 Q376,500 388,540 L390,568 L318,570 Q284,568 272,545 Q260,515 280,485 Q292,462 292,440 Q284,410 282,372 Z"/>
+<!-- sitting bone contact -->
+<path d="M290,566 Q310,574 340,570" fill="none"/>
+<!-- chest/sternum and shoulder lines (3/4 front) -->
+<path d="M334,372 L336,440" fill="none"/>
+<path d="M300,410 Q318,420 332,414" fill="none"/>
+<path d="M340,414 Q356,420 372,408" fill="none"/>
+<!-- far shoulder behind (slightly higher and smaller) -->
+<ellipse cx="378" cy="374" rx="16" ry="14"/>
+<!-- neck turned -->
+<path d="M318,362 L314,334 L342,334 L346,362 Z"/>
+<!-- head turned over near shoulder, looking back-left -->
+<ellipse cx="322" cy="302" rx="28" ry="34"/>
+<path d="M296,294 L284,310 L296,314" />
+<path d="M336,296 q8,6 0,16" fill="none"/>
+<!-- shin crossing over straight leg to the foot beyond -->
+<path d="M424,378 Q440,356 458,362 L520,472 Q524,490 508,492 Q496,490 494,484 Z"/>
+<!-- bent near leg: thigh from hip joint to knee -->
+<path d="M312,500 L418,356 Q436,338 456,348 Q472,362 462,384 L372,520 Q352,552 330,548 Q300,530 312,500 Z"/>
+<path d="M432,360 q14,-4 22,8" fill="none"/>
+<!-- near arm straight back to floor -->
+<path d="M266,378 Q282,368 296,384 L256,470 L232,548 L212,546 L230,466 Z"/>
+<path d="M196,560 Q204,544 222,542 Q240,546 246,560 Z"/>
+<!-- near shoulder -->
+<ellipse cx="284" cy="380" rx="20" ry="17"/>
+<!-- far arm across chest, elbow on outer side of knee, forearm up -->
+<path d="M366,382 Q378,370 392,382 L452,404 Q468,414 458,430 Q446,440 432,432 L364,402 Z"/>
+<path d="M436,430 Q428,414 442,406 L478,334 Q488,324 498,334 L466,422 Q458,440 444,436 Z"/>
+<ellipse cx="492" cy="318" rx="14" ry="18"/>
+</g>
+<!-- rotation arc around spine at chest level -->
+<path d="M410,404 Q420,432 340,440 Q262,442 252,412" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<path d="M410,404 Q400,390 380,388" fill="none" stroke="#1E88E5" stroke-width="5" stroke-dasharray="6 6" opacity="0.6"/>
+<text x="40" y="300" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">поворот корпуса</text>
+<path d="M120,310 Q150,370 230,404" fill="none" stroke="#1E88E5" stroke-width="2" opacity="0.6"/>
+<!-- elbow pushes knee inward -->
+<path d="M540,440 L476,424" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="548" y="448" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">локоть давит на колено</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" markerWidth="4" markerHeight="4" refX="6" refY="5" orient="auto-start-reverse" markerUnits="strokeWidth">
+<path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/>
+</marker>
+</defs>
+<text x="30" y="50" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Перекаты со штангой на спине</text>
+<text x="30" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Садимся на одну ногу, вторая прямая, пятка на полу, носок вверх</text>
+
+<!-- floor -->
+<line x1="90" y1="600" x2="720" y2="600" stroke="#78909C" stroke-width="2"/>
+
+<!-- barbell behind neck -->
+<rect x="100" y="322" width="420" height="11" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="116" y="274" width="20" height="106" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="138" y="288" width="12" height="78" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="484" y="274" width="20" height="106" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="470" y="288" width="12" height="78" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
+<!-- straight leg -->
+<path d="M339,495 Q395,512 448,543 Q500,560 548,579 L542,597 Q490,594 436,575 Q380,562 321,545 Z"/>
+<!-- foot on heel, toes up -->
+<path d="M546,580 Q556,566 560,548 Q566,536 575,541 Q580,562 575,586 Q570,600 556,600 Q544,600 540,596 Z"/>
+<!-- bent leg shin (vertical) -->
+<path d="M188,500 Q182,542 198,584 L232,584 Q238,545 230,505 Z"/>
+<!-- bent leg foot, toes out -->
+<path d="M198,582 L233,582 L235,600 L166,600 Q162,590 175,586 Z"/>
+<!-- bent leg thigh -->
+<path d="M274,490 Q240,476 205,472 Q185,476 185,495 Q189,513 210,517 Q252,526 302,547 Z"/>
+<!-- pelvis / shorts -->
+<path d="M262,484 L352,484 Q357,506 346,524 L330,548 Q314,553 300,546 L282,534 Q262,516 262,484 Z"/>
+<!-- upper arms -->
+<path d="M270,342 Q240,360 222,388 Q222,403 236,402 Q256,378 282,366 Z"/>
+<path d="M350,342 Q380,360 398,388 Q398,403 384,402 Q364,378 338,366 Z"/>
+<!-- forearms -->
+<path d="M220,394 Q222,360 230,334 L246,334 Q240,364 238,398 Z"/>
+<path d="M400,394 Q398,360 390,334 L374,334 Q380,364 382,398 Z"/>
+<!-- torso -->
+<path d="M262,350 Q258,335 282,333 L338,333 Q362,335 358,350 Q352,420 350,486 L264,486 Q264,420 262,350 Z"/>
+<!-- neck -->
+<path d="M298,304 L298,335 L322,335 L322,304 Z"/>
+<!-- head -->
+<ellipse cx="310" cy="282" rx="23" ry="29"/>
+<!-- hands on bar -->
+<rect x="227" y="317" width="22" height="22" rx="8"/>
+<rect x="371" y="317" width="22" height="22" rx="8"/>
+</g>
+
+<!-- adductors -->
+<g fill="#E53935" opacity="0.75">
+<path d="M300,530 Q266,516 234,510 Q226,512 230,518 Q264,528 300,546 Z"/>
+<path d="M326,528 Q360,542 394,559 L392,566 Q358,559 322,546 Z"/>
+</g>
+
+<!-- label -->
+<line x1="320" y1="613" x2="264" y2="522" stroke="#37474F" stroke-width="1.5"/>
+<line x1="380" y1="613" x2="365" y2="556" stroke="#37474F" stroke-width="1.5"/>
+<text x="235" y="636" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">приводящие мышцы бедра</text>
+
+<!-- roll arrow -->
+<path d="M170,228 Q330,178 490,228" fill="none" stroke="#1E88E5" stroke-width="5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="330" y="172" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">перекат из стороны в сторону</text>
+</svg>
