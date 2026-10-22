@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L4,2 L0,4 z" fill="#1E88E5"/>
+</marker>
+</defs>
+<text x="30" y="50" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Сгибание шеи с блином</text>
+<text x="30" y="82" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Блин на прямых руках, кивок: подбородок к груди. 3 по 15</text>
+
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#ECEFF1">
+<!-- back leg -->
+<path d="M440,385 L432,505 L436,602 L470,604 L470,594 L456,590 L458,505 L470,392 Z"/>
+<!-- front leg -->
+<path d="M455,385 C452,440 455,470 462,505 C465,540 466,570 466,598 L520,612 C524,604 518,598 492,592 L490,505 C492,460 495,420 495,385 Z"/>
+<!-- torso -->
+<path d="M448,232 C430,250 428,300 436,340 C434,360 436,380 440,398 L500,398 C504,370 506,350 502,330 C512,300 516,265 506,240 C495,226 465,224 448,232 Z"/>
+<!-- neck -->
+<path d="M462,236 C466,220 474,206 486,196 L516,214 C508,222 502,232 500,244 Z"/>
+<!-- head flexed forward -->
+<g transform="rotate(28 500 172)">
+<path d="M468,172 C466,140 486,126 508,128 C534,130 548,150 546,176 L552,186 L545,190 C546,198 544,206 538,210 C530,216 516,214 506,212 C490,208 470,198 468,172 Z"/>
+<path d="M516,170 C520,166 524,166 526,170" fill="none"/>
+<path d="M492,160 C484,160 482,176 490,180" fill="none" stroke-width="2.5"/>
+</g>
+<ellipse cx="470" cy="262" rx="22" ry="28"/>
+<!-- arm (far, partly hidden) -->
+<path d="M470,246 C520,262 570,272 618,276 L618,292 C570,292 520,286 466,272 Z"/>
+<!-- plate -->
+<ellipse cx="640" cy="282" rx="18" ry="62" fill="#B0BEC5" stroke="#78909C"/>
+<ellipse cx="640" cy="282" rx="6" ry="14" fill="#ECEFF1" stroke="#78909C"/>
+<!-- near arm -->
+<path d="M462,250 C512,268 568,280 622,286 L622,302 C566,300 512,294 458,280 Z"/>
+<!-- hand -->
+<path d="M612,282 C622,276 634,278 636,288 C638,300 630,308 618,306 C610,304 608,290 612,282 Z"/>
+</g>
+
+<!-- target muscle: anterior neck -->
+<path d="M514,214 C507,222 501,232 499,243 L488,242 C490,230 496,218 503,207 Z" fill="#E53935" fill-opacity="0.75" stroke="none"/>
+<!-- label -->
+<line x1="498" y1="226" x2="330" y2="190" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="498" cy="226" r="3" fill="#37474F"/>
+<text x="120" y="160" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Глубокие сгибатели шеи</text>
+<text x="120" y="186" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">передняя поверхность шеи</text>
+
+<!-- arrow: nod forward -->
+<path d="M548,112 C592,122 606,160 586,200" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="610" y="150" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">кивок вперёд</text>
+<text x="610" y="174" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">подбородок к груди</text>
+</svg>

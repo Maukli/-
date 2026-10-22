@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" markerWidth="3.5" markerHeight="3.5" refX="5" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="60" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Баланс на одной ноге</text>
+<text x="40" y="94" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Таз ровный, колено опорной ноги над стопой, руки на поясе</text>
+<!-- floor mat -->
+<rect x="300" y="600" width="340" height="12" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<g stroke-linecap="round" fill="none">
+<!-- far (raised) leg -->
+<line x1="460" y1="362" x2="560" y2="374" stroke="#37474F" stroke-width="48"/>
+<line x1="560" y1="374" x2="552" y2="465" stroke="#37474F" stroke-width="36"/>
+<line x1="460" y1="362" x2="560" y2="374" stroke="#CFD8DC" stroke-width="42"/>
+<line x1="560" y1="374" x2="552" y2="465" stroke="#CFD8DC" stroke-width="30"/>
+</g>
+<path d="M538,452 L566,455 Q592,476 590,488 L548,484 Q536,470 538,452 Z" fill="#CFD8DC" stroke="#37474F" stroke-width="3"/>
+<g stroke-linecap="round" fill="none">
+<!-- near (standing) leg -->
+<line x1="452" y1="365" x2="458" y2="480" stroke="#37474F" stroke-width="50"/>
+<line x1="458" y1="480" x2="452" y2="578" stroke="#37474F" stroke-width="37"/>
+<line x1="452" y1="365" x2="458" y2="480" stroke="#ECEFF1" stroke-width="44"/>
+<line x1="458" y1="480" x2="452" y2="578" stroke="#ECEFF1" stroke-width="31"/>
+<!-- neck -->
+<line x1="452" y1="168" x2="455" y2="202" stroke="#37474F" stroke-width="28"/>
+<line x1="452" y1="168" x2="455" y2="202" stroke="#ECEFF1" stroke-width="22"/>
+</g>
+<path d="M434,572 L470,572 Q508,586 512,600 L430,600 Q425,586 434,572 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- torso -->
+<path d="M432,198 C455,190 480,196 488,212 C496,238 492,268 482,300 C477,322 486,345 484,366 C472,388 440,392 416,380 C410,352 424,326 422,300 C418,270 414,228 432,198 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- gluteus medius -->
+<path d="M424,342 Q452,326 480,342 L468,384 Q452,394 440,386 Z" fill="#E53935" opacity="0.75"/>
+<!-- head -->
+<ellipse cx="462" cy="142" rx="27" ry="33" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M488,138 L496,150 L488,154" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="456" cy="144" rx="5" ry="8" fill="none" stroke="#37474F" stroke-width="2"/>
+<g stroke-linecap="round" fill="none">
+<!-- near arm -->
+<line x1="452" y1="218" x2="418" y2="284" stroke="#37474F" stroke-width="30"/>
+<line x1="418" y1="284" x2="470" y2="336" stroke="#37474F" stroke-width="25"/>
+<line x1="452" y1="218" x2="418" y2="284" stroke="#ECEFF1" stroke-width="24"/>
+<line x1="418" y1="284" x2="470" y2="336" stroke="#ECEFF1" stroke-width="19"/>
+</g>
+<ellipse cx="476" cy="338" rx="14" ry="11" fill="#ECEFF1" stroke="#37474F" stroke-width="3" transform="rotate(30 476 338)"/>
+<!-- muscle label -->
+<line x1="275" y1="372" x2="430" y2="368" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="430" cy="368" r="3" fill="#37474F"/>
+<text x="90" y="366" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Средняя ягодичная</text>
+<text x="90" y="390" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">опорной ноги</text>
+<!-- arrows -->
+<line x1="630" y1="440" x2="630" y2="380" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="655" y="405" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">колено держим</text>
+<text x="655" y="428" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">на уровне таза</text>
+<line x1="400" y1="530" x2="400" y2="585" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="385" y="555" text-anchor="end" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">давим стопой в пол</text>
+</svg>

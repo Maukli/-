@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Скручивания с блином</text>
+<text x="40" y="90" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Лопатки отрываем от пола, поясница прижата. 4 по 20-25</text>
+<!-- mat -->
+<rect x="150" y="515" width="620" height="14" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
+<!-- far leg (slightly behind) -->
+<path d="M488 478 L582 392 Q598 384 606 400 L672 494 Q676 506 664 508 L652 508 L590 422 L505 505 Z" fill="#E3E7EA"/>
+<!-- torso -->
+<path d="M282 438 Q300 424 322 428 Q342 430 352 438 Q395 462 455 469 Q495 473 508 488 Q514 506 492 513 L395 513 Q352 510 322 480 Q300 462 282 452 Z"/>
+<!-- near thigh -->
+<path d="M478 476 Q520 440 572 396 Q592 382 606 396 Q612 410 600 420 L520 500 Q505 514 486 510 Z"/>
+<!-- near shin -->
+<path d="M584 404 Q596 386 612 398 L676 492 L652 500 Z"/>
+<!-- foot -->
+<path d="M650 492 L680 488 Q706 498 712 510 Q712 514 704 514 L650 514 Q644 504 650 492 Z"/>
+<!-- neck -->
+<path d="M268 420 L292 408 L304 432 L282 446 Z"/>
+<!-- head -->
+<ellipse cx="262" cy="405" rx="27" ry="31" transform="rotate(-25 262 405)"/>
+<path d="M283 398 Q292 402 289 410" fill="none" stroke-width="2"/>
+</g>
+<!-- target muscle -->
+<path d="M352 440 Q395 463 446 469 L446 486 Q396 482 350 458 Z" fill="#E53935" opacity="0.75"/>
+<!-- arms and plate -->
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
+<path d="M302 438 Q312 424 328 428 L382 404 Q392 402 396 412 L392 420 L336 448 Q314 456 302 438 Z"/>
+<path d="M382 404 L428 384 Q438 382 440 392 L438 398 L392 420 Z"/>
+<ellipse cx="452" cy="388" rx="13" ry="44" fill="#B0BEC5" stroke="#78909C"/>
+<ellipse cx="452" cy="388" rx="5" ry="9" fill="#ffffff" stroke="#78909C" stroke-width="2"/>
+<ellipse cx="440" cy="390" rx="9" ry="11"/>
+</g>
+<!-- arrow -->
+<path d="M222 478 Q196 400 250 345" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="60" y="300" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">поднимаем голову и лопатки</text>
+<!-- lower back note -->
+<line x1="420" y1="510" x2="430" y2="560" stroke="#455A64" stroke-width="1.5"/>
+<text x="380" y="580" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">поясница на полу</text>
+<!-- muscle label -->
+<line x1="400" y1="470" x2="600" y2="250" stroke="#263238" stroke-width="1.5"/>
+<circle cx="400" cy="470" r="3" fill="#263238"/>
+<text x="560" y="220" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Прямая мышца живота</text>
+<text x="560" y="244" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">(верхняя часть)</text>
+</svg>

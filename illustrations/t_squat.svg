@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Приседания со штангой</text>
+<text x="40" y="92" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Колени по линии носков, рёбра вниз, шея нейтральная</text>
+<!-- floor -->
+<line x1="80" y1="591" x2="860" y2="591" stroke="#78909C" stroke-width="3"/>
+<!-- far plate behind body -->
+<circle cx="428" cy="272" r="78" fill="#B0BEC5" stroke="#78909C" stroke-width="3"/>
+<circle cx="428" cy="272" r="22" fill="none" stroke="#78909C" stroke-width="2"/>
+<!-- torso -->
+<path d="M417,283 Q442,270 472,292 L483,321 Q478,350 461,367 Q440,398 415,418 L404,458 L335,468 Q322,448 329,424 Q350,400 366,389 Q378,360 393,327 Q402,300 417,283 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<!-- neck -->
+<g stroke-linecap="round"><line x1="461" y1="292" x2="474" y2="262" stroke="#37474F" stroke-width="28"/><line x1="461" y1="292" x2="474" y2="262" stroke="#ECEFF1" stroke-width="22"/></g>
+<!-- head -->
+<ellipse cx="480" cy="250" rx="25" ry="30" transform="rotate(32 480 250)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M500,256 L510,266 L500,270" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M458,236 Q470,214 496,226" fill="none" stroke="#37474F" stroke-width="3"/>
+<!-- thigh fill -->
+<path d="M396,446 Q455,428 508,432 Q530,440 525,465 L505,483 Q430,494 352,490 Q316,484 318,455 Q320,436 332,425 Z" fill="#ECEFF1"/>
+<!-- shin + foot -->
+<path d="M522,462 Q500,515 465,560 L438,560 Q448,530 462,505 Q480,488 492,478 Z" fill="#ECEFF1" stroke="none"/>
+<path d="M437,558 L468,558 Q482,573 510,580 Q521,585 515,590 L428,590 Q417,588 420,575 Q424,561 437,558 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M437,560 L466,560" stroke="#ECEFF1" stroke-width="5"/>
+<g fill="none" stroke="#37474F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M524,466 Q502,515 467,558"/>
+<path d="M494,482 Q464,503 452,530 Q445,548 438,560"/>
+<path d="M404,442 Q455,428 508,432 Q530,440 525,465"/>
+<path d="M500,484 Q430,494 352,490 Q316,484 318,455 Q320,438 331,426"/>
+<path d="M396,452 Q404,447 412,440"/>
+</g>
+<!-- muscles -->
+<path d="M412,442 Q458,428 502,436 Q516,446 502,454 Q462,452 418,460 Q404,452 412,442 Z" fill="#E53935" opacity="0.75"/>
+<path d="M321,454 Q322,432 340,427 Q364,432 370,458 Q364,484 345,487 Q323,480 321,454 Z" fill="#E53935" opacity="0.75"/>
+<!-- bar -->
+<circle cx="428" cy="272" r="9" fill="#B0BEC5" stroke="#78909C" stroke-width="3"/>
+<!-- near arm -->
+<g stroke-linecap="round" fill="none">
+<line x1="448" y1="312" x2="398" y2="378" stroke="#37474F" stroke-width="30"/>
+<line x1="398" y1="378" x2="430" y2="288" stroke="#37474F" stroke-width="25"/>
+<line x1="448" y1="312" x2="398" y2="378" stroke="#ECEFF1" stroke-width="24"/>
+<line x1="398" y1="378" x2="430" y2="288" stroke="#ECEFF1" stroke-width="19"/>
+</g>
+<circle cx="432" cy="280" r="13" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<circle cx="428" cy="272" r="5" fill="#78909C"/>
+<!-- labels -->
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">
+<text x="610" y="400">квадрицепсы</text>
+<text x="120" y="560">ягодичные</text>
+</g>
+<line x1="606" y1="394" x2="470" y2="442" stroke="#263238" stroke-width="1.5"/>
+<line x1="220" y1="552" x2="335" y2="470" stroke="#263238" stroke-width="1.5"/>
+<!-- arrows -->
+<path d="M180,250 L180,410" stroke="#1E88E5" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+<path d="M250,430 L250,270" stroke="#1E88E5" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">
+<text x="60" y="230">вниз до параллели</text>
+<text x="200" y="470">встаём</text>
+</g>
+<text x="610" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">стопы на ширине плеч</text>
+</svg>

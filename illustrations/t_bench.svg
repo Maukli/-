@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="30" y="50" font-size="30" font-weight="bold" fill="#263238">Жим штанги лёжа</text>
+<text x="30" y="84" font-size="20" fill="#455A64">Лопатки сведены и опущены, локти 45-60 градусов к корпусу</text>
+</g>
+
+<!-- floor -->
+<line x1="60" y1="600" x2="880" y2="600" stroke="#78909C" stroke-width="2"/>
+<!-- bench -->
+<rect x="150" y="400" width="400" height="22" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="180" y="422" width="16" height="178" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="500" y="422" width="16" height="178" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- rack uprights -->
+
+<!-- legs -->
+<g stroke-linecap="round">
+<line x1="492" y1="378" x2="618" y2="392" stroke="#37474F" stroke-width="48"/>
+<line x1="618" y1="392" x2="640" y2="572" stroke="#37474F" stroke-width="36"/>
+<line x1="492" y1="378" x2="618" y2="392" stroke="#ECEFF1" stroke-width="42"/>
+<line x1="618" y1="392" x2="640" y2="572" stroke="#ECEFF1" stroke-width="30"/>
+</g>
+<!-- foot -->
+<path d="M 624 568 L 656 566 C 672 572, 690 582, 694 596 L 624 598 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- torso -->
+<path d="M 250 372 C 266 348, 290 332, 322 324 C 352 316, 388 320, 412 334 C 440 348, 470 350, 498 352 C 512 356, 516 368, 512 400 L 248 400 C 244 390, 245 380, 250 372 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- neck and head -->
+<path d="M 212 372 L 254 366 L 256 396 L 214 398 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<ellipse cx="196" cy="374" rx="30" ry="25" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 186 350 L 180 340 L 194 349" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 170 384 C 168 360, 178 352, 196 350" fill="none" stroke="#37474F" stroke-width="3"/>
+
+<!-- pectoralis major (profile) -->
+<path d="M 300 344 C 312 328, 340 318, 368 320 C 392 322, 408 330, 418 344 C 404 356, 380 362, 352 360 C 330 358, 312 354, 300 344 Z" fill="#E53935" opacity="0.75"/>
+
+<!-- plate (barbell end-on) behind arm -->
+<circle cx="335" cy="180" r="58" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<circle cx="335" cy="180" r="40" fill="none" stroke="#78909C" stroke-width="2"/>
+<circle cx="335" cy="180" r="10" fill="#78909C"/>
+
+<!-- arm -->
+<g stroke-linecap="round">
+<line x1="318" y1="342" x2="328" y2="268" stroke="#37474F" stroke-width="36"/>
+<line x1="328" y1="268" x2="335" y2="194" stroke="#37474F" stroke-width="27"/>
+<line x1="318" y1="342" x2="328" y2="268" stroke="#ECEFF1" stroke-width="30"/>
+<line x1="328" y1="268" x2="335" y2="194" stroke="#ECEFF1" stroke-width="21"/>
+</g>
+<!-- shoulder cap -->
+<ellipse cx="316" cy="340" rx="18" ry="16" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 300 344 C 312 328, 340 318, 368 320 C 392 322, 408 330, 418 344 C 404 356, 380 362, 352 360 C 330 358, 312 354, 300 344 Z" fill="#E53935" opacity="0.35"/>
+<!-- hand on bar -->
+<circle cx="335" cy="182" r="14" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- arrows -->
+<line x1="430" y1="170" x2="430" y2="292" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<line x1="470" y1="292" x2="470" y2="170" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="378" y="150" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">к груди</text>
+<text x="482" y="240" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">выжимаем</text>
+
+<!-- label -->
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#263238">
+<text x="190" y="480">большая грудная</text>
+<line x1="270" y1="462" x2="365" y2="346" stroke="#263238" stroke-width="1.5"/>
+<text x="40" y="530" font-size="17" fill="#455A64">лопатки прижаты</text>
+<text x="40" y="551" font-size="17" fill="#455A64">к скамье</text>
+<line x1="100" y1="512" x2="270" y2="402" stroke="#455A64" stroke-width="1.2"/>
+</g>
+
+<rect x="650" y="100" width="230" height="255" rx="8" fill="#ffffff" stroke="#B0BEC5" stroke-width="2"/>
+<g transform="translate(0,-20)"><!-- inset top view: elbow angle -->
+
+<text x="760" y="146" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#455A64">вид сверху</text>
+<!-- arms at angle -->
+<g stroke-linecap="round">
+<line x1="722" y1="215" x2="680" y2="268" stroke="#37474F" stroke-width="24"/>
+<line x1="798" y1="215" x2="840" y2="268" stroke="#37474F" stroke-width="24"/>
+<line x1="722" y1="215" x2="680" y2="268" stroke="#ECEFF1" stroke-width="18"/>
+<line x1="798" y1="215" x2="840" y2="268" stroke="#ECEFF1" stroke-width="18"/>
+</g>
+<circle cx="760" cy="168" r="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 718 198 Q 760 188 802 198 L 810 215 L 792 325 L 728 325 L 710 215 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 724 210 Q 742 204 758 210 L 758 246 Q 738 250 724 236 Z" fill="#E53935" opacity="0.75"/>
+<path d="M 796 210 Q 778 204 762 210 L 762 246 Q 782 250 796 236 Z" fill="#E53935" opacity="0.75"/>
+<circle cx="680" cy="268" r="10" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<circle cx="840" cy="268" r="10" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- angle arc -->
+<path d="M 704 248 Q 708 268 718 274" fill="none" stroke="#1E88E5" stroke-width="3"/>
+<path d="M 816 248 Q 812 268 802 274" fill="none" stroke="#1E88E5" stroke-width="3"/>
+<line x1="722" y1="215" x2="728" y2="300" stroke="#1E88E5" stroke-width="2" stroke-dasharray="4 4"/>
+<line x1="798" y1="215" x2="792" y2="300" stroke="#1E88E5" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="760" y="365" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#1E88E5">локти 45-60 градусов</text>
+</g>
+</svg>

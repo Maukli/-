@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+  <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/>
+  </marker>
+  <clipPath id="inset"><circle cx="650" cy="380" r="178"/></clipPath>
+</defs>
+<text x="30" y="50" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Раскатка стопы на мяче</text>
+<text x="30" y="85" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Мяч под сводом стопы, катаем от пятки к пальцам, 2 минуты</text>
+
+<!-- floor -->
+<line x1="120" y1="611" x2="450" y2="611" stroke="#78909C" stroke-width="3"/>
+
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round">
+  <!-- support leg (far) -->
+  <path d="M242,380 L300,380 L292,490 L287,590 Q300,596 320,600 Q330,606 322,611 L258,611 Q250,606 257,590 L259,490 Z"/>
+  <!-- torso -->
+  <path d="M238,206 Q272,192 306,206 Q320,240 314,278 Q304,320 306,360 Q310,388 300,402 L240,402 Q226,372 230,330 Q234,295 236,275 Q226,240 238,206 Z"/>
+  <!-- neck -->
+  <path d="M262,172 L284,172 L286,204 L260,204 Z"/>
+  <!-- head -->
+  <ellipse cx="274" cy="146" rx="28" ry="33"/>
+  <path d="M300,140 L307,152 L300,156" fill="none"/>
+  <ellipse cx="268" cy="150" rx="5" ry="8"/>
+  <!-- working leg (near): thigh -->
+  <path d="M296,380 Q300,420 333,478 L303,492 Q270,440 252,400 Q258,378 296,380 Z"/>
+  <!-- shin -->
+  <path d="M333,478 Q342,520 352,562 L332,568 Q318,525 303,490 Z"/>
+  <!-- foot on ball -->
+  <path d="M332,564 L352,560 Q362,566 378,570 L402,574 Q410,579 401,583 L338,583 Q325,582 328,572 Z"/>
+  <!-- arm -->
+  <path d="M258,212 Q274,198 290,214 L292,300 L272,302 Z"/>
+  <path d="M272,298 L292,298 L297,372 L281,375 Z"/>
+  <ellipse cx="290" cy="390" rx="9" ry="16"/>
+</g>
+<!-- small ball -->
+<circle cx="365" cy="596" r="14" fill="#B0BEC5" stroke="#78909C" stroke-width="3"/>
+
+<!-- connector to inset -->
+<circle cx="365" cy="585" r="34" fill="none" stroke="#78909C" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="395" y1="568" x2="510" y2="490" stroke="#78909C" stroke-width="2" stroke-dasharray="6 5"/>
+
+<!-- inset -->
+<g clip-path="url(#inset)">
+  <circle cx="650" cy="380" r="178" fill="#ffffff"/>
+  <rect x="460" y="520" width="380" height="60" fill="#ECEFF1"/>
+  <line x1="460" y1="520" x2="840" y2="520" stroke="#78909C" stroke-width="3"/>
+  <circle cx="650" cy="470" r="50" fill="#B0BEC5" stroke="#78909C" stroke-width="3"/>
+  <g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round">
+    <path d="M572,180 L566,330 Q538,352 535,388 Q532,418 560,420 Q610,412 650,420 L792,418 Q802,402 770,392 L690,370 Q640,350 618,322 L628,180 Z"/>
+  </g>
+  <line x1="660" y1="315" x2="795" y2="315" stroke="#1E88E5" stroke-width="5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+</g>
+<circle cx="650" cy="380" r="178" fill="none" stroke="#78909C" stroke-width="3"/>
+<text x="555" y="455" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64" text-anchor="middle">пятка</text>
+<text x="752" y="455" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64" text-anchor="middle">пальцы</text>
+<text x="727" y="300" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5" text-anchor="middle">вперёд и назад</text>
+<text x="650" y="600" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64" text-anchor="middle">мяч 10 см, по 2 минуты на ногу</text>
+</svg>

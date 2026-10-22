@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L5,2.5 L0,5 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="30" y="50" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Тяга в наклоне с горбом в пояснице</text>
+<text x="30" y="85" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Таз подкручен, поясница слегка округлена, грудь прямая</text>
+<!-- floor -->
+<line x1="150" y1="606" x2="750" y2="606" stroke="#78909C" stroke-width="3"/>
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#ECEFF1">
+<!-- foot -->
+<path d="M418,604 L418,585 Q425,575 445,578 L470,588 Q495,593 497,600 L497,605 Z"/>
+<!-- shin -->
+<path d="M448,488 Q492,492 486,512 L452,590 Q440,596 424,588 L440,520 Q440,500 448,488 Z"/>
+<!-- thigh -->
+<path d="M340,395 Q370,375 400,392 L482,470 Q500,500 478,515 Q462,525 445,512 L350,450 Q325,425 340,395 Z"/>
+<!-- torso -->
+<path d="M332,438 Q318,410 336,384 Q360,352 400,346 Q440,338 470,328 Q510,314 540,304 Q560,300 572,306 L580,336 Q572,355 556,364 Q530,382 505,390 Q470,404 445,414 Q420,426 405,444 Q385,458 360,455 Q340,452 332,438 Z"/>
+</g>
+<!-- muscles -->
+<path d="M512,384 Q470,402 444,412 Q420,424 406,442 L398,428 Q412,410 438,398 Q470,384 506,370 Z" fill="#E53935" opacity="0.75"/>
+<path d="M448,338 Q495,325 538,309 L546,332 Q500,346 456,360 Z" fill="#E53935" opacity="0.75"/>
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#ECEFF1">
+<!-- neck -->
+<path d="M566,306 L600,300 L606,326 L578,338 Z"/>
+<!-- head -->
+<ellipse cx="622" cy="306" rx="30" ry="34" transform="rotate(30 622 306)"/>
+<!-- dumbbell plate -->
+<circle cx="528" cy="498" r="27" fill="#B0BEC5" stroke="#78909C"/>
+<!-- upper arm -->
+<path d="M538,318 Q566,316 568,340 L532,424 Q516,436 502,420 L522,334 Q526,320 538,318 Z"/>
+<!-- forearm -->
+<path d="M502,418 Q512,402 532,414 L540,488 L516,492 Z"/>
+<!-- hand -->
+<circle cx="528" cy="496" r="13"/>
+</g>
+<!-- ear/eye hint -->
+<circle cx="636" cy="318" r="3" fill="#37474F"/>
+<!-- arrows -->
+<path d="M610,510 L610,415" stroke="#1E88E5" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+<text x="624" y="470" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">тянем к поясу</text>
+<path d="M352,334 Q290,365 300,438" stroke="#1E88E5" stroke-width="5" fill="none" marker-end="url(#ah)"/>
+<text x="150" y="350" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">таз подкручен</text>
+<!-- labels -->
+<line x1="500" y1="330" x2="560" y2="215" stroke="#455A64" stroke-width="1.5"/>
+<text x="565" y="212" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Середина спины</text>
+<line x1="450" y1="405" x2="330" y2="535" stroke="#455A64" stroke-width="1.5"/>
+<text x="110" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Прямая мышца живота</text>
+<text x="720" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">4 по 15</text>
+</svg>

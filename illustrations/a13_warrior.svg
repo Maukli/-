@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L4,2 L0,4 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="52" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Поза воина</text>
+<text x="40" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Колено 90 градусов, задняя нога прямая, таз подкручен, руки вверх</text>
+
+<!-- mat -->
+<rect x="190" y="600" width="480" height="12" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<g stroke-linecap="round" stroke-linejoin="round">
+<!-- back arm (behind) -->
+<g stroke="#37474F" fill="none"><line x1="446" y1="312" x2="448" y2="218" stroke-width="28"/><line x1="448" y1="218" x2="450" y2="144" stroke-width="24"/></g>
+<g stroke="#ECEFF1" fill="none"><line x1="446" y1="312" x2="448" y2="218" stroke-width="22"/><line x1="448" y1="218" x2="450" y2="144" stroke-width="18"/></g>
+<ellipse cx="451" cy="126" rx="9" ry="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- back leg -->
+<g stroke="#37474F" fill="none"><line x1="445" y1="468" x2="353" y2="527" stroke-width="46"/><line x1="353" y1="527" x2="258" y2="586" stroke-width="34"/></g>
+<g stroke="#ECEFF1" fill="none"><line x1="445" y1="468" x2="353" y2="527" stroke-width="40"/><line x1="353" y1="527" x2="258" y2="586" stroke-width="28"/></g>
+<path d="M240,588 Q244,572 262,574 L298,592 Q304,601 294,602 L252,601 Q238,600 240,588 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- torso -->
+<path d="M420,488 Q406,470 412,440 Q418,410 424,392 Q418,350 426,318 Q438,294 462,294 Q486,300 484,338 Q478,372 480,402 Q492,440 490,484 Q456,504 420,488 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- front leg -->
+<g stroke="#37474F" fill="none"><line x1="462" y1="466" x2="565" y2="468" stroke-width="48"/><line x1="565" y1="468" x2="568" y2="584" stroke-width="34"/></g>
+<g stroke="#ECEFF1" fill="none"><line x1="462" y1="466" x2="565" y2="468" stroke-width="42"/><line x1="565" y1="468" x2="568" y2="584" stroke-width="28"/></g>
+<path d="M552,600 Q548,584 556,578 Q572,574 584,586 L616,592 Q624,600 614,601 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- neck and head -->
+<rect x="441" y="270" width="22" height="34" rx="6" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M450,222 Q478,222 480,250 L486,262 Q484,266 479,266 Q478,284 458,288 Q426,288 422,256 Q422,224 450,222 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<ellipse cx="447" cy="257" rx="5" ry="8" fill="none" stroke="#37474F" stroke-width="2"/>
+
+<!-- front arm -->
+<g stroke="#37474F" fill="none"><line x1="458" y1="312" x2="466" y2="218" stroke-width="28"/><line x1="466" y1="218" x2="470" y2="144" stroke-width="24"/></g>
+<g stroke="#ECEFF1" fill="none"><line x1="458" y1="312" x2="466" y2="218" stroke-width="22"/><line x1="466" y1="218" x2="470" y2="144" stroke-width="18"/></g>
+<ellipse cx="471" cy="126" rx="9" ry="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+</g>
+
+<!-- arrows -->
+<path d="M330,410 Q370,420 392,452" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="150" y="400" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">таз вперёд и вниз</text>
+<line x1="525" y1="200" x2="525" y2="120" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="540" y="168" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">руки вверх</text>
+<text x="590" y="440" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">90 градусов</text>
+<text x="215" y="635" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">нога прямая</text>
+</svg>

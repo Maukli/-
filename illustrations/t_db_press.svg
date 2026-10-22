@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="30" y="50" font-size="30" font-weight="bold" fill="#263238">Жим гантелей лёжа</text>
+<text x="30" y="84" font-size="20" fill="#455A64">Опускаем гантели по бокам груди, локти под 45 градусов, жмём вверх</text>
+</g>
+
+<!-- floor -->
+<line x1="120" y1="600" x2="760" y2="600" stroke="#78909C" stroke-width="2"/>
+<!-- bench -->
+<rect x="160" y="432" width="380" height="22" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="190" y="454" width="16" height="146" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="494" y="454" width="16" height="146" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="170" y="588" width="56" height="12" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="474" y="588" width="56" height="12" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- legs -->
+<g stroke-linecap="round">
+<line x1="470" y1="410" x2="600" y2="392" stroke="#37474F" stroke-width="48"/>
+<line x1="600" y1="392" x2="632" y2="568" stroke="#37474F" stroke-width="36"/>
+<line x1="470" y1="410" x2="600" y2="392" stroke="#ECEFF1" stroke-width="42"/>
+<line x1="600" y1="392" x2="632" y2="568" stroke="#ECEFF1" stroke-width="30"/>
+</g>
+<!-- foot -->
+<path d="M 616 566 L 650 566 C 672 572, 690 584, 690 598 L 618 598 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- torso -->
+<path d="M 262 432 L 488 432 C 496 420, 494 398, 478 390 C 455 384, 420 390, 395 388 C 370 384, 352 364, 325 362 C 300 360, 278 366, 266 378 C 256 392, 254 418, 262 432 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- neck -->
+<path d="M 240 398 L 266 388 L 270 420 L 244 424 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- head -->
+<ellipse cx="216" cy="408" rx="31" ry="25" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 214 384 L 222 372 L 230 385" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 196 427 C 186 418, 186 398, 196 389" fill="none" stroke="#37474F" stroke-width="3"/>
+
+
+<!-- pectoralis major -->
+<path d="M 274 378 C 290 364, 320 360, 345 366 C 365 372, 382 384, 392 392 C 370 396, 335 396, 305 392 C 290 390, 278 386, 274 378 Z" fill="#E53935" opacity="0.75"/>
+
+<!-- arm (extended) -->
+<g stroke-linecap="round">
+<line x1="296" y1="384" x2="300" y2="296" stroke="#37474F" stroke-width="34"/>
+<line x1="300" y1="296" x2="304" y2="212" stroke="#37474F" stroke-width="27"/>
+<line x1="296" y1="384" x2="300" y2="296" stroke="#ECEFF1" stroke-width="28"/>
+<line x1="300" y1="296" x2="304" y2="212" stroke="#ECEFF1" stroke-width="21"/>
+</g>
+<!-- dumbbell end-on with hand -->
+<circle cx="304" cy="196" r="30" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<circle cx="304" cy="196" r="20" fill="none" stroke="#78909C" stroke-width="2"/>
+<circle cx="304" cy="203" r="14" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+
+<!-- arrows -->
+<line x1="372" y1="215" x2="372" y2="300" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="385" y="262" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">опускаем</text>
+<line x1="230" y1="300" x2="230" y2="212" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="118" y="262" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">выжимаем</text>
+
+<!-- label -->
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#263238">
+<text x="430" y="320">большая</text>
+<text x="430" y="342">грудная мышца</text>
+<line x1="428" y1="330" x2="350" y2="378" stroke="#263238" stroke-width="1.5"/>
+</g>
+
+<!-- inset neutral grip -->
+<rect x="640" y="120" width="230" height="250" rx="8" fill="#ffffff" stroke="#B0BEC5" stroke-width="2"/>
+<text x="755" y="146" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#455A64">при боли в плече</text>
+<!-- two dumbbells parallel, viewed from above -->
+<g>
+<rect x="696" y="178" width="24" height="16" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="702" y="194" width="12" height="64" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="696" y="258" width="24" height="16" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="790" y="178" width="24" height="16" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="796" y="194" width="12" height="64" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="790" y="258" width="24" height="16" rx="3" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- hands: palms inward -->
+<path d="M 700 204 C 690 204, 684 214, 684 226 C 684 240, 690 250, 700 250 L 716 250 L 716 204 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 810 204 C 820 204, 826 214, 826 226 C 826 240, 820 250, 810 250 L 794 250 L 794 204 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+</g>
+
+<text x="755" y="310" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#1E88E5">нейтральный хват</text>
+<text x="755" y="334" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#455A64">ладони друг к другу</text>
+</svg>

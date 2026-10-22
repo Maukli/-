@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="30" y="50" font-size="30" font-weight="bold" fill="#263238">Вертикальная тяга блока</text>
+<text x="30" y="84" font-size="20" fill="#455A64">Сначала опускаем лопатки, потом тянем к верху груди, локти вниз</text>
+</g>
+
+<!-- floor -->
+<line x1="250" y1="600" x2="880" y2="600" stroke="#78909C" stroke-width="2"/>
+<!-- machine column and top beam -->
+<rect x="640" y="115" width="56" height="485" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="430" y="115" width="250" height="22" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<circle cx="480" cy="152" r="16" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<circle cx="480" cy="152" r="4" fill="#78909C"/>
+<!-- seat -->
+<rect x="440" y="486" width="16" height="114" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="440" y="590" width="200" height="10" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="360" y="468" width="160" height="20" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- thigh pad arm -->
+<rect x="540" y="412" width="100" height="12" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<!-- cable -->
+<line x1="466" y1="160" x2="466" y2="292" stroke="#78909C" stroke-width="3"/>
+
+<!-- legs -->
+<g stroke-linecap="round">
+<line x1="420" y1="448" x2="530" y2="448" stroke="#37474F" stroke-width="50"/>
+<line x1="530" y1="448" x2="545" y2="570" stroke="#37474F" stroke-width="38"/>
+<line x1="545" y1="582" x2="585" y2="586" stroke="#37474F" stroke-width="22"/>
+<line x1="420" y1="448" x2="530" y2="448" stroke="#ECEFF1" stroke-width="44"/>
+<line x1="530" y1="448" x2="545" y2="570" stroke="#ECEFF1" stroke-width="32"/>
+<line x1="545" y1="582" x2="585" y2="586" stroke="#ECEFF1" stroke-width="16"/>
+</g>
+<!-- thigh pad roller -->
+<ellipse cx="535" cy="412" rx="22" ry="16" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- torso, leaning back slightly -->
+<path d="M 395 468 C 370 430, 352 380, 360 330 C 366 300, 395 286, 425 290 C 455 294, 474 315, 472 345 C 470 375, 458 400, 460 430 C 462 448, 466 460, 470 468 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- latissimus (profile) -->
+<path d="M 418 326 C 400 336, 380 352, 370 378 C 362 408, 372 436, 395 455 C 402 460, 410 462, 414 460 C 414 430, 420 395, 428 365 C 430 348, 426 334, 418 326 Z" fill="#E53935" opacity="0.75"/>
+<!-- neck and head -->
+<path d="M 404 294 L 404 268 L 428 268 L 432 294 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<ellipse cx="418" cy="246" rx="25" ry="29" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 442 240 L 449 252 L 442 255" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<path d="M 395 232 C 398 212, 433 210, 441 232" fill="none" stroke="#37474F" stroke-width="3"/>
+
+<!-- arm: elbow down beside torso, hand at upper chest -->
+<g stroke-linecap="round">
+<line x1="424" y1="314" x2="432" y2="394" stroke="#37474F" stroke-width="34"/>
+<line x1="432" y1="394" x2="470" y2="306" stroke="#37474F" stroke-width="27"/>
+<line x1="424" y1="314" x2="432" y2="394" stroke="#ECEFF1" stroke-width="28"/>
+<line x1="432" y1="394" x2="470" y2="306" stroke="#ECEFF1" stroke-width="21"/>
+</g>
+<!-- bar (3/4 view) and hand -->
+<path d="M 405 312 L 420 300 L 530 290 L 545 300" fill="none" stroke="#78909C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 405 312 L 420 300 L 530 290 L 545 300" fill="none" stroke="#B0BEC5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="471" cy="300" r="13" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- arrows -->
+<line x1="510" y1="180" x2="510" y2="262" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="522" y="215" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">к верху груди</text>
+<line x1="335" y1="350" x2="335" y2="420" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="250" y="340" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">локти вниз</text>
+
+<!-- label main -->
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#263238">
+<text x="250" y="478">широчайшие</text>
+<line x1="355" y1="462" x2="384" y2="420" stroke="#263238" stroke-width="1.5"/>
+<text x="560" y="350">бёдра под валиками</text>
+<line x1="600" y1="356" x2="545" y2="398" stroke="#263238" stroke-width="1.5"/>
+</g>
+
+<!-- inset back view -->
+<rect x="20" y="120" width="220" height="300" rx="8" fill="#ffffff" stroke="#B0BEC5" stroke-width="2"/>
+<text x="130" y="146" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#455A64">вид сзади</text>
+<g stroke-linecap="round">
+<line x1="62" y1="210" x2="40" y2="270" stroke="#37474F" stroke-width="28"/>
+<line x1="198" y1="210" x2="220" y2="270" stroke="#37474F" stroke-width="28"/>
+<line x1="62" y1="210" x2="40" y2="270" stroke="#ECEFF1" stroke-width="22"/>
+<line x1="198" y1="210" x2="220" y2="270" stroke="#ECEFF1" stroke-width="22"/>
+</g>
+<path d="M 130 188 L 120 188 L 118 200 L 142 200 L 140 188 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<circle cx="130" cy="174" r="17" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 75 198 Q 130 188 185 198 L 205 215 L 172 380 L 88 380 L 55 215 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<!-- scapulae -->
+<path d="M 78 218 L 112 222 L 104 282 Z" fill="none" stroke="#78909C" stroke-width="2"/>
+<path d="M 182 218 L 148 222 L 156 282 Z" fill="none" stroke="#78909C" stroke-width="2"/>
+<line x1="130" y1="202" x2="130" y2="375" stroke="#78909C" stroke-width="2" stroke-dasharray="4 4"/>
+<!-- lats -->
+<path d="M 68 230 C 80 240, 100 265, 128 290 L 128 360 C 112 362, 100 366, 92 372 C 84 330, 74 280, 62 236 Z" fill="#E53935" opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
+<path d="M 192 230 C 180 240, 160 265, 132 290 L 132 360 C 148 362, 160 366, 168 372 C 176 330, 186 280, 198 236 Z" fill="#E53935" opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
+<!-- scapula depression arrows -->
+<line x1="95" y1="232" x2="95" y2="270" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<line x1="165" y1="232" x2="165" y2="270" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="130" y="404" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#1E88E5">лопатки вниз</text>
+</svg>

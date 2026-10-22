@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="30" y="50" font-size="30" font-weight="bold" fill="#263238">Отжимания от пола</text>
+<text x="30" y="84" font-size="20" fill="#455A64">Тело в одну линию, грудью к полу, таз не провисает</text>
+</g>
+
+<!-- floor -->
+<line x1="60" y1="592" x2="880" y2="592" stroke="#78909C" stroke-width="2"/>
+
+<!-- body line guide -->
+<line x1="150" y1="300" x2="830" y2="533" stroke="#1E88E5" stroke-width="2" stroke-dasharray="8 7"/>
+<text x="690" y="455" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#1E88E5" transform="rotate(19 690 455)">одна линия</text>
+
+<!-- legs -->
+<g stroke-linecap="round">
+<line x1="461" y1="455" x2="625" y2="510" stroke="#37474F" stroke-width="50"/>
+<line x1="625" y1="510" x2="786" y2="558" stroke="#37474F" stroke-width="36"/>
+<line x1="461" y1="455" x2="625" y2="510" stroke="#ECEFF1" stroke-width="44"/>
+<line x1="625" y1="510" x2="786" y2="558" stroke="#ECEFF1" stroke-width="30"/>
+</g>
+<!-- foot on toes -->
+<path d="M 772 548 C 792 540, 812 544, 820 556 C 818 568, 812 582, 808 592 L 784 592 C 778 580, 770 566, 772 548 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- torso -->
+<path d="M 236 360 C 250 348, 270 346, 290 352 C 340 368, 390 388, 430 404 C 452 410, 474 410, 486 424 C 494 440, 490 470, 470 488 C 450 494, 430 486, 405 476 C 370 466, 340 466, 312 462 C 285 458, 260 440, 244 420 C 232 402, 228 378, 236 360 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- neck and head -->
+<path d="M 200 338 L 248 350 L 252 398 L 212 380 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="182" cy="350" rx="31" ry="27" transform="rotate(25 182 350)" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 160 368 L 152 384 L 168 378" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="194" cy="346" rx="6" ry="9" fill="none" stroke="#37474F" stroke-width="2.5"/>
+
+<!-- pectoralis major -->
+<path d="M 256 404 C 278 396, 308 402, 328 418 C 340 430, 342 448, 330 462 C 306 462, 282 452, 266 436 C 258 426, 254 414, 256 404 Z" fill="#E53935" opacity="0.75"/>
+
+<!-- arm -->
+<g stroke-linecap="round">
+<line x1="250" y1="390" x2="258" y2="486" stroke="#37474F" stroke-width="36"/>
+<line x1="258" y1="486" x2="250" y2="574" stroke="#37474F" stroke-width="27"/>
+<line x1="250" y1="390" x2="258" y2="486" stroke="#ECEFF1" stroke-width="30"/>
+<line x1="258" y1="486" x2="250" y2="574" stroke="#ECEFF1" stroke-width="21"/>
+</g>
+<ellipse cx="250" cy="388" rx="20" ry="18" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<path d="M 256 404 C 278 396, 308 402, 328 418 C 340 430, 342 448, 330 462 C 306 462, 282 452, 266 436 C 258 426, 254 414, 256 404 Z" fill="#E53935" opacity="0.35"/>
+<!-- hand flat on floor -->
+<path d="M 238 568 C 248 562, 262 564, 266 574 L 268 592 L 206 592 C 208 584, 220 580, 238 576 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- arrows -->
+<line x1="300" y1="190" x2="300" y2="310" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<line x1="340" y1="310" x2="340" y2="190" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="180" y="210" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">опускаемся</text>
+<text x="354" y="260" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">выжимаем</text>
+
+<!-- labels -->
+<g font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#263238">
+<text x="330" y="565">большая грудная</text>
+<line x1="380" y1="546" x2="304" y2="440" stroke="#263238" stroke-width="1.5"/>
+<text x="540" y="360" font-size="17" fill="#455A64">таз не провисает</text>
+<line x1="580" y1="366" x2="482" y2="418" stroke="#455A64" stroke-width="1.2"/>
+<text x="40" y="530" font-size="17" fill="#455A64">ладони чуть</text>
+<text x="40" y="551" font-size="17" fill="#455A64">шире плеч</text>
+<line x1="140" y1="545" x2="214" y2="584" stroke="#455A64" stroke-width="1.2"/>
+</g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Отведение на НШФБ</text>
+<text x="40" y="90" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Лёжа на боку, бедро на 20-30 градусов вперёд, носок вниз, нога вверх</text>
+
+<!-- mat -->
+<rect x="50" y="505" width="800" height="18" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<g stroke="#37474F" stroke-width="3" fill="#ECEFF1" stroke-linejoin="round" stroke-linecap="round">
+<!-- bottom arm overhead along mat -->
+<path d="M225,478 C180,480 130,482 75,486 C66,488 64,500 74,503 C130,503 180,503 228,504 Z"/>
+<!-- bottom leg -->
+<path d="M430,462 C520,468 620,478 700,484 L795,488 C808,486 818,482 826,486 C832,494 828,503 818,504 L700,504 C620,505 520,505 430,505 Z"/>
+<!-- top leg rotated -->
+<g transform="rotate(-25 450 450)">
+<path d="M440,418 C520,412 580,418 625,428 C680,426 740,430 800,436 C812,432 826,430 838,436 C846,446 844,456 830,458 L800,456 C740,462 690,468 625,462 C580,466 520,476 440,480 Z"/>
+</g>
+<!-- torso -->
+<path d="M196,432 C210,418 228,406 250,404 C300,402 340,420 380,420 C410,418 440,406 462,412 C478,424 492,470 476,503 C420,506 300,505 240,505 C215,504 200,495 196,478 Z"/>
+<g transform="rotate(-25 450 450)">
+<path d="M548,422 C600,426 640,430 660,432" fill="none" stroke="#90A4AE" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M455,421 C490,414 525,415 548,420 C540,428 500,432 458,434 Z" fill="#E53935" fill-opacity="0.75" stroke="#B71C1C" stroke-width="1.5"/>
+</g>
+<!-- neck -->
+<path d="M178,440 L200,434 L204,478 L182,482 Z"/>
+<!-- head -->
+<ellipse cx="148" cy="455" rx="36" ry="31"/>
+<path d="M118,440 C128,418 168,416 182,440" fill="none"/>
+<!-- top arm: hand on mat in front of chest -->
+<path d="M238,410 C262,412 300,440 318,468 C326,482 322,494 314,502 L296,504 C292,494 300,484 292,474 C276,452 252,438 232,432 Z"/>
+<path d="M296,504 C300,496 316,494 326,500 C328,504 326,506 320,506 Z"/>
+</g>
+
+<!-- leader and label -->
+<line x1="360" y1="268" x2="481" y2="402" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="481" cy="402" r="3.5" fill="#37474F"/>
+<text font-family="DejaVu Sans, Arial, sans-serif" font-size="19" fill="#263238">
+<tspan x="150" y="230">Мышца, напрягающая широкую</tspan>
+<tspan x="150" y="256">фасцию бедра (НШФБ)</tspan>
+</text>
+
+<!-- arrow -->
+<path d="M855,330 A410 410 0 0 0 780,190" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="640" y="160" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" fill="#1E88E5">отводим ногу вверх</text>
+<text x="440" y="570" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" fill="#455A64">Верхняя нога прямая, носок слегка вниз</text>
+</svg>

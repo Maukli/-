@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="60" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Сгибание ноги стоя</text>
+<text x="40" y="95" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Пятка к ягодице, носок вытянут, таз ровный, ягодицы напряжены</text>
+
+<!-- floor and machine -->
+<rect x="200" y="606" width="520" height="14" rx="4" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="545" y="230" width="26" height="378" rx="5" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="490" y="290" width="70" height="14" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="455" y="410" width="100" height="14" rx="6" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+<rect x="440" y="395" width="20" height="60" rx="8" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- far arm -->
+<g stroke-linecap="round" fill="none">
+<line x1="418" y1="218" x2="445" y2="283" stroke="#37474F" stroke-width="30"/>
+<line x1="445" y1="283" x2="492" y2="294" stroke="#37474F" stroke-width="24"/>
+<line x1="418" y1="218" x2="445" y2="283" stroke="#CFD8DC" stroke-width="24"/>
+<line x1="445" y1="283" x2="492" y2="294" stroke="#CFD8DC" stroke-width="18"/>
+</g>
+
+<!-- far (standing) leg -->
+<g stroke-linecap="round" fill="none">
+<line x1="422" y1="372" x2="428" y2="482" stroke="#37474F" stroke-width="44"/>
+<line x1="428" y1="482" x2="428" y2="582" stroke="#37474F" stroke-width="32"/>
+<line x1="422" y1="372" x2="428" y2="482" stroke="#E0E5E8" stroke-width="38"/>
+<line x1="428" y1="482" x2="428" y2="582" stroke="#E0E5E8" stroke-width="26"/>
+</g>
+<path d="M410 592 C410 580 430 578 440 584 L478 594 C488 597 488 606 478 606 L414 606 C408 606 408 598 410 592 Z" fill="#E0E5E8" stroke="#37474F" stroke-width="3"/>
+
+<!-- neck and head -->
+<g stroke-linecap="round" fill="none">
+<line x1="432" y1="172" x2="428" y2="202" stroke="#37474F" stroke-width="26"/>
+<line x1="432" y1="172" x2="428" y2="202" stroke="#ECEFF1" stroke-width="20"/>
+</g>
+<path d="M440 112 C462 112 470 130 469 146 L476 158 L469 162 C468 172 462 180 450 180 C432 180 413 170 413 146 C413 124 424 112 440 112 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+<ellipse cx="436" cy="148" rx="5" ry="8" fill="none" stroke="#37474F" stroke-width="2"/>
+
+<!-- lever of machine (behind working leg) -->
+<line x1="405" y1="478" x2="360" y2="401" stroke="#B0BEC5" stroke-width="12" stroke-linecap="round"/>
+<circle cx="405" cy="478" r="11" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- torso -->
+<path d="M410 195 C440 195 460 210 462 240 C465 275 452 300 448 330 C450 355 452 380 440 398 L398 398 C382 388 378 362 388 335 C395 300 385 260 390 230 C393 205 400 195 410 195 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- near (working) leg -->
+<g stroke-linecap="round" fill="none">
+<line x1="414" y1="372" x2="405" y2="478" stroke="#37474F" stroke-width="46"/>
+<line x1="405" y1="478" x2="322" y2="410" stroke="#37474F" stroke-width="34"/>
+<line x1="322" y1="410" x2="284" y2="379" stroke="#37474F" stroke-width="20"/>
+<line x1="414" y1="372" x2="405" y2="478" stroke="#ECEFF1" stroke-width="40"/>
+<line x1="405" y1="478" x2="322" y2="410" stroke="#ECEFF1" stroke-width="28"/>
+<line x1="322" y1="410" x2="284" y2="379" stroke="#ECEFF1" stroke-width="14"/>
+</g>
+<path d="M391 340 L447 340 L449 384 L392 384 C388 372 388 352 391 340 Z" fill="#ECEFF1"/>
+<!-- glute line -->
+<path d="M392 360 C384 378 388 392 400 398" fill="none" stroke="#37474F" stroke-width="2"/>
+
+<!-- hamstring -->
+<path d="M396 376 C388 402 385 438 389 470 C396 474 402 466 404 450 C406 420 407 395 406 378 C403 372 399 372 396 376 Z" fill="#E53935" opacity="0.75"/>
+
+<!-- pad on calf -->
+<circle cx="360" cy="401" r="14" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<!-- near arm -->
+<g stroke-linecap="round" fill="none">
+<line x1="425" y1="215" x2="452" y2="280" stroke="#37474F" stroke-width="30"/>
+<line x1="452" y1="280" x2="500" y2="297" stroke="#37474F" stroke-width="24"/>
+<line x1="425" y1="215" x2="452" y2="280" stroke="#ECEFF1" stroke-width="24"/>
+<line x1="452" y1="280" x2="500" y2="297" stroke="#ECEFF1" stroke-width="18"/>
+</g>
+<circle cx="507" cy="297" r="12" fill="#ECEFF1" stroke="#37474F" stroke-width="3"/>
+
+<!-- label -->
+<line x1="398" y1="405" x2="215" y2="325" stroke="#263238" stroke-width="1.5"/>
+<circle cx="398" cy="405" r="3" fill="#263238"/>
+<text x="60" y="330" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Бицепс бедра</text>
+
+<!-- arrow -->
+<path d="M328 589 A135 135 0 0 1 278 432" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="130" y="560" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#1E88E5">пятка к ягодице</text>
+</svg>

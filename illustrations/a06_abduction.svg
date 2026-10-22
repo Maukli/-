@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" markerWidth="4" markerHeight="4" refX="1.5" refY="2" orient="auto" markerUnits="strokeWidth">
+<path d="M0,0 L4,2 L0,4 Z" fill="#1E88E5"/>
+</marker>
+</defs>
+<text x="40" y="52" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Отведение бедра лёжа на боку</text>
+<text x="40" y="88" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Пятка ведёт, носок вперёд, таз не заваливается назад</text>
+
+<!-- mat -->
+<rect x="35" y="545" width="830" height="95" rx="12" fill="#B0BEC5" stroke="#78909C" stroke-width="3" opacity="0.6"/>
+
+<g transform="translate(0,-25)">
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="#ECEFF1">
+<!-- bottom arm extended overhead -->
+<path d="M240,560 L75,565 Q50,566 52,576 Q54,586 75,585 L240,586 Z"/>
+<!-- bottom shin (behind) -->
+<path d="M590,598 Q650,588 700,582 L712,584 Q750,586 752,596 Q750,604 712,604 L700,604 Q650,612 600,628 Z"/>
+<!-- bottom thigh -->
+<path d="M492,543 Q550,566 602,594 Q622,610 605,628 Q590,636 572,630 Q520,606 468,588 Z"/>
+<!-- torso + pelvis -->
+<path d="M226,522 Q238,500 268,497 Q320,500 362,520 Q400,526 432,506 Q448,497 462,498 L478,512 L500,555 Q508,578 488,586 L228,586 Q220,560 226,522 Z"/>
+<!-- neck -->
+<path d="M232,524 Q212,522 196,532 L194,566 Q214,571 234,568 Z"/>
+<!-- head -->
+<ellipse cx="162" cy="540" rx="36" ry="27"/>
+</g>
+<!-- hair -->
+<path d="M128,532 Q132,510 160,512 Q190,512 197,532 Q180,520 160,522 Q140,522 128,532 Z" fill="#90A4AE" stroke="#37474F" stroke-width="2"/>
+<!-- ear -->
+
+
+<!-- start position ghost -->
+<path d="M478,518 L700,506 L708,520 L705,536 L490,556" fill="none" stroke="#90A4AE" stroke-width="2.5" stroke-dasharray="8 7"/>
+
+<!-- top leg -->
+<path d="M440,502 L451,497 Q510,470 563,452 Q590,436 613,422 L667,403 L679,423 L635,460 Q605,478 585,488 Q545,512 512,550 L478,560 L470,520 Z" fill="#ECEFF1"/>
+<g fill="none" stroke="#37474F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path d="M432,506 Q445,497 451,497 Q510,470 563,452 Q590,436 613,422 L667,403"/>
+<path d="M679,423 L635,460 Q605,478 585,488 Q545,512 512,550"/>
+<!-- knee hint -->
+<path d="M572,462 Q580,468 576,476" stroke-width="2"/>
+</g>
+<!-- top foot, toes forward -->
+<path d="M664,402 Q680,390 692,402 L708,446 Q707,460 693,457 L676,428 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- top arm, hand on mat in front of chest -->
+<path d="M248,508 Q268,500 278,516 L322,586 Q336,598 330,610 Q318,618 304,608 L296,598 L250,530 Z" fill="#ECEFF1" stroke="#37474F" stroke-width="3" stroke-linejoin="round"/>
+
+<!-- gluteus medius -->
+<path d="M415,512 Q440,494 466,498 Q488,506 500,528 Q470,534 442,528 Q424,522 415,512 Z" fill="#E53935" opacity="0.75"/>
+<line x1="405" y1="452" x2="452" y2="508" stroke="#37474F" stroke-width="1.5"/>
+<text x="150" y="445" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#263238">средняя ягодичная мышца</text>
+
+<!-- movement arrow -->
+<path d="M728,462 A265 265 0 0 0 684,366" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<text x="712" y="352" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">пятка</text>
+<text x="712" y="376" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#1E88E5">ведёт вверх</text>
+</g>
+</svg>

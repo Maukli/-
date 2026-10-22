@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+<rect width="900" height="650" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#1E88E5"/></marker>
+</defs>
+<text x="40" y="55" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="bold" fill="#263238">Лодочка</text>
+<text x="40" y="90" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#455A64">Поясница прижата, ноги и лопатки над полом, тело в одну линию</text>
+
+<!-- mat -->
+<rect x="50" y="500" width="800" height="18" rx="9" fill="#B0BEC5" stroke="#78909C" stroke-width="2"/>
+
+<g stroke="#37474F" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<!-- far arm -->
+<g transform="rotate(16 450 500) translate(4 -9)" fill="#CFD8DC">
+<path d="M305,464 L200,466 Q190,468 189,476 Q190,486 200,487 L305,494 Z"/>
+<path d="M196,467 L115,470 L115,484 L196,487 Z"/>
+<path d="M117,469 Q95,468 78,473 Q73,477 78,481 Q95,485 117,485 Z"/>
+</g>
+<!-- far leg -->
+<g transform="rotate(-13 455 500) translate(4 -8)" fill="#CFD8DC">
+<path d="M500,440 Q560,444 615,458 Q630,460 640,462 L735,466 Q748,466 760,470 L800,476 Q806,481 798,485 L752,488 Q742,488 735,486 Q690,494 660,494 Q635,492 620,490 Q560,496 520,500 Z"/>
+</g>
+<!-- torso, neck, head -->
+<g transform="rotate(16 450 500)" fill="#ECEFF1">
+<path d="M254,462 L292,462 L292,498 L254,498 Z"/>
+<path d="M480,500 L305,500 Q282,499 278,482 Q276,458 288,446 Q300,436 318,433 Q340,428 352,432 Q372,440 395,446 Q430,452 468,454 Q482,472 480,500 Z"/>
+<path d="M264,472 Q263,454 253,451 L246,449 Q241,447 239,441 Q232,443 222,447 Q198,453 197,478 Q198,505 228,509 Q255,508 265,492 Z"/>
+</g>
+<!-- near leg with pelvis -->
+<g transform="rotate(-13 455 500)" fill="#ECEFF1">
+<path d="M470,475 Q478,445 500,440 Q560,444 615,458 Q630,460 640,462 L735,466 Q748,466 760,470 L800,476 Q806,481 798,485 L752,488 Q742,488 735,486 Q690,494 660,494 Q635,492 620,490 Q560,496 520,503 Q490,508 470,504 Q462,490 470,475 Z"/>
+<path d="M622,466 Q630,474 624,484" fill="none" stroke-width="2"/>
+</g>
+<ellipse cx="471" cy="477" rx="9" ry="15" fill="#ECEFF1" stroke="none"/>
+<!-- near arm -->
+<g transform="rotate(16 450 500)" fill="#ECEFF1">
+<path d="M305,464 L200,466 Q190,468 189,476 Q190,486 200,487 L305,494 Z"/>
+<ellipse cx="298" cy="479" rx="19" ry="16"/>
+<path d="M196,467 L115,470 L115,484 L196,487 Z"/>
+<path d="M117,469 Q95,468 78,473 Q73,477 78,481 Q95,485 117,485 Z"/>
+</g>
+</g>
+
+<!-- target muscle: rectus abdominis -->
+<g transform="rotate(16 450 500)">
+<path d="M348,437 Q372,445 395,451 Q430,457 466,459 L466,471 Q430,469 395,463 Q370,457 346,450 Z" fill="#E53935" opacity="0.75"/>
+<g stroke="#ffffff" stroke-width="1.5" opacity="0.8">
+<line x1="372" y1="445" x2="371" y2="457"/>
+<line x1="398" y1="451" x2="397" y2="463"/>
+<line x1="425" y1="456" x2="424" y2="467"/>
+</g>
+</g>
+
+<!-- label -->
+<line x1="440" y1="292" x2="425" y2="436" stroke="#37474F" stroke-width="1.5"/>
+<circle cx="425" cy="436" r="3" fill="#37474F"/>
+<text x="440" y="280" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#263238">Прямая мышца живота</text>
+
+<!-- arrows -->
+<path d="M840,470 Q868,420 838,372" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+<path d="M95,470 Q66,420 92,372" fill="none" stroke="#1E88E5" stroke-width="5" marker-end="url(#ah)"/>
+
+<!-- support note -->
+<line x1="450" y1="540" x2="450" y2="514" stroke="#37474F" stroke-width="1.5"/>
+<text x="450" y="562" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">опора только на поясницу, она прижата к полу</text>
+<text x="40" y="620" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#455A64">Цель: 3 подхода по 1,5 минуты</text>
+</svg>
