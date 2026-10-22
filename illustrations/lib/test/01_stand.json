@@ -1,0 +1,31 @@
+{
+  "title": "Стойка",
+  "hint": "Таз нейтрально, рёбра опущены, макушка тянется вверх",
+  "view": "side",
+  "floor": 590,
+  "pose": {
+    "pelvis": [
+      450,
+      "floor"
+    ],
+    "neck": -4,
+    "head": 4,
+    "both": {
+      "shoulder": -9,
+      "elbow": 10,
+      "wrist": 0,
+      "hip": 0,
+      "knee": 2,
+      "ankle": 0
+    },
+    "r": {
+      "shoulder": -10,
+      "elbow": 11
+    }
+  },
+  "work": [
+    "rectus_abdominis",
+    "glute_max",
+    "erectors"
+  ]
+}

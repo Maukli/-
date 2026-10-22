@@ -1,0 +1,53 @@
+{
+  "title": "Выпад",
+  "hint": "Шаг вперёд, оба колена под прямым углом, корпус ровно",
+  "view": "side",
+  "floor": 590,
+  "pose": {
+    "pelvis": [
+      430,
+      "floor"
+    ],
+    "trunk": 4,
+    "l": {
+      "hip": -20,
+      "knee": 84,
+      "ankle": 42,
+      "shoulder": -10,
+      "elbow": 15
+    },
+    "r": {
+      "hip": 94,
+      "knee": 90,
+      "ankle": 0,
+      "shoulder": 10,
+      "elbow": 15
+    }
+  },
+  "work": [
+    {
+      "name": "quads",
+      "side": "far"
+    },
+    "glute_max"
+  ],
+  "stretch": [
+    {
+      "name": "rectus_femoris",
+      "side": "near"
+    }
+  ],
+  "arrows": [
+    {
+      "from": [
+        300,
+        300
+      ],
+      "to": [
+        300,
+        420
+      ],
+      "label": "вниз"
+    }
+  ]
+}

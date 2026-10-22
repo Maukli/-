@@ -1,0 +1,86 @@
+{
+  "title": "Проверка снарядов",
+  "hint": "Наклонная скамья, гантели, блок",
+  "view": "side",
+  "floor": 590,
+  "pose": {
+    "pelvis": [
+      430,
+      470
+    ],
+    "rotate": -55,
+    "neck": 2,
+    "both": {
+      "hip": 35,
+      "knee": 95,
+      "ankle": 10,
+      "gripAt": {
+        "at": "shoulder_near",
+        "dy": -160
+      },
+      "hand": "fist"
+    },
+    "r": {
+      "gripAt": {
+        "at": "shoulder_far",
+        "dx": 3,
+        "dy": -160
+      }
+    }
+  },
+  "equipment": [
+    {
+      "type": "incline_bench",
+      "hinge": [
+        445,
+        505
+      ],
+      "angle": 35,
+      "len": 230,
+      "seat": 100
+    },
+    {
+      "type": "dumbbell",
+      "at": "hand_near"
+    },
+    {
+      "type": "cable_high",
+      "x": 790
+    },
+    {
+      "type": "kettlebell",
+      "at": [
+        740,
+        540
+      ]
+    },
+    {
+      "type": "ball",
+      "at": [
+        150,
+        530
+      ],
+      "r": 55
+    }
+  ],
+  "work": [
+    "pecs",
+    "deltoid",
+    "triceps"
+  ],
+  "arrows": [
+    {
+      "from": {
+        "at": "hand_near",
+        "dx": 40,
+        "dy": 10
+      },
+      "to": {
+        "at": "hand_near",
+        "dx": 40,
+        "dy": -60
+      },
+      "label": "вверх"
+    }
+  ]
+}

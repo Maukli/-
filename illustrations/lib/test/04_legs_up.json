@@ -1,0 +1,64 @@
+{
+  "title": "Подъём ног лёжа",
+  "hint": "Поясница прижата к полу, ноги опускаем медленно",
+  "view": "side",
+  "floor": 580,
+  "pose": {
+    "pelvis": [
+      520,
+      534
+    ],
+    "rotate": -90,
+    "both": {
+      "hip": 90,
+      "knee": 0,
+      "ankle": -40,
+      "shoulder": -7,
+      "elbow": 4,
+      "wrist": -6,
+      "hand": "open"
+    },
+    "r": {
+      "hip": 88
+    }
+  },
+  "equipment": [
+    {
+      "type": "mat",
+      "x": 160,
+      "y": 568,
+      "w": 600
+    }
+  ],
+  "work": [
+    "rectus_abdominis",
+    "iliopsoas"
+  ],
+  "stretch": [
+    "hamstrings"
+  ],
+  "arrows": [
+    {
+      "arc": {
+        "center": [
+          520,
+          534
+        ],
+        "r": 175,
+        "start": -80,
+        "end": -25
+      },
+      "label": "медленно вниз"
+    }
+  ],
+  "ghost": {
+    "pose": {
+      "both": {
+        "hip": 25
+      },
+      "r": {
+        "hip": 24
+      }
+    }
+  }
+}

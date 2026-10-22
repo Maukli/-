@@ -1,0 +1,11 @@
+{
+  "title": "Стойка в фас",
+  "hint": "Проверка фронтальной проекции",
+  "view": "front",
+  "floor": 600,
+  "pose": {
+    "pelvis": [450, "floor"],
+    "both": { "shoulder": 10, "elbow": 10, "hip": 4, "knee": 3 }
+  },
+  "work": ["pecs", "deltoid", "biceps", "rectus_abdominis", "quads", "adductors"]
+}

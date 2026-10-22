@@ -1,0 +1,13 @@
+{
+  "title": "Проверка мышц в профиль",
+  "hint": "Глубокие мышцы с пунктирным контуром",
+  "view": "side",
+  "floor": 600,
+  "pose": {
+    "pelvis": [430, "floor"],
+    "both": { "shoulder": 35, "elbow": 40, "hip": 8, "knee": 6, "ankle": 4 },
+    "r": { "shoulder": -20, "elbow": 30, "hip": -6 }
+  },
+  "work": ["iliopsoas", "tfl", "piriformis", "neck_flexors", "glute_med", "serratus", "trap_upper", "biceps", "tibialis_anterior", "gastrocnemius", "foot"],
+  "stretch": ["hamstrings"]
+}

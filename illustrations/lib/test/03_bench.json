@@ -1,0 +1,71 @@
+{
+  "title": "Жим штанги лёжа",
+  "hint": "Лопатки сведены и опущены, стопы на полу, штанга над грудью",
+  "view": "side",
+  "floor": 590,
+  "pose": {
+    "pelvis": [
+      470,
+      446
+    ],
+    "rotate": -90,
+    "neck": 6,
+    "l": {
+      "gripAt": {
+        "at": "shoulder_near",
+        "dy": -165
+      },
+      "footAt": [
+        574,
+        567
+      ]
+    },
+    "r": {
+      "gripAt": {
+        "at": "shoulder_far",
+        "dx": 3,
+        "dy": -165
+      },
+      "footAt": [
+        560,
+        567
+      ]
+    }
+  },
+  "equipment": [
+    {
+      "type": "bench",
+      "x": 220,
+      "y": 482,
+      "w": 320
+    },
+    {
+      "type": "barbell",
+      "at": {
+        "at": "shoulder_near",
+        "dx": 0,
+        "dy": -167
+      }
+    }
+  ],
+  "work": [
+    "pecs",
+    "triceps",
+    "deltoid"
+  ],
+  "arrows": [
+    {
+      "from": [
+        420,
+        300
+      ],
+      "to": [
+        420,
+        395
+      ],
+      "both": true,
+      "label": "к груди и вверх",
+      "labelSide": "right"
+    }
+  ]
+}

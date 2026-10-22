@@ -1,0 +1,41 @@
+{
+  "title": "Упор на четвереньках",
+  "hint": "Ладони под плечами, колени под тазом, спина ровная",
+  "view": "side",
+  "floor": 568,
+  "pose": {
+    "pelvis": [
+      330,
+      "floor"
+    ],
+    "trunk": 80,
+    "neck": 0,
+    "head": 8,
+    "both": {
+      "hip": 80,
+      "knee": 90,
+      "ankle": -90,
+      "shoulder": 80,
+      "elbow": 0,
+      "wrist": 90
+    },
+    "r": {
+      "hip": 78
+    },
+    "thoracic": 0,
+    "pelvisTilt": 0
+  },
+  "equipment": [
+    {
+      "type": "mat",
+      "x": 150,
+      "y": 568,
+      "w": 600
+    }
+  ],
+  "work": [
+    "rectus_abdominis",
+    "obliques",
+    "serratus"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Стойка со спины",
+  "hint": "Проверка задней проекции",
+  "view": "back",
+  "floor": 600,
+  "pose": {
+    "pelvis": [
+      450,
+      "floor"
+    ],
+    "both": {
+      "shoulder": 25,
+      "elbow": 20,
+      "hip": 4,
+      "knee": 3
+    }
+  },
+  "work": [
+    "traps",
+    "deltoid",
+    "triceps",
+    "lats",
+    "glute_max",
+    "hamstrings",
+    "gastrocnemius"
+  ],
+  "stretch": [
+    {
+      "name": "glute_med",
+      "side": "both"
+    }
+  ]
+}
