@@ -1,0 +1,21 @@
+{
+ "title": "Разгибание рук из-за головы",
+ "hint": "Локти смотрят вверх и не разъезжаются, внизу растяжение",
+ "floor": 600,
+ "pose": {
+  "pelvis": [400, 468],
+  "trunk": -2, "neck": 10, "head": 4,
+  "both": { "hip": 88, "knee": 88, "ankle": 0, "shoulder": 178, "elbow": 8, "hand": "fist" },
+  "r": { "hip": 80, "knee": 80, "shoulder": 176 }
+ },
+ "ghost": { "pose": { "both": { "shoulder": 178, "elbow": 140 }, "r": { "shoulder": 176, "elbow": 140 } } },
+ "equipment": [
+  { "type": "rect", "x": 290, "y": 486, "w": 200, "h": 20 },
+  { "type": "line", "from": [390, 506], "to": [390, 592], "w": 9 },
+  { "type": "rect", "x": 330, "y": 592, "w": 120, "h": 8 },
+  { "type": "dumbbell", "at": "hand_near", "angle": 0 }
+ ],
+ "work": [ { "name": "triceps", "label": "Трицепс, длинная головка" } ],
+ "arrows": [ { "arc": { "center": "elbow_near", "r": 110, "start": 60, "end": -70 }, "label": "за голову и вверх", "labelSide": "right" } ],
+ "center": false
+}

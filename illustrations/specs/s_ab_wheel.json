@@ -1,0 +1,84 @@
+{
+ "title": "Ролик для пресса",
+ "hint": "Поясница не прогибается, таз подкручен",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   330,
+   "floor"
+  ],
+  "trunk": 72,
+  "pelvisTilt": -8,
+  "lumbar": 6,
+  "neck": -6,
+  "both": {
+   "hip": 32,
+   "knee": 42,
+   "ankle": -30,
+   "gripAt": [
+    620,
+    548
+   ],
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    330,
+    "floor"
+   ],
+   "trunk": 35,
+   "both": {
+    "hip": 35,
+    "knee": 90,
+    "gripAt": [
+     440,
+     548
+    ]
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 580,
+   "w": 640
+  },
+  {
+   "type": "circle",
+   "at": [
+    620,
+    548
+   ],
+   "r": 30,
+   "layer": "back"
+  }
+ ],
+ "work": [
+  {
+   "name": "rectus_abdominis",
+   "label": "Прямая мышца живота"
+  },
+  {
+   "name": "lats",
+   "label": "Широчайшие"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    460,
+    615
+   ],
+   "to": [
+    620,
+    615
+   ],
+   "both": true,
+   "label": "вперёд и назад прессом",
+   "labelSide": "below"
+  }
+ ]
+}

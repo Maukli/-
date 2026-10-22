@@ -1,0 +1,62 @@
+{
+ "title": "Поза воина",
+ "hint": "Таз подкручен, корпус вертикально, руки вверх",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   430,
+   "floor"
+  ],
+  "trunk": 0,
+  "pelvisTilt": -8,
+  "near": "l",
+  "l": {
+   "hip": 76,
+   "knee": 84,
+   "ankle": 0,
+   "shoulder": 168,
+   "elbow": 0,
+   "hand": "open"
+  },
+  "r": {
+   "hip": -57,
+   "knee": 0,
+   "ankle": 30,
+   "shoulder": 168,
+   "elbow": 0,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 590,
+   "w": 620
+  }
+ ],
+ "stretch": [
+  {
+   "name": "iliopsoas",
+   "side": "far",
+   "label": "Подвздошно-поясничная (задняя нога)"
+  },
+  {
+   "name": "rectus_femoris",
+   "side": "far"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    300,
+    330
+   ],
+   "to": [
+    300,
+    420
+   ],
+   "label": "таз вниз"
+  }
+ ]
+}

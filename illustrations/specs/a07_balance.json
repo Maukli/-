@@ -1,0 +1,8 @@
+{ "title": "Баланс на одной ноге", "hint": "Таз ровный, опорная ягодица держит",
+  "floor": 600,
+  "pose": { "pelvis": [430, "floor"], "neck": 0,
+    "l": { "hip": 0, "knee": 4, "ankle": 2 },
+    "r": { "hip": 85, "knee": 90, "ankle": -10 },
+    "both": { "handAt": { "at": "hip", "dx": 4, "dy": -40 }, "lengths": { "upper": 0.8 } } },
+  "work": [ { "name": "glute_med", "side": "near", "label": "Средняя ягодичная опорной ноги" } ]
+}

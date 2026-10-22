@@ -6,7 +6,7 @@
   "pose": {
     "pelvis": [
       420,
-      420
+      "floor"
     ],
     "trunk": 44,
     "neck": -14,
@@ -17,8 +17,8 @@
       "ankle": 25,
       "gripAt": {
         "at": "upperback",
-        "dx": -3,
-        "dy": -1
+        "dx": -12,
+        "dy": 6
       },
       "wrist": -10,
       "lengths": {
@@ -38,8 +38,8 @@
       "type": "barbell",
       "at": {
         "at": "upperback",
-        "dx": -4,
-        "dy": -2
+        "dx": -12,
+        "dy": 6
       }
     }
   ],

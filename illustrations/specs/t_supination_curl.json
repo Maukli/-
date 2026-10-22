@@ -1,0 +1,15 @@
+{
+ "title": "Сгибание рук с супинацией",
+ "hint": "Ладонь разворачиваем вверх по ходу, наверху мизинец выше",
+ "floor": 600,
+ "pose": {
+  "pelvis": [420, "floor"],
+  "trunk": 0, "neck": 0,
+  "both": { "hip": 0, "knee": 3, "ankle": 2, "shoulder": 8, "elbow": 135, "wrist": 10, "hand": "fist" },
+  "r": { "shoulder": 4, "elbow": 5, "wrist": 0 }
+ },
+ "equipment": [ { "type": "dumbbell", "at": "hand_near", "orient": "end" } ],
+ "work": [ { "name": "biceps", "label": "Бицепс (сгибает и супинирует)" } ],
+ "arrows": [ { "arc": { "center": "elbow_near", "r": 120, "start": 85, "end": -45 }, "label": "вверх, ладонь к себе", "labelSide": "right" } ],
+ "notes": [ { "text": "внизу ладони друг к другу", "at": [560, 470], "size": 16, "anchor": "start" } ]
+}

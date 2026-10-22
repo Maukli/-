@@ -1,0 +1,69 @@
+{
+ "title": "Тяга к лицу",
+ "hint": "Локти в стороны и выше кистей, в конце свести лопатки",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   380,
+   "floor"
+  ],
+  "trunk": -4,
+  "neck": 0,
+  "both": {
+   "hip": 0,
+   "knee": 6,
+   "gripAt": {
+    "at": "head",
+    "dx": 42,
+    "dy": 12
+   },
+   "hand": "fist",
+   "lengths": {
+    "upper": 0.15
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "gripAt": null,
+    "shoulder": 95,
+    "elbow": 5,
+    "lengths": {
+     "upper": 1
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "cable_high",
+   "x": 760,
+   "top": 170,
+   "to": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "deltoid",
+   "label": "Задняя дельта"
+  },
+  "trap_middle",
+  "rhomboids"
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_near",
+    "dx": 170,
+    "dy": -40
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 40,
+    "dy": -40
+   },
+   "label": "к лицу"
+  }
+ ]
+}

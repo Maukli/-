@@ -1,0 +1,62 @@
+{
+ "title": "Y-T-W лёжа на животе",
+ "hint": "Лоб у пола, лопатки вниз и вместе",
+ "view": "back",
+ "floor": 700,
+ "pose": {
+  "pelvis": [
+   450,
+   410
+  ],
+  "both": {
+   "shoulder": 135,
+   "elbow": 0,
+   "hip": 4,
+   "knee": 0,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 60,
+    "elbow": 100
+   }
+  }
+ },
+ "work": [
+  {
+   "name": "trap_lower"
+  },
+  {
+   "name": "trap_middle"
+  },
+  {
+   "name": "deltoid",
+   "side": "both",
+   "label": "Задняя дельта"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Вид сверху. Y, потом T, потом W по 8-10",
+   "at": [
+    450,
+    635
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ],
+ "arrows": [],
+ "center": false,
+ "scale": 0.9,
+ "equipment": [
+  {
+   "type": "floor",
+   "x": 0,
+   "y": 900,
+   "w": 1
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "title": "Дыхание 90/90",
+ "hint": "Длинный выдох, рёбра вниз, поясница к полу",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   440,
+   545
+  ],
+  "rotate": -90,
+  "pelvisTilt": -8,
+  "neck": 6,
+  "both": {
+   "hip": 90,
+   "knee": 90,
+   "ankle": 0,
+   "shoulder": -8,
+   "elbow": 4,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 120,
+   "y": 568,
+   "w": 446
+  },
+  {
+   "type": "wall",
+   "x": 568,
+   "top": 330,
+   "bottom": 580
+  }
+ ],
+ "work": [
+  {
+   "name": "obliques",
+   "label": "Косые: опускают рёбра"
+  }
+ ],
+ "stretch": [
+  {
+   "name": "erectors",
+   "label": "Разгибатели поясницы"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "chest",
+    "dx": 0,
+    "dy": -60
+   },
+   "to": {
+    "at": "chest",
+    "dx": 20,
+    "dy": -12
+   },
+   "label": "рёбра вниз на выдохе",
+   "labelSide": "left"
+  }
+ ]
+}

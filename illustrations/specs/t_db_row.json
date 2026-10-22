@@ -1,0 +1,79 @@
+{
+ "title": "Тяга гантели одной рукой",
+ "hint": "Спина параллельна полу, локоть вдоль корпуса к поясу",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   380,
+   385
+  ],
+  "trunk": 88,
+  "neck": -20,
+  "r": {
+   "hip": 90,
+   "knee": 90,
+   "ankle": -40,
+   "handAt": [
+    535,
+    498
+   ],
+   "hand": "open"
+  },
+  "l": {
+   "footAt": [
+    420,
+    577
+   ],
+   "gripAt": {
+    "at": "belly",
+    "dx": 10,
+    "dy": 10
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "gripAt": {
+     "at": "shoulder_near",
+     "dx": 6,
+     "dy": 148
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 250,
+   "y": 500,
+   "w": 330
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  "lats",
+  "rhomboids",
+  {
+   "name": "deltoid",
+   "label": "Задняя дельта"
+  },
+  "biceps"
+ ],
+ "arrows": [
+  {
+   "from": [
+    660,
+    560
+   ],
+   "to": [
+    660,
+    440
+   ],
+   "label": "к поясу"
+  }
+ ]
+}

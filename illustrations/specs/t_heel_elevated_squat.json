@@ -1,0 +1,67 @@
+{
+ "title": "Присед с пятками на возвышении",
+ "hint": "Корпус вертикально, колени вперёд над носками",
+ "floor": 559,
+ "pose": {
+  "pelvis": [
+   420,
+   470
+  ],
+  "trunk": 18,
+  "neck": -4,
+  "both": {
+   "hip": 118,
+   "knee": 145,
+   "ankle": 28,
+   "gripAt": {
+    "at": "upperback",
+    "dx": -12,
+    "dy": 6
+   },
+   "bend": -1,
+   "wrist": -10,
+   "lengths": {
+    "upper": 0.86,
+    "fore": 0.72
+   }
+  },
+  "farShift": [
+   -14,
+   0
+  ]
+ },
+ "equipment": [
+  {
+   "type": "barbell",
+   "at": {
+    "at": "upperback",
+    "dx": -12,
+    "dy": 6
+   }
+  },
+  {
+   "type": "box",
+   "x": 402,
+   "y": 544,
+   "w": 50,
+   "h": 15
+  }
+ ],
+ "work": [
+  "quads"
+ ],
+ "arrows": [
+  {
+   "from": [
+    680,
+    440
+   ],
+   "to": [
+    680,
+    300
+   ],
+   "label": "вверх"
+  }
+ ],
+ "center": true
+}

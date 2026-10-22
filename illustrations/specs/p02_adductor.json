@@ -1,0 +1,98 @@
+{
+ "title": "Сведение бёдер в тренажёре",
+ "hint": "Сводим бёдра плавно, без рывка",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   420
+  ],
+  "both": {
+   "hip": 75,
+   "knee": 75,
+   "lengths": {
+    "thigh": 0.62
+   },
+   "shoulder": 12,
+   "elbow": 20
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "hip": 75,
+    "knee": 75,
+    "lengths": {
+     "thigh": 0.2
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "machine_adductor",
+   "at": "pelvis",
+   "pads": []
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "knee_l",
+    "dx": -20,
+    "dy": -28
+   },
+   "to": {
+    "at": "knee_l",
+    "dx": -20,
+    "dy": 30
+   },
+   "w": 16,
+   "layer": "front"
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "knee_r",
+    "dx": 20,
+    "dy": -28
+   },
+   "to": {
+    "at": "knee_r",
+    "dx": 20,
+    "dy": 30
+   },
+   "w": 16,
+   "layer": "front"
+  }
+ ],
+ "work": [
+  {
+   "name": "adductors",
+   "label": "Приводящие мышцы бедра"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    280,
+    470
+   ],
+   "to": [
+    350,
+    470
+   ],
+   "label": "свести"
+  },
+  {
+   "from": [
+    620,
+    470
+   ],
+   "to": [
+    550,
+    470
+   ]
+  }
+ ]
+}

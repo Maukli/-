@@ -1,0 +1,62 @@
+{
+ "title": "Отведение бедра лёжа на боку",
+ "hint": "Пятка ведёт, носок вперёд",
+ "view": "front",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   500,
+   520
+  ],
+  "rotate": -90,
+  "l": {
+   "hip": 35,
+   "knee": 0,
+   "shoulder": 20,
+   "elbow": -120,
+   "hand": "open",
+   "lengths": {
+    "fore": 0.75
+   }
+  },
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "shoulder": 178,
+   "elbow": 0,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "hip": 3
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_med",
+   "side": "l"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "pelvis",
+    "r": 250,
+    "start": -5,
+    "end": -30
+   },
+   "label": "вверх"
+  }
+ ]
+}

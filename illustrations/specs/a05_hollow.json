@@ -1,0 +1,8 @@
+{ "title": "Лодочка", "hint": "Поясница прижата к полу",
+  "floor": 580,
+  "pose": { "pelvis": [480, 545], "rotate": -90, "lumbar": 10, "thoracic": 25, "neck": 15, "pelvisTilt": -10,
+    "both": { "hip": 25, "knee": 0, "ankle": -40, "shoulder": 165, "elbow": 0, "hand": "open" } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 568, "w": 640 } ],
+  "work": [ "rectus_abdominis" ],
+  "arrows": []
+}

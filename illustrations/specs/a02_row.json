@@ -1,0 +1,88 @@
+{
+ "title": "Тяга блока широким хватом в наклоне",
+ "hint": "Локти в стороны на уровне плеч, лопатки свести",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   330,
+   505
+  ],
+  "trunk": 12,
+  "neck": -4,
+  "both": {
+   "hip": 82,
+   "knee": 40,
+   "footAt": [
+    555,
+    560
+   ],
+   "gripAt": {
+    "at": "chest",
+    "dx": 30,
+    "dy": -6
+   },
+   "bend": -1,
+   "lengths": {
+    "upper": 0.35
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "trunk": 20,
+   "both": {
+    "gripAt": null,
+    "shoulder": 80,
+    "elbow": 3,
+    "lengths": {
+     "upper": 1
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 230,
+   "y": 512,
+   "w": 170
+  },
+  {
+   "type": "box",
+   "x": 575,
+   "y": 515,
+   "w": 22,
+   "h": 85
+  },
+  {
+   "type": "cable_high",
+   "x": 820,
+   "top": 385,
+   "to": "hand_near"
+  }
+ ],
+ "work": [
+  "rhomboids",
+  "trap_middle",
+  "trap_lower",
+  {
+   "name": "deltoid",
+   "label": "Задняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_near",
+    "dx": 150,
+    "dy": -45
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 40,
+    "dy": -45
+   },
+   "label": "к груди"
+  }
+ ]
+}

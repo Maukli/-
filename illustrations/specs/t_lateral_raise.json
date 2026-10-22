@@ -1,0 +1,79 @@
+{
+ "title": "Махи гантелями в стороны",
+ "hint": "До уровня плеч, плечи не тянем к ушам",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "both": {
+   "shoulder": 88,
+   "elbow": 10,
+   "hip": 6,
+   "knee": 2,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 12,
+    "elbow": 10
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "circle",
+   "at": "hand_l",
+   "r": 22,
+   "layer": "front"
+  },
+  {
+   "type": "circle",
+   "at": "hand_l",
+   "r": 7,
+   "layer": "front"
+  },
+  {
+   "type": "circle",
+   "at": "hand_r",
+   "r": 22,
+   "layer": "front"
+  },
+  {
+   "type": "circle",
+   "at": "hand_r",
+   "r": 7,
+   "layer": "front"
+  }
+ ],
+ "work": [
+  {
+   "name": "deltoid",
+   "side": "both",
+   "label": "Средняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "shoulder_l",
+    "r": 200,
+    "start": 60,
+    "end": 5
+   },
+   "label": "через стороны вверх"
+  },
+  {
+   "arc": {
+    "center": "shoulder_r",
+    "r": 200,
+    "start": 120,
+    "end": 175
+   }
+  }
+ ]
+}

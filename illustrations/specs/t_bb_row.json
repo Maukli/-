@@ -1,0 +1,66 @@
+{
+ "title": "Тяга штанги в наклоне",
+ "hint": "Наклон от таза, спина прямая, штангу к животу",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   360,
+   "floor"
+  ],
+  "trunk": 65,
+  "neck": -18,
+  "both": {
+   "hip": 70,
+   "knee": 22,
+   "ankle": 12,
+   "gripAt": {
+    "at": "belly",
+    "dx": 6,
+    "dy": 16
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "gripAt": {
+     "at": "shoulder_near",
+     "dx": 4,
+     "dy": 150
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "barbell",
+   "at": {
+    "at": "belly",
+    "dx": 6,
+    "dy": 16
+   }
+  }
+ ],
+ "work": [
+  "lats",
+  "rhomboids",
+  "trap_middle",
+  {
+   "name": "deltoid",
+   "label": "Задняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    640,
+    520
+   ],
+   "to": [
+    640,
+    410
+   ],
+   "label": "к животу"
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "title": "Открытая книга",
+ "hint": "Колени прижаты друг к другу, раскрываем только грудной отдел",
+ "view": "front",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   520,
+   520
+  ],
+  "rotate": -90,
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 0,
+   "shoulder": 0,
+   "elbow": 0,
+   "hand": "open",
+   "lengths": {
+    "thigh": 0.45,
+    "shin": 0.75,
+    "upper": 0.06,
+    "fore": 0.06,
+    "hand": 0.5
+   }
+  },
+  "l": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 0,
+   "shoulder": 90,
+   "elbow": 0,
+   "hand": "open",
+   "lengths": {
+    "thigh": 0.45,
+    "shin": 0.75
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "shoulder": 40,
+    "lengths": {
+     "thigh": 0.45,
+     "shin": 0.75,
+     "upper": 0.25,
+     "fore": 0.25
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  }
+ ],
+ "stretch": [
+  {
+   "name": "pecs",
+   "side": "l",
+   "label": "Грудные"
+  },
+  {
+   "name": "obliques",
+   "side": "l",
+   "label": "Косые мышцы живота"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "shoulder_l",
+    "r": 185,
+    "start": -120,
+    "end": -55
+   },
+   "label": "рука раскрывается назад"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Лёжа на боку, бёдра и колени согнуты под 90 (к зрителю), колени на месте",
+   "at": [
+    450,
+    625
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

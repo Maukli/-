@@ -1,0 +1,53 @@
+{
+ "title": "Молотки",
+ "hint": "Ладони смотрят друг на друга, локти прижаты к корпусу",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   420,
+   "floor"
+  ],
+  "trunk": 0,
+  "neck": 0,
+  "both": {
+   "hip": 0,
+   "knee": 3,
+   "ankle": 2,
+   "shoulder": 6,
+   "elbow": 135,
+   "hand": "fist"
+  },
+  "r": {
+   "shoulder": 4,
+   "elbow": 5
+  }
+ },
+ "equipment": [
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "biceps",
+   "label": "Бицепс"
+  },
+  {
+   "name": "forearm",
+   "label": "Плечелучевая"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "elbow_near",
+    "r": 120,
+    "start": 85,
+    "end": -45
+   },
+   "label": "вверх, кисть не крутим",
+   "labelSide": "right"
+  }
+ ]
+}

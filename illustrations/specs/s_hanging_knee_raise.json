@@ -1,0 +1,10 @@
+{ "title": "Подъём коленей в висе", "hint": "Колени выше таза, без раскачки, вниз медленно",
+  "floor": 640, "scale": 0.85,
+  "pose": { "pelvis": [450, 418], "pelvisTilt": -14, "lumbar": 10,
+    "both": { "hip": 115, "knee": 100, "ankle": -20, "gripAt": [440, 172] } },
+  "ghost": { "pose": { "pelvisTilt": 0, "lumbar": 0, "both": { "hip": 4, "knee": 8, "ankle": -20 } } },
+  "equipment": [ { "type": "pullup_bar", "at": [440, 172] } ],
+  "work": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "iliopsoas", "label": "Подвздошно-поясничная" } ],
+  "arrows": [ { "arc": { "center": "pelvis", "r": 175, "start": 75, "end": 15 }, "label": "колени вверх" } ],
+  "center": false
+}

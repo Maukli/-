@@ -72,12 +72,12 @@
     {
       "from": {
         "at": "hand_near",
-        "dx": 40,
+        "dx": 62,
         "dy": 10
       },
       "to": {
         "at": "hand_near",
-        "dx": 40,
+        "dx": 62,
         "dy": -60
       },
       "label": "вверх"

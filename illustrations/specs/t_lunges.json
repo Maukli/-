@@ -1,0 +1,60 @@
+{
+ "title": "Выпады с весом",
+ "hint": "Корпус прямой, заднее колено почти до пола",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   430,
+   "floor"
+  ],
+  "trunk": 4,
+  "neck": 0,
+  "near": "r",
+  "l": {
+   "hip": -6,
+   "knee": 92,
+   "ankle": 5,
+   "shoulder": -2,
+   "elbow": 4,
+   "hand": "fist"
+  },
+  "r": {
+   "hip": 92,
+   "knee": 92,
+   "ankle": 2,
+   "shoulder": 2,
+   "elbow": 4,
+   "hand": "fist"
+  }
+ },
+ "equipment": [
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "quads",
+   "side": "near"
+  },
+  {
+   "name": "glute_max",
+   "side": "near"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    660,
+    330
+   ],
+   "to": [
+    660,
+    450
+   ],
+   "both": true,
+   "label": "вниз и вверх"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{ "title": "Альпинист", "hint": "Таз на линии плеч, колени к груди быстро",
+  "floor": 580,
+  "pose": { "pelvis": [395, 468], "rotate": 75, "neck": 4, "head": 4,
+    "both": { "hip": 0, "knee": 0, "ankle": 14, "handAt": [575, 584], "hand": "open", "wrist": 80 },
+    "l": { "hip": 130, "knee": 135, "ankle": -55 } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 580, "w": 620 } ],
+  "work": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "iliopsoas", "label": "Подвздошно-поясничная" } ],
+  "arrows": [ { "from": [230, 440], "to": [340, 440], "bend": 0.15, "label": "колено к груди, по очереди", "labelSide": "left" } ]
+}

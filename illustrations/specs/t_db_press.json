@@ -1,0 +1,68 @@
+{
+ "title": "Жим гантелей лёжа",
+ "hint": "Гантели по бокам груди, при боли в плече хват нейтральный",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   470,
+   446
+  ],
+  "rotate": -90,
+  "neck": 6,
+  "l": {
+   "gripAt": {
+    "at": "shoulder_near",
+    "dy": -160
+   },
+   "footAt": [
+    574,
+    567
+   ],
+   "hand": "fist"
+  },
+  "r": {
+   "gripAt": {
+    "at": "shoulder_far",
+    "dx": 3,
+    "dy": -160
+   },
+   "footAt": [
+    548,
+    567
+   ],
+   "hand": "fist"
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 220,
+   "y": 482,
+   "w": 320
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  "pecs",
+  "triceps",
+  "deltoid"
+ ],
+ "arrows": [
+  {
+   "from": [
+    440,
+    300
+   ],
+   "to": [
+    440,
+    395
+   ],
+   "both": true,
+   "label": "к груди и вверх",
+   "labelSide": "right"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{ "title": "Сфинкс", "hint": "Локти под плечами, таз на полу, 30-60 с",
+  "floor": 580,
+  "pose": { "pelvis": [380, 548], "rotate": 90, "lumbar": -30, "thoracic": -14, "neck": -10,
+    "both": { "hip": -2, "knee": 0, "ankle": -70, "shoulder": 70, "elbow": 90, "hand": "open" } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 568, "w": 640 } ],
+  "stretch": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "iliopsoas", "label": "Подвздошно-поясничная" } ],
+  "arrows": [ { "from": { "at": "chest", "dx": 40, "dy": 0 }, "to": { "at": "chest", "dx": 40, "dy": -70 }, "label": "грудь вверх" } ]
+}

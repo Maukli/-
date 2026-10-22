@@ -1,0 +1,10 @@
+{ "title": "Шраги", "hint": "Плечи к ушам, голова нейтрально, не вперёд",
+  "view": "front", "floor": 600,
+  "pose": { "pelvis": [450, "floor"], "both": { "shoulder": 8, "elbow": 2, "hip": 5, "knee": 1, "hand": "fist" } },
+  "equipment": [
+    { "type": "circle", "at": "hand_l", "r": 20, "layer": "front" }, { "type": "circle", "at": "hand_l", "r": 7, "layer": "front" },
+    { "type": "circle", "at": "hand_r", "r": 20, "layer": "front" }, { "type": "circle", "at": "hand_r", "r": 7, "layer": "front" } ],
+  "work": [ { "name": "trap_upper", "side": "both", "label": "Верхняя трапеция" } ],
+  "arrows": [ { "from": { "at": "shoulder_l", "dx": 30, "dy": 30 }, "to": { "at": "shoulder_l", "dx": 30, "dy": -30 }, "both": true, "label": "вверх и вниз" },
+              { "from": { "at": "shoulder_r", "dx": -30, "dy": 30 }, "to": { "at": "shoulder_r", "dx": -30, "dy": -30 }, "both": true } ]
+}

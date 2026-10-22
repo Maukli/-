@@ -1,0 +1,74 @@
+{
+ "title": "Прогулка с весом в одной руке",
+ "hint": "Плечи и таз ровно, не заваливаемся к весу",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "r": {
+   "shoulder": 6,
+   "elbow": 0,
+   "hip": 3,
+   "knee": 2,
+   "hand": "fist"
+  },
+  "l": {
+   "shoulder": 10,
+   "elbow": 6,
+   "hip": 3,
+   "knee": 2,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "kettlebell",
+   "at": {
+    "at": "hand_r",
+    "dy": 42
+   },
+   "r": 30
+  }
+ ],
+ "work": [
+  {
+   "name": "obliques",
+   "side": "l",
+   "label": "Косые (сторона без веса)"
+  },
+  {
+   "name": "glute_med",
+   "side": "l",
+   "label": "Средняя ягодичная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "shoulder_l",
+    "dx": 40,
+    "dy": 50
+   },
+   "to": {
+    "at": "shoulder_l",
+    "dx": 40,
+    "dy": -10
+   },
+   "label": "держим плечо ровно"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Идём 20-30 м, затем вес в другую руку",
+   "at": [
+    450,
+    630
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

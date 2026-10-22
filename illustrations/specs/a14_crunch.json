@@ -1,0 +1,62 @@
+{
+ "title": "Скручивания с блином",
+ "hint": "Поднимаем только голову и верх спины, поясница на полу",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   500,
+   534
+  ],
+  "rotate": -90,
+  "lumbar": 0,
+  "thoracic": 16,
+  "neck": 14,
+  "both": {
+   "ankle": 10,
+   "shoulder": 80,
+   "elbow": 5,
+   "hand": "fist",
+   "footAt": [
+    650,
+    557
+   ]
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 150,
+   "y": 568,
+   "w": 600
+  },
+  {
+   "type": "plate",
+   "at": "hand_near",
+   "r": 32
+  }
+ ],
+ "work": [
+  {
+   "name": "rectus_abdominis",
+   "label": "Прямая мышца живота (верх)",
+   "labelAt": [
+    560,
+    330
+   ]
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": [
+     430,
+     546
+    ],
+    "r": 200,
+    "start": -160,
+    "end": -130
+   },
+   "label": "вверх"
+  }
+ ]
+}

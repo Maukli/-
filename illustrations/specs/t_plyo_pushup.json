@@ -1,0 +1,65 @@
+{
+ "title": "Отжимания с отталкиванием",
+ "hint": "Взрывно оттолкнись, мягко приземлись",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   395,
+   430
+  ],
+  "rotate": 68,
+  "neck": 0,
+  "head": 4,
+  "both": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 18,
+   "shoulder": 70,
+   "elbow": 5,
+   "hand": "open",
+   "wrist": -30
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    400,
+    505
+   ],
+   "rotate": 82,
+   "both": {
+    "shoulder": 20,
+    "elbow": 105,
+    "wrist": 75,
+    "hand": "open"
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 580,
+   "w": 620
+  }
+ ],
+ "work": [
+  "pecs",
+  "triceps",
+  "deltoid"
+ ],
+ "arrows": [
+  {
+   "from": [
+    680,
+    480
+   ],
+   "to": [
+    680,
+    340
+   ],
+   "label": "взрывно вверх",
+   "labelSide": "right"
+  }
+ ]
+}

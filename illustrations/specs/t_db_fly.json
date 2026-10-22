@@ -1,0 +1,82 @@
+{
+ "title": "Разводка гантелей лёжа",
+ "hint": "Локти чуть согнуты, вниз до растяжения груди",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   470,
+   446
+  ],
+  "rotate": -90,
+  "neck": 6,
+  "both": {
+   "shoulder": -75,
+   "elbow": 18,
+   "hand": "fist",
+   "lengths": {
+    "upper": 0.62,
+    "fore": 0.62
+   }
+  },
+  "l": {
+   "footAt": [
+    574,
+    567
+   ]
+  },
+  "r": {
+   "footAt": [
+    548,
+    567
+   ]
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 90,
+    "elbow": 12,
+    "lengths": {
+     "upper": 1,
+     "fore": 1
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 220,
+   "y": 482,
+   "w": 320
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near",
+   "orient": "end"
+  }
+ ],
+ "work": [
+  "pecs",
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    255,
+    250
+   ],
+   "to": [
+    285,
+    520
+   ],
+   "bend": 0.35,
+   "both": true,
+   "label": "по дуге вниз и вверх",
+   "labelSide": "left"
+  }
+ ]
+}

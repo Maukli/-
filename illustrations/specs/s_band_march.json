@@ -1,0 +1,11 @@
+{ "title": "Марш с резиной лёжа", "hint": "Поясница прижата, колено к груди против резины",
+  "floor": 580,
+  "pose": { "pelvis": [480, 545], "rotate": -90, "pelvisTilt": -6, "neck": 6,
+    "both": { "shoulder": -7, "elbow": 4, "hand": "open" },
+    "l": { "hip": 118, "knee": 105, "ankle": 0 },
+    "r": { "hip": 62, "knee": 70, "ankle": 0 } },
+  "ghost": { "pose": { "l": { "hip": 62, "knee": 70 } } },
+  "equipment": [ { "type": "mat", "x": 150, "y": 568, "w": 640 }, { "type": "band", "from": "ball_l", "to": "ball_r" } ],
+  "work": [ { "name": "iliopsoas", "label": "Подвздошно-поясничная" }, { "name": "rectus_femoris", "label": "Прямая мышца бедра" } ],
+  "arrows": [ { "arc": { "center": "pelvis", "r": 190, "start": -50, "end": -85 }, "label": "колено к груди" } ]
+}

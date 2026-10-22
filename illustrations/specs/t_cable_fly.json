@@ -1,0 +1,61 @@
+{
+ "title": "Сведение рук в кроссовере",
+ "hint": "Локти чуть согнуты и не меняют угол, сводим по дуге",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "both": {
+   "shoulder": 75,
+   "elbow": 15,
+   "hip": 6,
+   "knee": 3,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 30,
+    "elbow": -75
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "cable_high",
+   "x": 140,
+   "top": 130,
+   "side": "left",
+   "to": "hand_r"
+  },
+  {
+   "type": "cable_high",
+   "x": 730,
+   "top": 130,
+   "to": "hand_l"
+  }
+ ],
+ "work": [
+  "pecs",
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта",
+   "labelSide": "top"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "shoulder_l",
+    "r": 150,
+    "start": -5,
+    "end": 60
+   },
+   "label": "свести"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{ "title": "Пуловер на блоке", "hint": "Руки почти прямые, рёбра опущены",
+  "floor": 600,
+  "pose": { "pelvis": [360, "floor"], "trunk": 18, "neck": -6,
+    "both": { "hip": 25, "knee": 15, "ankle": 10, "shoulder": 125, "elbow": 12 } },
+  "ghost": { "pose": { "both": { "shoulder": 18, "elbow": 8 } } },
+  "equipment": [ { "type": "cable_high", "x": 790, "top": 140, "to": "hand_near" } ],
+  "work": [ "lats" ],
+  "arrows": [ { "arc": { "center": "shoulder_near", "r": 210, "start": -40, "end": 55 }, "label": "по дуге к бёдрам" } ]
+}

@@ -1,0 +1,59 @@
+{
+ "title": "Сгибание рук со штангой",
+ "hint": "Локти прижаты к корпусу, без раскачки",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   420,
+   "floor"
+  ],
+  "trunk": 0,
+  "neck": 0,
+  "both": {
+   "hip": 0,
+   "knee": 6,
+   "ankle": 4,
+   "shoulder": 6,
+   "elbow": 120,
+   "wrist": 0,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 2,
+    "elbow": 6
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "barbell",
+   "at": "hand_near",
+   "r": 46
+  }
+ ],
+ "work": [
+  {
+   "name": "biceps",
+   "labelSide": "left"
+  },
+  {
+   "name": "forearm",
+   "label": "Предплечье",
+   "labelSide": "left"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "elbow_near",
+    "r": 150,
+    "start": 80,
+    "end": -30
+   },
+   "label": "к плечам"
+  }
+ ]
+}

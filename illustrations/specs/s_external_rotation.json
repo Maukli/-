@@ -1,0 +1,87 @@
+{
+ "title": "Наружная ротация плеча с резиной",
+ "hint": "Локоть прижат к боку, предплечье наружу медленно",
+ "view": "back",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   470,
+   "floor"
+  ],
+  "r": {
+   "shoulder": 6,
+   "elbow": 90,
+   "hip": 3,
+   "knee": 2,
+   "hand": "fist"
+  },
+  "l": {
+   "shoulder": 6,
+   "elbow": 6,
+   "hip": 3,
+   "knee": 2,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "r": {
+    "elbow": -70
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "rect",
+   "x": 186,
+   "y": 170,
+   "w": 14,
+   "h": 430,
+   "layer": "back"
+  },
+  {
+   "type": "band",
+   "from": {
+    "at": "hand_r",
+    "dx": -420
+   },
+   "to": "hand_r",
+   "layer": "back"
+  }
+ ],
+ "work": [
+  {
+   "name": "deltoid",
+   "side": "r",
+   "label": "Задняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "elbow_r",
+    "dx": 10,
+    "dy": 40
+   },
+   "to": {
+    "at": "hand_r",
+    "dx": 10,
+    "dy": 40
+   },
+   "bend": 0.25,
+   "label": "предплечье наружу",
+   "labelSide": "below"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Главные: подостная и малая круглая на лопатке, под дельтой",
+   "at": [
+    450,
+    630
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

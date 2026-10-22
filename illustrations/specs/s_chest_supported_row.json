@@ -1,0 +1,79 @@
+{
+ "title": "Тяга гантелей с упором в скамью",
+ "hint": "Грудь на скамье, тянем к поясу, сводим лопатки",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   426,
+   423
+  ],
+  "trunk": 50,
+  "neck": -12,
+  "both": {
+   "footAt": [
+    345,
+    577
+   ],
+   "gripAt": {
+    "at": "belly",
+    "dx": 0,
+    "dy": 25
+   },
+   "hand": "fist"
+  },
+  "r": {
+   "footAt": [
+    335,
+    577
+   ]
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "gripAt": null,
+    "shoulder": 50,
+    "elbow": 3
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "incline_bench",
+   "hinge": [
+    440,
+    470
+   ],
+   "angle": 40,
+   "len": 230,
+   "seat": 100,
+   "back": "right"
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  "rhomboids",
+  "trap_middle",
+  {
+   "name": "deltoid",
+   "label": "Задняя дельта"
+  },
+  "lats"
+ ],
+ "arrows": [
+  {
+   "from": [
+    680,
+    560
+   ],
+   "to": [
+    680,
+    440
+   ],
+   "label": "к поясу"
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "title": "Жим в тренажёре сидя",
+ "hint": "Спина прижата, руки до почти прямых",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   380,
+   450
+  ],
+  "trunk": -8,
+  "neck": 4,
+  "both": {
+   "hip": 82,
+   "knee": 80,
+   "footAt": [
+    525,
+    567
+   ],
+   "gripAt": {
+    "at": "chest",
+    "dx": 175,
+    "dy": 0
+   },
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "gripAt": {
+     "at": "chest",
+     "dx": 40,
+     "dy": 0
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "rect",
+   "x": 300,
+   "y": 458,
+   "w": 150,
+   "h": 22
+  },
+  {
+   "type": "rect",
+   "x": 345,
+   "y": 480,
+   "w": 16,
+   "h": 105
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     330,
+     450
+    ],
+    [
+     352,
+     450
+    ],
+    [
+     318,
+     210
+    ],
+    [
+     296,
+     210
+    ]
+   ]
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "hand_near",
+    "dx": 0,
+    "dy": -40
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 0,
+    "dy": 40
+   }
+  }
+ ],
+ "work": [
+  "pecs",
+  "triceps",
+  "deltoid"
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_near",
+    "dx": -90,
+    "dy": -70
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 10,
+    "dy": -70
+   },
+   "both": true,
+   "label": "вперёд и назад"
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "title": "Поза голубя",
+ "hint": "Таз ровно, задняя нога прямая, корпус на предплечья",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   380,
+   538
+  ],
+  "trunk": 62,
+  "neck": -12,
+  "l": {
+   "hip": 147,
+   "knee": 152,
+   "ankle": -80,
+   "lengths": {
+    "shin": 0.55
+   },
+   "shoulder": 52,
+   "elbow": 88,
+   "hand": "open"
+  },
+  "r": {
+   "hip": -22,
+   "knee": 0,
+   "ankle": -60,
+   "shoulder": 52,
+   "elbow": 88,
+   "hand": "open"
+  },
+  "both": {}
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 120,
+   "y": 580,
+   "w": 660
+  }
+ ],
+ "stretch": [
+  {
+   "name": "piriformis",
+   "side": "near",
+   "label": "Грушевидная"
+  },
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Ягодичная передней ноги"
+  },
+  {
+   "name": "iliopsoas",
+   "side": "far",
+   "label": "Сгибатели бедра задней ноги"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "chest",
+    "dx": 0,
+    "dy": -40
+   },
+   "to": {
+    "at": "chest",
+    "dx": 20,
+    "dy": 10
+   },
+   "label": "корпус вниз"
+  }
+ ]
+}

@@ -6,13 +6,13 @@
   "pose": {
     "pelvis": [
       430,
-      "floor"
+      465
     ],
     "trunk": 4,
     "l": {
-      "hip": -20,
-      "knee": 84,
-      "ankle": 42,
+      "hip": -6,
+      "knee": 98,
+      "ankle": 56,
       "shoulder": -10,
       "elbow": 15
     },
@@ -22,19 +22,20 @@
       "ankle": 0,
       "shoulder": 10,
       "elbow": 15
-    }
+    },
+    "near": "r"
   },
   "work": [
     {
       "name": "quads",
-      "side": "far"
+      "side": "near"
     },
     "glute_max"
   ],
   "stretch": [
     {
       "name": "rectus_femoris",
-      "side": "near"
+      "side": "far"
     }
   ],
   "arrows": [

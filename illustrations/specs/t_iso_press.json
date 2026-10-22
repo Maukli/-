@@ -1,0 +1,123 @@
+{
+ "title": "Изометрический жим в упор",
+ "hint": "Гриф в стопорах на высоте застоя, давим 3-6 с со всей силы",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   470,
+   446
+  ],
+  "rotate": -90,
+  "neck": 6,
+  "l": {
+   "gripAt": {
+    "at": "chest",
+    "dx": 0,
+    "dy": -32
+   },
+   "footAt": [
+    574,
+    567
+   ]
+  },
+  "r": {
+   "gripAt": {
+    "at": "chest",
+    "dx": 3,
+    "dy": -32
+   },
+   "footAt": [
+    548,
+    567
+   ]
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 220,
+   "y": 482,
+   "w": 320
+  },
+  {
+   "type": "rect",
+   "x": 150,
+   "y": 170,
+   "w": 16,
+   "h": 420
+  },
+  {
+   "type": "rect",
+   "x": 610,
+   "y": 170,
+   "w": 16,
+   "h": 420
+  },
+  {
+   "type": "rect",
+   "x": 140,
+   "y": 584,
+   "w": 496,
+   "h": 8
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "chest",
+    "dx": -215,
+    "dy": -42
+   },
+   "to": {
+    "at": "chest",
+    "dx": 265,
+    "dy": -42
+   },
+   "w": 8
+  },
+  {
+   "type": "barbell",
+   "at": {
+    "at": "chest",
+    "dx": 0,
+    "dy": -34
+   }
+  }
+ ],
+ "work": [
+  "pecs",
+  "triceps",
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "chest",
+    "dx": 130,
+    "dy": -60
+   },
+   "to": {
+    "at": "chest",
+    "dx": 130,
+    "dy": -140
+   },
+   "label": "давим вверх, гриф стоит",
+   "labelSide": "right"
+  }
+ ],
+ "center": false,
+ "notes": [
+  {
+   "text": "стопоры",
+   "at": {
+    "at": "chest",
+    "dx": -180,
+    "dy": -54
+   },
+   "size": 16,
+   "anchor": "start"
+  }
+ ]
+}

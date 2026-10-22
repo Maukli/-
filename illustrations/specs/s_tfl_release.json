@@ -1,0 +1,9 @@
+{ "title": "Раскатка НШФБ на ролле", "hint": "Ролл чуть ниже таза спереди сбоку, 60-90 с",
+  "view": "front", "floor": 580,
+  "pose": { "pelvis": [450, 490], "rotate": -68,
+    "l": { "hip": 20, "knee": 0, "shoulder": 4, "elbow": 0, "hand": "open" },
+    "r": { "hip": -20, "knee": 0, "shoulder": 68, "elbow": 0, "hand": "fist", "lengths": { "upper": 0.6, "fore": 0.2 } } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 568, "w": 640 }, { "type": "foam_roller", "at": [500, 541], "r": 26 } ],
+  "stretch": [ { "name": "tfl", "side": "r", "label": "НШФБ" } ],
+  "arrows": [ { "from": [450, 615], "to": [570, 615], "both": true, "label": "медленно", "labelSide": "below" } ]
+}

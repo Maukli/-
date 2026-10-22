@@ -1,0 +1,83 @@
+{
+ "title": "Растяжка верхней трапеции",
+ "hint": "Плечо вниз, голову к плечу мягко, держим 30 с",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   440
+  ],
+  "neck": 28,
+  "head": 10,
+  "l": {
+   "hip": 12,
+   "knee": 0,
+   "handAt": {
+    "at": "head",
+    "dx": -30,
+    "dy": -6
+   },
+   "hand": "open",
+   "lengths": {
+    "thigh": 0.3
+   }
+  },
+  "r": {
+   "hip": 12,
+   "knee": 0,
+   "shoulder": 18,
+   "elbow": 0,
+   "hand": "fist",
+   "lengths": {
+    "thigh": 0.3
+   }
+  },
+  "order": [
+   "armL",
+   "body",
+   "armR"
+  ]
+ },
+ "equipment": [
+  {
+   "type": "box",
+   "x": 335,
+   "y": 450,
+   "w": 230,
+   "h": 150
+  }
+ ],
+ "stretch": [
+  {
+   "name": "trap_upper",
+   "side": "r",
+   "label": "Верхняя трапеция"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "neck",
+    "r": 80,
+    "start": -100,
+    "end": -40
+   },
+   "label": "голову к плечу"
+  },
+  {
+   "from": {
+    "at": "shoulder_r",
+    "dx": -30,
+    "dy": -40
+   },
+   "to": {
+    "at": "shoulder_r",
+    "dx": -30,
+    "dy": 10
+   },
+   "label": "плечо вниз",
+   "labelSide": "left"
+  }
+ ]
+}

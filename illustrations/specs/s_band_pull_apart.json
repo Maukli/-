@@ -1,0 +1,82 @@
+{
+ "title": "Разведение резины",
+ "hint": "Руки прямые, от груди в стороны, сводим лопатки",
+ "view": "back",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "both": {
+   "shoulder": 88,
+   "elbow": 0,
+   "hip": 5,
+   "knee": 2,
+   "hand": "fist"
+  }
+ },
+ "equipment": [
+  {
+   "type": "band",
+   "from": "hand_l",
+   "to": "hand_r",
+   "layer": "back"
+  }
+ ],
+ "work": [
+  {
+   "name": "deltoid",
+   "side": "both",
+   "label": "Задняя дельта",
+   "labelSide": "left"
+  },
+  {
+   "name": "rhomboids",
+   "label": "Ромбовидные",
+   "labelSide": "right"
+  },
+  {
+   "name": "trap_middle",
+   "label": "Средняя трапеция",
+   "labelSide": "right"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "elbow_l",
+    "dx": 0,
+    "dy": -50
+   },
+   "to": {
+    "at": "hand_l",
+    "dx": 10,
+    "dy": -50
+   }
+  },
+  {
+   "from": {
+    "at": "elbow_r",
+    "dx": 0,
+    "dy": -50
+   },
+   "to": {
+    "at": "hand_r",
+    "dx": -10,
+    "dy": -50
+   }
+  }
+ ],
+ "notes": [
+  {
+   "text": "Вид со спины. Резина перед грудью, старт: руки вперёд",
+   "at": [
+    450,
+    635
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

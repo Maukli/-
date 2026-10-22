@@ -1,0 +1,61 @@
+{
+ "title": "Растяжка бицепса бедра лёжа",
+ "hint": "Нога прямая, носок на себя, таз на полу",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   520,
+   542
+  ],
+  "rotate": -90,
+  "neck": 4,
+  "l": {
+   "hip": 88,
+   "knee": 0,
+   "ankle": 20,
+   "gripAt": [
+    512,
+    400
+   ]
+  },
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 10,
+   "shoulder": -5,
+   "elbow": 5,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 150,
+   "y": 580,
+   "w": 600
+  }
+ ],
+ "stretch": [
+  {
+   "name": "hamstrings",
+   "side": "near",
+   "label": "Бицепс бедра"
+  },
+  {
+   "name": "gastrocnemius",
+   "side": "near",
+   "label": "Икроножная"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "pelvis",
+    "r": 230,
+    "start": -80,
+    "end": -110
+   },
+   "label": "к себе"
+  }
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "title": "Жим ногами",
+ "hint": "Поясница прижата к спинке, колени по носкам",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   360,
+   500
+  ],
+  "rotate": -50,
+  "neck": 8,
+  "both": {
+   "footAt": [
+    462,
+    342
+   ],
+   "ankle": 45,
+   "shoulder": -8,
+   "elbow": 10,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "footAt": [
+     555,
+     250
+    ],
+    "ankle": 0
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "incline_bench",
+   "hinge": [
+    380,
+    530
+   ],
+   "angle": 40,
+   "len": 250,
+   "seat": 60,
+   "back": "left"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     414,
+     291
+    ],
+    [
+     425,
+     280
+    ],
+    [
+     515,
+     370
+    ],
+    [
+     504,
+     381
+    ]
+   ]
+  }
+ ],
+ "work": [
+  "quads",
+  "glute_max",
+  "adductors"
+ ],
+ "arrows": [
+  {
+   "from": [
+    560,
+    350
+   ],
+   "to": [
+    650,
+    260
+   ],
+   "both": true,
+   "label": "вниз и вверх",
+   "labelSide": "right"
+  }
+ ]
+}

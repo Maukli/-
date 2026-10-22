@@ -1,0 +1,67 @@
+{
+ "title": "Сгибание ног в тренажёре",
+ "hint": "Сгибаем до упора, разгибаем медленно",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   380,
+   455
+  ],
+  "trunk": -10,
+  "neck": 0,
+  "both": {
+   "hip": 80,
+   "knee": 100,
+   "ankle": 10,
+   "shoulder": 20,
+   "elbow": 40,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "knee": 5
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "machine_leg_ext",
+   "seat": "knee_near",
+   "axis": "knee_near",
+   "pad": {
+    "at": "heel_near",
+    "dx": -10,
+    "dy": -8
+   },
+   "backX": 320
+  },
+  {
+   "type": "circle",
+   "at": {
+    "at": "thigh_near",
+    "dx": 30,
+    "dy": -30
+   },
+   "r": 16
+  }
+ ],
+ "work": [
+  {
+   "name": "hamstrings",
+   "side": "near"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "knee_near",
+    "r": 125,
+    "start": 10,
+    "end": 90
+   },
+   "label": "пятки под себя"
+  }
+ ]
+}

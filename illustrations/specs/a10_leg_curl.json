@@ -1,0 +1,61 @@
+{
+ "title": "Сгибание ноги стоя",
+ "hint": "Пятка к ягодице, таз ровный",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   420,
+   "floor"
+  ],
+  "trunk": 4,
+  "l": {
+   "hip": -5,
+   "knee": 115,
+   "ankle": -35
+  },
+  "r": {
+   "hip": 0,
+   "knee": 3,
+   "ankle": 2
+  },
+  "both": {
+   "shoulder": 70,
+   "elbow": 15,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "hip": 0,
+    "knee": 3,
+    "ankle": 2
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "wall",
+   "x": 640,
+   "top": 150,
+   "side": "left"
+  }
+ ],
+ "work": [
+  {
+   "name": "hamstrings",
+   "side": "near"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "knee_near",
+    "r": 110,
+    "start": 110,
+    "end": 190
+   },
+   "label": "пятка вверх"
+  }
+ ]
+}

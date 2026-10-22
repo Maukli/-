@@ -1,0 +1,98 @@
+{
+ "title": "Жим сидя над головой",
+ "hint": "Спина прижата к спинке, вес над головой, не за неё",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   400,
+   462
+  ],
+  "trunk": -8,
+  "neck": 0,
+  "both": {
+   "hip": 88,
+   "knee": 88,
+   "ankle": 0,
+   "gripAt": {
+    "at": "shoulder_near",
+    "dx": 48,
+    "dy": -150
+   },
+   "hand": "fist"
+  },
+  "r": {
+   "gripAt": {
+    "at": "shoulder_far",
+    "dx": 50,
+    "dy": -150
+   },
+   "hip": 80,
+   "knee": 80
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "gripAt": {
+     "at": "shoulder_near",
+     "dx": 18,
+     "dy": -58
+    },
+    "lengths": {
+     "upper": 0.5
+    }
+   },
+   "r": {
+    "gripAt": {
+     "at": "shoulder_far",
+     "dx": 20,
+     "dy": -58
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "incline_bench",
+   "hinge": [
+    378,
+    485
+   ],
+   "angle": 82,
+   "len": 250,
+   "seat": 120
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "deltoid",
+   "label": "Передняя и средняя дельта"
+  },
+  "triceps",
+  {
+   "name": "trap_upper",
+   "label": "Верх трапеций"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "shoulder_near",
+    "dx": 120,
+    "dy": -40
+   },
+   "to": {
+    "at": "shoulder_near",
+    "dx": 120,
+    "dy": -150
+   },
+   "both": true,
+   "label": "к плечам и вверх",
+   "labelSide": "right"
+  }
+ ]
+}

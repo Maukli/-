@@ -8,19 +8,19 @@
       330,
       "floor"
     ],
-    "trunk": 80,
+    "trunk": 75,
     "neck": 0,
     "head": 8,
     "both": {
-      "hip": 80,
-      "knee": 90,
-      "ankle": -90,
-      "shoulder": 80,
+      "hip": 75,
+      "knee": 88,
+      "ankle": -64,
+      "shoulder": 75,
       "elbow": 0,
       "wrist": 90
     },
     "r": {
-      "hip": 78
+      "hip": 73
     },
     "thoracic": 0,
     "pelvisTilt": 0

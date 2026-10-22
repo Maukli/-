@@ -1,0 +1,7 @@
+{ "title": "Паллоф-пресс", "hint": "Руки вперёд, корпус не разворачивается к блоку",
+  "view": "front", "floor": 600, "center": false,
+  "pose": { "pelvis": [500, "floor"], "both": { "hip": 8, "knee": 8, "gripAt": [500, 292], "hand": "fist", "lengths": { "upper": 0.62, "fore": 0.22 } } },
+  "equipment": [ { "type": "cable_high", "x": 150, "top": 257, "to": [500, 292], "handle": false, "layer": "front" } ],
+  "work": [ { "name": "obliques", "label": "Косые мышцы" }, { "name": "rectus_abdominis", "label": "Прямая мышца живота" } ],
+  "arrows": [ { "from": [380, 250], "to": [250, 250], "dash": true, "label": "тянет к блоку" } ]
+}

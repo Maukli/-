@@ -1,0 +1,70 @@
+{
+ "title": "Прыжки с ноги на ногу",
+ "hint": "Мягкое приземление, колено не внутрь",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   560,
+   "floor"
+  ],
+  "trunk": 6,
+  "l": {
+   "hip": 4,
+   "knee": 0
+  },
+  "r": {
+   "hip": 22,
+   "knee": 0,
+   "lengths": {
+    "shin": 0.55
+   }
+  },
+  "both": {
+   "shoulder": 20,
+   "elbow": 40
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    300,
+    "floor"
+   ],
+   "trunk": -6,
+   "l": {
+    "hip": 22,
+    "lengths": {
+     "shin": 0.55
+    }
+   },
+   "r": {
+    "hip": 4,
+    "lengths": {
+     "shin": 1
+    }
+   }
+  }
+ },
+ "work": [
+  {
+   "name": "glute_med",
+   "side": "l"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    330,
+    250
+   ],
+   "to": [
+    530,
+    250
+   ],
+   "both": true,
+   "bend": -0.3,
+   "label": "в сторону"
+  }
+ ]
+}

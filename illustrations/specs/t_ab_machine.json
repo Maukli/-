@@ -1,0 +1,22 @@
+{
+ "title": "Сгибание в тренажёре на пресс",
+ "hint": "Скручиваем рёбра к тазу прессом, а не тянем руками",
+ "floor": 600,
+ "pose": {
+  "pelvis": [360, 466],
+  "trunk": 8, "lumbar": 12, "thoracic": 22, "neck": 8,
+  "both": { "hip": 98, "knee": 95, "footAt": [490, 577], "gripAt": { "at": "chest", "dx": 30, "dy": -18 }, "hand": "fist" },
+  "r": { "footAt": [470, 577], "gripAt": { "at": "chest", "dx": 33, "dy": -18 } }
+ },
+ "ghost": { "pose": { "trunk": -4, "lumbar": 0, "thoracic": 0, "neck": 0 } },
+ "equipment": [
+  { "type": "rect", "x": 280, "y": 484, "w": 160, "h": 22 },
+  { "type": "rect", "x": 250, "y": 160, "w": 26, "h": 432 },
+  { "type": "rect", "x": 220, "y": 592, "w": 260, "h": 8 },
+  { "type": "line", "from": [263, 230], "to": { "at": "chest", "dx": 32, "dy": -26 }, "w": 10 },
+  { "type": "circle", "at": [263, 230], "r": 12 },
+  { "type": "circle", "at": { "at": "chest", "dx": 32, "dy": -18 }, "r": 13, "layer": "front" }
+ ],
+ "work": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "obliques", "label": "Косые" } ],
+ "arrows": [ { "arc": { "center": [360, 466], "r": 230, "start": -95, "end": -60 }, "label": "скрутиться вперёд", "labelSide": "right" } ]
+}

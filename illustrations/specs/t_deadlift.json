@@ -1,0 +1,71 @@
+{
+ "title": "Становая тяга",
+ "hint": "Спина прямая, ноги и таз разгибаются вместе",
+ "floor": 610,
+ "pose": {
+  "pelvis": [
+   418,
+   463
+  ],
+  "trunk": 55,
+  "neck": -20,
+  "both": {
+   "footAt": [
+    500,
+    587
+   ],
+   "gripAt": [
+    522,
+    553
+   ]
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    492,
+    "floor"
+   ],
+   "trunk": 0,
+   "neck": 0,
+   "both": {
+    "footAt": null,
+    "hip": 0,
+    "knee": 0,
+    "ankle": 0,
+    "gripAt": null,
+    "shoulder": 0,
+    "elbow": 0
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "barbell",
+   "at": [
+    522,
+    553
+   ],
+   "r": 57
+  }
+ ],
+ "work": [
+  "erectors",
+  "glute_max",
+  "hamstrings"
+ ],
+ "arrows": [
+  {
+   "from": [
+    680,
+    530
+   ],
+   "to": [
+    680,
+    370
+   ],
+   "label": "встать"
+  }
+ ],
+ "center": false
+}

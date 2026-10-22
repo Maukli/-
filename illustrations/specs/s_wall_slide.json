@@ -1,0 +1,63 @@
+{
+ "title": "Скольжение руками по стене",
+ "hint": "Затылок, лопатки, таз и предплечья у стены",
+ "view": "back",
+ "floor": 620,
+ "scale": 0.85,
+ "center": false,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "both": {
+   "shoulder": 90,
+   "elbow": 90,
+   "hip": 5,
+   "knee": 2,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 150,
+    "elbow": 20
+   }
+  }
+ },
+ "work": [
+  {
+   "name": "trap_lower",
+   "side": "both",
+   "label": "Нижняя трапеция"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_r",
+    "dx": 50,
+    "dy": 30
+   },
+   "to": {
+    "at": "hand_r",
+    "dx": 50,
+    "dy": -80
+   },
+   "both": true,
+   "label": "вверх и вниз по стене"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Вид со спины, стена за спиной не показана",
+   "at": [
+    450,
+    645
+   ],
+   "size": 15,
+   "anchor": "middle"
+  }
+ ]
+}

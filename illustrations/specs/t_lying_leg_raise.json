@@ -1,0 +1,11 @@
+{
+ "title": "Подъём ног лёжа",
+ "hint": "Поясница прижата к полу, вниз медленно",
+ "floor": 580,
+ "pose": { "pelvis": [480, 534], "rotate": -90, "pelvisTilt": -6, "lumbar": 4,
+   "both": { "hip": 90, "knee": 0, "ankle": -30, "shoulder": -7, "elbow": 4, "hand": "open" } },
+ "ghost": { "pose": { "both": { "hip": 12, "ankle": -30 } } },
+ "equipment": [ { "type": "mat", "x": 160, "y": 568, "w": 640 } ],
+ "work": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "iliopsoas", "label": "Подвздошно-поясничная" } ],
+ "arrows": [ { "arc": { "center": [480, 534], "r": 185, "start": -82, "end": -22 }, "both": true, "label": "медленно вниз" } ]
+}

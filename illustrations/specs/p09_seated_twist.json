@@ -1,0 +1,66 @@
+{
+ "title": "Скрут сидя",
+ "hint": "Спина прямая, поворот от грудного отдела",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   380,
+   515
+  ],
+  "trunk": -5,
+  "neck": 0,
+  "l": {
+   "footAt": [
+    468,
+    557
+   ],
+   "shoulder": -30,
+   "elbow": 0,
+   "handAt": [
+    300,
+    572
+   ],
+   "wrist": -80,
+   "hand": "open"
+  },
+  "r": {
+   "hip": 88,
+   "knee": 0,
+   "ankle": 15,
+   "gripAt": [
+    450,
+    440
+   ]
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 150,
+   "y": 580,
+   "w": 600
+  }
+ ],
+ "stretch": [
+  {
+   "name": "obliques",
+   "label": "Косые мышцы живота"
+  },
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Ягодичная согнутой ноги"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "chest",
+    "r": 110,
+    "start": -30,
+    "end": -150
+   },
+   "label": "поворот к колену"
+  }
+ ]
+}

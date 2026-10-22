@@ -1,0 +1,59 @@
+{
+ "title": "Растяжка грудных в дверном проёме",
+ "hint": "Локоть на уровне плеча, шаг вперёд, держим 30 с",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "trunk": 8,
+  "neck": 0,
+  "l": {
+   "shoulder": -90,
+   "elbow": -90,
+   "hand": "open",
+   "hip": -14,
+   "knee": 6,
+   "ankle": 8
+  },
+  "r": {
+   "shoulder": 5,
+   "elbow": 10,
+   "hand": "fist",
+   "hip": 20,
+   "knee": 12
+  }
+ },
+ "equipment": [
+  {
+   "type": "wall",
+   "x": 368,
+   "top": 110,
+   "w": 22
+  }
+ ],
+ "stretch": [
+  {
+   "name": "pecs",
+   "label": "Грудные"
+  },
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    520,
+    300
+   ],
+   "to": [
+    620,
+    300
+   ],
+   "label": "шаг вперёд"
+  }
+ ]
+}

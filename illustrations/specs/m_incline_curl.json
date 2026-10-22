@@ -1,0 +1,75 @@
+{
+ "title": "Сгибание рук на наклонной скамье",
+ "hint": "Плечи неподвижны, локти смотрят в пол",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   430,
+   470
+  ],
+  "rotate": -35,
+  "neck": 6,
+  "both": {
+   "hip": 55,
+   "knee": 95,
+   "ankle": 10,
+   "shoulder": -35,
+   "elbow": 2,
+   "wrist": 0,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": -30,
+    "elbow": 135
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "incline_bench",
+   "hinge": [
+    420,
+    503
+   ],
+   "angle": 55,
+   "len": 230,
+   "seat": 115,
+   "back": "left"
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "biceps",
+   "label": "Бицепс в растяжении"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "elbow_near",
+    "r": 95,
+    "start": 95,
+    "end": -5
+   }
+  }
+ ],
+ "notes": [
+  {
+   "text": "согнуть, локоть на месте",
+   "at": [
+    470,
+    425
+   ],
+   "color": "#1E88E5",
+   "size": 18,
+   "anchor": "start"
+  }
+ ]
+}

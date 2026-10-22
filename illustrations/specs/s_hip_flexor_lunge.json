@@ -1,0 +1,75 @@
+{
+ "title": "Растяжка сгибателей бедра в выпаде",
+ "hint": "Сожми ягодицу, подкрути таз, подай его вперёд",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   420,
+   478
+  ],
+  "trunk": 0,
+  "pelvisTilt": -10,
+  "neck": 0,
+  "near": "l",
+  "l": {
+   "hip": -22,
+   "knee": 70,
+   "ankle": -50,
+   "shoulder": -10,
+   "elbow": 20,
+   "hand": "open"
+  },
+  "r": {
+   "footAt": [
+    575,
+    567
+   ],
+   "shoulder": -10,
+   "elbow": 20,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 590,
+   "w": 620
+  }
+ ],
+ "stretch": [
+  {
+   "name": "iliopsoas",
+   "side": "near",
+   "label": "Подвздошно-поясничная"
+  },
+  {
+   "name": "rectus_femoris",
+   "side": "near",
+   "label": "Прямая мышца бедра"
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Ягодичная: сжать"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "pelvis",
+    "dx": -10,
+    "dy": -60
+   },
+   "to": {
+    "at": "pelvis",
+    "dx": 60,
+    "dy": -60
+   },
+   "label": "таз вперёд"
+  }
+ ],
+ "center": false
+}

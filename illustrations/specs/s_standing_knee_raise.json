@@ -1,0 +1,67 @@
+{
+ "title": "Подъём колена стоя",
+ "hint": "Колено выше таза, корпус не отклоняем назад",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "trunk": 0,
+  "neck": 0,
+  "l": {
+   "hip": 105,
+   "knee": 95,
+   "ankle": 5,
+   "shoulder": -8,
+   "elbow": 6,
+   "hand": "open"
+  },
+  "r": {
+   "hip": 0,
+   "knee": 2,
+   "ankle": 0,
+   "shoulder": -4,
+   "elbow": 6,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "hip": 0,
+    "knee": 2,
+    "ankle": 0
+   }
+  }
+ },
+ "work": [
+  {
+   "name": "iliopsoas",
+   "side": "near",
+   "label": "Подвздошно-поясничная"
+  },
+  {
+   "name": "rectus_femoris",
+   "side": "near",
+   "label": "Прямая мышца бедра"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_near",
+    "dx": 70,
+    "dy": 110
+   },
+   "to": {
+    "at": "knee_near",
+    "dx": 55,
+    "dy": 5
+   },
+   "bend": 0.25,
+   "label": "колено вверх",
+   "labelSide": "right"
+  }
+ ]
+}

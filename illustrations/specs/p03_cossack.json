@@ -1,0 +1,69 @@
+{
+ "title": "Перекаты со штангой на спине",
+ "hint": "Глубокий присед на одну ногу, вторая прямая в сторону",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   400,
+   485
+  ],
+  "trunk": 6,
+  "l": {
+   "footAt": [
+    200,
+    577
+   ]
+  },
+  "r": {
+   "footAt": [
+    445,
+    577
+   ],
+   "bend": -1
+  },
+  "both": {
+   "shoulder": 78,
+   "elbow": 140
+  }
+ },
+ "equipment": [
+  {
+   "type": "barbell",
+   "at": {
+    "at": "neck",
+    "dy": -12
+   },
+   "w": 520
+  }
+ ],
+ "work": [
+  {
+   "name": "adductors",
+   "side": "both",
+   "label": "Приводящие мышцы бедра"
+  },
+  {
+   "name": "quads",
+   "side": "r"
+  },
+  {
+   "name": "glute_max",
+   "side": "r"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    330,
+    250
+   ],
+   "to": [
+    570,
+    250
+   ],
+   "both": true,
+   "label": "перекат"
+  }
+ ]
+}

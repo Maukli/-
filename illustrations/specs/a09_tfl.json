@@ -1,0 +1,10 @@
+{ "title": "Отведение на НШФБ", "hint": "Бедро на 20-30 вперёд, носок слегка вниз",
+  "view": "front", "floor": 580,
+  "pose": { "pelvis": [500, 520], "rotate": -90,
+    "l": { "hip": 35, "knee": 0, "shoulder": 20, "elbow": -120, "lengths": { "fore": 0.75, "thigh": 0.92 } },
+    "r": { "hip": 0, "knee": 0, "shoulder": 178, "elbow": 0, "hand": "open" } },
+  "ghost": { "pose": { "l": { "hip": 3 } } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 568, "w": 640 } ],
+  "work": [ { "name": "tfl", "side": "l", "label": "НШФБ" } ],
+  "arrows": [ { "arc": { "center": "pelvis", "r": 250, "start": -5, "end": -30 }, "label": "вверх" } ]
+}

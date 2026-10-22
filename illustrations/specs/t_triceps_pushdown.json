@@ -1,0 +1,68 @@
+{
+ "title": "Разгибание рук на блоке",
+ "hint": "Локти прижаты и неподвижны, внизу руки прямые",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   380,
+   "floor"
+  ],
+  "trunk": 12,
+  "neck": -4,
+  "both": {
+   "hip": 14,
+   "knee": 10,
+   "ankle": 4,
+   "shoulder": 4,
+   "elbow": 6,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 0,
+    "elbow": 85
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "cable_high",
+   "x": 545,
+   "top": 110,
+   "to": "fingers_near",
+   "handle": false,
+   "layer": "front"
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "fingers_near",
+    "dx": -5,
+    "dy": -18
+   },
+   "to": {
+    "at": "fingers_near",
+    "dx": 5,
+    "dy": 18
+   },
+   "layer": "front"
+  }
+ ],
+ "work": [
+  "triceps"
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "elbow_near",
+    "r": 110,
+    "start": 0,
+    "end": 75
+   },
+   "label": "вниз до прямой руки",
+   "labelSide": "right"
+  }
+ ]
+}

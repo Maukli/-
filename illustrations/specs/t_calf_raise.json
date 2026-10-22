@@ -1,0 +1,73 @@
+{
+ "title": "Подъём на носки",
+ "hint": "Внизу пятки ниже ступени, наверху пауза на носках",
+ "floor": 620,
+ "pose": {
+  "pelvis": [
+   430,
+   342
+  ],
+  "trunk": 0,
+  "neck": 0,
+  "both": {
+   "hip": 0,
+   "knee": 2,
+   "ankle": -32,
+   "shoulder": 4,
+   "elbow": 6,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    407,
+    369
+   ],
+   "both": {
+    "ankle": 14
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "box",
+   "x": 440,
+   "y": 592,
+   "w": 200,
+   "h": 28
+  },
+  {
+   "type": "floor",
+   "x": 120,
+   "y": 620,
+   "w": 660
+  }
+ ],
+ "work": [
+  {
+   "name": "gastrocnemius",
+   "side": "near"
+  },
+  {
+   "name": "soleus",
+   "side": "near"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    340,
+    602
+   ],
+   "to": [
+    340,
+    512
+   ],
+   "both": true,
+   "label": "вверх, медленно вниз",
+   "labelSide": "left"
+  }
+ ],
+ "center": false
+}

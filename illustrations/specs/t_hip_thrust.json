@@ -1,0 +1,84 @@
+{
+ "title": "Ягодичный мост со штангой",
+ "hint": "Наверху прямая от плеч до колен, пауза 2 с",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   480,
+   462
+  ],
+  "rotate": -90,
+  "neck": 22,
+  "pelvisTilt": -8,
+  "both": {
+   "footAt": [
+    586,
+    567
+   ],
+   "gripAt": {
+    "at": "pelvis",
+    "dx": -4,
+    "dy": -42
+   },
+   "hand": "fist"
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 180,
+   "y": 500,
+   "w": 185
+  },
+  {
+   "type": "barbell",
+   "at": {
+    "at": "pelvis",
+    "dx": -4,
+    "dy": -42
+   },
+   "r": 57
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_max",
+   "labelSide": "bottom"
+  },
+  {
+   "name": "hamstrings",
+   "labelSide": "bottom"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    680,
+    440
+   ],
+   "to": [
+    680,
+    340
+   ],
+   "label": "таз вверх"
+  }
+ ],
+ "center": true,
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    463,
+    530
+   ],
+   "rotate": -60,
+   "pelvisTilt": 0,
+   "both": {
+    "gripAt": {
+     "at": "pelvis",
+     "dx": -4,
+     "dy": -42
+    }
+   }
+  }
+ }
+}

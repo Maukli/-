@@ -1,0 +1,14 @@
+{
+ "title": "Планка",
+ "hint": "Тело в одну линию, рёбра вниз, таз не провисает",
+ "floor": 560,
+ "pose": {
+  "pelvis": [400, "floor"],
+  "rotate": 85, "pelvisTilt": -4, "neck": 0, "head": 0,
+  "both": { "hip": 0, "knee": 0, "ankle": 22, "shoulder": 86, "elbow": 84, "wrist": 0, "hand": "fist" }
+ },
+ "equipment": [ { "type": "mat", "x": 130, "y": 560, "w": 640 } ],
+ "work": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "obliques", "label": "Косые" }, { "name": "glute_max", "label": "Ягодичные" }, { "name": "quads", "label": "Квадрицепс" } ],
+ "arrows": [],
+ "notes": []
+}

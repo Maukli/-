@@ -1,0 +1,59 @@
+{
+ "title": "Подъём рук буквой Y на наклонной",
+ "hint": "Руки прямые до линии корпуса, большие пальцы вверх",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   380,
+   400
+  ],
+  "trunk": 50,
+  "neck": -8,
+  "both": {
+   "hip": 25,
+   "knee": 15,
+   "ankle": 5,
+   "shoulder": 178,
+   "elbow": 0,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 50,
+    "elbow": 0
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "incline_bench",
+   "hinge": [
+    395,
+    425
+   ],
+   "angle": 40,
+   "len": 230,
+   "seat": 100,
+   "back": "right"
+  }
+ ],
+ "work": [
+  {
+   "name": "trap_lower",
+   "label": "Нижняя трапеция"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "shoulder_near",
+    "r": 150,
+    "start": 80,
+    "end": -25
+   },
+   "label": "вперёд и вверх"
+  }
+ ]
+}

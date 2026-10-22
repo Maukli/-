@@ -1,0 +1,10 @@
+{ "title": "Приседания со штангой", "hint": "Колени по линии носков, рёбра вниз, без клевка таза",
+  "floor": 590,
+  "pose": { "pelvis": [420, "floor"], "trunk": 42, "neck": -10, "head": -2,
+    "both": { "hip": 112, "knee": 103, "ankle": 28, "gripAt": { "at": "upperback", "dx": -12, "dy": 6 }, "bend": -1,
+      "wrist": -10, "lengths": { "upper": 0.86, "fore": 0.72 } },
+    "r": { "hip": 108, "knee": 100, "ankle": 26 } },
+  "equipment": [ { "type": "barbell", "at": { "at": "upperback", "dx": -12, "dy": 6 } } ],
+  "work": [ "quads", "glute_max", "adductors", "erectors" ],
+  "arrows": [ { "from": [700, 470], "to": [700, 330], "label": "вверх" } ]
+}

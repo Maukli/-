@@ -1,0 +1,66 @@
+{
+ "title": "Колено к противоположному плечу",
+ "hint": "Другая нога прямая, поясница на полу",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   500,
+   542
+  ],
+  "rotate": -90,
+  "neck": 6,
+  "l": {
+   "hip": 115,
+   "knee": 105,
+   "ankle": -20,
+   "gripAt": [
+    448,
+    446
+   ],
+   "hand": "fist"
+  },
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 10,
+   "shoulder": -5,
+   "elbow": 5,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 150,
+   "y": 580,
+   "w": 600
+  }
+ ],
+ "stretch": [
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Большая ягодичная"
+  },
+  {
+   "name": "piriformis",
+   "side": "near",
+   "label": "Грушевидная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_near",
+    "dx": 20,
+    "dy": -20
+   },
+   "to": {
+    "at": "knee_near",
+    "dx": -50,
+    "dy": -50
+   },
+   "label": "к плечу"
+  }
+ ]
+}

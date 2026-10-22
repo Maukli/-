@@ -1,0 +1,80 @@
+{
+ "title": "Bird dog (птица-собака)",
+ "hint": "Рука и нога в линию с корпусом, поясница нейтральна",
+ "floor": 568,
+ "pose": {
+  "pelvis": [
+   330,
+   466
+  ],
+  "trunk": 72,
+  "neck": -6,
+  "l": {
+   "hip": -14,
+   "knee": 0,
+   "ankle": -20,
+   "elbow": 10,
+   "wrist": 80,
+   "hand": "open",
+   "shoulder": 70
+  },
+  "r": {
+   "hip": 72,
+   "knee": 92,
+   "ankle": -60,
+   "shoulder": 166,
+   "elbow": 0,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "hip": 72,
+    "knee": 92,
+    "ankle": -60
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 120,
+   "y": 568,
+   "w": 660
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Большая ягодичная"
+  },
+  {
+   "name": "hamstrings",
+   "side": "near",
+   "label": "Бицепс бедра"
+  },
+  {
+   "name": "erectors",
+   "label": "Разгибатели спины"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_near",
+    "dx": -30,
+    "dy": 75
+   },
+   "to": {
+    "at": "ankle_near",
+    "dx": 30,
+    "dy": 30
+   },
+   "bend": -0.25,
+   "label": "нога назад",
+   "labelSide": "below"
+  }
+ ]
+}

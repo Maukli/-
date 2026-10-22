@@ -1,0 +1,8 @@
+{ "title": "Короткая стопа", "hint": "Пальцы не поджимаем, головку пальца тянем к пятке",
+  "floor": 580,
+  "pose": { "pelvis": [400, 432], "trunk": 4, "neck": 14,
+    "both": { "hip": 90, "footAt": [505, 557], "handAt": [470, 418], "hand": "open" } },
+  "equipment": [ { "type": "box", "x": 300, "y": 452, "w": 140, "h": 116 } ],
+  "work": [ { "name": "foot", "side": "near", "label": "Мышцы свода стопы" } ],
+  "arrows": [ { "from": { "at": "toe_near", "dx": 10, "dy": 30 }, "to": { "at": "heel_near", "dx": 0, "dy": 30 }, "label": "к пятке", "labelSide": "below" } ]
+}

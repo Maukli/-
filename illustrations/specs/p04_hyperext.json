@@ -1,0 +1,63 @@
+{
+ "title": "Гиперэкстензия с прогибом в пояснице",
+ "hint": "Поднимаем корпус до прямой, прогиб в пояснице",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   440,
+   400
+  ],
+  "rotate": 90,
+  "lumbar": -15,
+  "neck": 0,
+  "both": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 0,
+   "shoulder": 40,
+   "elbow": 140,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "trunk": 85,
+   "both": {
+    "hip": 85
+   },
+   "lumbar": 10
+  }
+ },
+ "equipment": [
+  {
+   "type": "roman_chair",
+   "hip": [
+    415,
+    410
+   ],
+   "foot": "ankle_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "erectors",
+   "label": "Разгибатели поясницы"
+  },
+  "glute_max",
+  "hamstrings"
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": [
+     440,
+     400
+    ],
+    "r": 230,
+    "start": 95,
+    "end": 15
+   },
+   "label": "вверх"
+  }
+ ]
+}

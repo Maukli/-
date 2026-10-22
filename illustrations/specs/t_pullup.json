@@ -1,0 +1,59 @@
+{
+ "title": "Подтягивания",
+ "hint": "Сначала опусти лопатки, потом тянись грудью",
+ "view": "back",
+ "floor": 650,
+ "pose": {
+  "pelvis": [
+   450,
+   385
+  ],
+  "both": {
+   "hip": 3,
+   "knee": 6
+  },
+  "l": {
+   "gripAt": [
+    315,
+    172
+   ]
+  },
+  "r": {
+   "gripAt": [
+    585,
+    172
+   ]
+  }
+ },
+ "equipment": [
+  {
+   "type": "pullup_bar",
+   "at": [
+    450,
+    170
+   ],
+   "w": 420
+  }
+ ],
+ "work": [
+  "lats",
+  "biceps",
+  "trap_lower",
+  "rhomboids"
+ ],
+ "arrows": [
+  {
+   "from": [
+    790,
+    440
+   ],
+   "to": [
+    790,
+    300
+   ],
+   "label": "к перекладине",
+   "labelSide": "left"
+  }
+ ],
+ "center": false
+}

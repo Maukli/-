@@ -1,0 +1,59 @@
+{
+ "title": "Наклон к ноге, носок на себя",
+ "hint": "Наклон от таза, спина ровная, носок на себя",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   400,
+   "floor"
+  ],
+  "trunk": 55,
+  "pelvisTilt": 8,
+  "lumbar": 0,
+  "thoracic": -6,
+  "neck": -10,
+  "l": {
+   "hip": 75,
+   "knee": 0,
+   "ankle": 25,
+   "handAt": [
+    440,
+    408
+   ],
+   "hand": "open"
+  },
+  "r": {
+   "hip": 55,
+   "knee": 42,
+   "ankle": 10,
+   "handAt": [
+    432,
+    400
+   ],
+   "hand": "open"
+  }
+ },
+ "stretch": [
+  {
+   "name": "hamstrings",
+   "side": "near",
+   "label": "Бицепс бедра"
+  },
+  {
+   "name": "gastrocnemius",
+   "side": "near",
+   "label": "Икроножная"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "pelvis",
+    "r": 180,
+    "start": -110,
+    "end": -60
+   },
+   "label": "наклон от таза"
+  }
+ ]
+}

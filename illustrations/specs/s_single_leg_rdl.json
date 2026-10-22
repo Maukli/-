@@ -1,0 +1,88 @@
+{
+ "title": "Румынская тяга на одной ноге",
+ "hint": "Наклон от таза, таз ровный, спина прямая",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   430,
+   380
+  ],
+  "trunk": 78,
+  "neck": -20,
+  "lumbar": -4,
+  "l": {
+   "footAt": [
+    450,
+    577
+   ],
+   "shoulder": 76,
+   "elbow": 0,
+   "hand": "fist"
+  },
+  "r": {
+   "hip": -6,
+   "knee": 0,
+   "ankle": 5,
+   "shoulder": 76,
+   "elbow": 0,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    445,
+    "floor"
+   ],
+   "trunk": 0,
+   "neck": 0,
+   "lumbar": 0,
+   "l": {
+    "footAt": null,
+    "hip": 0,
+    "knee": 4,
+    "ankle": 0,
+    "shoulder": 0
+   },
+   "r": {
+    "hip": -10,
+    "knee": 30,
+    "ankle": -10,
+    "shoulder": 0
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "hamstrings",
+   "side": "near",
+   "label": "Бицепс бедра"
+  },
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Ягодичные"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": [
+     430,
+     380
+    ],
+    "r": 200,
+    "start": -70,
+    "end": -20
+   },
+   "label": "наклон от таза"
+  }
+ ],
+ "center": false
+}

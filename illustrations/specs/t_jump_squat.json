@@ -1,0 +1,66 @@
+{
+ "title": "Приседания с выпрыгиванием",
+ "hint": "Взрывно вверх, приземление мягко сразу в присед",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   540,
+   "floor"
+  ],
+  "trunk": 38,
+  "neck": -14,
+  "both": {
+   "hip": 110,
+   "knee": 105,
+   "ankle": 30,
+   "shoulder": 80,
+   "elbow": 10,
+   "hand": "fist"
+  },
+  "r": {
+   "hip": 106,
+   "knee": 101
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    290,
+    350
+   ],
+   "trunk": 6,
+   "neck": 0,
+   "both": {
+    "hip": 4,
+    "knee": 8,
+    "ankle": -40,
+    "shoulder": -25,
+    "elbow": 10
+   },
+   "r": {
+    "hip": 2,
+    "knee": 10
+   }
+  }
+ },
+ "work": [
+  "quads",
+  "glute_max",
+  "gastrocnemius"
+ ],
+ "arrows": [
+  {
+   "from": [
+    390,
+    470
+   ],
+   "to": [
+    390,
+    330
+   ],
+   "label": "взрывно вверх",
+   "labelSide": "left"
+  }
+ ],
+ "center": false
+}

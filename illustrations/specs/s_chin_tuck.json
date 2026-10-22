@@ -1,0 +1,72 @@
+{
+ "title": "Ретракция подбородка",
+ "hint": "Подбородок назад, затылок вверх, держим 5-10 с",
+ "scale": 1.7,
+ "center": false,
+ "floor": 2000,
+ "equipment": [
+  {
+   "type": "floor",
+   "x": 0,
+   "y": 2000,
+   "w": 1
+  }
+ ],
+ "pose": {
+  "pelvis": [
+   420,
+   650
+  ],
+  "trunk": 0,
+  "neck": -8,
+  "head": 14,
+  "both": {
+   "shoulder": 0,
+   "elbow": 6,
+   "hip": 2,
+   "knee": 2,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "neck": 26,
+   "head": -26
+  }
+ },
+ "work": [
+  {
+   "name": "neck_flexors",
+   "label": "Глубокие сгибатели шеи"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "chin",
+    "dx": 150,
+    "dy": 10
+   },
+   "to": {
+    "at": "chin",
+    "dx": 70,
+    "dy": 10
+   },
+   "label": "подбородок назад",
+   "labelSide": "right"
+  },
+  {
+   "from": {
+    "at": "head",
+    "dx": -20,
+    "dy": -80
+   },
+   "to": {
+    "at": "head",
+    "dx": -20,
+    "dy": -140
+   },
+   "label": "затылок вверх"
+  }
+ ]
+}

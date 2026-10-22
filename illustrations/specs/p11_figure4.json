@@ -1,0 +1,73 @@
+{
+ "title": "Четвёрка лёжа",
+ "hint": "Лодыжка на колене, бедро тянем к груди",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   520,
+   542
+  ],
+  "rotate": -90,
+  "neck": 6,
+  "r": {
+   "hip": 110,
+   "knee": 90,
+   "ankle": 10,
+   "gripAt": [
+    497,
+    474
+   ]
+  },
+  "l": {
+   "footAt": [
+    490,
+    438
+   ],
+   "bend": -1,
+   "ankle": -30,
+   "lengths": {
+    "thigh": 0.7,
+    "shin": 0.85
+   },
+   "gripAt": [
+    497,
+    474
+   ]
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 150,
+   "y": 580,
+   "w": 600
+  }
+ ],
+ "stretch": [
+  {
+   "name": "piriformis",
+   "side": "near",
+   "label": "Грушевидная"
+  },
+  {
+   "name": "glute_max",
+   "side": "near",
+   "label": "Большая ягодичная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_far",
+    "dx": 30,
+    "dy": -10
+   },
+   "to": {
+    "at": "knee_far",
+    "dx": -30,
+    "dy": -40
+   },
+   "label": "к груди"
+  }
+ ]
+}

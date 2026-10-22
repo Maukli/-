@@ -1,0 +1,99 @@
+{
+ "title": "Отведение бедра в тренажёре",
+ "hint": "Спина прижата, колени разводим и сводим медленно",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   420
+  ],
+  "both": {
+   "hip": 84,
+   "knee": 75,
+   "lengths": {
+    "thigh": 0.85
+   },
+   "shoulder": 6,
+   "elbow": 12
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "hip": 75,
+    "knee": 75,
+    "lengths": {
+     "thigh": 0.2
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "machine_adductor",
+   "at": "pelvis",
+   "pads": []
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "knee_l",
+    "dx": 20,
+    "dy": -28
+   },
+   "to": {
+    "at": "knee_l",
+    "dx": 20,
+    "dy": 30
+   },
+   "w": 16,
+   "layer": "front"
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "knee_r",
+    "dx": -20,
+    "dy": -28
+   },
+   "to": {
+    "at": "knee_r",
+    "dx": -20,
+    "dy": 30
+   },
+   "w": 16,
+   "layer": "front"
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_med",
+   "side": "both",
+   "label": "Средняя ягодичная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    330,
+    500
+   ],
+   "to": [
+    250,
+    500
+   ],
+   "label": "развести"
+  },
+  {
+   "from": [
+    570,
+    500
+   ],
+   "to": [
+    650,
+    500
+   ]
+  }
+ ]
+}

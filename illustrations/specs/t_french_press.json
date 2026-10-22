@@ -1,0 +1,69 @@
+{
+ "title": "Французский жим",
+ "hint": "Плечи неподвижны, гриф ко лбу только локтями",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   470,
+   446
+  ],
+  "rotate": -90,
+  "neck": 6,
+  "l": {
+   "shoulder": 96,
+   "elbow": 88,
+   "hand": "fist",
+   "footAt": [
+    574,
+    567
+   ]
+  },
+  "r": {
+   "shoulder": 96,
+   "elbow": 88,
+   "hand": "fist",
+   "footAt": [
+    548,
+    567
+   ]
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "elbow": 4
+   },
+   "r": {
+    "elbow": 4
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 220,
+   "y": 482,
+   "w": 320
+  },
+  {
+   "type": "barbell",
+   "at": "hand_near",
+   "r": 40
+  }
+ ],
+ "work": [
+  "triceps"
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "elbow_near",
+    "r": 120,
+    "start": -95,
+    "end": -175
+   },
+   "label": "ко лбу и обратно",
+   "both": true
+  }
+ ]
+}

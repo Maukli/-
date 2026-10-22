@@ -1,0 +1,67 @@
+{
+ "title": "Шаги в сторону с резиной",
+ "hint": "Резина всегда натянута, колени не сводим",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   430,
+   "floor"
+  ],
+  "both": {
+   "hip": 13,
+   "knee": 10,
+   "hand": "open",
+   "lengths": {
+    "thigh": 0.74
+   },
+   "shoulder": 14,
+   "elbow": 12
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    400,
+    "floor"
+   ],
+   "both": {
+    "hip": 6
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "band",
+   "from": {
+    "at": "knee_l",
+    "dy": -26
+   },
+   "to": {
+    "at": "knee_r",
+    "dy": -26
+   }
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_med",
+   "side": "both",
+   "label": "Средняя ягодичная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    560,
+    615
+   ],
+   "to": [
+    700,
+    615
+   ],
+   "label": "шаг в сторону",
+   "labelSide": "below"
+  }
+ ]
+}

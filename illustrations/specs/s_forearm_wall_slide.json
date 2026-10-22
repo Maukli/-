@@ -1,0 +1,71 @@
+{
+ "title": "Скольжение предплечьями по стене",
+ "hint": "Давим предплечьями в стену и ведём их вверх",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   462,
+   "floor"
+  ],
+  "trunk": 6,
+  "neck": -4,
+  "both": {
+   "hip": -4,
+   "knee": 4,
+   "ankle": 4,
+   "shoulder": 146,
+   "elbow": 28,
+   "hand": "open",
+   "wrist": -10
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    468,
+    "floor"
+   ],
+   "trunk": 0,
+   "both": {
+    "hip": 0,
+    "ankle": 0,
+    "shoulder": 90,
+    "elbow": 90
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "wall",
+   "x": 545,
+   "top": 120,
+   "side": "right"
+  }
+ ],
+ "work": [
+  {
+   "name": "serratus",
+   "label": "Передняя зубчатая"
+  },
+  {
+   "name": "trap_lower",
+   "label": "Нижняя трапеция"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    600,
+    330
+   ],
+   "to": [
+    600,
+    190
+   ],
+   "both": true,
+   "label": "вверх и вниз",
+   "labelSide": "right"
+  }
+ ],
+ "scale": 0.85
+}

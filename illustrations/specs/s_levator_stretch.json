@@ -1,0 +1,100 @@
+{
+ "title": "Растяжка мышцы, поднимающей лопатку",
+ "hint": "Нос к противоположной подмышке, рукой мягко вниз",
+ "view": "front",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   440
+  ],
+  "neck": 36,
+  "head": 12,
+  "l": {
+   "hip": 12,
+   "knee": 0,
+   "handAt": {
+    "at": "head",
+    "dx": -26,
+    "dy": -10
+   },
+   "hand": "open",
+   "lengths": {
+    "thigh": 0.3
+   }
+  },
+  "r": {
+   "hip": 12,
+   "knee": 0,
+   "shoulder": 18,
+   "elbow": 0,
+   "hand": "fist",
+   "lengths": {
+    "thigh": 0.3
+   }
+  },
+  "order": [
+   "armL",
+   "body",
+   "armR"
+  ]
+ },
+ "equipment": [
+  {
+   "type": "box",
+   "x": 335,
+   "y": 450,
+   "w": 230,
+   "h": 150
+  }
+ ],
+ "stretch": [
+  {
+   "name": "trap_upper",
+   "side": "r",
+   "label": "Мышца, поднимающая лопатку (под трапецией)"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "head",
+    "dx": 50,
+    "dy": -55
+   },
+   "to": {
+    "at": "head",
+    "dx": 95,
+    "dy": 15
+   },
+   "bend": 0.25,
+   "label": "к подмышке",
+   "labelSide": "right"
+  },
+  {
+   "from": {
+    "at": "shoulder_r",
+    "dx": -30,
+    "dy": -40
+   },
+   "to": {
+    "at": "shoulder_r",
+    "dx": -30,
+    "dy": 10
+   },
+   "label": "плечо вниз",
+   "labelSide": "left"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Голова повёрнута к левой подмышке",
+   "at": [
+    450,
+    630
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

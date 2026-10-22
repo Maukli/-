@@ -1,0 +1,68 @@
+{
+ "title": "Раскатка стопы на мяче",
+ "hint": "Катаем от пятки к пальцам, по 2 минуты на стопу",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   430,
+   358
+  ],
+  "trunk": 2,
+  "near": "l",
+  "l": {
+   "hip": 12,
+   "knee": 20,
+   "footAt": [
+    518,
+    541
+   ],
+   "ankle": 2,
+   "shoulder": 5,
+   "elbow": 10,
+   "hand": "open"
+  },
+  "r": {
+   "hip": 0,
+   "knee": 2,
+   "footAt": [
+    440,
+    567
+   ],
+   "shoulder": -5,
+   "elbow": 10,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "ball",
+   "at": [
+    528,
+    577
+   ],
+   "r": 13
+  }
+ ],
+ "stretch": [
+  {
+   "name": "foot",
+   "side": "near",
+   "label": "Подошвенная фасция"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    475,
+    615
+   ],
+   "to": [
+    585,
+    615
+   ],
+   "both": true,
+   "label": "пятка - пальцы",
+   "labelSide": "below"
+  }
+ ]
+}

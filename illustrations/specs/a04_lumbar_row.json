@@ -1,0 +1,57 @@
+{
+ "title": "Тяга в наклоне с горбом в пояснице",
+ "hint": "Таз подкручен, поясница круглая, грудной прямой",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   380,
+   "floor"
+  ],
+  "trunk": 55,
+  "pelvisTilt": -25,
+  "lumbar": 38,
+  "thoracic": -8,
+  "neck": -15,
+  "both": {
+   "hip": 82,
+   "knee": 48,
+   "ankle": 22,
+   "shoulder": -28,
+   "elbow": 100
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 55,
+    "elbow": 3
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  "rectus_abdominis",
+  "rhomboids",
+  "trap_middle"
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_near",
+    "dx": 70,
+    "dy": 80
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 70,
+    "dy": 0
+   },
+   "label": "к поясу"
+  }
+ ]
+}

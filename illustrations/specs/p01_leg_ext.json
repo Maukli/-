@@ -1,0 +1,63 @@
+{
+ "title": "Разгибание ног в тренажёре",
+ "hint": "Разгибаем колени до прямых, таз прижат к сиденью",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   380,
+   430
+  ],
+  "trunk": -12,
+  "neck": 8,
+  "both": {
+   "hip": 80,
+   "knee": 4,
+   "ankle": 10,
+   "gripAt": [
+    395,
+    462
+   ],
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "knee": 90
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "machine_leg_ext",
+   "seat": [
+    495,
+    455
+   ],
+   "axis": "knee_near",
+   "pad": {
+    "at": "ankle_near",
+    "dx": -20,
+    "dy": -20
+   },
+   "backX": 330
+  }
+ ],
+ "work": [
+  {
+   "name": "rectus_femoris",
+   "label": "Прямая мышца бедра"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "knee_near",
+    "r": 150,
+    "start": 70,
+    "end": 10
+   },
+   "label": "разгибаем"
+  }
+ ]
+}

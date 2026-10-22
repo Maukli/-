@@ -1,0 +1,59 @@
+{
+ "title": "Растяжка передней поверхности бедра",
+ "hint": "Таз подкручен, поясница не прогибается",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   420,
+   "floor"
+  ],
+  "trunk": -30,
+  "pelvisTilt": -10,
+  "lumbar": 4,
+  "neck": 12,
+  "both": {
+   "hip": 42,
+   "knee": 158,
+   "ankle": -80,
+   "handAt": [
+    325,
+    590
+   ],
+   "wrist": -80,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 220,
+   "y": 580,
+   "w": 460
+  }
+ ],
+ "stretch": [
+  {
+   "name": "rectus_femoris",
+   "side": "near",
+   "label": "Прямая мышца бедра"
+  },
+  {
+   "name": "iliopsoas",
+   "side": "near"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": [
+     430,
+     540
+    ],
+    "r": 210,
+    "start": -95,
+    "end": -125
+   },
+   "label": "корпус назад"
+  }
+ ]
+}

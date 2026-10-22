@@ -1,0 +1,92 @@
+{
+ "title": "Прыжки на тумбу",
+ "hint": "Мах руками и прыжок, мягко в полуприсед, вниз шагом",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   555,
+   335
+  ],
+  "trunk": 26,
+  "neck": -8,
+  "both": {
+   "footAt": [
+    590,
+    457
+   ],
+   "shoulder": 55,
+   "elbow": 20,
+   "hand": "fist"
+  },
+  "r": {
+   "footAt": [
+    578,
+    457
+   ],
+   "shoulder": 50
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    250,
+    470
+   ],
+   "trunk": 42,
+   "neck": -16,
+   "both": {
+    "footAt": [
+     290,
+     577
+    ],
+    "shoulder": -55,
+    "elbow": 10
+   },
+   "r": {
+    "footAt": [
+     280,
+     577
+    ],
+    "shoulder": -50
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "box",
+   "x": 500,
+   "y": 480,
+   "w": 200,
+   "h": 120
+  }
+ ],
+ "work": [
+  {
+   "name": "quads",
+   "label": "Квадрицепс"
+  },
+  {
+   "name": "glute_max",
+   "label": "Ягодичные"
+  },
+  {
+   "name": "gastrocnemius",
+   "label": "Икроножная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    340,
+    330
+   ],
+   "to": [
+    500,
+    240
+   ],
+   "bend": -0.3,
+   "label": "прыжок двумя ногами",
+   "labelSide": "left"
+  }
+ ]
+}

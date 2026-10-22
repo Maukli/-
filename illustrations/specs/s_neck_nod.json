@@ -1,0 +1,9 @@
+{ "title": "Кивок головой лёжа", "hint": "Затылок на полу, подбородок мягко вниз, держим 10 с",
+  "floor": 580,
+  "pose": { "pelvis": [520, "floor"], "rotate": -90, "neck": 0, "head": 18,
+    "both": { "hip": 55, "knee": 105, "ankle": 10, "shoulder": -6, "elbow": 4, "hand": "open" } },
+  "ghost": { "pose": { "head": 0 } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 568, "w": 640 } ],
+  "work": [ { "name": "neck_flexors", "label": "Глубокие сгибатели шеи" } ],
+  "arrows": [ { "arc": { "center": "head", "r": 70, "start": -150, "end": -60 }, "label": "кивок" } ]
+}

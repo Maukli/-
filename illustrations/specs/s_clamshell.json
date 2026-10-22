@@ -1,0 +1,88 @@
+{
+ "title": "Ракушка",
+ "hint": "Стопы вместе, таз не заваливаем назад",
+ "view": "front",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   500,
+   520
+  ],
+  "rotate": -90,
+  "l": {
+   "shoulder": 20,
+   "elbow": -120,
+   "hand": "open",
+   "lengths": {
+    "fore": 0.75,
+    "thigh": 0.78,
+    "shin": 0.45
+   },
+   "hip": 32,
+   "knee": 95
+  },
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "shoulder": 178,
+   "elbow": 0,
+   "hand": "open",
+   "lengths": {
+    "thigh": 0.78,
+    "shin": 0.45
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "footAt": null,
+    "hip": 3,
+    "knee": 0
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  }
+ ],
+ "work": [
+  {
+   "name": "glute_med",
+   "side": "l",
+   "label": "Средняя ягодичная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_l",
+    "dx": 45,
+    "dy": 45
+   },
+   "to": {
+    "at": "knee_l",
+    "dx": 30,
+    "dy": -25
+   },
+   "bend": 0.2,
+   "label": "колено вверх",
+   "labelSide": "right"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Бёдра согнуты под 45, колени под 90, стопы сзади вместе",
+   "at": [
+    450,
+    620
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

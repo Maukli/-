@@ -1,0 +1,9 @@
+{ "title": "Сгибание шеи с блином", "hint": "Кивок подбородком, корпус неподвижен",
+  "floor": 600,
+  "pose": { "pelvis": [400, "floor"], "trunk": 0, "neck": 28, "head": 16,
+    "both": { "shoulder": 80, "elbow": 5, "hip": 2, "knee": 3, "hand": "fist" }, "r": { "hip": -2 } },
+  "ghost": { "pose": { "neck": 0, "head": 0 } },
+  "equipment": [ { "type": "plate", "at": "hand_near", "r": 48, "layer": "front" } ],
+  "work": [ { "name": "neck_flexors", "label": "Глубокие сгибатели шеи" } ],
+  "arrows": [ { "arc": { "center": "neck", "r": 95, "start": -60, "end": -10 }, "label": "кивок вниз" } ]
+}

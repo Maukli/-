@@ -1,0 +1,81 @@
+{
+ "title": "Растяжка икр у стены",
+ "hint": "Пятка на полу, колено тянем к стене",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   465,
+   380
+  ],
+  "trunk": 15,
+  "neck": 0,
+  "l": {
+   "footAt": [
+    545,
+    562
+   ],
+   "ankle": 45,
+   "handAt": [
+    596,
+    300
+   ],
+   "wrist": -75,
+   "hand": "open"
+  },
+  "r": {
+   "footAt": [
+    380,
+    567
+   ],
+   "handAt": [
+    592,
+    312
+   ],
+   "wrist": -75,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "wall",
+   "x": 605,
+   "top": 120,
+   "side": "right"
+  },
+  {
+   "type": "floor",
+   "x": 150,
+   "y": 590,
+   "w": 455
+  }
+ ],
+ "stretch": [
+  {
+   "name": "soleus",
+   "side": "near",
+   "label": "Камбаловидная",
+   "labelSide": "right"
+  },
+  {
+   "name": "gastrocnemius",
+   "side": "near",
+   "label": "Икроножная",
+   "labelSide": "left"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_near",
+    "dx": 10,
+    "dy": -10
+   },
+   "to": {
+    "at": "knee_near",
+    "dx": 60,
+    "dy": -10
+   },
+   "label": "колено к стене"
+  }
+ ]
+}

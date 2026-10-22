@@ -1,0 +1,61 @@
+{
+ "title": "Мёртвый жук",
+ "hint": "Поясница прижата к полу все повторы",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   500,
+   545
+  ],
+  "rotate": -90,
+  "pelvisTilt": -8,
+  "neck": 6,
+  "l": {
+   "hip": 15,
+   "knee": 5,
+   "ankle": -20,
+   "shoulder": 90,
+   "elbow": 2,
+   "hand": "open"
+  },
+  "r": {
+   "hip": 90,
+   "knee": 90,
+   "ankle": -10,
+   "shoulder": 160,
+   "elbow": 2,
+   "hand": "open"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "hip": 90,
+    "knee": 90
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  }
+ ],
+ "work": [
+  "rectus_abdominis",
+  "obliques"
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "pelvis",
+    "r": 200,
+    "start": -70,
+    "end": -20
+   },
+   "label": "нога вниз"
+  }
+ ]
+}

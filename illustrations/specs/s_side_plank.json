@@ -1,0 +1,69 @@
+{
+ "title": "Боковая планка",
+ "hint": "Упор на предплечье под плечом, тело в одну линию",
+ "view": "front",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   480,
+   "floor"
+  ],
+  "rotate": -70,
+  "l": {
+   "hip": 0,
+   "knee": 0,
+   "shoulder": 8,
+   "elbow": 0,
+   "hand": "open"
+  },
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "shoulder": 70,
+   "elbow": 0,
+   "hand": "fist",
+   "lengths": {
+    "fore": 0.2,
+    "hand": 0.3
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "l": {
+    "hip": 28
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  }
+ ],
+ "work": [
+  {
+   "name": "obliques",
+   "label": "Косые мышцы живота"
+  },
+  {
+   "name": "glute_med",
+   "side": "l",
+   "label": "Средняя ягодичная"
+  }
+ ],
+ "arrows": [],
+ "notes": [
+  {
+   "text": "Пунктир: вариант с отведением верхней ноги",
+   "at": [
+    450,
+    625
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "title": "Румынская тяга",
+ "hint": "Таз назад, гриф скользит по бёдрам, спина прямая",
+ "floor": 610,
+ "pose": {
+  "pelvis": [
+   378,
+   412
+  ],
+  "trunk": 72,
+  "neck": -22,
+  "lumbar": -4,
+  "both": {
+   "footAt": [
+    470,
+    587
+   ],
+   "shoulder": 70,
+   "elbow": 0,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    455,
+    "floor"
+   ],
+   "trunk": 0,
+   "neck": 0,
+   "lumbar": 0,
+   "both": {
+    "footAt": null,
+    "gripAt": null,
+    "hip": 0,
+    "knee": 4,
+    "ankle": 0,
+    "shoulder": 0,
+    "elbow": 0
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "barbell",
+   "at": "hand_near",
+   "r": 57
+  }
+ ],
+ "work": [
+  "hamstrings",
+  "glute_max",
+  "erectors"
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": [
+     378,
+     412
+    ],
+    "r": 215,
+    "start": -15,
+    "end": -68
+   },
+   "label": "таз вперёд, встать"
+  }
+ ],
+ "center": false
+}

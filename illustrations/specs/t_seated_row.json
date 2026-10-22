@@ -1,0 +1,78 @@
+{
+ "title": "Горизонтальная тяга блока",
+ "hint": "Спина прямая, локти вдоль корпуса, в конце свести лопатки",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   330,
+   498
+  ],
+  "trunk": -4,
+  "neck": -4,
+  "both": {
+   "hip": 80,
+   "knee": 30,
+   "footAt": [
+    560,
+    545
+   ],
+   "gripAt": {
+    "at": "belly",
+    "dx": 30,
+    "dy": 0
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "trunk": 12,
+   "both": {
+    "gripAt": [
+     535,
+     440
+    ]
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 200,
+   "y": 512,
+   "w": 360
+  },
+  {
+   "type": "box",
+   "x": 580,
+   "y": 470,
+   "w": 22,
+   "h": 130
+  },
+  {
+   "type": "cable_low",
+   "x": 760,
+   "to": "hand_near"
+  }
+ ],
+ "work": [
+  "lats",
+  "rhomboids",
+  "trap_middle",
+  "biceps"
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_near",
+    "dx": 150,
+    "dy": -40
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 30,
+    "dy": -40
+   },
+   "label": "к животу"
+  }
+ ]
+}

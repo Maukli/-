@@ -49,6 +49,21 @@ function smoothClosed(pts, k = 1) {
   }
   return d + 'Z';
 }
+// точки плотной выборки по пути из smoothClosed/smoothOpen (M и C), для проверок по настоящему контуру
+function pathPts(d, per = 5) {
+  const nums = d.match(/-?[\d.]+/g).map(Number), out = [];
+  let p = [nums[0], nums[1]];
+  out.push(p);
+  for (let i = 2; i + 5 < nums.length; i += 6) {
+    const c1 = [nums[i], nums[i + 1]], c2 = [nums[i + 2], nums[i + 3]], q = [nums[i + 4], nums[i + 5]];
+    for (let j = 1; j <= per; j++) {
+      const t = j / per, u = 1 - t;
+      out.push([0, 1].map(k => u * u * u * p[k] + 3 * u * u * t * c1[k] + 3 * u * t * t * c2[k] + t * t * t * q[k]));
+    }
+    p = q;
+  }
+  return out;
+}
 function smoothOpen(pts, k = 1) {
   pts = dedupe(pts);
   const n = pts.length;
@@ -207,7 +222,7 @@ const PROF_FRONT = {
 // контуры frame-сегментов (u вверх/вдоль, v вперёд/вправо)
 const PELVIS_SIDE = [[38, -24], [26, -30.5], [10, -37], [-6, -38.5], [-18, -33], [-25, -19], [-26, 0], [-18, 13], [-4, 21], [12, 23.5], [27, 23.5], [38, 21]];
 // голова в профиль: затылок, темя, лоб, надбровье, нос, губы, подбородок (масштаб 1.07 к росту 440)
-const HEAD_SIDE = [[-3, -13], [8, -21], [24, -23], [38, -17], [46, -4], [46, 8], [41, 17], [33, 21.5], [28, 22.5], [25, 22], [19, 27.5], [16, 26.5], [14, 24.2], [11, 24.8], [8.5, 23.2], [5.5, 24], [1, 23.2], [-4, 21], [-8, 15], [-8.5, 8], [-4, 3]].map(([u, v]) => [u * 1.07, v * 1.07]);
+const HEAD_SIDE = [[-3, -13], [6, -20], [17, -23.5], [29, -22.2], [38.5, -16.5], [44.6, -7], [46.4, 3], [44.2, 12.5], [38.8, 19.2], [32, 22.6], [27, 23.4], [25, 23], [21.6, 26.2], [18.6, 29.4], [16.6, 29.1], [15, 26.9], [13.6, 25.4], [11.6, 25.6], [9.6, 24.9], [7.8, 25.1], [5.8, 24], [3, 24.8], [-0.2, 23.6], [-3.2, 21], [-6.6, 16], [-8.2, 9.5], [-4, 3]].map(([u, v]) => [u * 1.07, v * 1.07]);
 const FOOT_SIDE = [[-9, 7], [-15, -5], [-15.5, -15], [-10, -23], [8, -21.5], [24, -20.5], [40, -23], [49, -22.5], [54, -18], [50, -13], [40, -10.5], [24, -3], [12, 4], [6, 9]];
 const ANKLE_H = 23; // высота голеностопа над полом
 const mirrorPts = half => [...half, ...half.slice().reverse().map(([u, v]) => [u, -v])];
@@ -311,7 +326,8 @@ function buildSide(spec, xf) {
     let thighA = 90 + T - (J.hip || 0);
     let shinA = thighA + (J.knee || 0);
     if (J.footAt) [thighA, shinA] = ik2(hip, lt, ls, loc(J.footAt), -1, J.bend === -1);
-    const footA = shinA - 90 - (J.ankle || 0);
+    // стопа по footAt без явного ankle ставится ровно на пол (подошва горизонтальна на холсте)
+    const footA = J.footAt && J.ankle == null ? ((P.facing || 'right') === 'left' ? (P.rotate || 0) : -(P.rotate || 0)) : shinA - 90 - (J.ankle || 0);
     const up = add_({ name: 'upper_' + s, side: s, A: shoulder, ang: armA, len: lu, prof: PROF.upper, antSign: -1, capA: 0.85, capB: 0.8 });
     const fo = add_({ name: 'fore_' + s, side: s, A: up.B, ang: foreA, len: lf, prof: PROF.fore, antSign: -1, capA: 0.8, capB: 0.7 });
     const fist = J.hand ? J.hand === 'fist' : !!J.gripAt;
@@ -319,7 +335,7 @@ function buildSide(spec, xf) {
     const th = add_({ name: 'thigh_' + s, side: s, A: hip, ang: thighA, len: lt, prof: PROF.thigh, antSign: -1, capA: 0.9, capB: 0.6 });
     const sn = add_({ name: 'shin_' + s, side: s, A: th.B, ang: shinA, len: ls, prof: PROF.shin, antSign: -1, capA: 0.8, capB: 0.6 });
     add_({ name: 'foot_' + s, side: s, kind: 'frame', A: sn.B, ang: footA, antSign: -1, pts: FOOT_SIDE });
-    segs['_j_' + s] = { elbow: normA(armA - foreA), knee: normA(shinA - thighA), hip: normA((90 + T) - thighA) };
+    segs['_j_' + s] = { elbow: normA(armA - foreA), knee: normA(shinA - thighA), hip: normA((90 + T) - thighA), shoulder: normA(90 + chestLean - armA) };
   }
   const n = near, f = far;
   const clusters = [
@@ -338,7 +354,7 @@ function buildSide(spec, xf) {
     if (s === near && j.hip > 95) creases.push({ seg: 'thigh_' + s, side: 'ant', t0: 0.12, t1: 0.75 });
   }
   const details = [
-    { kind: 'ear', seg: 'head', u: 13, v: -3 },
+    { kind: 'ear', seg: 'head', u: 18.5, v: -5 },
   ];
   // именованные точки
   const pts = Object.assign({}, early, { nose: framePt(segs.head, 20.5, 29.5), chin: framePt(segs.head, -4.5, 22.5) });
@@ -417,8 +433,6 @@ function buildFront(spec, xf, back) {
     if (j.elbow > 70) creases.push({ seg: 'fore_' + s, side: 'med', t0: 0.1, t1: 0.6 });
   }
   const details = back ? [] : [{ kind: 'earF', seg: 'head', u: 4, v: 23 }, { kind: 'earF', seg: 'head', u: 4, v: -23 }];
-  // большой палец на открытой кисти (в фас виден спереди, со спины не виден)
-  if (!back) for (const s of ['l', 'r']) if (segs['hand_' + s].kind === 'frame') details.push({ kind: 'thumb', seg: 'hand_' + s });
   if (back) details.push({ kind: 'earF', seg: 'head', u: 4, v: 23 }, { kind: 'earF', seg: 'head', u: 4, v: -23 });
   const pts = Object.assign({}, early, { chin: framePt(segs.head, -10, 0) });
   for (const s of ['l', 'r']) {
@@ -475,7 +489,7 @@ function shapeKit(F, sideKey, sym) {
     return A.concat(B.reverse());
   }
   return {
-    S, segName,
+    S, segName, joint: F.segs['_j_' + sideKey] || {},
     band: (n, t0, t1, fA, fB, o) => gband((u, f) => segPt(S(n), lerp(t0, t1, u), f), fA, fB, o),
     chain: (parts, fA, fB, o) => {
       const ws = parts.map(([n, a, b]) => Math.abs(b - a) * S(n).len), tot = ws.reduce((x, y) => x + y, 0);
@@ -517,11 +531,12 @@ function shapeKit(F, sideKey, sym) {
   };
 }
 
-// дельта шапкой: широкая и круглая над головкой плеча (t от -0.32 до 0.1), сужается к бугристости tEnd
+// дельта шапкой: широкая и круглая над головкой плеча (t от -0.36 до 0.06 на всю ширину руки),
+// держит ширину до середины и сужается только у бугристости tEnd, конец тупой (не капля)
 function deltCap(k, tEnd) {
   const e = tEnd;
-  return k.free([['upper', -0.34, 0], ['upper', -0.24, 1.15], ['upper', 0.04, 1.22], ['upper', e * 0.5, 1.02], ['upper', e * 0.78, 0.55], ['upper', e, 0.04],
-    ['upper', e * 0.78, -0.5], ['upper', e * 0.5, -1.0], ['upper', 0.04, -1.22], ['upper', -0.24, -1.15]]);
+  const half = [['upper', -0.3, 0.9], ['upper', -0.14, 1.25], ['upper', 0.06, 1.25], ['upper', e * 0.5, 1.15], ['upper', e * 0.72, 0.9], ['upper', e * 0.9, 0.48], ['upper', e, 0.16]];
+  return k.free([['upper', -0.36, 0], ...half, ...half.slice().reverse().map(([n, t, v]) => [n, t, -v])]);
 }
 const SIDE_DEFS = {
   // дельта: только головка плеча (верхняя треть), грудная: передний верх грудной клетки перед плечом
@@ -529,9 +544,14 @@ const SIDE_DEFS = {
   deltoid: k => [{ segs: ['upper'], pts: deltCap(k, 0.42) }],
   // грудная: передний верх грудной клетки и переход на головку плечевой кости. Часть на плече рисуется
   // в слое руки поверх неё (top), поэтому грудная видна в жимах, где рука закрывает грудную клетку
-  pecs: k => [
-    { segs: ['chest'], pts: k.free([['chest', 0.95, 0.45], ['chest', 0.95, 1.15], ['chest', 0.7, 1.2], ['chest', 0.42, 1.15], ['chest', 0.32, 0.85], ['chest', 0.4, 0.45], ['chest', 0.6, 0.22], ['chest', 0.82, 0.22]]) },
-    { segs: ['upper'], top: true, pts: k.free([['upper', -0.06, 0.3], ['upper', -0.04, 1.15], ['upper', 0.1, 1.2], ['upper', 0.2, 1.1], ['upper', 0.21, 0.75], ['upper', 0.13, 0.35]]) }],
+  pecs: k => {
+    const out = [{ segs: ['chest'], pts: k.free([['chest', 0.97, 0.3], ['chest', 0.97, 1.2], ['chest', 0.72, 1.25], ['chest', 0.42, 1.22], ['chest', 0.27, 0.95], ['chest', 0.28, 0.45], ['chest', 0.45, 0.08], ['chest', 0.7, 0.02], ['chest', 0.86, 0.1]]) }];
+    // жимовые положения (плечо согнуто больше 45): рука закрывает грудную клетку, поэтому грудная заходит
+    // на основание плеча со стороны подмышки (передняя подмышечная складка, задняя сторона согнутого плеча)
+    // и рисуется поверх дельты (top): грудная остаётся видна и одной массой переходит с груди на плечо
+    if ((k.joint.shoulder ?? 0) > 45) out.push({ segs: ['upper'], top: true, pts: k.free([['upper', -0.1, -0.15], ['upper', -0.12, -1.25], ['upper', 0.08, -1.3], ['upper', 0.22, -1.2], ['upper', 0.27, -0.8], ['upper', 0.2, -0.4], ['upper', 0.06, -0.12]]) });
+    return out;
+  },
   lats: k => [{ segs: ['abd', 'chest'], pts: k.free([['abd', 0.2, -1.1], ['abd', 0.75, -1.1], ['chest', 0.3, -1.1], ['chest', 0.6, -0.95], ['chest', 0.8, -0.3], ['chest', 0.72, 0.15], ['chest', 0.5, 0.1], ['chest', 0.15, -0.35], ['abd', 0.6, -0.65]]) }],
   // верх трапеции: сзади шеи от затылка к надплечью; сгибатели шеи (ГКС): спереди, от уха к грудине
   trap_upper: k => [{ segs: ['neck', 'chest'], pts: k.free([['neck', 0.98, -1.15], ['neck', 0.6, -0.5], ['neck', 0.2, -0.25], ['chest', 0.99, -0.05], ['chest', 0.92, -0.35], ['chest', 0.86, -0.75], ['chest', 0.9, -1.15], ['neck', 0.3, -1.2]]) }],
@@ -549,21 +569,25 @@ const SIDE_DEFS = {
   },
   // прямая мышца живота: полоса вдоль передней стенки от лобка до грудины
   // прямая мышца живота: лента ровной ширины вдоль передней стенки от лобка (ось живота продлена вниз) до рёбер
-  rectus_abdominis: k => [{ segs: ['pelvis', 'abd', 'chest'], pts: k.chain([['abd', -0.55, 1], ['chest', 0, 0.42]], 1.15, 0.6, { edge: 'a', ta: 0.06, tb: 0.22 }) }],
+  rectus_abdominis: k => [{ segs: ['pelvis', 'abd', 'chest'], pts: k.chain([['abd', -0.55, 1], ['chest', 0, 0.42]], 1.15, 0.45, { edge: 'a', ta: 0.06, tb: 0.22 }) }],
   // наружная косая: весь бок живота от гребня таза до нижних рёбер, между прямой мышцей и широчайшей
-  obliques: k => [{ segs: ['pelvis', 'abd', 'chest'], pts: k.free([['pelvis', 36, -17], ['abd', 0.3, -0.6], ['abd', 0.75, -0.62], ['chest', 0.18, -0.58], ['chest', 0.42, -0.25], ['chest', 0.5, 0.15], ['chest', 0.38, 0.45], ['chest', 0.12, 0.55], ['abd', 0.6, 0.55], ['abd', 0.2, 0.58], ['pelvis', 33, 13], ['pelvis', 38.5, -2]]) }],
-  erectors: k => [{ segs: ['pelvis', 'abd', 'chest'], pts: k.chain([['abd', 0, 1], ['chest', 0, 0.78]], -1.1, -0.45, { edge: 'a', ta: 0.18, tb: 0.5 }) }],
+  obliques: k => [{ segs: ['pelvis', 'abd', 'chest'], pts: k.free([['pelvis', 36, -14], ['abd', 0.3, -0.6], ['abd', 0.75, -0.62], ['chest', 0.18, -0.58], ['chest', 0.42, -0.25], ['chest', 0.5, 0.15], ['chest', 0.4, 0.4], ['chest', 0.12, 0.44], ['abd', 0.6, 0.44], ['abd', 0.2, 0.44], ['pelvis', 34, 8], ['pelvis', 38.5, -3]]) }],
+  // разгибатели: от крестца (низ доходит до верхнего края большой ягодичной, без разрыва) до грудного отдела
+  erectors: k => [{ segs: ['pelvis', 'abd', 'chest'], pts: k.chain([['abd', -0.17, 1], ['chest', 0, 0.78]], -1.1, -0.45, { edge: 'a', ta: 0.14, tb: 0.5 }) }],
   neck_flexors: k => [{ segs: ['neck', 'chest', 'head'], pts: k.tube([['head', 5, -5], ['neck', 0.72, 0.15], ['neck', 0.3, 0.62], ['chest', 0.97, 0.98]], [8, 10, 9, 7]) }],
   biceps: k => [{ segs: ['upper'], pts: k.band('upper', 0.34, 0.92, 1.1, 0.0, { edge: 'a', ta: 0.5, tb: 0.3 }) }],
   triceps: k => [{ segs: ['upper'], pts: k.band('upper', 0.3, 0.94, -1.1, -0.05, { edge: 'a', ta: 0.4, tb: 0.3 }) }],
   forearm: k => [{ segs: ['fore'], pts: k.band('fore', -0.08, 0.8, -1.1, 1.1, { ta: 0.08, tb: 0.75 }) }],
-  glute_max: k => [{ segs: ['pelvis', 'thigh'], pts: k.free([['pelvis', 26, -27], ['pelvis', 10, -34], ['pelvis', -6, -37], ['pelvis', -19, -31], ['thigh', 0.33, -1.1], ['thigh', 0.36, -0.6], ['thigh', 0.2, -0.35], ['pelvis', 4, -14], ['pelvis', 16, -16]]) }],
+  // большая ягодичная: передний край на бедре не дальше v -0.3 (сбоку остаётся за висящей рукой), низ по ягодичной складке
+  glute_max: k => [{ segs: ['pelvis', 'thigh'], pts: k.free([['pelvis', 26, -27], ['pelvis', 10, -34], ['pelvis', -6, -37], ['pelvis', -19, -31], ['thigh', 0.25, -1.05], ['thigh', 0.3, -0.55], ['thigh', 0.2, -0.32], ['pelvis', 4, -14], ['pelvis', 16, -16]]) }],
   // средняя ягодичная: крыло таза под гребнем, веером к большому вертелу; грушевидная ниже, под большой ягодичной
-  glute_med: k => [{ segs: ['pelvis'], pts: k.free([['pelvis', 39, -17], ['pelvis', 39, -1], ['pelvis', 35, 10], ['pelvis', 25, 12], ['pelvis', 13, 4], ['pelvis', 9, -6], ['pelvis', 17, -15], ['pelvis', 29, -21]]) }],
+  glute_med: k => [{ segs: ['pelvis'], pts: k.free([['pelvis', 39, -17], ['pelvis', 39.5, -2], ['pelvis', 36, 7], ['pelvis', 26, 9], ['pelvis', 13, 3], ['pelvis', 9, -6], ['pelvis', 17, -15], ['pelvis', 29, -21]]) }],
   glute_min: k => [{ deep: true, segs: ['pelvis'], pts: k.free([['pelvis', 27, -6], ['pelvis', 25, 7], ['pelvis', 14, 8], ['pelvis', 8, -1], ['pelvis', 15, -9]]) }],
   tfl: k => [{ segs: ['pelvis', 'thigh'], pts: k.tube([['pelvis', 28, 17], ['pelvis', 10, 14], ['thigh', 0.22, 0.25], ['thigh', 0.4, 0.1]], [10, 14, 12, 6]) }],
   piriformis: k => [{ deep: true, segs: ['pelvis'], pts: k.tube([['pelvis', 15, -32], ['pelvis', 8, -21], ['pelvis', 2, -9]], [11, 9, 6]) }],
-  iliopsoas: k => [{ deep: true, segs: ['pelvis', 'abd', 'thigh'], pts: k.tube([['abd', 0.7, -0.15], ['abd', 0.25, 0.45], ['pelvis', 28, 16.5], ['pelvis', 14, 17], ['pelvis', 2, 16], ['thigh', 0.2, 0.25]], [9, 11, 11, 11, 10, 7]) }],
+  // подвздошно-поясничная одной лентой: поясничная часть над тазом переходит в подвздошную перед средней ягодичной
+  // (ось на v 17-18 у таза, средняя ягодичная кончается на v 9), так верх не выглядит отдельной мышцей
+  iliopsoas: k => [{ deep: true, segs: ['pelvis', 'abd', 'thigh'], pts: k.tube([['abd', 0.72, 0.0], ['abd', 0.3, 0.42], ['pelvis', 30, 17.5], ['pelvis', 16, 18], ['pelvis', 3, 16.5], ['thigh', 0.2, 0.25]], [9, 11, 11, 11, 10, 7]) }],
   quads: k => [{ segs: ['thigh'], pts: k.band('thigh', 0.12, 0.97, 1.1, -0.25, { edge: 'a', ta: 0.4, tb: 0.3 }) }],
   rectus_femoris: k => [{ segs: ['thigh', 'pelvis'], pts: k.band('thigh', -0.12, 0.9, 1.1, 0.4, { edge: 'a', ta: 0.3, tb: 0.35 }) }],
   adductors: k => [{ deep: true, segs: ['thigh'], pts: k.band('thigh', 0.04, 0.62, 0.45, -0.25, { ta: 0.3, tb: 0.7 }) }],
@@ -590,10 +614,10 @@ const FRONT_DEFS = {
   // квадрицепс до надколенника, внизу медиально капля медиальной широкой
   // квадрицепс: вся передняя поверхность бедра от паховой складки (сбоку выше, у промежности ниже) до надколенника,
   // латеральная широкая снаружи, внизу медиально капля медиальной широкой
-  quads: k => [{ segs: ['thigh'], pts: k.free([['thigh', 0.2, -0.25], ['thigh', 0.16, 0.3], ['thigh', 0.12, 0.85], ['thigh', 0.2, 1.1], ['thigh', 0.5, 1.1], ['thigh', 0.8, 1.05], ['thigh', 0.93, 0.65], ['thigh', 0.98, 0.05], ['thigh', 0.95, -0.55], ['thigh', 0.86, -0.85], ['thigh', 0.72, -0.75], ['thigh', 0.52, -0.5], ['thigh', 0.34, -0.38]]) }],
+  quads: k => [{ segs: ['thigh'], pts: k.free([['thigh', 0.1, 1.15], ['thigh', 0.13, 0.6], ['thigh', 0.18, 0.12], ['thigh', 0.3, -0.12], ['thigh', 0.45, -0.38], ['thigh', 0.6, -0.62], ['thigh', 0.76, -0.88], ['thigh', 0.9, -0.75], ['thigh', 0.97, -0.2], ['thigh', 0.96, 0.4], ['thigh', 0.88, 0.85], ['thigh', 0.7, 1.12], ['thigh', 0.4, 1.15]]) }],
   rectus_femoris: k => [{ segs: ['thigh', 'pelvis'], pts: k.band('thigh', -0.05, 0.86, -0.3, 0.42, { ta: 0.35, tb: 0.35 }) }],
   // приводящие: внутренняя поверхность бедра от паховой складки (у промежности) до середины бедра, не на тазу
-  adductors: k => [{ segs: ['thigh'], pts: k.free([['thigh', 0.22, -0.3], ['thigh', 0.26, -1.15], ['thigh', 0.62, -1.15], ['thigh', 0.6, -0.82], ['thigh', 0.46, -0.55], ['thigh', 0.32, -0.38]]) }],
+  adductors: k => [{ segs: ['thigh'], pts: k.free([['thigh', 0.16, -1.25], ['thigh', 0.17, 0.05], ['thigh', 0.3, -0.12], ['thigh', 0.45, -0.38], ['thigh', 0.6, -0.64], ['thigh', 0.66, -1.0], ['thigh', 0.6, -1.25], ['thigh', 0.4, -1.3]]) }],
   tfl: k => [{ segs: ['pelvis', 'thigh'], pts: k.free([['pelvis', 26, 40], ['pelvis', 12, 46], ['thigh', 0.32, 1.1], ['thigh', 0.28, 0.65], ['pelvis', 10, 35]]) }],
   glute_med: k => [{ segs: ['pelvis'], pts: k.free([['pelvis', 52, 36], ['pelvis', 30, 43], ['pelvis', 10, 46], ['pelvis', 16, 38], ['pelvis', 36, 34]]) }],
   glute_min: k => [{ deep: true, segs: ['pelvis'], pts: k.free([['pelvis', 40, 34], ['pelvis', 24, 42], ['pelvis', 10, 43], ['pelvis', 20, 34]]) }],
@@ -712,7 +736,15 @@ function drawEquip(e, ctx) {
           `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r * 0.78)}" fill="none" stroke="${COL.equipLine}" stroke-width="1.5" opacity="0.5"/>` +
           `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r * 0.2)}" ${eqStyle()}/>` +
           `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r * 0.08)}" fill="${COL.equipLine}"/>`;
-        return { svg, box: boxOf([c], r) };
+        // гриф почти торцом: короткая втулка (около 30 px) выходит из кулака поверх блина, чтобы хват читался
+        if (e.sleeve === false) return { svg, box: boxOf([c], r) };
+        const sl = (e.sleeveLen ?? 30) * S;
+        // направление втулки: первое из кандидатов, где она не уходит под руку, голову или корпус
+        const cands = typeof e.sleeve === 'number' ? [e.sleeve] : (ctx.facing === 'left' ? [45, -45, 135, 0, 90, -135, 180, -90] : [135, -135, 45, 180, 90, -45, 0, -90]);
+        const sa = cands.find(a => [0.55, 0.8, 1].every(f => !ctx.inBody(add(c, mul(dirv(a), sl * f + 6))))) ?? cands[0];
+        const se = add(c, mul(dirv(sa), sl));
+        const handSvg = rodSvg(c, se, 7 * S) + `<circle cx="${fx(se[0])}" cy="${fx(se[1])}" r="${fx(5.5 * S)}" ${eqStyle(2)}/>`;
+        return { svg, box: boxOf([c, se], r), handSvg, handAt: c };
       }
       const half = (e.w ?? 470) / 2;
       let svg = rodSvg([c[0] - half, c[1]], [c[0] + half, c[1]], 6);
@@ -723,15 +755,24 @@ function drawEquip(e, ctx) {
       return { svg, box: { x0: c[0] - half, y0: c[1] - r, x1: c[0] + half, y1: c[1] + r } };
     }
     case 'dumbbell': {
-      const c = R(e.at), r = (e.r ?? 17) * S;
-      if (view === 'side' && e.orient !== 'long') {
-        const svg = `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r)}" ${eqStyle()}/>` + `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r * 0.35)}" ${eqStyle(2)}/>`;
-        return { svg, box: boxOf([c], r) };
+      // в профиль по умолчанию гантель боком (нейтральный хват): ручка поперёк кисти, кулак закрывает её середину,
+      // по обе стороны кулака видны короткие куски ручки и диски r 22. orient: 'end' даёт вид с торца
+      // (большой диск с ободом поверх кисти)
+      const c = R(e.at);
+      if (view === 'side' && e.orient === 'end') {
+        const r = (e.r ?? 23) * S;
+        const svg = `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r)}" ${eqStyle()}/>` + `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r - 4 * S)}" fill="none" stroke="${COL.equipLine}" stroke-width="1.6" opacity="0.6"/>` + `<circle cx="${fx(c[0])}" cy="${fx(c[1])}" r="${fx(r * 0.28)}" ${eqStyle(2)}/>`;
+        return { svg, box: boxOf([c], r), layer: 'front' };
       }
-      const a = e.angle ?? 0, half = (e.len ?? 70) * S / 2;
-      const d = dirv(a);
+      const r = (e.r ?? (view === 'side' ? 22 : 17)) * S;
+      const hd = view === 'side' && e.angle == null ? ctx.handDir(e.at) : null;
+      const a = e.angle ?? (hd ? deg(Math.atan2(hd[1], hd[0])) + 90 : 0), half = (e.len ?? (view === 'side' ? 76 : 70)) * S / 2;
+      const d = dirv(a), pw = (view === 'side' ? 15 : 14) * S;
       let svg = rodSvg(sub(c, mul(d, half)), add(c, mul(d, half)), 6);
-      for (const sgn of [-1, 1]) svg += rotRect(add(c, mul(d, sgn * (half - 4))), a, 14 * S, 2 * r, 4);
+      for (const sgn of [-1, 1]) {
+        svg += rotRect(add(c, mul(d, sgn * (half - pw / 2))), a, pw, 2 * r, 4);
+        if (view === 'side') svg += rotRect(add(c, mul(d, sgn * (half - pw - 3 * S))), a, 6 * S, 1.3 * r, 2);
+      }
       return { svg, box: boxOf([sub(c, mul(d, half)), add(c, mul(d, half))], r) };
     }
     case 'kettlebell': {
@@ -883,6 +924,7 @@ function buildFigure(spec) {
     F = view === 'side' ? buildSide(spec, nx) : buildFront(spec, nx, view === 'back');
   }
   Object.assign(fig, F);
+  if (fig.view === 'side' && P.hideSlivers !== false) hideFarSlivers(fig);
   fig.world = n => {
     if (!(n in fig.pts)) throw new Error('Неизвестная точка тела: ' + n + '. Есть: ' + Object.keys(fig.pts).join(', '));
     return fig.xf(fig.pts[n]);
@@ -890,6 +932,36 @@ function buildFigure(spec) {
   return fig;
 }
 
+// дальняя конечность почти совпадает с ближней (меньше 8-10 px): серый контур торчит на 2-4 px и даёт
+// грязную двойную линию. Такой сегмент не рисуем: видимая часть проверяется на "ядро" (круг радиуса
+// SLIVER_R целиком вне ближних частей тела с учётом толщины их контура)
+const SLIVER_R = 6.5;
+function hideFarSlivers(fig) {
+  fig.hiddenSegs = new Set();
+  fig.clusters.forEach((c, ci) => {
+    if (!c.far) return;
+    const wpoly = n => pathPts(outlineOf(fig, n)).map(p => fig.xf(p));
+    const occ = fig.clusters.slice(ci + 1).flatMap(o => o.segs.map(wpoly)).filter(p => p.length);
+    const covered = q => occ.some(pl => pip(q, pl));
+    const ring = [];
+    for (let k = 0; k < 12; k++) { const d = dirv(k * 30); ring.push(mul(d, SLIVER_R + SW), mul(d, (SLIVER_R + SW) / 2)); }
+    let visArea = 0;
+    for (const n of c.segs) {
+      const pl = wpoly(n), b = boxOf(pl);
+      let core = false, area = 0;
+      for (let x = b.x0; x <= b.x1; x += 1.5) for (let y = b.y0; y <= b.y1; y += 1.5) {
+        const q = [x, y];
+        if (!pip(q, pl) || covered(q)) continue;
+        area += 2.25;
+        if (!core && ring.every(d => !covered(add(q, d)))) core = true;
+      }
+      if (!core) fig.hiddenSegs.add(n); else visArea += area;
+    }
+    // корень конечности спрятан, а от остального видно мало (висящее предплечье из-за корпуса): прячем целиком
+    if (fig.hiddenSegs.has(c.segs[0]) && visArea < 700) c.segs.forEach(n => fig.hiddenSegs.add(n));
+    c.segs = c.segs.filter(n => !fig.hiddenSegs.has(n));
+  });
+}
 const expandSegs = (fig, list) => list.flatMap(n => (fig.segs[n].kind === 'chain' ? fig.segs[n].parts : [n]));
 function figureOutlinePts(fig) {
   const out = [];
@@ -964,6 +1036,34 @@ function pip(pt, poly) {
   return ins;
 }
 
+// перекрытия для маски мышцы: сегменты того же слоя, нарисованные позже первого своего сегмента
+// и не входящие в мышцу. В профиль мышцы живота дополнительно закрывает ближнее бедро при согнутом
+// тазобедренном (четвереньки, присед): иначе прямая мышца вылезает клином на пах и бедро
+const ABDOMINAL = new Set(['rectus_abdominis', 'obliques']);
+function occludersOf(F, c, own, it) {
+  const list = expandSegs(F, c.segs);
+  const idx = Math.min(...own.map(n => list.indexOf(n)).filter(i => i >= 0));
+  const poly = it.sh.pts.map(p => F.xf(p)), bx = boxOf(poly);
+  const hit = pl => { if (!pl.length) return false; const b = boxOf(pl); return b.x0 < bx.x1 && b.x1 > bx.x0 && b.y0 < bx.y1 && b.y1 > bx.y0; };
+  const out = [];
+  if (isFinite(idx)) for (let i = idx + 1; i < list.length; i++) {
+    const n = list[i];
+    if (own.includes(n) || n.startsWith('_')) continue;
+    // в профиль корпус не закрывает мышцы бедра: при согнутом бедре оно визуально впереди живота (складка)
+    if (F.view === 'side' && n === 'trunk') continue;
+    if (hit(segPoly(F, n))) out.push(outlineOf(F, n));
+  }
+  if (F.view === 'side' && ABDOMINAL.has(it.m.name)) {
+    const th = F.segs['thigh_' + F.near], j = F.segs['_j_' + F.near];
+    if (th && j && j.hip > 40) {
+      const a = [], b = [];
+      for (let i = 0; i <= 10; i++) { a.push(segPt(th, 0.02 + 0.98 * i / 10, 1.08)); b.push(segPt(th, 0.02 + 0.98 * i / 10, -1.08)); }
+      out.push('M' + [...a, ...b.reverse()].map(fp).join('L') + 'Z');
+    }
+  }
+  return out;
+}
+
 // ---------- главная функция ----------
 function drawExercise(spec) {
   spec = JSON.parse(JSON.stringify(spec));
@@ -972,7 +1072,18 @@ function drawExercise(spec) {
   const fig = buildFigure(spec);
   CURRENT = fig;
   const resolve = p => resolveRaw(p);
-  const ctx = { view, S: fig.S, floor: spec.floor, resolve };
+  // направление кисти (запястье -> пальцы) на холсте для точки вида hand_near / {at: 'hand_l'}
+  const handDir = p => {
+    const nm = typeof p === 'string' ? p : p && typeof p.at === 'string' ? p.at : null;
+    const m = nm && nm.match(/^(hand|wrist|fingers)_(l|r|near|far)$/);
+    if (!m) return null;
+    const sd = m[2] === 'near' ? (fig.near || 'l') : m[2] === 'far' ? (fig.far || 'r') : m[2];
+    const h = fig.segs['hand_' + sd];
+    const v = sub(fig.xf(h.B || framePt(h, 40, 0)), fig.xf(h.A));
+    return mul(v, 1 / (len2(v) || 1));
+  };
+  const bodyPolys = segPolys(fig).filter(p => p.length);
+  const ctx = { view, S: fig.S, floor: spec.floor, resolve, handDir, facing: (spec.pose || {}).facing || 'right', inBody: q => bodyPolys.some(pl => pip(q, pl)) };
 
   // --- мышцы: нормализация
   let mlist = [];
@@ -1013,6 +1124,7 @@ function drawExercise(spec) {
       const items = [];
       for (const sh of shapes) {
         const segNames = sh.segs.map(kit.segName);
+        if (fig.hiddenSegs && segNames.every(n => fig.hiddenSegs.has(n))) continue;
         const ci = segCluster[segNames[0]] ?? 0;
         const far = view === 'side' && fig.clusters[ci].far;
         const it = { m, sh, segNames, far, ci };
@@ -1028,7 +1140,7 @@ function drawExercise(spec) {
       // мышца почти целиком закрыта (меньше HIDDEN_AREA px2): рисуем её пунктиром поверх, выноска к ней
       const hidden = !!info && info.vis.length * 6.25 < HIDDEN_AREA;
       if (hidden) for (const it of allItems) it.hidden = true;
-      labels.push({ ci: anchorPts[0].ci, fixedAnchor: m.anchor ? resolve(m.anchor) : null, info, alts, hidden, text: m.label || NAMES[m.name], type: m.type, at: m.labelAt, prefSide: m.labelSide });
+      labels.push({ segNames: anchorPts.flatMap(it => it.segNames), ci: anchorPts[0].ci, fixedAnchor: m.anchor ? resolve(m.anchor) : null, info, alts, hidden, text: m.label || NAMES[m.name], type: m.type, at: m.labelAt, prefSide: m.labelSide });
     }
   }
   // якоря: сначала мышцы с маленькой видимой зоной, остальные разносятся не ближе 18 px друг от друга
@@ -1048,6 +1160,21 @@ function drawExercise(spec) {
     taken.push(l.anchor);
   }
 
+  // наружная сторона мышцы: от оси ближайшего сегмента к якорю. Выноска, уходящая сквозь конечность
+  // на другую сторону (икроножная вперёд через голень), дороже
+  for (const l of labels) {
+    if (!l.anchor || !l.segNames || !l.segNames.every(n => /^(upper|fore|thigh|shin)_/.test(n))) continue;
+    let best = null;
+    for (const n of l.segNames) {
+      const sg = fig.segs[n];
+      if (!sg || !sg.len || sg.kind === 'frame') continue;
+      const a = fig.xf(sg.A), b = fig.xf(sg.B), ab = sub(b, a), t = clamp(((l.anchor[0] - a[0]) * ab[0] + (l.anchor[1] - a[1]) * ab[1]) / (len2(ab) ** 2 || 1), 0, 1);
+      const off = sub(l.anchor, add(a, mul(ab, t))), d = len2(off);
+      if (!best || d < best.d) best = { d, off };
+    }
+    if (best && best.d > 4) l.outward = { v: mul(best.off, 1 / best.d), w: clamp(best.d / 12, 0, 1) };
+  }
+
   // --- снаряды
   const equipBack = [], equipFront = [], equipBefore = {};
   const boxes = [];
@@ -1064,7 +1191,14 @@ function drawExercise(spec) {
   for (const e of spec.equipment || []) {
     const r = drawEquip(e, ctx);
     if (r.box) boxes.push(r.box);
-    let layer = e.layer || EQUIP_LAYER[e.type] || 'back';
+    if (r.handSvg) {
+      // втулка грифа: под ближней рукой, если кулак на грифе, иначе поверх тела
+      const nh = view === 'side' ? fig.near : 'l';
+      const ci = fig.clusters.findIndex(c => c.segs.includes('hand_' + nh));
+      if (ci >= 0 && len2(sub(fig.world('hand_' + nh), r.handAt)) < 30 * fig.S) (equipBefore[ci] = equipBefore[ci] || []).push(r.handSvg);
+      else equipFront.push(r.handSvg);
+    }
+    let layer = e.layer || r.layer || EQUIP_LAYER[e.type] || 'back';
     if (layer === 'hand') {
       const ci = clusterOfPoint(e.at || e.from);
       if (ci != null && ci >= 0) { (equipBefore[ci] = equipBefore[ci] || []).push(r.svg); continue; }
@@ -1093,11 +1227,17 @@ function drawExercise(spec) {
         const kid = uid('k');
         defs.push(`<clipPath id="${kid}">${paths.map(d => `<path d="${d}"/>`).join('')}</clipPath>`);
         out += `<g clip-path="url(#${kid})">`;
-        for (const it of perCluster[ci]) {
+        for (const it of perCluster[ci].slice().sort((a, b) => (a.sh.top ? 1 : 0) - (b.sh.top ? 1 : 0))) {
           const cid = uid('c');
           const clipNames = [...new Set(it.segNames.map(n => (F.segs.trunk && F.segs.trunk.parts.includes(n) ? 'trunk' : n)))];
           defs.push(`<clipPath id="${cid}">${clipNames.map(n => `<path d="${outlineOf(F, n)}"/>`).join('')}</clipPath>`);
           it.cid = cid;
+          // маска перекрытий: части тела, нарисованные в этом слое позже своих сегментов мышцы, закрывают её
+          // (таз над верхом бедра в фас, голень над концом бедра у колена, предплечье над локтем)
+          const occ = occludersOf(F, c, clipNames, it);
+          const mid = occ.length ? uid('m') : null;
+          if (mid) defs.push(`<mask id="${mid}" maskUnits="userSpaceOnUse" x="-3000" y="-3000" width="6000" height="6000"><rect x="-3000" y="-3000" width="6000" height="6000" fill="#fff"/>${occ.map(d => `<path d="${d}" fill="#000"/>`).join('')}</mask>`);
+          const mattr = mid ? ` mask="url(#${mid})"` : '';
           const col = it.m.type === 'stretch' ? COL.stretch : COL.work;
           let op = it.m.type === 'stretch' ? 0.6 : 0.8;
           if (it.far) op *= 0.55;
@@ -1107,8 +1247,9 @@ function drawExercise(spec) {
           const dash = deep ? ' stroke-dasharray="5 3.5"' : '';
           const strokeC = it.m.type === 'stretch' ? '#E65100' : '#B71C1C';
           const sop = it.far ? 0.35 : deep ? 0.95 : 0.7;
-          out += `<path d="${smoothClosed(it.sh.pts)}" clip-path="url(#${cid})" fill="${col}" fill-opacity="${fx(op)}" stroke="${strokeC}" stroke-opacity="${sop}" stroke-width="${deep ? 1.7 : 1.3}"${dash}/>`;
-          if (it.hidden) hiddenOut.push(`<path d="${smoothClosed(it.sh.pts)}" clip-path="url(#${cid})" fill="${col}" fill-opacity="0.22" stroke="${strokeC}" stroke-width="1.8" stroke-dasharray="5 3.5"/>`);
+          if (it.sh.top) out += `<path d="${smoothClosed(it.sh.pts)}" clip-path="url(#${cid})"${mattr} fill="${fillC}"/>`;
+          out += `<path d="${smoothClosed(it.sh.pts)}" clip-path="url(#${cid})"${mattr} fill="${col}" fill-opacity="${fx(op)}" stroke="${strokeC}" stroke-opacity="${sop}" stroke-width="${deep ? 1.7 : 1.3}"${dash}/>`;
+          if (it.hidden) hiddenOut.push(`<path d="${smoothClosed(it.sh.pts)}" clip-path="url(#${cid})"${mattr} fill="${col}" fill-opacity="0.22" stroke="${strokeC}" stroke-width="1.8" stroke-dasharray="5 3.5"/>`);
         }
         out += `</g>`;
         // складки и детали
@@ -1122,7 +1263,7 @@ function drawExercise(spec) {
           const s = F.segs[dt.seg];
           const p = framePt(s, dt.u, dt.v);
           const a = s.ang + 90;
-          if (dt.kind === 'ear') out += `<ellipse cx="${fx(p[0])}" cy="${fx(p[1])}" rx="${fx(5.5 * s.S)}" ry="${fx(8.5 * s.S)}" transform="rotate(${fx(a)} ${fp(p)})" fill="${fillC}" stroke="${lineC}" stroke-width="2"/>`;
+          if (dt.kind === 'ear') out += `<ellipse cx="${fx(p[0])}" cy="${fx(p[1])}" rx="${fx(5 * s.S)}" ry="${fx(8.5 * s.S)}" transform="rotate(${fx(a - 12)} ${fp(p)})" fill="${fillC}" stroke="${lineC}" stroke-width="2"/>`;
           if (dt.kind === 'thumb') { const q = [[3, -4], [12, -3], [20, -2.5], [25, -4.5]].map(([u, v]) => framePt(s, u, v)); out += `<path d="${smoothOpen(q)}" fill="none" stroke="${lineC}" stroke-width="1.8" stroke-linecap="round"/>`; }
           if (dt.kind === 'earF') out += `<ellipse cx="${fx(p[0])}" cy="${fx(p[1])}" rx="${fx(4 * s.S)}" ry="${fx(8 * s.S)}" transform="rotate(${fx(a)} ${fp(p)})" fill="${fillC}" stroke="${lineC}" stroke-width="2"/>`;
         }
@@ -1230,18 +1371,20 @@ function drawExercise(spec) {
   const bodyRun = (A, E, lb) => {
     const L_ = len2(sub(E, A)), n = Math.max(10, Math.ceil(L_ / 3));
     const ownBit = 1 << Math.min(lb.ci ?? 0, 6);
-    let otherMask = 0;
-    fig.clusters.forEach((_, k) => { if (k !== lb.ci && (!lb.hidden || k < lb.ci)) otherMask |= 1 << Math.min(k, 6); });
+    let otherMask = 0, farMask = 0;
+    fig.clusters.forEach((c, k) => { if (k !== lb.ci && (!lb.hidden || k < lb.ci)) { otherMask |= 1 << Math.min(k, 6); if (c.far) farMask |= 1 << Math.min(k, 6); } });
     let run = 0, first = 0, exited = false;
     for (let i = 1; i <= n; i++) {
       const q = add(A, mul(sub(E, A), i / n));
       if (len2(sub(q, A)) <= 8) continue;
       const cq = cellAt(q), inOwn = (cq & ownBit) !== 0, inOther = (cq & otherMask & ~ownBit) !== 0;
       if (!inOwn && !inOther) { exited = true; continue; }
-      if (exited || inOther) run += L_ / n; else first += L_ / n;
+      // дальние (светлые) конечности мешают выноске вдвое меньше
+      const w = inOther && !inOwn && (cq & otherMask & ~farMask) === 0 ? 0.5 : 1;
+      if (exited || inOther) run += w * L_ / n; else first += L_ / n;
     }
     // выход из своей части тела допустим, но длинный путь по ней (через чужие мышцы) тоже плох
-    return run + Math.max(0, first - 30);
+    return run + Math.max(0, first - 22) * 1.5;
   };
   const zoneKey = q => Math.round(q[0] / 2.5) + ',' + Math.round(q[1] / 2.5);
   for (const l of labels) { l.zone = new Set(); if (l.info) for (const q of (l.hidden ? [] : l.info.vis)) l.zone.add(zoneKey(q)); if (l.alts) for (const a of l.alts) for (const q of a.vis) l.zone.add(zoneKey(q)); }
@@ -1265,18 +1408,19 @@ function drawExercise(spec) {
     if (!fits) return null;
     const E = leaderEnd(x, y, at, s);
     let cost = len2(sub(E, A)) + (s === 'top' || s === 'bottom' ? 40 : 0);
+    if (lb.outward && view === 'side') { const dv = sub(E, A), dl = len2(dv) || 1, dot = (dv[0] * lb.outward.v[0] + dv[1] * lb.outward.v[1]) / dl; if (dot < 0) cost += -dot * 70 * lb.outward.w; }
     const run = bodyRun(A, E, lb);
     cost += run * 3 + (run > MAX_BODY_RUN ? 1500 + run * 10 : 0);
     // выноска поверх чужих закрашенных мышц читается плохо
     const mr = muscleRun(A, E, lb);
-    cost += mr * 4 + (mr > 30 ? 600 : 0);
+    cost += view === 'side' ? mr * 8 + (mr > 3 ? 120 : 0) + (mr > 30 ? 600 : 0) : mr * 4 + (mr > 30 ? 600 : 0);
     if (leaderHitsObst(A, E)) cost += 1500;
     // пересечение уже поставленных выносок и проход рядом с чужими якорями
     const segHitsRect = (P, Q, r) => { for (let i = 0; i <= 20; i++) { const q = add(P, mul(sub(Q, P), i / 20)); if (q[0] > r[0] - 3 && q[0] < r[2] + 3 && q[1] > r[1] - 2 && q[1] < r[3] + 2) return true; } return false; };
     for (const p of placed) {
       if (p === lb) continue;
       const pE = leaderEnd(p.x, p.y, p.anchorT, p.side);
-      if (segX(A, E, p.anchor, pE)) cost += 400;
+      if (segX(A, E, p.anchor, pE)) cost += 2500;
       // выноска через чужую подпись или чужая выноска через эту подпись
       if (segHitsRect(A, E, textBox(p.x, p.y, p.anchorT, p.w))) cost += 600;
       if (segHitsRect(p.anchor, pE, [tx0, ty0, tx1, ty1])) cost += 600;
@@ -1444,10 +1588,22 @@ function drawExercise(spec) {
 
   const markerDefs = `<marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0,0.5 L10,5 L0,9.5 Z" fill="${COL.arrow}"/></marker>` +
     `<marker id="ahs" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0,0.5 L10,5 L0,9.5 Z" fill="${COL.arrow}"/></marker>`;
+  // вертикальная центровка: сцена (пол, снаряды, фигура, стрелки, подписи) ставится посередине между
+  // заголовком и низом холста (легендой), чтобы под заголовком не оставалось 150-200 px пустоты
+  let dy = 0;
+  if (spec.center !== false) {
+    const bs = [fb, ...boxes, ...arrowBoxes, ...placed.map(p => { const [a0, b0, a1, b1] = textBox(p.x, p.y, p.anchorT, p.w); return { x0: a0, y0: b0, x1: a1, y1: b1 }; })];
+    if (floorSvg) bs.push({ x0: 50, y0: spec.floor - 2, x1: 850, y1: spec.floor + 2 });
+    for (const n of spec.notes || []) { const p = resolve(n.at); bs.push({ x0: p[0], y0: p[1] - 14, x1: p[0] + 1, y1: p[1] + 4 }); }
+    const top = Math.min(...bs.map(b => b.y0)), bot = Math.max(...bs.map(b => b.y1));
+    const above = top - (topLimit - 8), below = bottomLimit - bot;
+    if (Math.abs(above - below) > 30) dy = Math.round(clamp((below - above) / 2, -above, below));
+  }
+  const scene = (floorSvg + equipBack.join('') + '\n' + body + '\n' + equipFront.join('') + '\n' + arrows + arrowLabels.join('') + '\n' + labelSvg + notes);
   CURRENT = null;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${CW}" height="${CH}" viewBox="0 0 ${CW} ${CH}" font-family="${FONT}">\n` +
     `<rect width="${CW}" height="${CH}" fill="#ffffff"/>\n<defs>${markerDefs}${defs.join('')}</defs>\n` +
-    head + '\n' + floorSvg + equipBack.join('') + '\n' + body + '\n' + equipFront.join('') + '\n' + arrows + arrowLabels.join('') + '\n' + labelSvg + notes + legend + '\n</svg>\n';
+    head + '\n' + (dy ? `<g transform="translate(0,${dy})">${scene}</g>` : scene) + legend + '\n</svg>\n';
 }
 
-module.exports = { drawExercise, MUSCLE_NAMES: NAMES, ANKLE_HEIGHT: ANKLE_H, COLORS: COL };
+module.exports = { _buildFigure: buildFigure, _outlinePts: (fig, n) => pathPts(outlineOf(fig, n)).map(p => fig.xf(p)), drawExercise, MUSCLE_NAMES: NAMES, ANKLE_HEIGHT: ANKLE_H, COLORS: COL };

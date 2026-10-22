@@ -1,0 +1,9 @@
+{ "title": "Отжимания с доведением лопаток", "hint": "Наверху дотолкни пол, лопатки разводим вперёд",
+  "floor": 580,
+  "pose": { "pelvis": [395, 468], "rotate": 75, "thoracic": 14, "neck": 4, "head": 4,
+    "both": { "hip": 0, "knee": 0, "ankle": 14, "handAt": [575, 584], "hand": "open", "wrist": 80 } },
+  "ghost": { "pose": { "thoracic": -6, "pelvis": [395, 474] } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 580, "w": 620 } ],
+  "work": [ { "name": "serratus", "label": "Передняя зубчатая" } ],
+  "arrows": [ { "from": { "at": "upperback", "dx": 0, "dy": -10 }, "to": { "at": "upperback", "dx": 0, "dy": -70 }, "label": "спину вверх, лопатки врозь", "labelSide": "left" } ]
+}

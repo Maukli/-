@@ -1,0 +1,65 @@
+{
+ "title": "Разгибание грудного отдела на ролле",
+ "hint": "Прогиб через ролл, пауза 2-3 с, таз на полу",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   540,
+   545
+  ],
+  "rotate": -58,
+  "thoracic": -40,
+  "neck": -10,
+  "both": {
+   "hip": 100,
+   "knee": 100,
+   "footAt": [
+    720,
+    557
+   ],
+   "shoulder": 120,
+   "elbow": 140,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  },
+  {
+   "type": "foam_roller",
+   "at": [
+    450,
+    536
+   ],
+   "r": 32
+  }
+ ],
+ "stretch": [
+  {
+   "name": "rectus_abdominis",
+   "label": "Мышцы живота"
+  },
+  {
+   "name": "pecs",
+   "label": "Грудные"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": [
+     450,
+     500
+    ],
+    "r": 115,
+    "start": -115,
+    "end": -170
+   },
+   "label": "прогиб назад"
+  }
+ ]
+}

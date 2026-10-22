@@ -1,0 +1,136 @@
+{
+ "title": "Вертикальная тяга блока",
+ "hint": "Сначала опусти лопатки, локти тяни вниз",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   400,
+   475
+  ],
+  "trunk": -12,
+  "neck": -8,
+  "both": {
+   "hip": 95,
+   "knee": 95,
+   "footAt": [
+    560,
+    577
+   ],
+   "gripAt": {
+    "at": "chest",
+    "dx": 20,
+    "dy": -40
+   },
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "trunk": -4,
+   "both": {
+    "gripAt": {
+     "at": "head",
+     "dx": 40,
+     "dy": -175
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "rect",
+   "x": 320,
+   "y": 483,
+   "w": 160,
+   "h": 22
+  },
+  {
+   "type": "rect",
+   "x": 392,
+   "y": 505,
+   "w": 16,
+   "h": 90
+  },
+  {
+   "type": "circle",
+   "at": {
+    "at": "thigh_near",
+    "dx": 45,
+    "dy": -20
+   },
+   "r": 16
+  },
+  {
+   "type": "rect",
+   "x": 640,
+   "y": 110,
+   "w": 28,
+   "h": 485
+  },
+  {
+   "type": "rect",
+   "x": 410,
+   "y": 104,
+   "w": 258,
+   "h": 16
+  },
+  {
+   "type": "circle",
+   "at": [
+    432,
+    132
+   ],
+   "r": 12
+  },
+  {
+   "type": "line",
+   "from": [
+    432,
+    144
+   ],
+   "to": {
+    "at": "hand_near",
+    "dx": 4,
+    "dy": -6
+   }
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "hand_near",
+    "dx": -60,
+    "dy": 8
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 60,
+    "dy": -8
+   }
+  }
+ ],
+ "work": [
+  "lats",
+  "biceps",
+  "trap_lower",
+  {
+   "name": "deltoid",
+   "label": "Задняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "hand_near",
+    "dx": 80,
+    "dy": -120
+   },
+   "to": {
+    "at": "hand_near",
+    "dx": 80,
+    "dy": -10
+   },
+   "label": "локти вниз",
+   "labelSide": "right"
+  }
+ ]
+}

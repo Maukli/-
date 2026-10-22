@@ -1,0 +1,85 @@
+{
+ "title": "Поза кошки",
+ "hint": "Ладони под плечами, колени под тазом, прогиб плавно",
+ "floor": 568,
+ "pose": {
+  "pelvis": [
+   330,
+   "floor"
+  ],
+  "trunk": 92,
+  "pelvisTilt": 12,
+  "lumbar": -18,
+  "thoracic": -10,
+  "neck": -24,
+  "head": -12,
+  "both": {
+   "hip": 92,
+   "knee": 88,
+   "ankle": -64,
+   "elbow": 0,
+   "wrist": -80,
+   "handAt": [
+    520,
+    555
+   ],
+   "hand": "open"
+  },
+  "r": {
+   "hip": 90,
+   "handAt": [
+    515,
+    555
+   ]
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 150,
+   "y": 568,
+   "w": 600
+  }
+ ],
+ "stretch": [
+  {
+   "name": "rectus_abdominis",
+   "label": "Прямая мышца живота"
+  }
+ ],
+ "work": [
+  {
+   "name": "erectors",
+   "label": "Разгибатели спины"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "lowback",
+    "dx": 0,
+    "dy": -60
+   },
+   "to": {
+    "at": "lowback",
+    "dx": 0,
+    "dy": -15
+   },
+   "label": "спина вниз",
+   "labelSide": "left"
+  },
+  {
+   "from": {
+    "at": "head",
+    "dx": 30,
+    "dy": 10
+   },
+   "to": {
+    "at": "head",
+    "dx": 40,
+    "dy": -40
+   },
+   "label": "голова вверх"
+  }
+ ]
+}

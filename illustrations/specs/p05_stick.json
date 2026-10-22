@@ -1,0 +1,57 @@
+{
+ "title": "Проводки с палкой",
+ "hint": "Руки прямые, хват широкий, без прогиба в пояснице",
+ "floor": 625,
+ "pose": {
+  "pelvis": [
+   450,
+   "floor"
+  ],
+  "both": {
+   "shoulder": 180,
+   "elbow": 0,
+   "hip": 0,
+   "knee": 2,
+   "hand": "fist"
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": -35
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "circle",
+   "at": "hand_near",
+   "r": 9,
+   "layer": "front"
+  }
+ ],
+ "stretch": [
+  {
+   "name": "pecs",
+   "label": "Грудные"
+  },
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "shoulder_near",
+    "r": 165,
+    "start": -20,
+    "end": -165
+   },
+   "label": "за спину и обратно",
+   "both": true
+  }
+ ],
+ "scale": 0.8,
+ "center": false
+}

@@ -1,0 +1,9 @@
+{ "title": "Ягодичный мост на полу", "hint": "Наверху пауза, таз подкручен, поясница не прогнута",
+  "floor": 580,
+  "pose": { "pelvis": [470, 484], "rotate": -114, "pelvisTilt": -10, "neck": 32,
+    "both": { "footAt": [578, 545], "shoulder": -22, "elbow": 2, "hand": "open" } },
+  "ghost": { "pose": { "pelvis": [482, 546], "rotate": -90, "pelvisTilt": 0, "neck": 6, "both": { "shoulder": -6 } } },
+  "equipment": [ { "type": "mat", "x": 150, "y": 568, "w": 620 } ],
+  "work": [ { "name": "glute_max", "label": "Большая ягодичная" }, { "name": "hamstrings", "label": "Бицепс бедра" } ],
+  "arrows": [ { "from": [700, 520], "to": [700, 420], "label": "таз вверх" } ]
+}

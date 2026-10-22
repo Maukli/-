@@ -1,0 +1,95 @@
+{
+ "title": "Жим на наклонной скамье",
+ "hint": "Глубоко к верху груди, с растяжением",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   430,
+   470
+  ],
+  "rotate": -55,
+  "neck": 2,
+  "both": {
+   "hip": 35,
+   "knee": 95,
+   "ankle": 10,
+   "gripAt": {
+    "at": "shoulder_near",
+    "dy": -160
+   },
+   "hand": "fist"
+  },
+  "r": {
+   "gripAt": {
+    "at": "shoulder_far",
+    "dx": 3,
+    "dy": -160
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "gripAt": {
+     "at": "chest",
+     "dx": 0,
+     "dy": -38
+    }
+   },
+   "r": {
+    "gripAt": {
+     "at": "chest",
+     "dx": 3,
+     "dy": -38
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "incline_bench",
+   "hinge": [
+    445,
+    505
+   ],
+   "angle": 35,
+   "len": 230,
+   "seat": 100
+  },
+  {
+   "type": "barbell",
+   "at": {
+    "at": "shoulder_near",
+    "dy": -162
+   }
+  }
+ ],
+ "work": [
+  {
+   "name": "pecs",
+   "label": "Верх грудных"
+  },
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта",
+   "labelSide": "left"
+  },
+  "triceps"
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "shoulder_near",
+    "dx": 90,
+    "dy": -150
+   },
+   "to": {
+    "at": "shoulder_near",
+    "dx": 90,
+    "dy": -50
+   },
+   "both": true,
+   "label": "к верху груди и вверх"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "title": "Отжимания от пола",
+ "hint": "Тело в одну линию, таз не провисает",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   395,
+   472
+  ],
+  "rotate": 75,
+  "neck": 0,
+  "head": 4,
+  "both": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 14,
+   "handAt": [
+    575,
+    584
+   ],
+   "hand": "open",
+   "wrist": 80
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    400,
+    505
+   ],
+   "rotate": 82,
+   "both": {
+    "shoulder": 20,
+    "elbow": 105,
+    "wrist": 75,
+    "hand": "open"
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 580,
+   "w": 620
+  }
+ ],
+ "work": [
+  "pecs",
+  "triceps",
+  "deltoid",
+  "rectus_abdominis"
+ ],
+ "arrows": [
+  {
+   "from": [
+    660,
+    340
+   ],
+   "to": [
+    660,
+    450
+   ],
+   "both": true,
+   "label": "грудь к полу и вверх",
+   "labelSide": "right"
+  }
+ ]
+}

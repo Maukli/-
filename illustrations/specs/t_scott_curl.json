@@ -1,0 +1,137 @@
+{
+ "title": "Сгибание рук на скамье Скотта",
+ "hint": "Плечи лежат на подушке, вниз медленно и почти до конца",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   330,
+   468
+  ],
+  "trunk": 12,
+  "neck": 4,
+  "both": {
+   "ankle": 2,
+   "shoulder": 52,
+   "elbow": 105,
+   "hand": "fist",
+   "footAt": [
+    455,
+    577
+   ]
+  },
+  "r": {
+   "footAt": [
+    430,
+    577
+   ]
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "elbow": 20
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "rect",
+   "x": 230,
+   "y": 486,
+   "w": 160,
+   "h": 20
+  },
+  {
+   "type": "line",
+   "from": [
+    310,
+    506
+   ],
+   "to": [
+    310,
+    592
+   ],
+   "w": 9
+  },
+  {
+   "type": "rect",
+   "x": 250,
+   "y": 592,
+   "w": 120,
+   "h": 8
+  },
+  {
+   "type": "poly",
+   "points": [
+    {
+     "at": "shoulder_near",
+     "dx": -26,
+     "dy": 4
+    },
+    {
+     "at": "elbow_near",
+     "dx": 18,
+     "dy": 26
+    },
+    {
+     "at": "elbow_near",
+     "dx": 2,
+     "dy": 47
+    },
+    {
+     "at": "shoulder_near",
+     "dx": -42,
+     "dy": 25
+    }
+   ]
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "elbow_near",
+    "dx": -20,
+    "dy": 44
+   },
+   "to": [
+    560,
+    592
+   ],
+   "w": 9
+  },
+  {
+   "type": "rect",
+   "x": 500,
+   "y": 592,
+   "w": 120,
+   "h": 8
+  },
+  {
+   "type": "barbell",
+   "at": "hand_near",
+   "r": 34
+  }
+ ],
+ "work": [
+  {
+   "name": "biceps",
+   "label": "Бицепс"
+  },
+  {
+   "name": "forearm",
+   "label": "Плечелучевая"
+  }
+ ],
+ "arrows": [
+  {
+   "arc": {
+    "center": "elbow_near",
+    "r": 120,
+    "start": 40,
+    "end": -60
+   },
+   "label": "вверх и медленно вниз",
+   "labelSide": "right"
+  }
+ ],
+ "center": false
+}

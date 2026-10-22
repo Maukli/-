@@ -1,0 +1,80 @@
+{
+ "title": "Колено к стене",
+ "hint": "Пятка на полу, колено тянем к стене над носком",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   515,
+   392
+  ],
+  "trunk": 10,
+  "neck": 0,
+  "l": {
+   "footAt": [
+    536,
+    567
+   ],
+   "ankle": 46,
+   "handAt": [
+    596,
+    290
+   ],
+   "wrist": -75,
+   "hand": "open"
+  },
+  "r": {
+   "footAt": [
+    415,
+    567
+   ],
+   "handAt": [
+    592,
+    302
+   ],
+   "wrist": -75,
+   "hand": "open"
+  }
+ },
+ "equipment": [
+  {
+   "type": "wall",
+   "x": 605,
+   "top": 120,
+   "side": "right"
+  },
+  {
+   "type": "floor",
+   "x": 150,
+   "y": 590,
+   "w": 455
+  }
+ ],
+ "stretch": [
+  {
+   "name": "soleus",
+   "side": "near",
+   "label": "Камбаловидная"
+  },
+  {
+   "name": "gastrocnemius",
+   "side": "near",
+   "label": "Икроножная"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "knee_near",
+    "dx": -45,
+    "dy": -55
+   },
+   "to": {
+    "at": "knee_near",
+    "dx": 5,
+    "dy": -55
+   },
+   "label": "к стене",
+   "labelSide": "left"
+  }
+ ]
+}

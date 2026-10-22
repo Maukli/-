@@ -1,0 +1,121 @@
+{
+ "title": "Бабочка назад",
+ "hint": "Руки прямые, разводим назад через стороны",
+ "view": "back",
+ "floor": 600,
+ "pose": {
+  "pelvis": [
+   450,
+   420
+  ],
+  "both": {
+   "shoulder": 88,
+   "elbow": 4,
+   "hip": 6,
+   "knee": 0,
+   "hand": "fist",
+   "lengths": {
+    "thigh": 0.3,
+    "shin": 0.6
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "both": {
+    "shoulder": 88,
+    "elbow": 4,
+    "lengths": {
+     "upper": 0.3,
+     "fore": 0.3,
+     "thigh": 0.3,
+     "shin": 0.6
+    }
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "rect",
+   "x": 350,
+   "y": 425,
+   "w": 200,
+   "h": 26,
+   "layer": "front"
+  },
+  {
+   "type": "rect",
+   "x": 396,
+   "y": 451,
+   "w": 108,
+   "h": 149,
+   "layer": "front"
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "hand_l",
+    "dy": -26
+   },
+   "to": {
+    "at": "hand_l",
+    "dy": 26
+   },
+   "w": 12,
+   "layer": "front"
+  },
+  {
+   "type": "line",
+   "from": {
+    "at": "hand_r",
+    "dy": -26
+   },
+   "to": {
+    "at": "hand_r",
+    "dy": 26
+   },
+   "w": 12,
+   "layer": "front"
+  }
+ ],
+ "work": [
+  {
+   "name": "deltoid",
+   "side": "both",
+   "label": "Задняя дельта",
+   "labelSide": "left"
+  },
+  {
+   "name": "trap_middle",
+   "labelSide": "top"
+  },
+  {
+   "name": "rhomboids",
+   "labelSide": "right"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    370,
+    370
+   ],
+   "to": [
+    250,
+    370
+   ],
+   "label": "развести назад",
+   "labelSide": "below"
+  },
+  {
+   "from": [
+    530,
+    370
+   ],
+   "to": [
+    650,
+    370
+   ]
+  }
+ ]
+}

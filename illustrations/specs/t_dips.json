@@ -1,0 +1,74 @@
+{
+ "title": "Отжимания на брусьях",
+ "hint": "Корпус чуть вперёд, вниз до плеча на уровне локтя",
+ "floor": 610,
+ "pose": {
+  "pelvis": [
+   425,
+   418
+  ],
+  "trunk": 25,
+  "neck": -4,
+  "both": {
+   "hip": 15,
+   "knee": 95,
+   "ankle": -30,
+   "gripAt": [
+    460,
+    362
+   ],
+   "hand": "fist"
+  },
+  "r": {
+   "hip": 5,
+   "knee": 85
+  }
+ },
+ "ghost": {
+  "pose": {
+   "pelvis": [
+    440,
+    340
+   ],
+   "trunk": 12,
+   "both": {
+    "gripAt": [
+     460,
+     362
+    ]
+   }
+  }
+ },
+ "equipment": [
+  {
+   "type": "dip_bars",
+   "at": [
+    460,
+    366
+   ]
+  }
+ ],
+ "work": [
+  "pecs",
+  "triceps",
+  {
+   "name": "deltoid",
+   "label": "Передняя дельта"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    640,
+    300
+   ],
+   "to": [
+    640,
+    420
+   ],
+   "both": true,
+   "label": "вниз и выжать вверх",
+   "labelSide": "right"
+  }
+ ]
+}

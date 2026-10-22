@@ -1,0 +1,8 @@
+{ "title": "Кобра", "hint": "Таз на полу, плечи вниз от ушей",
+  "floor": 580,
+  "pose": { "pelvis": [360, 548], "rotate": 90, "lumbar": -62, "thoracic": -26, "neck": -10,
+    "both": { "hip": -2, "knee": 0, "ankle": -70, "shoulder": 18, "elbow": 22, "wrist": 70, "hand": "open" } },
+  "equipment": [ { "type": "mat", "x": 140, "y": 568, "w": 640 } ],
+  "stretch": [ { "name": "rectus_abdominis", "label": "Прямая мышца живота" }, { "name": "iliopsoas", "label": "Подвздошно-поясничная" } ],
+  "arrows": [ { "from": { "at": "chest", "dx": 50, "dy": 40 }, "to": { "at": "chest", "dx": 50, "dy": -40 }, "label": "грудь вверх" } ]
+}

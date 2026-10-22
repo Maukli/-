@@ -1,0 +1,58 @@
+{
+ "title": "Гоблет-присед",
+ "hint": "Корпус прямой, колени по линии носков",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   420,
+   "floor"
+  ],
+  "trunk": 24,
+  "neck": -4,
+  "both": {
+   "hip": 124,
+   "knee": 128,
+   "ankle": 38,
+   "gripAt": {
+    "at": "chest",
+    "dx": 34,
+    "dy": -12
+   },
+   "hand": "fist"
+  },
+  "r": {
+   "hip": 120,
+   "knee": 124,
+   "ankle": 36
+  }
+ },
+ "equipment": [
+  {
+   "type": "kettlebell",
+   "at": {
+    "at": "chest",
+    "dx": 36,
+    "dy": 2
+   },
+   "r": 24
+  }
+ ],
+ "work": [
+  "quads",
+  "glute_max",
+  "adductors"
+ ],
+ "arrows": [
+  {
+   "from": [
+    700,
+    470
+   ],
+   "to": [
+    700,
+    330
+   ],
+   "label": "вверх"
+  }
+ ]
+}

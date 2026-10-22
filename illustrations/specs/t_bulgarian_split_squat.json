@@ -1,0 +1,69 @@
+{
+ "title": "Болгарские выпады",
+ "hint": "Заднее колено почти до пола, вес на передней ноге",
+ "floor": 590,
+ "pose": {
+  "pelvis": [
+   450,
+   452
+  ],
+  "trunk": 14,
+  "neck": -6,
+  "near": "r",
+  "r": {
+   "hip": 100,
+   "knee": 95,
+   "ankle": 12,
+   "shoulder": 4,
+   "elbow": 4,
+   "hand": "fist"
+  },
+  "l": {
+   "footAt": [
+    365,
+    478
+   ],
+   "ankle": -5,
+   "shoulder": 0,
+   "elbow": 4,
+   "hand": "fist"
+  }
+ },
+ "equipment": [
+  {
+   "type": "bench",
+   "x": 200,
+   "y": 490,
+   "w": 180
+  },
+  {
+   "type": "dumbbell",
+   "at": "hand_near"
+  }
+ ],
+ "work": [
+  {
+   "name": "quads",
+   "side": "near"
+  },
+  {
+   "name": "glute_max",
+   "side": "near"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    680,
+    330
+   ],
+   "to": [
+    680,
+    460
+   ],
+   "both": true,
+   "label": "вниз и вверх"
+  }
+ ],
+ "center": false
+}

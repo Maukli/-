@@ -1,0 +1,89 @@
+{
+ "title": "Скручивание Макгилла",
+ "hint": "Голова и плечи на пару сантиметров, шея неподвижна",
+ "floor": 580,
+ "pose": {
+  "pelvis": [
+   520,
+   545
+  ],
+  "rotate": -90,
+  "thoracic": 10,
+  "neck": 0,
+  "head": 0,
+  "l": {
+   "hip": 0,
+   "knee": 0,
+   "ankle": 0,
+   "hand": "open",
+   "shoulder": -6,
+   "elbow": 0,
+   "lengths": {
+    "fore": 0.6
+   }
+  },
+  "r": {
+   "hip": 0,
+   "knee": 0,
+   "footAt": [
+    640,
+    557
+   ],
+   "hand": "open",
+   "shoulder": -6,
+   "elbow": 0,
+   "lengths": {
+    "fore": 0.6
+   }
+  }
+ },
+ "ghost": {
+  "pose": {
+   "thoracic": 0
+  }
+ },
+ "equipment": [
+  {
+   "type": "mat",
+   "x": 140,
+   "y": 568,
+   "w": 640
+  }
+ ],
+ "work": [
+  {
+   "name": "rectus_abdominis",
+   "label": "Прямая мышца живота"
+  },
+  {
+   "name": "obliques",
+   "label": "Косые мышцы живота"
+  }
+ ],
+ "arrows": [
+  {
+   "from": {
+    "at": "head",
+    "dx": 0,
+    "dy": -40
+   },
+   "to": {
+    "at": "head",
+    "dx": 0,
+    "dy": -80
+   },
+   "label": "на 2-3 см"
+  }
+ ],
+ "notes": [
+  {
+   "text": "Ладони под поясницей, одна нога согнута",
+   "at": [
+    450,
+    625
+   ],
+   "size": 16,
+   "anchor": "middle"
+  }
+ ]
+}
