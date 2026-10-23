@@ -29,16 +29,30 @@ const fontFaces = ['manrope', 'montserrat', 'unbounded'].flatMap(f => [500, 700,
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const mark = s => WORDS.reduce((t, w) => t.split(w).join(`<span class="kw">${w}</span>`), esc(s));
 
-function bodySize(text, cover) {
+function bodySize(text, cover, img) {
   if (cover) return 52;
   const n = text.length;
+  if (img) return n < 120 ? 44 : n < 200 ? 40 : n < 280 ? 37 : 34;
   return n < 120 ? 56 : n < 200 ? 50 : n < 280 ? 46 : 42;
 }
+
+// Утка для обложки с хуком "Стоишь как утка?": простая плоская фигура в цвете акцента
+const duck = t => `<svg class="duck" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70 215 L18 132 L128 182 Z" fill="${t.accent}"/>
+  <path d="M262 92 Q262 196 300 214 L340 230 Q330 320 210 320 Q80 320 62 232 Q60 170 150 168 Q228 166 246 150 Z" fill="${t.accent}"/>
+  <circle cx="300" cy="98" r="62" fill="${t.accent}"/>
+  <path d="M352 86 L414 104 L352 124 Z" fill="#FFD27A"/>
+  <circle cx="318" cy="84" r="10" fill="${t.bg}"/>
+  <path d="M120 220 Q190 200 260 236 Q200 282 120 220 Z" fill="${t.bg}" opacity=".18"/>
+  <path d="M178 320 L178 360 M236 320 L236 360" stroke="#FFD27A" stroke-width="12" stroke-linecap="round"/>
+  <path d="M160 362 L200 362 M218 362 L258 362" stroke="#FFD27A" stroke-width="12" stroke-linecap="round"/>
+</svg>`;
 
 function slideHtml(s, i, total, t) {
   const cover = i === 0, last = i === total - 1;
   const cls = cover ? 'cover' : last ? 'cta' : 'mid';
   const h = px => Math.round(px * t.hs) + 'px';
+  const img = s.img && fs.readFileSync(path.join(dir, 'img', s.img + '.png')).toString('base64');
   return `<!doctype html><html><head><meta charset="utf-8"><style>
   ${fontFaces}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -56,11 +70,21 @@ function slideHtml(s, i, total, t) {
   .bottom{margin-top:auto;padding-top:60px;display:flex;justify-content:space-between;align-items:center;font-size:30px;font-weight:500;color:${t.muted}}
   .cover .bottom,.cta .bottom{margin-top:90px}
   .swipe{color:${t.accent};font-weight:800}
-  </style></head><body><div class="wrap ${cls}">
+  .duck{width:500px;align-self:flex-end;margin-top:40px;margin-bottom:40px}
+  .duck + h1{margin-top:auto}
+  .has-img .bar{margin:50px 0 40px}
+  .has-img h1{font-size:${h(64)}}
+  .has-img p{margin-top:30px}
+  .pic{flex:1;position:relative;margin-top:30px;min-height:0;display:flex;align-items:flex-end;justify-content:center}
+  .pic::before{content:'';position:absolute;width:560px;height:560px;border-radius:50%;left:50%;bottom:-40px;transform:translateX(-50%);background:radial-gradient(circle at 50% 45%, ${t.accent}55, ${t.accent}10 62%, transparent 72%)}
+  .pic img{position:relative;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
+  .has-img .bottom{margin-top:30px;padding-top:30px}
+  </style></head><body><div class="wrap ${cls}${img ? ' has-img' : ''}">
   <div class="top"><span>${HANDLE}</span><span>${i + 1}/${total}</span></div>
-  ${cover ? '' : '<div class="bar"></div>'}
+  ${cover ? (s.duck ? duck(t) : '') : '<div class="bar"></div>'}
   <h1>${mark(s.title)}</h1>
-  <p style="font-size:${bodySize(s.body, cover)}px">${mark(s.body)}</p>
+  <p style="font-size:${bodySize(s.body, cover, img)}px">${mark(s.body)}</p>
+  ${img ? `<div class="pic"><img src="data:image/png;base64,${img}"></div>` : ''}
   <div class="bottom"><span>Осанка. Сила. Система.</span>${last ? '' : '<span class="swipe">Листай</span>'}</div>
   </div></body></html>`;
 }
