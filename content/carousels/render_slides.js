@@ -8,7 +8,8 @@ const path = require('path');
 const HANDLE = '@miko_oloo';
 const WORDS = ['ОСАНКА', 'ПРОГРАММА', 'СУШКА'];
 const dir = __dirname;
-const data = JSON.parse(fs.readFileSync(path.join(dir, 'carousels.json'), 'utf8'));
+const data = JSON.parse(fs.readFileSync(process.env.CAROUSELS || path.join(dir, 'carousels.json'), 'utf8'));
+const OUT = process.env.OUT || path.join(dir, 'out');
 
 // head: шрифт заголовков, body: шрифт текста, hs: множитель размера заголовков (широкие шрифты меньше)
 const THEMES = {
@@ -48,17 +49,64 @@ const duck = t => `<svg class="duck" viewBox="0 0 420 380" xmlns="http://www.w3.
   <path d="M160 362 L200 362 M218 362 L258 362" stroke="#FFD27A" stroke-width="12" stroke-linecap="round"/>
 </svg>`;
 
+const dataUri = rel => {
+  const file = path.join(dir, 'img', rel);
+  const mime = /\.png$/i.test(rel) ? 'image/png' : 'image/jpeg';
+  return `data:${mime};base64,${fs.readFileSync(file).toString('base64')}`;
+};
+
+// Пометки поверх фото, координаты в процентах блока с фото:
+// {type:'circle', x, y, r} | {type:'arrow', x1, y1, x2, y2} | {type:'line', points:[[x,y],...]} | {type:'label', x, y, text}
+function marksSvg(marks, t) {
+  if (!marks || !marks.length) return '';
+  const els = marks.map(m => {
+    if (m.type === 'circle') return `<ellipse cx="${m.x}" cy="${m.y}" rx="${m.r}" ry="${m.ry || m.r}" fill="none" stroke="${t.accent}" stroke-width="0.9" vector-effect="non-scaling-stroke" class="mk"/>`;
+    if (m.type === 'arrow') return `<line x1="${m.x1}" y1="${m.y1}" x2="${m.x2}" y2="${m.y2}" stroke="${t.accent}" class="mk" marker-end="url(#ah)"/>`;
+    if (m.type === 'line') return `<polyline points="${m.points.map(p => p.join(',')).join(' ')}" fill="none" stroke="${t.accent}" class="mk" stroke-dasharray="${m.dash ? '2 1.5' : 'none'}"/>`;
+    return '';
+  }).join('');
+  const labels = marks.filter(m => m.type === 'label').map(m => `<div class="mlabel" style="left:${m.x}%;top:${m.y}%">${esc(m.text)}</div>`).join('');
+  return `<div class="marks"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="${t.accent}"/></marker></defs>${els}</svg>${labels}</div>`;
+}
+
 function slideHtml(s, i, total, t) {
   const cover = i === 0, last = i === total - 1;
-  const cls = cover ? 'cover' : last ? 'cta' : 'mid';
+  const layout = s.layout || 'plain';
+  const cls = layout === 'plain' ? (cover ? 'cover' : last ? 'cta' : 'mid') : layout;
   const h = px => Math.round(px * t.hs) + 'px';
   const img = s.img && fs.readFileSync(path.join(dir, 'img', s.img + '.png')).toString('base64');
+  const photo = s.photo && dataUri(s.photo);
+  const focus = s.focus || '50% 50%';
+  const head = `<div class="top"><span>${HANDLE}</span><span>${i + 1}/${total}</span></div>`;
+  const foot = `<div class="bottom"><span>Осанка. Сила. Система.</span>${last ? '' : '<span class="swipe">Листай</span>'}</div>`;
+  const title = `<h1>${mark(s.title)}</h1>`;
+  const body = s.body ? `<p>${mark(s.body)}</p>` : '';
+  let inner;
+  if (layout === 'plain') {
+    inner = `${head}
+  ${cover ? (s.duck ? duck(t) : '') : '<div class="bar"></div>'}
+  ${title}
+  <p style="font-size:${bodySize(s.body, cover, img)}px">${mark(s.body)}</p>
+  ${img ? `<div class="pic"><img src="data:image/png;base64,${img}"></div>` : ''}
+  ${foot}`;
+  } else if (layout === 'photo-top' || layout === 'exercise-annotated') {
+    inner = `<div class="ph"><img src="${photo}" style="object-position:${focus};${s.fit ? 'object-fit:' + s.fit : ''}">${marksSvg(s.marks, t)}</div>
+  ${head}<div class="txt"><div class="bar"></div>${title}${body}</div>${foot}`;
+  } else if (layout === 'big-number') {
+    inner = `<img class="bg" src="${photo}" style="object-position:${focus}"><div class="shade"></div>
+  ${head}<div class="txt"><div class="num">${esc(s.number || '')}</div>${title}${body}</div>${foot}`;
+  } else {
+    // cover-photo, photo-full-card, cta-photo: фото на весь слайд, текст снизу
+    inner = `<img class="bg" src="${photo}" style="object-position:${focus}"><div class="shade"></div>${marksSvg(s.marks, t)}
+  ${head}<div class="txt">${layout === 'cover-photo' ? '' : '<div class="bar"></div>'}${title}${body}</div>${foot}`;
+  }
+  const n = (s.body || '').length;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
   ${fontFaces}
   *{box-sizing:border-box;margin:0;padding:0}
   body{width:1080px;height:1350px;font-family:'${t.body}',sans-serif;background:${t.bg};color:${t.text};overflow:hidden}
   .wrap{position:relative;width:100%;height:100%;padding:110px 96px 120px;display:flex;flex-direction:column}
-  .top{display:flex;justify-content:space-between;font-size:30px;font-weight:700;color:${t.muted};letter-spacing:.5px}
+  .top{position:relative;z-index:3;display:flex;justify-content:space-between;font-size:30px;font-weight:700;color:${t.muted};letter-spacing:.5px}
   .bar{width:120px;height:10px;background:${t.accent};border-radius:5px;margin:auto 0 50px}
   h1{font-family:'${t.head}',sans-serif;font-weight:800;line-height:1.1;letter-spacing:${t.ls}px}
   .mid h1{font-size:${h(78)}}
@@ -67,7 +115,7 @@ function slideHtml(s, i, total, t) {
   p{margin-top:48px;line-height:1.38;color:${t.soft};font-weight:500}
   .cover p{color:${t.accent};font-weight:700}
   .kw{color:${t.onAccent};background:${t.accent};padding:2px 14px;border-radius:10px;font-weight:800}
-  .bottom{margin-top:auto;padding-top:60px;display:flex;justify-content:space-between;align-items:center;font-size:30px;font-weight:500;color:${t.muted}}
+  .bottom{position:relative;z-index:3;margin-top:auto;padding-top:60px;display:flex;justify-content:space-between;align-items:center;font-size:30px;font-weight:500;color:${t.muted}}
   .cover .bottom,.cta .bottom{margin-top:90px}
   .swipe{color:${t.accent};font-weight:800}
   .duck{width:500px;align-self:flex-end;margin-top:40px;margin-bottom:40px}
@@ -79,13 +127,35 @@ function slideHtml(s, i, total, t) {
   .pic::before{content:'';position:absolute;width:560px;height:560px;border-radius:50%;left:50%;bottom:-40px;transform:translateX(-50%);background:radial-gradient(circle at 50% 45%, ${t.accent}55, ${t.accent}10 62%, transparent 72%)}
   .pic img{position:relative;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(0,0,0,.35))}
   .has-img .bottom{margin-top:30px;padding-top:30px}
-  </style></head><body><div class="wrap ${cls}${img ? ' has-img' : ''}">
-  <div class="top"><span>${HANDLE}</span><span>${i + 1}/${total}</span></div>
-  ${cover ? (s.duck ? duck(t) : '') : '<div class="bar"></div>'}
-  <h1>${mark(s.title)}</h1>
-  <p style="font-size:${bodySize(s.body, cover, img)}px">${mark(s.body)}</p>
-  ${img ? `<div class="pic"><img src="data:image/png;base64,${img}"></div>` : ''}
-  <div class="bottom"><span>Осанка. Сила. Система.</span>${last ? '' : '<span class="swipe">Листай</span>'}</div>
+  /* фото: один тон на всю карусель */
+  .bg,.ph img{filter:saturate(.88) contrast(1.06) brightness(.97)}
+  .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, ${t.bg}B0 0%, ${t.bg}00 16%, ${t.bg}00 38%, ${t.bg}D9 66%, ${t.bg}FA 100%)}
+  .marks{position:absolute;inset:0;z-index:2}
+  .marks svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .marks .mk{stroke-width:10px;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+  .mlabel{position:absolute;font:800 34px/1.2 '${t.head}',sans-serif;color:${t.onAccent};background:${t.accent};padding:8px 18px;border-radius:12px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .txt{position:relative;z-index:3;margin-top:auto;display:flex;flex-direction:column}
+  .txt .bar{margin:0 0 34px}
+  .cover-photo .top span,.photo-full-card .top span,.cta-photo .top span,.big-number .top span{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .cover-photo h1{font-size:${h(104)};text-shadow:0 4px 24px rgba(0,0,0,.45)}
+  .cover-photo p{margin-top:30px;font-size:46px;color:${t.accent};font-weight:700;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+  .cover-photo .bottom,.photo-full-card .bottom,.cta-photo .bottom,.big-number .bottom{margin-top:56px;padding-top:0}
+  .photo-full-card h1,.cta-photo h1,.big-number h1{font-size:${h(70)}}
+  .photo-full-card p,.cta-photo p,.big-number p{margin-top:26px;font-size:${n < 90 ? 46 : 41}px;color:#EEF1F4}
+  .cta-photo h1{font-size:${h(84)}}
+  .ph{position:absolute;left:0;top:0;width:100%;height:${s.photoHeight || 58}%;z-index:0}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, ${t.bg}A6 0%, ${t.bg}00 18%, ${t.bg}00 70%, ${t.bg} 100%)}
+  .photo-top h1,.exercise-annotated h1{font-size:${h(64)}}
+  .photo-top p,.exercise-annotated p{margin-top:24px;font-size:${n < 90 ? 44 : n < 150 ? 40 : 37}px}
+  .photo-top .bottom,.exercise-annotated .bottom{margin-top:48px;padding-top:0}
+  .photo-top .top span,.exercise-annotated .top span{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+  .num{font-family:'${t.head}',sans-serif;font-weight:800;font-size:${s.number && s.number.length > 5 ? 170 : 240}px;line-height:.95;color:${t.accent};letter-spacing:-4px;margin-bottom:18px;text-shadow:0 6px 30px rgba(0,0,0,.35)}
+  .cover-photo .shade{background:linear-gradient(180deg, ${t.bg}B0 0%, ${t.bg}00 15%, ${t.bg}00 28%, ${t.bg}CC 52%, ${t.bg}FA 78%)}
+  .big-number .shade{background:linear-gradient(180deg, ${t.bg}C0 0%, ${t.bg}66 30%, ${t.bg}E6 62%, ${t.bg}FA 100%)}
+  </style></head><body><div class="wrap ${cls}${img && layout === 'plain' ? ' has-img' : ''}">
+  ${inner}
   </div></body></html>`;
 }
 
@@ -122,7 +192,7 @@ async function shot(p, html, file) {
   } else {
     const t = THEMES[arg || DEFAULT_THEME];
     for (const c of data) {
-      const out = path.join(dir, 'out', c.id);
+      const out = path.join(OUT, c.id);
       fs.mkdirSync(out, { recursive: true });
       for (let i = 0; i < c.slides.length; i++) {
         if (await shot(p, slideHtml(c.slides[i], i, c.slides.length, t), path.join(out, String(i + 1).padStart(2, '0') + '.png')))
