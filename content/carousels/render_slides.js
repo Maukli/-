@@ -27,7 +27,7 @@ const fontFaces = ['manrope', 'montserrat', 'unbounded'].flatMap(f => [500, 700,
 }))).join('\n');
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const mark = s => WORDS.reduce((t, w) => t.split(w).join(`<span class="kw">${w}</span>`), esc(s));
+const mark = s => WORDS.reduce((t, w) => t.split(w).join(`<span class="kw">${w}</span>`), esc(s)).replace(/\n/g, '<br>');
 
 function bodySize(text, cover, img) {
   if (cover) return 52;
