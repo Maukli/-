@@ -90,7 +90,8 @@ function slideHtml(s, i, total, t) {
   ${img ? `<div class="pic"><img src="data:image/png;base64,${img}"></div>` : ''}
   ${foot}`;
   } else if (layout === 'photo-top' || layout === 'exercise-annotated') {
-    inner = `<div class="ph"><img src="${photo}" style="object-position:${focus};${s.fit ? 'object-fit:' + s.fit + ';' : ''}${s.bw ? 'filter:grayscale(1) contrast(1.12) brightness(.92)' : ''}">${marksSvg(s.marks, t)}</div>
+    const second = s.photo2 ? `<img src="${dataUri(s.photo2)}" style="object-position:${s.focus2 || '50% 50%'}">` : '';
+    inner = `<div class="ph${s.photo2 ? ' duo' : ''}"><img src="${photo}" style="object-position:${focus};${s.fit ? 'object-fit:' + s.fit + ';' : ''}${s.bw ? 'filter:grayscale(1) contrast(1.12) brightness(.92)' : ''}">${second}${marksSvg(s.marks, t)}</div>
   ${head}<div class="txt"><div class="bar"></div>${title}${body}</div>${foot}`;
   } else if (layout === 'big-number') {
     inner = `<img class="bg" src="${photo}" style="object-position:${focus}"><div class="shade"></div>
@@ -146,7 +147,9 @@ function slideHtml(s, i, total, t) {
   .cta-photo h1{font-size:${h(84)}}
   .ph{position:absolute;left:0;top:0;width:100%;height:${s.photoHeight || 58}%;z-index:0}
   .ph img{width:100%;height:100%;object-fit:cover;display:block}
-  .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, ${t.bg}A6 0%, ${t.bg}00 18%, ${t.bg}00 70%, ${t.bg} 100%)}
+  .ph.duo{display:flex;gap:8px}
+  .ph.duo img{width:50%}
+  .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, ${t.bg}D0 0%, ${t.bg}00 20%, ${t.bg}00 70%, ${t.bg} 100%)}
   .photo-top h1,.exercise-annotated h1{font-size:${h(s.big ? 88 : 64)}}
   .photo-top p,.exercise-annotated p{margin-top:24px;font-size:${n < 90 ? 44 : n < 150 ? 40 : 37}px}
   .photo-top .bottom,.exercise-annotated .bottom{margin-top:48px;padding-top:0}
