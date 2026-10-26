@@ -31,3 +31,12 @@
 | src/px_7343000.jpg | c3 слайд 9 | pexels.com/photo/person-using-smartphone-7343000 | Pexels |
 | src/c1_04..07, src/fedb_*.jpg | c1 слайды 4-7, c2 слайды 3, 4, 6, 7, 8, c3 слайд 6 | free-exercise-db (github.com/yuhonas/free-exercise-db) | Unlicense |
 | own/client_side_01_*.jpg | c1 слайды 1, 2, 3, 9 | фото клиента Микаела, лицо размыто | согласие подтвердил Микаел 23.10 |
+
+## Фото Микаела (прислал сам 26.10 для публикации)
+| Файл | Где | Обработка |
+|---|---|---|
+| src/mikael_bench.jpg | c2 слайд 3 | без изменений, кадрирование |
+| src/mikael_pullup.jpg | c2 слайд 7 | обрезаны полосы скриншота, размыт человек на заднем плане |
+| src/mikael_curl.jpg | c3 слайд 6 | обрезаны полосы скриншота, размыты люди на заднем плане |
+| src/mikael_sideplank.jpg | c1 слайд 8 | без изменений |
+Оригиналы лежат в own/ (вне git).
