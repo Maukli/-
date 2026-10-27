@@ -1,14 +1,16 @@
 # Читает сообщения, которые Микаел переслал своему Telegram-боту.
-# Токен берётся из переменной окружения TELEGRAM_BOT_TOKEN и никуда не выводится.
+# Токен берётся из переменной окружения TELEGRAM_BOT_TOKEN (запасное имя mpetrosyan_cloude_bot,
+# под ним токен сохранён в окружении Default) и никуда не выводится.
 # Запуск: python3 tools/telegram_inbox.py [--check] [--download DIR]
 #   --check     только проверить, что бот отвечает
 #   --download  скачать фото и видео из новых сообщений в папку DIR
 # Прочитанные сообщения подтверждаются (offset), повторно они не придут.
 import json, os, sys, urllib.request
 
-TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+TOKEN_VARS = ('TELEGRAM_BOT_TOKEN', 'mpetrosyan_cloude_bot')
+TOKEN = next((os.environ[v] for v in TOKEN_VARS if os.environ.get(v)), None)
 if not TOKEN:
-    sys.exit('Нет переменной TELEGRAM_BOT_TOKEN: её добавляют в настройках облачного окружения, видна в новой сессии.')
+    sys.exit(f'Нет переменной {" или ".join(TOKEN_VARS)}: её добавляют в настройках облачного окружения, видна в новой сессии.')
 API = f'https://api.telegram.org/bot{TOKEN}/'
 FILE_API = f'https://api.telegram.org/file/bot{TOKEN}/'
 
