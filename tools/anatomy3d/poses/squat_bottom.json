@@ -12,16 +12,20 @@
   "hip_rotation_r": -8,
   "hip_rotation_l": -8,
   "lumbar_extension": 4,
-  "wrist_flex_r": -25,
-  "wrist_flex_l": -25,
-  "arm_flex_r": -44.4,
-  "arm_add_r": -26.7,
-  "arm_rot_r": -122.5,
-  "elbow_flex_r": 120.6,
-  "arm_flex_l": -44.4,
-  "arm_add_l": -26.7,
-  "arm_rot_l": -122.5,
-  "elbow_flex_l": 120.6
+  "arm_flex_r": -2.9,
+  "arm_add_r": -23.1,
+  "arm_rot_r": -130.0,
+  "elbow_flex_r": 128.0,
+  "pro_sup_r": 75.4,
+  "wrist_flex_r": -30.0,
+  "wrist_dev_r": 0.0,
+  "arm_flex_l": -3.9,
+  "arm_add_l": -22.8,
+  "arm_rot_l": -130.0,
+  "elbow_flex_l": 126.4,
+  "pro_sup_l": 74.8,
+  "wrist_flex_l": 40.0,
+  "wrist_dev_l": 10.0
  },
  "tiers": {
   "vaslat": 1,
@@ -71,5 +75,11 @@
   0.3
  ],
  "wrist_below": 0.0,
- "elbow_w": 0.3
+ "elbow_w": 0.06,
+ "grip_curl": [
+  25,
+  80,
+  45,
+  30
+ ]
 }
