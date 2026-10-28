@@ -1,0 +1,563 @@
+<title>Опрос перед тренировкой</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Одна колонка как экран телефона: вопросы сверху вниз, живой итог внизу и в липкой плашке */
+:root {
+  --bg: #102033;
+  --surface: #172b43;
+  --surface-2: #1e3654;
+  --line: #2a4566;
+  --fg: #f4f1ea;
+  --soft: #d5dce4;
+  --muted: #8597ab;
+  --accent: #ff9f5a;
+  --on-accent: #102033;
+  --l0: #6fd3a8;
+  --l1: #f5c451;
+  --l2: #ff8a4c;
+  --l3: #ff6470;
+  --head: 'Montserrat', 'Arial Black', system-ui, sans-serif;
+  --body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.45;
+}
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 120px;
+  display: grid;
+  gap: 28px;
+}
+header { display: grid; gap: 8px; }
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+h1 {
+  font-family: var(--head);
+  font-weight: 800;
+  font-size: clamp(26px, 7vw, 32px);
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+}
+.lead { margin: 0; color: var(--soft); }
+.sample {
+  justify-self: start;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+section.q { display: grid; gap: 12px; padding-top: 22px; border-top: 1px solid var(--line); }
+.q h2 {
+  font-family: var(--body);
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.q h2 .n { color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 600; font-size: 14px; }
+.hint { font-size: 13px; color: var(--muted); margin: -6px 0 0; }
+
+/* кнопки-чипы */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit;
+  font-weight: 600;
+  color: var(--soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.chip[aria-checked="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip:focus-visible, .star:focus-visible, .opt:focus-visible, input[type=range]:focus-visible, .bar:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+.day .chip { display: grid; justify-items: center; gap: 0; min-width: 64px; padding: 8px 10px; }
+.day .chip b { font-family: var(--head); font-size: 20px; line-height: 1.1; }
+.day .chip span { font-size: 11px; font-weight: 600; opacity: .85; }
+
+/* сон */
+.sleep-val { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.sleep-val output { font-family: var(--head); font-weight: 800; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.zone { font-weight: 700; font-size: 14px; padding: 3px 10px; border-radius: 999px; color: var(--on-accent); }
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  margin: 0;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--l3) 0 18.75%, var(--l2) 18.75% 37.5%, var(--l1) 37.5% 62.5%, var(--l0) 62.5% 100%);
+}
+input[type=range]::-moz-range-track {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--l3) 0 18.75%, var(--l2) 18.75% 37.5%, var(--l1) 37.5% 62.5%, var(--l0) 62.5% 100%);
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px; height: 30px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: 4px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--fg);
+}
+input[type=range]::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: 4px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--fg);
+}
+.ticks { position: relative; height: 16px; margin: -4px 15px 0; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ticks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.sub { display: grid; gap: 8px; padding: 12px 14px; background: var(--surface); border-radius: 12px; }
+.sub p { margin: 0; font-weight: 600; font-size: 15px; }
+
+/* звёзды */
+.stars { display: flex; gap: 6px; }
+.star {
+  background: none;
+  border: 0;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  line-height: 0;
+}
+.star svg { width: 44px; height: 44px; display: block; transition: transform .12s; }
+.star path { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.2; transition: fill .12s, stroke .12s; }
+.star.on path { fill: var(--accent); stroke: var(--accent); }
+.star:active svg { transform: scale(.9); }
+.caption { font-size: 14px; color: var(--soft); min-height: 1.4em; margin: 0; }
+.caption b { color: var(--fg); }
+
+/* здоровье */
+.opts { display: grid; gap: 8px; }
+.opt {
+  font: inherit;
+  text-align: left;
+  color: var(--soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px 12px 44px;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.35;
+}
+.opt::before {
+  content: "";
+  position: absolute;
+  left: 14px; top: 14px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+}
+.opt[aria-checked="true"] { border-color: var(--accent); color: var(--fg); background: var(--surface-2); }
+.opt[aria-checked="true"]::before { border-color: var(--accent); background: radial-gradient(circle, var(--accent) 0 45%, transparent 50%); }
+
+/* итог */
+.result {
+  display: grid;
+  gap: 14px;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 20px 18px;
+  border: 1px solid var(--line);
+  scroll-margin-top: 16px;
+}
+.result-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pill {
+  font-family: var(--head);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--on-accent);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.result h2 { font-family: var(--head); font-size: 22px; font-weight: 800; margin: 0; line-height: 1.15; }
+.result ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.result li { padding-left: 2px; }
+.result li::marker { color: var(--muted); }
+.example { margin: 0; font-size: 14px; color: var(--muted); }
+details { border-top: 1px solid var(--line); padding-top: 12px; }
+summary { cursor: pointer; font-weight: 600; color: var(--soft); font-size: 14px; }
+details ol { margin: 10px 0 0; padding-left: 20px; display: grid; gap: 4px; font-size: 14px; color: var(--soft); }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* липкая плашка */
+.bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  background: linear-gradient(180deg, transparent, var(--bg) 35%);
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--fg);
+}
+.bar-in {
+  width: 100%;
+  max-width: 488px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.bar .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.bar strong { font-weight: 700; }
+.bar span { color: var(--soft); flex: 1; min-width: 0; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">@miko_oloo, онлайн-ведение</div>
+    <h1>Как ты сегодня?</h1>
+    <p class="lead">Пять вопросов перед тренировкой, ничего печатать не нужно. По ответам сразу видно, идём по плану или снимаем вес.</p>
+    <div class="sample" id="sample">Пример уже заполнен. Нажми свои ответы</div>
+  </header>
+
+  <section class="q day" aria-labelledby="q0">
+    <h2 id="q0"><span class="n">0</span>Какой день по плану</h2>
+    <p class="hint">У клиента это стоит само, из плана. Здесь можно переключить, чтобы посмотреть разные дни.</p>
+    <div class="chips" role="radiogroup" aria-labelledby="q0" id="day"></div>
+  </section>
+
+  <section class="q" aria-labelledby="q1">
+    <h2 id="q1"><span class="n">1</span>Сколько спал этой ночью</h2>
+    <div class="sleep-val">
+      <output id="sleepOut" for="sleep">6 ч</output>
+      <span class="zone" id="sleepZone">недосып</span>
+    </div>
+    <input type="range" id="sleep" min="2" max="10" step="0.5" value="6" aria-label="Сон этой ночью, часов">
+    <div class="ticks" aria-hidden="true"><span style="left:0">2</span><span style="left:18.75%">3,5</span><span style="left:37.5%">5</span><span style="left:62.5%">7</span><span style="left:100%">10</span></div>
+    <div class="sub" id="prevBox">
+      <p>Прошлой ночью тоже меньше 7 часов?</p>
+      <div class="chips" role="radiogroup" aria-label="Прошлой ночью тоже меньше 7 часов" id="prev"></div>
+    </div>
+  </section>
+
+  <section class="q" aria-labelledby="q2">
+    <h2 id="q2"><span class="n">2</span>Энергия</h2>
+    <div class="stars" role="radiogroup" aria-labelledby="q2" id="energy"></div>
+    <p class="caption" id="energyCap"></p>
+  </section>
+
+  <section class="q" aria-labelledby="q3">
+    <h2 id="q3"><span class="n">3</span>Спокойствие за сутки</h2>
+    <p class="hint">5 звёзд: день без стресса.</p>
+    <div class="stars" role="radiogroup" aria-labelledby="q3" id="calm"></div>
+    <p class="caption" id="calmCap"></p>
+  </section>
+
+  <section class="q" aria-labelledby="q4">
+    <h2 id="q4"><span class="n">4</span>Свежесть мышц, которые сегодня работают</h2>
+    <p class="hint">5 звёзд: крепатуры нет.</p>
+    <div class="stars" role="radiogroup" aria-labelledby="q4" id="muscle"></div>
+    <p class="caption" id="muscleCap"></p>
+  </section>
+
+  <section class="q" aria-labelledby="q5">
+    <h2 id="q5"><span class="n">5</span>Здоровье</h2>
+    <p class="hint">Выбери самый серьёзный пункт.</p>
+    <div class="opts" role="radiogroup" aria-labelledby="q5" id="health"></div>
+  </section>
+
+  <section class="q" aria-labelledby="q6">
+    <h2 id="q6">Разминка шла тяжелее обычного?</h2>
+    <p class="hint">Уже в зале, по желанию. Например, первый рабочий подход не добрал по повторам.</p>
+    <div class="chips" role="radiogroup" aria-labelledby="q6" id="warm"></div>
+  </section>
+
+  <section class="result" id="result" aria-live="polite">
+    <div class="result-top">
+      <span class="pill" id="pill">Уровень 1</span>
+      <h2 id="rTitle">Небольшая поправка</h2>
+    </div>
+    <ul id="rLines"></ul>
+    <p class="example" id="rExample"></p>
+    <details>
+      <summary>Как посчитано</summary>
+      <ol id="rWhy"></ol>
+    </details>
+  </section>
+
+  <p class="note">Демо для тренера: ответы никуда не отправляются. Правила из базы "Тренировочные планы", раздел "Поправка на состояние". Проценты в примерах по калькулятору, первый микроцикл. У клиента свои цифры из плана, правило то же.</p>
+</div>
+
+<button class="bar" id="bar" type="button" aria-label="Показать итог">
+  <span class="bar-in">
+    <i class="dot" id="barDot"></i>
+    <strong id="barLvl">Уровень 1</strong>
+    <span id="barTxt">верх дня минус 3</span>
+  </span>
+</button>
+
+<script>
+(function () {
+  var S = { day: 'Т', sleep: 6, prev: false, energy: 3, calm: 4, muscle: 2, health: 0, warm: false };
+
+  var DAYS = [
+    { k: 'М', name: 'малая', pct: 69 },
+    { k: 'С', name: 'средняя', pct: 80 },
+    { k: 'Л', name: 'лёгкая', pct: 57 },
+    { k: 'Т', name: 'тяжёлая', pct: 92 },
+    { k: 'П', name: 'проходка', pct: 100 }
+  ];
+  var PCT = { М: 69, С: 80, Л: 57, Т: 92 };
+
+  var CAPS = {
+    energy: ['сил нет', 'хуже обычного', 'обычно', 'хорошо', 'отлично'],
+    calm: ['очень сильный стресс', 'сильный стресс', 'обычный день', 'почти спокойно', 'полностью спокойно'],
+    muscle: ['сильная крепатура, мешает двигаться', 'заметная крепатура', 'лёгкая крепатура', 'почти нет', 'крепатуры нет']
+  };
+  var NAMES = { energy: 'энергия', calm: 'спокойствие', muscle: 'мышцы' };
+
+  var HEALTH = [
+    'Здоров',
+    'Насморк, заложенность или першение, температуры нет',
+    'Температура, и я знаю, что это инфекция: ОРВИ, грипп, ковид, ангина, кишечная',
+    'Температура без понятной причины, или кашель с мокротой, ломота, рвота, понос',
+    'Боль или давление в груди, перебои, одышка в покое, головокружение, острая боль в суставе или мышце, травма после армрестлинга'
+  ];
+
+  var COLORS = ['var(--l0)', 'var(--l1)', 'var(--l2)', 'var(--l3)'];
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.83 5.73 6.32.92-4.58 4.46 1.08 6.3L12 17.04l-5.65 2.97 1.08-6.3L2.85 9.25l6.32-.92z"/></svg>';
+
+  function $(id) { return document.getElementById(id); }
+  function fmtH(h) { return (h >= 10 ? '10 и больше' : String(h).replace('.', ',')) + ' ч'; }
+  function plural(n, one, few, many) {
+    var m10 = n % 10, m100 = n % 100;
+    if (m10 === 1 && m100 !== 11) return one;
+    if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+    return many;
+  }
+  function sleepLevel(h) { return h < 3.5 ? 3 : h < 5 ? 2 : h < 7 ? 1 : 0; }
+  var ZONES = ['норма', 'недосып', 'почти не спал', 'считай не спал'];
+  function pts(v) { return v === 1 ? 2 : v === 2 ? 1 : 0; }
+
+  function touched() { $('sample').hidden = true; }
+
+  // день
+  DAYS.forEach(function (d) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.setAttribute('role', 'radio'); b.id = 'day-' + d.k;
+    b.innerHTML = '<b>' + (d.k === 'П' ? 'ПМ' : d.k) + '</b><span>' + d.name + '</span>';
+    b.addEventListener('click', function () { S.day = d.k; render(); });
+    $('day').appendChild(b);
+  });
+
+  // да / нет
+  function yesNo(boxId, key) {
+    [['Нет', false], ['Да', true]].forEach(function (p) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.setAttribute('role', 'radio'); b.id = boxId + '-' + (p[1] ? 'y' : 'n');
+      b.textContent = p[0];
+      b.addEventListener('click', function () { S[key] = p[1]; touched(); render(); });
+      $(boxId).appendChild(b);
+    });
+  }
+  yesNo('prev', 'prev');
+  yesNo('warm', 'warm');
+
+  // звёзды
+  ['energy', 'calm', 'muscle'].forEach(function (key) {
+    for (var i = 1; i <= 5; i++) {
+      (function (v) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'star'; b.setAttribute('role', 'radio'); b.id = key + '-' + v;
+        b.setAttribute('aria-label', v + ' из 5: ' + CAPS[key][v - 1]);
+        b.innerHTML = STAR;
+        b.addEventListener('click', function () { S[key] = v; touched(); render(); });
+        $(key).appendChild(b);
+      })(i);
+    }
+  });
+
+  // здоровье
+  HEALTH.forEach(function (t, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'opt'; b.setAttribute('role', 'radio'); b.id = 'health-' + i;
+    b.textContent = t;
+    b.addEventListener('click', function () { S.health = i; touched(); render(); });
+    $('health').appendChild(b);
+  });
+
+  $('sleep').addEventListener('input', function (e) { S.sleep = parseFloat(e.target.value); touched(); render(); });
+  $('bar').addEventListener('click', function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    $('result').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  function compute() {
+    var why = [];
+    if (S.health === 2) return { kind: 'skip', why: ['Температура при известной инфекции: пропуск, это правило без исключений.'] };
+    if (S.health === 3 || S.health === 4) return { kind: 'coach', why: ['Такие признаки тренер разбирает сам, уровень не считаем.'] };
+
+    var sl0 = sleepLevel(S.sleep), sl = sl0;
+    why.push('Сон ' + fmtH(S.sleep) + ': ' + ZONES[sl0] + ', уровень ' + sl0 + '.');
+    if (S.prev && sl0 >= 1) { sl = Math.min(3, sl0 + 1); why.push('Две ночи подряд меньше 7 часов: плюс 1, по сну уровень ' + sl + '.'); }
+
+    var p = 0, low = [];
+    ['energy', 'calm', 'muscle'].forEach(function (k) {
+      var x = pts(S[k]); p += x;
+      if (x) low.push(NAMES[k] + ' ' + S[k] + ' ' + plural(S[k], 'звезда', 'звезды', 'звёзд'));
+    });
+    var ql = p <= 1 ? 0 : p <= 3 ? 1 : p <= 5 ? 2 : 3;
+    why.push(p === 0
+      ? 'Оценки: везде 3 звезды и больше, это норма. Уровень 0.'
+      : 'Оценки: ' + low.join(', ') + '. ' + p + ' ' + plural(p, 'балл', 'балла', 'баллов') + ', уровень ' + ql + '.');
+
+    var lvl = Math.max(sl, ql);
+    why.push('Берём большее: уровень ' + lvl + '.');
+    if (sl >= 1 && ql >= 1) { lvl++; why.push('Плохо и сон, и оценки: плюс 1.'); }
+    if (S.warm) { lvl++; why.push('Разминка тяжелее обычного: плюс 1.'); }
+    if (S.health === 1 && lvl < 2) { lvl = 2; why.push('Насморк без температуры: не ниже 2.'); }
+    if (lvl > 3) { lvl = 3; why.push('Выше 3 не поднимаем.'); }
+    why.push('Итог: уровень ' + lvl + '.');
+    return { kind: 'level', lvl: lvl, why: why };
+  }
+
+  function minus(d, n) { return (PCT[d] - n) + '% вместо ' + PCT[d] + '%'; }
+  var NOEXTRA = 'Без удержаний, полужимов и добавки.';
+
+  function decide(r) {
+    var d = S.day;
+    if (r.kind === 'skip') return {
+      pill: 'Пропуск', color: COLORS[3], title: 'Сегодня не тренируемся', bar: 'не тренируемся',
+      lines: ['Температура при инфекции: никакой нагрузки.', 'Возвращаемся по таблице возврата после болезни. С какого веса начать, скажет тренер.'], ex: ''
+    };
+    if (r.kind === 'coach') {
+      var cl = ['Тренировку не начинаем.', 'Напиши тренеру, что случилось, и дождись ответа.'];
+      if (S.health === 4) cl.push('Боль в груди не проходит в покое: скорая 103 или 112.');
+      return { pill: 'Стоп', color: COLORS[3], title: 'Сначала тренеру', bar: 'сначала тренеру', lines: cl, ex: '' };
+    }
+    var l = r.lvl, o = { pill: 'Уровень ' + l, color: COLORS[l], lines: [], ex: '' };
+    if (l === 0) {
+      o.title = 'По плану'; o.bar = 'по плану';
+      o.lines = d === 'П' ? ['Проходка по плану.'] : ['Проценты, подходы и удержания по плану.'];
+      if (d !== 'П') o.ex = 'Пример: план ' + PCT[d] + '% от максимума, сегодня столько же.';
+    } else if (d === 'П') {
+      o.title = 'Проходку переносим'; o.bar = 'проходка завтра, сегодня С';
+      if (l === 3) {
+        o.title = 'Лёгкий день'; o.bar = 'лёгкий день';
+        o.lines = ['Вместо проходки лёгкий день: Л, все рабочие минус 5.', '4 подхода базы.', NOEXTRA, 'Проходка на следующей тренировке.'];
+        o.ex = 'Пример: ' + minus('Л', 5) + ' от максимума.';
+      } else {
+        o.lines = ['Проходка на следующей тренировке.', 'Сегодня С, все рабочие минус 5.'];
+        if (l === 2) o.lines.push('4 подхода базы.', NOEXTRA);
+        o.ex = 'Пример: ' + minus('С', 5) + ' от максимума.';
+      }
+    } else if (l === 1) {
+      o.title = 'Небольшая поправка';
+      if (d === 'Т' || d === 'С') {
+        o.bar = 'верх дня минус 3';
+        o.lines = ['Верхний вес дня минус 3.', 'Подходы и повторы те же.', 'Удержания весом прошлого микроцикла.', 'Полужимов и жима от бруска нет.'];
+        o.ex = 'Пример: верх ' + minus(d, 3) + ' от максимума.';
+      } else {
+        o.bar = 'проценты по плану';
+        o.lines = ['Проценты и подходы по плану.', 'Удержания, если есть, весом прошлого микроцикла.', 'Полужимов и жима от бруска нет.'];
+        o.ex = 'Пример: план ' + PCT[d] + '% от максимума, сегодня столько же.';
+      }
+    } else if (l === 2) {
+      o.title = 'Снимаем вес и подходы';
+      if (d === 'Т') {
+        o.bar = 'вместо Т день С, минус 5';
+        o.lines = ['Вместо Т делаем С этого микроцикла.', 'Все рабочие минус 5.', '4 подхода базы.', NOEXTRA, 'Т переносится на следующую тренировку.'];
+        o.ex = 'Пример: ' + minus('С', 5) + ' от максимума.';
+      } else if (d === 'С') {
+        o.bar = 'все рабочие минус 5';
+        o.lines = ['Все рабочие минус 5.', '4 подхода базы.', NOEXTRA];
+        o.ex = 'Пример: ' + minus('С', 5) + ' от максимума.';
+      } else {
+        o.bar = 'все рабочие минус 3';
+        o.lines = ['Все рабочие минус 3.', '4 подхода базы.', NOEXTRA];
+        o.ex = 'Пример: ' + minus(d, 3) + ' от максимума.';
+      }
+    } else {
+      o.title = 'Лёгкий день'; o.bar = 'лёгкий день';
+      o.lines = [d === 'Л' ? 'Лёгкий день, все рабочие минус 5.' : 'Вместо этого дня лёгкий: Л, все рабочие минус 5.', '4 подхода базы.', NOEXTRA];
+      if (d === 'Т') o.lines.push('Т переносится на следующую тренировку.');
+      o.ex = 'Пример: ' + minus('Л', 5) + ' от максимума.';
+    }
+    if (S.health === 1) o.lines.push('Через 10-15 минут разминки стало хуже: заканчиваем.');
+    return o;
+  }
+
+  function setChecked(boxId, pred) {
+    Array.prototype.forEach.call($(boxId).children, function (el, i) { el.setAttribute('aria-checked', pred(el, i) ? 'true' : 'false'); });
+  }
+
+  function render() {
+    setChecked('day', function (el, i) { return DAYS[i].k === S.day; });
+    setChecked('prev', function (el, i) { return (i === 1) === S.prev; });
+    setChecked('warm', function (el, i) { return (i === 1) === S.warm; });
+    setChecked('health', function (el, i) { return i === S.health; });
+    ['energy', 'calm', 'muscle'].forEach(function (k) {
+      Array.prototype.forEach.call($(k).children, function (el, i) {
+        el.classList.toggle('on', i < S[k]);
+        el.setAttribute('aria-checked', i + 1 === S[k] ? 'true' : 'false');
+      });
+      $(k + 'Cap').innerHTML = '<b>' + S[k] + ' ' + plural(S[k], 'звезда', 'звезды', 'звёзд') + ':</b> ' + CAPS[k][S[k] - 1];
+    });
+
+    var sl = sleepLevel(S.sleep);
+    $('sleepOut').textContent = fmtH(S.sleep);
+    $('sleepZone').textContent = ZONES[sl];
+    $('sleepZone').style.background = COLORS[sl];
+    $('prevBox').hidden = S.sleep >= 7;
+
+    var r = compute(), o = decide(r);
+    $('pill').textContent = o.pill;
+    $('pill').style.background = o.color;
+    $('rTitle').textContent = o.title;
+    $('rLines').innerHTML = o.lines.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+    $('rExample').textContent = o.ex;
+    $('rExample').hidden = !o.ex;
+    $('rWhy').innerHTML = r.why.map(function (t) { return '<li>' + t + '</li>'; }).join('');
+    $('barDot').style.background = o.color;
+    $('barLvl').textContent = o.pill;
+    $('barTxt').textContent = o.bar;
+  }
+
+  render();
+})();
+</script>
