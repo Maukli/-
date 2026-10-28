@@ -1,6 +1,6 @@
 # Задание: настроить ChatPlace через коннектор
 
-Для новой сессии, в которой подключён коннектор ChatPlace (MCP, https://mcp.chatplace.io/mcp). Ветка с работой: claude/carousel-analysis-tools-4pgmj2.
+Для новой сессии, в которой подключён ChatPlace (MCP, https://mcp.chatplace.io/mcp). Подключение через Claude Code: .mcp.json в корне репозитория, ключ в переменной окружения CHATPLACE_API_KEY облачного окружения (сервер ждёт заголовок Authorization: Bearer). Если инструменты ChatPlace не появились: проверить, что переменная задана, и сказать Микаелу; запасной путь коннектор на claude.ai/customize/connectors. Ветка с работой: claude/carousel-analysis-tools-4pgmj2.
 
 ## Что уже есть
 - Instagram @miko_oloo подключён к ChatPlace (28.10, Микаел).
