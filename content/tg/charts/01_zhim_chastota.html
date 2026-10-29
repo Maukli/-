@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#102033;--ink:#f1efe9;--soft:#d5dce4;--muted:#8597ab;--line:#26384c;--bar:#ff9f5a}
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1350px;background:var(--bg);color:var(--ink);font-family:Manrope,sans-serif;padding:88px 88px 64px;display:flex;flex-direction:column}
+.kicker{font-size:30px;color:var(--muted);font-weight:500;letter-spacing:.5px}
+h1{font-family:Montserrat,sans-serif;font-weight:800;font-size:66px;line-height:1.1;margin-top:22px}
+.metric{margin-top:28px;font-size:34px;color:var(--soft);font-weight:500}
+.plot{position:relative;flex:1;margin-top:40px;display:flex;align-items:flex-end;gap:56px;padding:0 24px;border-bottom:2px solid var(--line)}
+.col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.val{font-size:44px;font-weight:700;margin-bottom:16px}
+.bar{width:100%;background:var(--bar);border-radius:4px 4px 0 0}
+.labels{display:flex;gap:56px;padding:18px 24px 0}
+.labels div{flex:1;text-align:center;font-size:40px;color:var(--soft);font-weight:500}
+.axis{text-align:center;font-size:36px;color:var(--soft);margin-top:8px}
+.callout{margin-top:56px;border-left:6px solid var(--bar);padding:6px 0 6px 28px;font-size:44px;font-weight:700;line-height:1.2}
+.src{margin-top:32px;font-size:30px;color:var(--muted)}
+</style></head><body>
+<div class="kicker">Метаанализ: 22 исследования, 2018</div>
+<h1>Чаще тренировки, больше прирост силы</h1>
+<div class="metric">Прирост силы, величина эффекта</div>
+<div class="plot" id="plot"></div>
+<div class="labels"><div>1</div><div>2</div><div>3</div><div>4+</div></div>
+<div class="axis">тренировок в неделю</div>
+<div class="callout">При равном объёме разницы нет: частота работает через объём</div>
+<div class="src">Grgic и соавт., Sports Medicine, 2018</div>
+<script>
+const v=[0.74,0.82,0.93,1.08], max=1.2, p=document.getElementById('plot');
+const h=p.clientHeight-80;
+v.forEach(x=>{const c=document.createElement('div');c.className='col';
+c.innerHTML='<div class="val">'+String(x).replace('.',',')+'</div><div class="bar" style="height:'+Math.round(h*x/max)+'px"></div>';p.appendChild(c)});
+</script></body></html>
