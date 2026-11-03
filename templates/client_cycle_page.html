@@ -1,0 +1,255 @@
+<title>Андрей: цикл 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Один столбец как экран телефона: выбор тренировки, план, опрос, итог, после тренировки, дневник */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#e8edf2; --line:#d3dbe3;
+  --fg:#14202c; --soft:#3a4a5a; --muted:#6b7b8b;
+  --accent:#e2621b; --on-accent:#ffffff; --star:#f2a20c;
+  --l0:#2f9e6a; --l1:#c99410; --l2:#e2621b; --l3:#d2384a;
+  --head:'Unbounded','Arial Black',system-ui,sans-serif;
+  --body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1a25; --surface:#16263a; --surface-2:#1d3149; --line:#2b4562;
+  --fg:#eef2f6; --soft:#c9d4df; --muted:#8b9db0;
+  --accent:#ff8a3d; --on-accent:#0f1a25; --star:#ffc23d;
+  --l0:#5fd39e; --l1:#f2c94c; --l2:#ff8a3d; --l3:#ff6b7a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1a25; --surface:#16263a; --surface-2:#1d3149; --line:#2b4562;
+  --fg:#eef2f6; --soft:#c9d4df; --muted:#8b9db0;
+  --accent:#ff8a3d; --on-accent:#0f1a25; --star:#ffc23d;
+  --l0:#5fd39e; --l1:#f2c94c; --l2:#ff8a3d; --l3:#ff6b7a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.45}
+.wrap{max-width:540px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px;display:grid;gap:22px}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(22px,6vw,28px);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0;font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--soft);font-size:14px}
+.meta b{color:var(--fg);font-variant-numeric:tabular-nums}
+section{display:grid;gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:14px}
+.weeks{display:grid;gap:8px}
+.week{display:grid;grid-template-columns:64px 1fr;gap:8px;align-items:center}
+.week span{font-size:13px;color:var(--muted);font-weight:600}
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+button{font:inherit;cursor:pointer}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 6px;color:var(--fg);display:grid;gap:2px;justify-items:center;min-height:52px;position:relative}
+.day small{font-size:12px;color:var(--muted)}
+.day[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.day .dot{position:absolute;top:6px;right:6px;width:9px;height:9px;border-radius:50%}
+.q{display:grid;gap:8px}
+.q label,.qt{font-weight:700;font-size:15px}
+.hint{font-size:13px;color:var(--muted);margin:-4px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-height:44px;color:var(--soft);font-weight:600}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.usual{width:100%;background:var(--surface-2);border:2px dashed var(--line);border-radius:14px;padding:14px;font-weight:700;color:var(--fg);min-height:52px}
+.usual[aria-pressed="true"]{background:var(--l0);border-color:var(--l0);border-style:solid;color:var(--on-accent)}
+.stars{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.star{background:none;border:0;padding:4px;width:46px;height:46px;display:grid;place-items:center;border-radius:10px}
+.star svg{width:36px;height:36px;fill:none;stroke:var(--muted);stroke-width:1.6}
+.star.on svg{fill:var(--star);stroke:var(--star)}
+.slabel{font-size:14px;color:var(--soft);min-height:20px}
+button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.result{border-width:2px}
+.lvl{display:flex;align-items:center;gap:10px;font-weight:700}
+.badge{font-family:var(--head);font-size:14px;padding:4px 10px;border-radius:999px;color:var(--on-accent)}
+.big{font-family:var(--head);font-size:30px;font-variant-numeric:tabular-nums}
+.todo{color:var(--soft)}
+.save{background:var(--accent);color:var(--on-accent);border:0;border-radius:14px;padding:14px;font-weight:700;min-height:52px;width:100%}
+.save:disabled{opacity:.5;cursor:default}
+.status{font-size:14px;color:var(--muted);min-height:20px}
+.ex{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--soft)}
+.ex li:first-child{color:var(--fg);font-weight:700}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:52px;height:48px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);font-weight:700;font-size:18px}
+.step output{font-family:var(--head);font-size:24px;min-width:110px;text-align:center;font-variant-numeric:tabular-nums}
+.log{display:grid;gap:8px}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px}
+.row .d{font-weight:700;white-space:nowrap}
+.row .w{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.row .m{color:var(--muted);min-width:0}
+.note{font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){.chip,.star,.day{transition:background .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:8px">
+    <h2>Жим лёжа, цикл 2</h2>
+    <h1>Андрей: цикл 2</h1>
+    <div class="meta"><span>Максимум <b>87,5 кг</b></span><span>Цель проходки <b>92,5 кг</b></span><span>4 недели, 3 тренировки</span></div>
+  </header>
+
+  <section>
+    <h2>Тренировка</h2>
+    <div class="weeks" id="weeks"></div>
+  </section>
+
+  <section class="card">
+    <div class="qt" id="planTitle"></div>
+    <ul class="ex" id="planList"></ul>
+  </section>
+
+  <section>
+    <h2>Опрос перед тренировкой</h2>
+    <button class="usual" id="usual" aria-pressed="false">Всё как обычно</button>
+    <p class="hint">Одно нажатие, если всё как всегда. Если что-то не так, отметь только это.</p>
+    <div class="card">
+      <div class="q"><div class="qt">Сон этой ночью</div><div class="chips" id="sleep"></div></div>
+      <div class="q" id="prevWrap" hidden><div class="qt">Позапрошлая ночь тоже меньше 7 часов?</div><div class="chips" id="prev"></div></div>
+      <div class="q"><div class="qt">Энергия и самочувствие</div><div class="stars" id="energy"></div><div class="slabel" id="energyL"></div></div>
+      <div class="q"><div class="qt">Спокойствие за сутки</div><div class="stars" id="calm"></div><div class="slabel" id="calmL"></div></div>
+      <div class="q"><div class="qt">Свежесть мышц, которые сегодня работают</div><div class="stars" id="fresh"></div><div class="slabel" id="freshL"></div></div>
+      <div class="q"><div class="qt">Здоровье</div><div class="chips" id="health"></div></div>
+      <div class="q"><div class="qt">Разминка тяжелее обычного?</div><p class="hint">Можно отметить уже в зале.</p><div class="chips" id="warm"></div></div>
+    </div>
+  </section>
+
+  <section class="card result" id="result">
+    <div class="lvl"><span class="badge" id="badge"></span><span id="decision"></span></div>
+    <div><div class="note">Жим сегодня, верхний вес</div><div class="big" id="weight"></div><div class="todo" id="sets"></div></div>
+    <button class="save" id="saveSurvey">Сохранить опрос</button>
+    <div class="status" id="st1" role="status"></div>
+  </section>
+
+  <section>
+    <h2>После тренировки</h2>
+    <div class="card">
+      <div class="q"><div class="qt">Вес в главном рабочем подходе</div><div class="step"><button id="minus" aria-label="Минус 2,5 кг">-</button><output id="factW"></output><button id="plus" aria-label="Плюс 2,5 кг">+</button></div></div>
+      <div class="q"><div class="qt">Сколько повторов сделал</div><div class="chips" id="reps"></div></div>
+      <div class="q"><div class="qt">Сколько ещё мог бы сделать</div><div class="chips" id="rir"></div></div>
+      <div class="note" id="e1rm"></div>
+      <button class="save" id="saveFact">Сохранить результат</button>
+      <div class="status" id="st2" role="status"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Дневник цикла</h2>
+    <div class="log" id="log"><div class="note">Здесь появятся сохранённые тренировки.</div></div>
+    <p class="note">Если что-то болит, напиши мне, разберёмся.</p>
+  </section>
+</div>
+
+<script>
+const PM=87.5, STEP=2.5;
+const PROGRAM=__PROGRAM__;
+const PLAN=[
+ ["w1d1",1,"Жс Сс","С","70 кг 6х3",.80,.57,.80],["w1d2",1,"Жл Нс","Л","50 кг 4х5",.57,.57,.80],["w1d3",1,"Жт Сл","Т","80 кг 4х2",.92,.57,.80],
+ ["w2d1",2,"Жс Нл","С","75 кг 5х3",.86,.63,.86],["w2d2",2,"Жл Ст","Л","55 кг 4х6",.63,.63,.86],["w2d3",2,"Жт Нт","Т","85 кг 3х1, потом 80 кг 2х2",.98,.63,.86],
+ ["w3d1",3,"Жс Сс","С","80 кг 5х2",.92,.69,.92],["w3d2",3,"Жл Нс","Л","60 кг 4х6",.69,.69,.92],["w3d3",3,"Жт Сл","Т","90 кг 2х1, потом 80 кг 2х2",1.04,.69,.92],
+ ["w4d1",4,"Жс Нл","С","70 кг 4х2",.80,.57,.80],["w4d2",4,"Жл Ст","Л","50 кг 4х3",.57,.57,.80],["w4d3",4,"Жт Нт","П","Проходка: 90, потом 92,5",.80,.57,.80]
+].map(r=>({id:r[0],week:r[1],day:r[2],type:r[3],text:r[4],pTop:r[5],pL:r[6],pC:r[7]}));
+const SLEEP=[["7 ч и больше",8],["5-7 ч",6],["3,5-5 ч",4],["меньше 3,5 ч",3]];
+const HEALTH=["Здоров","Насморк без температуры","Температура 37,1 и выше","Боль в груди, давление, острая боль"];
+const LBL={energy:["сил нет","хуже обычного","обычно","хорошо","отлично"],calm:["очень сильный стресс","сильный стресс","обычный день","почти спокойно","полностью спокойно"],fresh:["сильная крепатура, мешает двигаться","заметная крепатура","лёгкая крепатура","почти нет крепатуры","крепатуры нет"]};
+const STAR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2 6.4 20.2l1.1-6.3L2.9 9.5l6.3-.9z"/></svg>';
+const $=id=>document.getElementById(id);
+const store={}; let db=null, cur=PLAN[0].id, form={}, fact={};
+const r25=x=>Math.round(x/STEP)*STEP;
+const kg=x=>String(x).replace(".",",")+" кг";
+
+function compute(f,p){
+  const empty=!f.usual&&f.sleep==null&&!f.energy&&!f.calm&&!f.fresh&&!f.health;
+  if(empty) return {empty:true};
+  if(f.health===HEALTH[2]) return {level:"нет",text:"Пропуск, никакой нагрузки",kg:null};
+  if(f.health===HEALTH[3]) return {level:"нет",text:"Не начинай, напиши Микаелу",kg:null};
+  const s=f.sleep!=null?f.sleep:(f.usual?8:null);
+  let sl=0; if(s!=null){sl=s>=7?0:s>=5?1:s>=3.5?2:3; if(s<7&&f.prev==="да") sl++; sl=Math.min(3,sl);}
+  const pt=v=>v===1?2:v===2?1:0; const sum=pt(f.energy)+pt(f.calm)+pt(f.fresh);
+  const sc=sum>=6?3:sum>=4?2:sum>=2?1:0;
+  let L=Math.min(3,Math.max(sl,sc)+(sl>=1&&sc>=1?1:0)+(f.warm==="да"?1:0));
+  if(f.health===HEALTH[1]) L=Math.max(2,L);
+  const t=p.type; let pct=p.pTop, text="По плану";
+  if(L===3){pct=p.pL-.05;text="Вместо этого лёгкий день: все рабочие минус 5 п., 4 по 5";}
+  else if(L>=1&&t==="П"){pct=p.pC-.05;text="Проходки сегодня нет: средний день минус 5 п., проходка на следующей тренировке";}
+  else if(L===1){ if(t!=="Л"){pct=p.pTop-.03;text="Верх дня минус 3 п.";} }
+  else if(L===2){ if(t==="Т"){pct=p.pC-.05;text="Тяжёлый день заменить на средний этой недели минус 5 п., 4 подхода";} else if(t==="С"){pct=p.pTop-.05;text="Все рабочие минус 5 п., 4 подхода";} else {pct=p.pTop-.03;text="Все рабочие минус 3 п., 4 подхода";} }
+  const w=(L===0&&t==="П")?null:r25(PM*pct);
+  return {level:L,text,kg:w};
+}
+function e1rm(w,reps,rir){ if(!w||!reps) return null; const n=reps+(rir||0); if((rir||0)>4||n>10) return null;
+  const f=[1,.95,.93,.9,.87,.85,.83,.8,.77,.75][n-1]; return Math.round(w/f*2)/2; }
+const lvColor=L=>L==="нет"?"var(--l3)":["var(--l0)","var(--l1)","var(--l2)","var(--l3)"][L];
+
+function chips(el,opts,key,obj,onch){
+  el.innerHTML=""; opts.forEach(o=>{const [lab,val]=Array.isArray(o)?o:[o,o];
+    const b=document.createElement("button"); b.className="chip"; b.textContent=lab; b.type="button";
+    b.setAttribute("aria-pressed",String(obj[key]===val));
+    b.onclick=()=>{obj[key]=obj[key]===val?null:val; if(obj===form) form.usual=false; onch();}; el.appendChild(b);});
+}
+function stars(key){
+  const el=$(key); el.innerHTML=""; for(let i=1;i<=5;i++){const b=document.createElement("button");b.type="button";
+    b.className="star"+((form[key]||(form.usual?5:0))>=i?" on":""); b.innerHTML=STAR; b.setAttribute("aria-label",i+" из 5: "+LBL[key][i-1]);
+    b.onclick=()=>{form[key]=form[key]===i?null:i; form.usual=false; render();}; el.appendChild(b);}
+  const v=form[key]||(form.usual?5:0); $(key+"L").textContent=v?LBL[key][v-1]:"";
+}
+function render(){
+  const p=PLAN.find(x=>x.id===cur);
+  $("weeks").innerHTML="";
+  [1,2,3,4].forEach(w=>{const row=document.createElement("div");row.className="week";row.innerHTML=`<span>Неделя ${w}</span>`;
+    const days=document.createElement("div");days.className="days";
+    PLAN.filter(x=>x.week===w).forEach(x=>{const b=document.createElement("button");b.className="day";b.type="button";
+      b.setAttribute("aria-pressed",String(x.id===cur));b.innerHTML=`${x.day}<small>${x.type==="П"?"проходка":x.type==="Т"?"тяжёлый":x.type==="С"?"средний":"лёгкий"}</small>`;
+      const s=store[x.id]; if(s&&s.result&&!s.result.empty){const d=document.createElement("i");d.className="dot";d.style.background=lvColor(s.result.level);b.appendChild(d);}
+      b.onclick=()=>select(x.id); days.appendChild(b);});
+    row.appendChild(days); $("weeks").appendChild(row);});
+  $("planTitle").textContent=`Неделя ${p.week}, ${p.day}`;
+  $("planList").innerHTML=""; (PROGRAM[p.id]||[]).forEach(t=>{const li=document.createElement("li");li.textContent=t;$("planList").appendChild(li);});
+  $("usual").setAttribute("aria-pressed",String(!!form.usual));
+  chips($("sleep"),SLEEP,"sleep",form,render);
+  const s=form.sleep; $("prevWrap").hidden=!(s!=null&&s<7);
+  chips($("prev"),["да","нет"],"prev",form,render);
+  ["energy","calm","fresh"].forEach(stars);
+  chips($("health"),HEALTH,"health",form,render);
+  chips($("warm"),["да","нет"],"warm",form,render);
+  const r=compute(form,p);
+  if(r.empty){$("badge").textContent="?";$("badge").style.background="var(--muted)";$("decision").textContent="Пройди опрос или нажми \"Всё как обычно\"";
+    $("weight").textContent=kg(r25(PM*p.pTop)).replace(/^NaN.*/,"");$("sets").textContent="План: "+p.text;}
+  else{$("badge").textContent=r.level==="нет"?"стоп":"уровень "+r.level;$("badge").style.background=lvColor(r.level);$("decision").textContent=r.text;
+    $("weight").textContent=r.kg?kg(r.kg):(r.level===0&&p.type==="П"?"90, потом 92,5 кг":"нет жима");$("sets").textContent="План: "+p.text;}
+  if(p.type==="П"&&r.empty) $("weight").textContent="90, потом 92,5 кг";
+  $("saveSurvey").disabled=r.empty;
+  if(!fact.manual) fact.w=r.kg||r25(PM*p.pTop);
+  $("factW").textContent=kg(fact.w);
+  chips($("reps"),[1,2,3,4,5,6,7,8,9,10].map(n=>[String(n),n]),"reps",fact,render);
+  chips($("rir"),[0,1,2,3,4].map(n=>[String(n),n]),"rir",fact,render);
+  const e=e1rm(fact.w,fact.reps,fact.rir);
+  $("e1rm").textContent=e?`Расчётный максимум по этому подходу: ${kg(e)}`:"Отметь повторы и запас, посчитаю расчётный максимум.";
+  $("saveFact").disabled=!fact.reps;
+  renderLog();
+}
+function renderLog(){
+  const rows=PLAN.filter(x=>store[x.id]); if(!rows.length){$("log").innerHTML='<div class="note">Здесь появятся сохранённые тренировки.</div>';return;}
+  $("log").innerHTML=""; rows.forEach(x=>{const s=store[x.id];const r=s.result||{};const el=document.createElement("div");el.className="row";
+    const f=s.fact; const factTxt=f&&f.reps?`${kg(f.w)} на ${f.reps}, запас ${f.rir||0}`:"";
+    el.innerHTML=`<div class="d">Н${x.week} ${x.day}</div><div class="m"></div><div class="w"></div>`;
+    el.querySelector(".m").textContent=(r.empty||r.level==null?"опрос не пройден":(r.level==="нет"?"":"уровень "+r.level+". ")+r.text)+(s.e1rm?`. Расчётный максимум ${kg(s.e1rm)}`:"");
+    el.querySelector(".w").textContent=factTxt||(r.kg?kg(r.kg):"");
+    el.style.borderLeft=r.level!=null&&!r.empty?`4px solid ${lvColor(r.level)}`:"";
+    $("log").appendChild(el);});
+}
+function select(id){cur=id;const s=store[id]||{};form=Object.assign({},s.form||{});fact=Object.assign({},s.fact||{});$("st1").textContent="";$("st2").textContent="";render();}
+$("usual").onclick=()=>{form={usual:!form.usual};render();};
+$("minus").onclick=()=>{fact.manual=true;fact.w=Math.max(20,fact.w-STEP);render();};
+$("plus").onclick=()=>{fact.manual=true;fact.w=fact.w+STEP;render();};
+async function save(part,st){
+  const p=PLAN.find(x=>x.id===cur);
+  const doc={week:p.week,day:p.day,form,result:compute(form,p),fact,e1rm:e1rm(fact.w,fact.reps,fact.rir),savedAt:new Date().toISOString()};
+  if(!db){$(st).textContent="Сохранение недоступно: открой страницу, войдя в claude.ai.";return;}
+  $(st).textContent="Сохраняю...";
+  try{await db.doc("trainings/"+cur).set(JSON.parse(JSON.stringify(doc)));$(st).textContent=part==="f"?"Результат сохранён.":"Опрос сохранён. Хорошей тренировки!";}
+  catch(e){$(st).textContent=e&&e.code==="permission_denied"?"Нет прав на запись. Попроси Микаела открыть тебе доступ.":"Не сохранилось, попробуй ещё раз.";}
+}
+$("saveSurvey").onclick=()=>save("s","st1");
+$("saveFact").onclick=()=>save("f","st2");
+render();
+(async()=>{try{db=await claude.use("db");}catch(e){db=null}
+  if(!db) return;
+  db.collection("trainings").onSnapshot(snap=>{snap.docs.forEach(d=>{store[d.id]=d.data();});
+    if(Object.keys(form).length===0&&store[cur]){form=Object.assign({},store[cur].form||{});fact=Object.assign({},store[cur].fact||{});}
+    render();},()=>{});
+})();
+</script>
