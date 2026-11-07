@@ -10,6 +10,7 @@
 | Массонабор: база знаний | a0bcfecd-ecd1-4394-b159-30cce28e123c | https://claude.ai/artifact/LrDr1qdy7CsRw8Hc48Wv6F |
 | Тренировочные планы | df8b4b3c-37a6-4b58-a865-951d329fc559 | https://claude.ai/artifact/Uc3TsqubfUobY37NfXqXHa |
 | Осанка и методы коррекции | 6cfe76c5-2d4b-48d6-a0bc-5a558bd45a18 | https://claude.ai/artifact/ETdDwsx5e3WwzsHq18yXtb |
+| Фарма: контроль здоровья клиента на курсе (без схем и доз) | 1039e1c9-8c90-4665-8092-edfbb02c8b82 | https://claude.ai/artifact/31DLi2oXKkFdrLxuZKLaUh |
 
 Перед правкой документа: загрузить скилл docs, прочитать документ свежим чтением (`sinceRev`), менять только нужное.
 
