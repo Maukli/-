@@ -66,6 +66,28 @@
 - Сборка: python3 interp60.py, затем python3 render4.py 4k60. Файл в HEVC (H.265), 2160x3840, около 35 Мбит/с, 87 с.
 - В финальной сборке обеих версий сглаживание полос на тёмных градиентах (на потолке вокруг ламп были ступеньки от сильного осветления) и тонкое зерно, кодировщик бережнее к тёмным участкам.
 
+## Подпись к рилсу (08.11, на английском)
+```
+Could you do this? 👀
+One arm. One barbell. Five presses without putting it down.
+
+The rules:
+1. Lying: unrack and press
+2. Seated: sit up, press
+3. Standing: stand up, press
+4. Seated: sit back down, press
+5. Lying: lie back, press, rack it
+
+Grip the bar in the middle. The arm stays locked out between positions, no help from the other hand.
+
+@oxmedo12 vs me. Who did it cleaner?
+Film your attempt and tag @miko_oloo
+
+Start with an empty bar and have someone spot you.
+
+#gymchallenge #benchpress #onearmpress #strengthchallenge #gymmotivation
+```
+
 ## Перед публикацией
 - Другу 15 лет: на публикацию его видео нужно согласие (его и родителей), лучше письменное, сообщением.
 - Для молодёжи в подписи: начинать с пустого грифа, рядом страхующий.
