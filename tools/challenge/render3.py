@@ -1,12 +1,14 @@
 # Челлендж-рилс v3 (08.11). Запуск: python3 render3.py [--force]
-# Исходники в raw/ (C022-C026 с папки на Диске), шрифты в fonts/, маски mask_C023.png и mask_C024.png.
+# Исходники в raw/ (C022-C026 с папки на Диске), шрифт fonts2/SofiaXC.ttf (Google Fonts: Sofia Sans Extra Condensed, Black Italic), маски mask_C023.png и mask_C024.png.
+# "python3 render3.py grade" считает только цвет; без аргумента: цвет из кэша, надписи, переход, финальный файл.
 import subprocess, os, sys
 from concurrent.futures import ThreadPoolExecutor
 B = os.path.dirname(os.path.abspath(__file__))
 T = f'{B}/txt3'
 OUT = f'{B}/seg3'
-F_TITLE = f'{B}/fonts/Rubik.ttf'
-F_NAME = f'{B}/fonts/Oswald.ttf'
+# Шрифт v3: Sofia Sans Extra Condensed Black Italic (Google Fonts, кириллица). Тонкая обводка и мягкая тень вместо толстого контура.
+F_TITLE = f'{B}/fonts2/SofiaXC.ttf'
+F_NAME = f'{B}/fonts2/SofiaXC.ttf'
 F_SYM = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 CROP = {'C025': 'crop=900:1600:0:20', 'C023': 'crop=900:1600:0:20', 'C026': 'crop=900:1600:58:20', 'C022': 'crop=900:1600:58:20'}
 MASK = {'C025': 'mask_C023', 'C023': 'mask_C023', 'C026': 'mask_C024', 'C022': 'mask_C024'}
@@ -23,7 +25,7 @@ GRADE = ("hqdn3d=1.5:1.2:3.5:3.5,curves=master='0/0.015 0.04/0.11 0.12/0.30 0.3/
 GLOW, VIGNETTE = 0.22, 'PI/14'
 # Значок Instagram с ником всё время в кадре, место меняется каждые WM_STEP секунд (как в примере, и от перезаливов).
 WM_STEP = 6
-WM_POS = [('60', '1120'), ('W-w-60', '330'), ('60', '520'), ('W-w-60', '1000')]
+WM_POS = [('60', '1050'), ('W-w-60', '330'), ('60', '520'), ('W-w-60', '1000')]
 # Галочка через 0,2 с после того, как рука выпрямилась в конце жима (размечено по кадрам).
 CHECKS = {'ox': [17.3, 22.9, 27.7, 35.4, 45.3], 'mi': [48.4, 61.4, 76.2, 91.1, 114.2]}
 # (клип, начало, конец, ускорение, кто, метка). Жимы в реальной скорости, переходы ускорены.
@@ -44,55 +46,71 @@ SEG = [
 XFADE = 0.6  # плавный переход в концовку
 
 
-def dtext(fn, font, size, x, y, color='white', extra='', border=4):
-    return f"drawtext=fontfile={font}:textfile={T}/{fn}:fontsize={size}:fontcolor={color}:x={x}:y={y}:borderw={border}:bordercolor=black@0.8{extra}"
+def dtext(fn, font, size, x, y, color='white', extra='', border=2):
+    return (f"drawtext=fontfile={font}:textfile={T}/{fn}:fontsize={size}:fontcolor={color}:x={x}:y={y}:borderw={border}:bordercolor=black@0.55"
+            f":shadowcolor=black@0.45:shadowx=0:shadowy=5{extra}")
 
 
 def texts(s, e, sp, who, badge):
     if who == 'end':
         return []
-    tx = [dtext('title.txt', F_TITLE, 78, '(w-text_w)/2', 1415)]
+    tx = [dtext('title.txt', F_TITLE, 112, '(w-text_w)/2', 1380)]
     if who:
-        tx.append(dtext(f'n_{who}.txt', F_NAME, 64, '(w-text_w)/2', 1508, border=3))
-        tx.append(dtext(f's_{who}.txt', F_NAME, 52, '(w-text_w)/2', 1588, border=3))
+        tx.append(dtext(f'n_{who}.txt', F_NAME, 84, '(w-text_w)/2', 1505))
+        tx.append(dtext(f's_{who}.txt', F_NAME, 56, '(w-text_w)/2', 1600, 'white@0.92'))
+        tx.append("drawbox=x=iw-330:y=535:w=300:h=410:color=black@0.30:t=fill")
         for k, ev in enumerate(CHECKS[who]):
             y = 560 + k * 78
             done_from = 0.0 if ev < s else ((ev - s) / sp if ev < e else None)
             if done_from is None:
-                tx += [dtext(f'l{k}.txt', F_NAME, 44, 'w-200-text_w', y, 'white@0.55', border=2),
-                       dtext('circ.txt', F_SYM, 48, 'w-170', y - 2, 'white@0.55', border=2)]
+                tx += [dtext(f'l{k}.txt', F_NAME, 54, 'w-200-text_w', y, 'white@0.68', border=2),
+                       dtext('circ.txt', F_SYM, 48, 'w-170', y - 2, 'white@0.68', border=2)]
                 continue
             pre = f":enable='lt(t,{done_from:.2f})'"
             post = f":enable='gte(t,{done_from:.2f})'"
             if done_from > 0:
-                tx += [dtext(f'l{k}.txt', F_NAME, 44, 'w-200-text_w', y, 'white@0.55', pre, 2),
-                       dtext('circ.txt', F_SYM, 48, 'w-170', y - 2, 'white@0.55', pre, 2)]
-            tx += [dtext(f'l{k}.txt', F_NAME, 44, 'w-200-text_w', y, 'white', post, 2),
+                tx += [dtext(f'l{k}.txt', F_NAME, 54, 'w-200-text_w', y, 'white@0.68', pre, 2),
+                       dtext('circ.txt', F_SYM, 48, 'w-170', y - 2, 'white@0.68', pre, 2)]
+            tx += [dtext(f'l{k}.txt', F_NAME, 54, 'w-200-text_w', y, 'white', post, 2),
                    dtext('chk.txt', F_SYM, 50, 'w-172', y - 4, '0x3DDC84', post, 3)]
             if done_from > 0:
                 pop = f":enable='between(t,{done_from:.2f},{done_from + 0.8:.2f})'"
                 tx.append(dtext('chk.txt', F_SYM, 230, '(w-text_w)/2', 1150, '0x3DDC84', pop, 8))
     if badge:
-        tx.append(f"drawtext=fontfile={F_NAME}:textfile={T}/{badge}.txt:fontsize=56:fontcolor=black:x=50:y=1310:box=1:boxcolor=white@0.9:boxborderw=16")
+        tx.append(f"drawtext=fontfile={F_NAME}:textfile={T}/{badge}.txt:fontsize=64:fontcolor=black:x=50:y=1270:box=1:boxcolor=white@0.9:boxborderw=14")
     return tx
 
 
-def render(i):
+def grade(i):
+    # Этап 1: цвет, детализация, размытие фона. Без надписей, считается один раз.
     c, s, e, sp, who, badge = SEG[i]
-    out = f'{OUT}/s{i:02d}.mp4'
-    if os.path.exists(out) and '--force' not in sys.argv:
+    out = f'{OUT}/g{i:02d}.mp4'
+    if os.path.exists(out) and '--regrade' not in sys.argv:
         return out, 'cached'
     dur = (e - s) / sp
-    tx = texts(s, e, sp, who, badge)
-    tail = (',' + ','.join(tx)) if tx else ''
     fc = (f"[0:v]setpts=(PTS-STARTPTS)/{sp},fps=24000/1001,{CROP[c]},scale=1080:1920:flags=lanczos,{GRADE};"
           f"[g]format=gbrp,split=3[s][b][h];"
           f"[h]curves=all='0/0 0.72/0 1/1',gblur=sigma=25[hg];[b]gblur=sigma=9[bb];[1:v]format=gray[m];[s][m]alphamerge[sa];"
           f"[bb][sa]overlay=format=auto,format=gbrp[c];[c][hg]blend=all_mode=screen:all_opacity={GLOW},vignette=angle={VIGNETTE},"
-          f"format=yuv420p,noise=alls=3:allf=t{tail}[v]")
+          f"format=yuv420p,noise=alls=3:allf=t[v]")
     cmd = ['ffmpeg', '-v', 'error', '-y', '-ss', str(s), '-to', str(e), '-i', f'{B}/raw/{c}.mp4', '-loop', '1', '-i', f'{B}/{MASK[c]}.png',
-           '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-filter_complex', fc, '-map', '[v]', '-map', '2:a', '-t', f'{dur:.3f}',
-           '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '128k', out]
+           '-filter_complex', fc, '-map', '[v]', '-t', f'{dur:.3f}', '-an',
+           '-c:v', 'libx264', '-preset', 'medium', '-crf', '14', '-pix_fmt', 'yuv420p', out + '.part.mp4']
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode == 0:
+        os.replace(out + '.part.mp4', out)
+    return out, ('ok' if r.returncode == 0 else r.stderr[-800:])
+
+
+def render(i):
+    # Этап 2: надписи поверх готового цвета. Быстро, шрифт можно менять без пересчёта цвета.
+    c, s, e, sp, who, badge = SEG[i]
+    src, out = f'{OUT}/g{i:02d}.mp4', f'{OUT}/s{i:02d}.mp4'
+    tx = texts(s, e, sp, who, badge)
+    vf = ','.join(tx) if tx else 'null'
+    cmd = ['ffmpeg', '-v', 'error', '-y', '-i', src, '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-vf', vf,
+           '-map', '0:v', '-map', '1:a', '-shortest', '-c:v', 'libx264', '-preset', 'medium', '-crf', '16', '-pix_fmt', 'yuv420p',
+           '-c:a', 'aac', '-b:a', '128k', out]
     r = subprocess.run(cmd, capture_output=True, text=True)
     return out, ('ok' if r.returncode == 0 else r.stderr[-800:])
 
@@ -103,6 +121,14 @@ def dur_of(p):
 
 
 os.makedirs(OUT, exist_ok=True)
+with ThreadPoolExecutor(max_workers=4) as ex:
+    gres = list(ex.map(grade, range(len(SEG))))
+for i, (p, st) in enumerate(gres):
+    if st not in ('ok', 'cached'):
+        print('grade fail', i, st); sys.exit(1)
+print('grade done', flush=True)
+if 'grade' in sys.argv:
+    sys.exit(0)
 with ThreadPoolExecutor(max_workers=4) as ex:
     res = list(ex.map(render, range(len(SEG))))
 for i, (p, st) in enumerate(res):
