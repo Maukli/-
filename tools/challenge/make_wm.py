@@ -3,7 +3,7 @@ import sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 S = 4  # рисуем крупно и уменьшаем для гладких краёв
 icon, pad = 72, 14
-font = ImageFont.truetype('fonts2/SofiaXC.ttf', 54 * S)
+font = ImageFont.truetype('fonts2/Bebas.ttf', 62 * S)
 text = sys.argv[1] if len(sys.argv) > 1 else '@MIKO_OLOO'
 tw = font.getbbox(text)[2]
 W = max(icon * S, tw) + 2 * pad * S
