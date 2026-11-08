@@ -55,7 +55,7 @@
 
 ## Черновик v4 (08.11)
 - По правкам Микаела к v3: возраст убран, на экране только ник. Концовка с хлопком по спине убрана, ролик кончается подходом miko (сел после того, как поставил штангу). Большие зелёные галочки в центре убраны, маленькие в чек-листе остались. Все надписи на английском.
-- Стиль: NEW CHALLENGE шрифтом Anton (белый, разрядка), ник под ним жёлтой росписью Mr Dafoe (как подпись, жёлтый в тон стойкам и колоннам зала). Чек-лист LYING / SEATED / STANDING / SEATED / LYING и метки x2-x4 шрифтом Bebas Neue, ник в значке Instagram тоже им. Запасные пары на листе стилей: Bebas Neue + Permanent Marker, Big Shoulders + Kaushan Script, жёлтый Anton + Yellowtail.
+- Стиль (выбор Микаела: B с заголовком как в D): NEW CHALLENGE шрифтом Bebas Neue, жёлтым, с разрядкой (жёлтый в тон стойкам и колоннам зала), ник под ним белым маркером Permanent Marker. Первый вариант v4 был Anton + жёлтая роспись Mr Dafoe. Чек-лист LYING / SEATED / STANDING / SEATED / LYING и метки x2-x4 шрифтом Bebas Neue, ник в значке Instagram тоже им. Другие пары на листе стилей: Anton + Mr Dafoe, Big Shoulders + Kaushan Script, жёлтый Anton + Yellowtail.
 - Цвет, детализация, галочки по кадрам и значок Instagram как в v3. Длина 89 с.
 - Скрипт: tools/challenge/render4.py (цвет берёт из кэша render3.py).
 

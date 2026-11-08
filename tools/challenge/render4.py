@@ -1,6 +1,6 @@
 # Челлендж-рилс v4 (08.11). Запуск: python3 render4.py
 # Цвет берётся из кэша v3 (seg3/g*.mp4, считает render3.py grade). Здесь только надписи, ник Instagram и финальный файл.
-# Шрифты (Google Fonts) в fonts2/: Anton (заголовок), Mr Dafoe (имя-роспись), Bebas Neue (чек-лист, метки, ник в значке).
+# Шрифты (Google Fonts) в fonts2/: Bebas Neue (заголовок, чек-лист, метки, ник в значке), Permanent Marker (имя).
 import subprocess, os, sys
 from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -13,8 +13,9 @@ F_LAB = f'{B}/fonts2/Bebas.ttf'
 F_SYM = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 YELLOW = (255, 210, 31)
 # Всё на английском (решение 08.11). На экране только NEW CHALLENGE и ник, без возраста и веса.
-TITLE = ('NEW CHALLENGE', f'{B}/fonts2/Anton.ttf', 120, (255, 255, 255), 4)
-NAMES = {'ox': ('oxmedo', f'{B}/fonts2/MrDafoe.ttf', 185, YELLOW, 0), 'mi': ('miko', f'{B}/fonts2/MrDafoe.ttf', 185, YELLOW, 0)}
+# Стиль B с жёлтым заголовком (выбор Микаела 08.11): NEW CHALLENGE Bebas Neue жёлтым с разрядкой, ник маркером Permanent Marker белым.
+TITLE = ('NEW CHALLENGE', f'{B}/fonts2/Bebas.ttf', 150, YELLOW, 10)
+NAMES = {'ox': ('OXMEDO', f'{B}/fonts2/Marker.ttf', 92, (255, 255, 255), 2), 'mi': ('MIKO', f'{B}/fonts2/Marker.ttf', 92, (255, 255, 255), 2)}
 TITLE_Y = 1330
 WM_STEP = 6
 WM_POS = [('60', '1050'), ('W-w-60', '330'), ('60', '520'), ('W-w-60', '1000')]
