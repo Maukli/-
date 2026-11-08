@@ -88,6 +88,20 @@ Start with an empty bar and have someone spot you.
 #gymchallenge #benchpress #onearmpress #strengthchallenge #gymmotivation
 ```
 
+## Версия для YouTube Shorts, до 60 секунд (08.11)
+- Тот же стиль и цвет, монтаж плотнее (tools/challenge/segs_short.py): в каждом жиме опускание x2, жим вверх и выпрямление руки в реальной скорости, переходы и удержание x3-x8 с меткой, у oxmedo убрано время после того, как поставил штангу. Около 59 секунд.
+- Сборка: render3.py grade --short, render4.py --short (1080p), затем interp60.py --short и render4.py 4k60 --short (4K 60 кадров).
+- Название и описание для YouTube:
+```
+Title: One Arm Barbell Challenge: Could You Do It? #shorts
+
+Lying, seated, standing, seated, lying. One arm, five presses, the bar never goes down.
+Who did it cleaner, @oxmedo12 or me? Film your attempt and tag @miko_oloo on Instagram.
+Start with an empty bar and use a spotter.
+
+#gymchallenge #benchpress #onearmpress #strengthchallenge #shorts
+```
+
 ## Перед публикацией
 - Другу 15 лет: на публикацию его видео нужно согласие (его и родителей), лучше письменное, сообщением.
 - Для молодёжи в подписи: начинать с пустого грифа, рядом страхующий.

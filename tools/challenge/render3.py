@@ -43,6 +43,10 @@ SEG = [
     ('C025', 115.0, 117.0, 2, 'mi', 'x2'), ('C025', 117.0, 120.6, 1, 'mi', None),
     ('C023', 157.9, 161.3, 1, 'end', None),  # хлопают друг друга по спине, без надписей
 ]
+if '--short' in sys.argv:  # версия до 60 секунд для YouTube Shorts
+    sys.path.insert(0, B)
+    from segs_short import SHORT_SEG
+    SEG, OUT = SHORT_SEG, f'{B}/segS'
 XFADE = 0.6  # плавный переход в концовку
 
 

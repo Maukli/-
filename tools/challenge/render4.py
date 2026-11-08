@@ -35,6 +35,12 @@ SEG = [
     ('C025', 91.9, 95.5, 3, 'mi', 'x3'), ('C025', 95.5, 109.4, 4, 'mi', 'x4'), ('C025', 109.4, 115.0, 1, 'mi', None),
     ('C025', 115.0, 117.0, 2, 'mi', 'x2'), ('C025', 117.0, 120.6, 1, 'mi', None),
 ]
+SHORT = '--short' in sys.argv  # версия до 60 секунд для YouTube Shorts (монтаж в segs_short.py)
+if SHORT:
+    from segs_short import SHORT_SEG
+    SEG = SHORT_SEG
+    G = f'{B}/segS60' if HI else f'{B}/segS'
+    OUT = f'{B}/segSk60' if HI else f'{B}/segS4'
 WM_OWNER = {'C022': 'ox', 'C026': 'ox', 'C023': 'mi', 'C025': 'mi'}
 
 os.makedirs(OUT, exist_ok=True)
@@ -118,6 +124,8 @@ if __name__ == '__main__':
         t0 += d
     en = {k: '+'.join(f'gte(t,{a:.3f})*lt(t,{b:.3f})' for a, b in v) for k, v in spans.items()}
     final = f'{B}/challenge_v4_4k60.mp4' if HI else f'{B}/challenge_v4.mp4'
+    if SHORT:
+        final = f'{B}/challenge_short_4k60.mp4' if HI else f'{B}/challenge_short.mp4'
     # Сглаживание полос на тёмных градиентах (потолок) и тонкое зерно поверх, чтобы ступеньки не вернулись при сжатии.
     up = (',scale=2160:3840:flags=lanczos,unsharp=5:5:0.35:5:5:0.0,noise=alls=3:allf=t' if HI else ',noise=alls=2:allf=t')
     fc = (f"[1:v]format=rgba[wo];[2:v]format=rgba[wi];[0:v]deband=1thr=0.03:2thr=0.03:3thr=0.03:range=22:blur=1[d0];"
