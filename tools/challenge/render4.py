@@ -7,8 +7,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from textpng import text_png
 B = os.path.dirname(os.path.abspath(__file__))
 T = f'{B}/txt4'
-G = f'{B}/seg3'   # готовый цвет
-OUT = f'{B}/seg4'
+HI = '4k60' in sys.argv  # 4K 60 кадров: цвет с дорисованными кадрами из seg60 (interp60.py), увеличение до 2160x3840 в финале
+G = f'{B}/seg60' if HI else f'{B}/seg3'   # готовый цвет
+OUT = f'{B}/seg4k60' if HI else f'{B}/seg4'
 F_LAB = f'{B}/fonts2/Bebas.ttf'
 F_SYM = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 YELLOW = (255, 210, 31)
@@ -113,12 +114,15 @@ if __name__ == '__main__':
         spans[WM_OWNER[SEG[i][0]]].append((t0, t0 + d))
         t0 += d
     en = {k: '+'.join(f'gte(t,{a:.3f})*lt(t,{b:.3f})' for a, b in v) for k, v in spans.items()}
-    final = f'{B}/challenge_v4.mp4'
+    final = f'{B}/challenge_v4_4k60.mp4' if HI else f'{B}/challenge_v4.mp4'
+    up = ',scale=2160:3840:flags=lanczos,unsharp=5:5:0.35:5:5:0.0' if HI else ''
     fc = (f"[1:v]format=rgba[wo];[2:v]format=rgba[wi];"
           f"[0:v][wo]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':enable='{en['ox']}':shortest=1:format=auto[v1];"
-          f"[v1][wi]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':enable='{en['mi']}':shortest=1:format=auto,format=yuv420p[v]")
+          f"[v1][wi]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':enable='{en['mi']}':shortest=1:format=auto{up},format=yuv420p[v]")
+    enc = (['-c:v', 'libx265', '-preset', 'fast', '-crf', '20', '-x265-params', 'vbv-maxrate=35000:vbv-bufsize=70000:log-level=error',
+            '-tag:v', 'hvc1'] if HI else
+           ['-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-maxrate', '10M', '-bufsize', '20M', '-tune', 'grain'])
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{OUT}/list.txt',
                     '-loop', '1', '-i', f'{B}/wm_ox.png', '-loop', '1', '-i', f'{B}/wm_mi.png', '-filter_complex', fc,
-                    '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-maxrate', '10M', '-bufsize', '20M',
-                    '-tune', 'grain', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '128k', final], check=True)
+                    '-map', '[v]', '-map', '0:a', *enc, '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '128k', final], check=True)
     print('final', final, dur_of(final))
