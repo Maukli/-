@@ -13,11 +13,17 @@ MASK = {'C025': 'mask_C023', 'C023': 'mask_C023', 'C026': 'mask_C024', 'C022': '
 # Цвет как в v2 (тил-оранж), плюс детализация через ткань: подняты глубокие тени,
 # локальный контраст по яркости (крупный радиус для рельефа, мелкий для фактуры), слабее шумодав.
 CB = "colorbalance=rs=-0.02:gs=-0.005:bs=0.03:rm=0.02:gm=0:bm=-0.02:rh=0.06:gh=0.02:bh=-0.05"
-GRADE = ("hqdn3d=1:1:3:3,curves=master='0/0.03 0.05/0.085 0.12/0.18 0.25/0.30 0.5/0.56 0.78/0.86 1/0.98',"
-         f"{CB},eq=saturation=0.93:contrast=1.03,format=yuv444p,split=3[ca][cb][cc];"
-         "[cb]gblur=sigma=11[cbb];[cc]gblur=sigma=3[ccb];"
-         "[ca][cbb]blend=c0_expr='clip(A+0.85*(A-B),0,255)':c1_expr=A:c2_expr=A[cd];"
-         "[cd][ccb]blend=c0_expr='clip(A+0.35*(A-B),0,255)':c1_expr=A:c2_expr=A,unsharp=3:3:0.4:3:3:0.0[g]")
+# Яркость подняли по просьбе Микаела (пример светлее): средняя яркость кадра около 80 из 255 вместо 36,
+# чёрная точка осталась на месте, чтобы картинка не стала молочной. Свечение и виньетка слабее.
+GRADE = ("hqdn3d=1.5:1.2:3.5:3.5,curves=master='0/0.015 0.04/0.11 0.12/0.30 0.3/0.56 0.55/0.80 0.8/0.95 1/1',"
+         f"{CB},eq=saturation=1.0:contrast=1.03,format=yuv444p,split=3[ca][cb][cc];"
+         "[cb]gblur=sigma=10[cbb];[cc]gblur=sigma=3[ccb];"
+         "[ca][cbb]blend=c0_expr='clip(A+0.6*(A-B),0,255)':c1_expr=A:c2_expr=A[cd];"
+         "[cd][ccb]blend=c0_expr='clip(A+0.28*(A-B),0,255)':c1_expr=A:c2_expr=A,unsharp=3:3:0.3:3:3:0.0[g]")
+GLOW, VIGNETTE = 0.22, 'PI/14'
+# Значок Instagram с ником всё время в кадре, место меняется каждые WM_STEP секунд (как в примере, и от перезаливов).
+WM_STEP = 6
+WM_POS = [('60', '1120'), ('W-w-60', '330'), ('60', '520'), ('W-w-60', '1000')]
 # Галочка через 0,2 с после того, как рука выпрямилась в конце жима (размечено по кадрам).
 CHECKS = {'ox': [17.3, 22.9, 27.7, 35.4, 45.3], 'mi': [48.4, 61.4, 76.2, 91.1, 114.2]}
 # (клип, начало, конец, ускорение, кто, метка). Жимы в реальной скорости, переходы ускорены.
@@ -82,7 +88,7 @@ def render(i):
     fc = (f"[0:v]setpts=(PTS-STARTPTS)/{sp},fps=24000/1001,{CROP[c]},scale=1080:1920:flags=lanczos,{GRADE};"
           f"[g]format=gbrp,split=3[s][b][h];"
           f"[h]curves=all='0/0 0.72/0 1/1',gblur=sigma=25[hg];[b]gblur=sigma=9[bb];[1:v]format=gray[m];[s][m]alphamerge[sa];"
-          f"[bb][sa]overlay=format=auto,format=gbrp[c];[c][hg]blend=all_mode=screen:all_opacity=0.35,vignette=angle=PI/5,"
+          f"[bb][sa]overlay=format=auto,format=gbrp[c];[c][hg]blend=all_mode=screen:all_opacity={GLOW},vignette=angle={VIGNETTE},"
           f"format=yuv420p,noise=alls=3:allf=t{tail}[v]")
     cmd = ['ffmpeg', '-v', 'error', '-y', '-ss', str(s), '-to', str(e), '-i', f'{B}/raw/{c}.mp4', '-loop', '1', '-i', f'{B}/{MASK[c]}.png',
            '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo', '-filter_complex', fc, '-map', '[v]', '-map', '2:a', '-t', f'{dur:.3f}',
@@ -115,3 +121,19 @@ subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', a, '-i', b, '-f', 'lavfi', 
 parts = [p for p, _ in res[:-2]] + [joined]
 open(f'{OUT}/list.txt', 'w').write(''.join(f"file '{p}'\n" for p in parts))
 print('list ready', len(parts))
+
+
+def pos_expr(k):
+    idx = f'mod(floor(t/{WM_STEP}),{len(WM_POS)})'
+    e = WM_POS[-1][k]
+    for i in range(len(WM_POS) - 2, -1, -1):
+        e = f'if(eq({idx},{i}),{WM_POS[i][k]},{e})'
+    return e
+
+
+final = f'{B}/challenge_v3.mp4'
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{OUT}/list.txt', '-loop', '1', '-i', f'{B}/wm.png',
+                '-filter_complex', f"[1:v]format=rgba[wm];[0:v][wm]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':shortest=1:format=auto,format=yuv420p[v]",
+                '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-maxrate', '10M', '-bufsize', '20M',
+                '-tune', 'grain', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '128k', final], check=True)
+print('final', final, dur_of(final))
