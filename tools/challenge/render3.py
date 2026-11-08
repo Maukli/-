@@ -54,7 +54,7 @@ def texts(s, e, sp, who, badge):
     tx = [dtext('title.txt', F_TITLE, 78, '(w-text_w)/2', 1415)]
     if who:
         tx.append(dtext(f'n_{who}.txt', F_NAME, 64, '(w-text_w)/2', 1508, border=3))
-        tx.append(dtext(f's_{who}.txt', F_NAME, 46, '(w-text_w)/2', 1590, border=3))
+        tx.append(dtext(f's_{who}.txt', F_NAME, 52, '(w-text_w)/2', 1588, border=3))
         for k, ev in enumerate(CHECKS[who]):
             y = 560 + k * 78
             done_from = 0.0 if ev < s else ((ev - s) / sp if ev < e else None)
@@ -131,9 +131,21 @@ def pos_expr(k):
     return e
 
 
+# Чей ник в кадре: на частях oxmedo (C022, C026) его аккаунт, на частях miko и в концовке @miko_oloo.
+WM_OWNER = {'C022': 'ox', 'C026': 'ox', 'C023': 'mi', 'C025': 'mi'}
+spans, t0 = {'ox': [], 'mi': []}, 0.0
+for p in parts:
+    d = dur_of(p)
+    c = SEG[int(os.path.basename(p)[1:3])][0] if os.path.basename(p).startswith('s') else 'C025'
+    spans[WM_OWNER[c]].append((t0, t0 + d))
+    t0 += d
+en = {k: '+'.join(f'gte(t,{a:.3f})*lt(t,{b:.3f})' for a, b in v) for k, v in spans.items()}
 final = f'{B}/challenge_v3.mp4'
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{OUT}/list.txt', '-loop', '1', '-i', f'{B}/wm.png',
-                '-filter_complex', f"[1:v]format=rgba[wm];[0:v][wm]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':shortest=1:format=auto,format=yuv420p[v]",
+fc = (f"[1:v]format=rgba[wo];[2:v]format=rgba[wi];"
+      f"[0:v][wo]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':enable='{en['ox']}':shortest=1:format=auto[v1];"
+      f"[v1][wi]overlay=x='{pos_expr(0)}':y='{pos_expr(1)}':enable='{en['mi']}':shortest=1:format=auto,format=yuv420p[v]")
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{OUT}/list.txt',
+                '-loop', '1', '-i', f'{B}/wm_ox.png', '-loop', '1', '-i', f'{B}/wm_mi.png', '-filter_complex', fc,
                 '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-maxrate', '10M', '-bufsize', '20M',
                 '-tune', 'grain', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-c:a', 'aac', '-b:a', '128k', final], check=True)
 print('final', final, dur_of(final))
