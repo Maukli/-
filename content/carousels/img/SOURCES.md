@@ -40,3 +40,11 @@
 | src/mikael_curl.jpg | c3 слайд 6 | обрезаны полосы скриншота, размыты люди на заднем плане |
 | src/mikael_sideplank.jpg | c1 слайд 8 | без изменений |
 Оригиналы лежат в own/ (вне git).
+
+## Карусель c4 "Тир-лист: грудь" (12.11)
+| Файл | Где | Источник | Лицензия |
+|---|---|---|---|
+| src/c4_*.jpg | слайды 2-7 | free-exercise-db (github.com/yuhonas/free-exercise-db) | Unlicense |
+| src/fedb_Barbell_Bench_Press_-_Medium_Grip_0.jpg | слайд 2 | free-exercise-db | Unlicense |
+| src/mikael_bench.jpg | обложка | фото Микаела (прислал 26.10) | своё |
+| src/mikael_challenge_stand.jpg | слайд 8 | кадр из видео челленджа Микаела 07.11, цвет как в челлендже | своё |
