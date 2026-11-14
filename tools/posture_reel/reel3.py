@@ -13,7 +13,8 @@ import pelvis as PV
 import pose as POSE
 from look import GRADE3, finish_fast, big_word, behind, glow_map, add_glow
 
-OUT = f'{B}/seg3'
+ENH = '--enh' in sys.argv  # брать улучшенные нейросетью исходники из enh/ (ai/enhance.py)
+OUT = f'{B}/seg3e' if ENH else f'{B}/seg3'
 Z9673 = 'crop=iw/1.6:ih/1.6:iw*0.16:ih*0.26,'
 MODEL = f'{B}/../models/pose_heavy.task'
 WARM, HOT, COOL = (255, 150, 60), (255, 90, 40), (90, 180, 255)
@@ -365,8 +366,11 @@ def render(i):
             base_options=BaseOptions(model_asset_path=MODEL), running_mode=mode, num_poses=1, output_segmentation_masks=True))
     if kind == 'clip':
         P = Pose(POSE.run(src, s, e, pre))
-        dec = subprocess.Popen(['ffmpeg', '-v', 'error', '-ss', str(s), '-to', str(e), '-i', f'{B}/raw/IMG_{src} (1).MOV', '-vf',
-                                f'{pre}scale={W}:{H}:flags=lanczos,fps=30,{GRADE3}', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'],
+        efile = f'{B}/enh/s{i:02d}.mp4'
+        srcargs = (['-i', efile] if ENH and os.path.exists(efile) else ['-ss', str(s), '-to', str(e), '-i', f'{B}/raw/IMG_{src} (1).MOV'])
+        vpre = '' if ENH and os.path.exists(efile) else pre
+        dec = subprocess.Popen(['ffmpeg', '-v', 'error', *srcargs, '-vf',
+                                f'{vpre}scale={W}:{H}:flags=lanczos,fps=30,{GRADE3}', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'],
                                stdout=subprocess.PIPE)
     if kind == 'still':
         im = still_frame(src)
@@ -381,7 +385,7 @@ def render(i):
         face = 1 if L_[0].x * W > ear[0] else -1
         dl = math.dist(ear, shp)
         P = {'ear': ear, 'sh': shp, 'head': (ear[0] + face * 0.22 * dl, ear[1] - 0.18 * dl)}
-        smask = r.segmentation_masks[0].numpy_view().squeeze()
+        smask = np.array(r.segmentation_masks[0].numpy_view(), copy=True).squeeze()
     enc = subprocess.Popen(['ffmpeg', '-v', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', '30', '-i', '-',
                             '-c:v', 'libx264', '-preset', 'fast', '-crf', '17', '-pix_fmt', 'yuv420p', out], stdin=subprocess.PIPE)
     subs = chunks(vo)
@@ -397,7 +401,7 @@ def render(i):
                 break
             arr = np.frombuffer(buf, np.uint8).reshape(H, W, 3)
             r = lm.detect_for_video(mp.Image(image_format=mp.ImageFormat.SRGB, data=np.ascontiguousarray(np.asarray(Image.fromarray(arr).resize((540, 960))))), int(k * 1000 / 30))
-            msk = r.segmentation_masks[0].numpy_view().squeeze() if r.segmentation_masks else np.zeros((960, 540), np.float32)
+            msk = np.array(r.segmentation_masks[0].numpy_view(), copy=True).squeeze() if r.segmentation_masks else np.zeros((960, 540), np.float32)
             P.i = k
         elif kind == 'still':
             if k >= n:
@@ -477,7 +481,7 @@ if __name__ == '__main__':
         t0 += dd
     pos = [('W-w-50', '1440'), ('50', '1440')]
     px = f"if(eq(mod(floor(t/6),2),0),{pos[0][0]},{pos[1][0]})"
-    final = f'{B}/posture_draft_v3.mp4'
+    final = f'{B}/posture_draft_v3_enh.mp4' if ENH else f'{B}/posture_draft_v3.mp4'
     fc = (f"[1:v]format=rgba,scale=iw*0.8:-1,colorchannelmixer=aa=0.85[wm];"
           f"[0:v][wm]overlay=x='{px}':y=1440:enable='{'+'.join(en)}':shortest=1:format=auto,format=yuv420p[v]")
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', f'{OUT}/list.txt', '-loop', '1', '-i', f'{B}/../challenge/wm_mi.png',
