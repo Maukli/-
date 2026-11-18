@@ -49,13 +49,18 @@
 | src/mikael_bench.jpg | обложка | фото Микаела (прислал 26.10) | своё |
 | src/mikael_challenge_stand.jpg | слайд 8 | кадр из видео челленджа Микаела 07.11, цвет как в челлендже | своё |
 
-## Карусели c5-c7 (18.11)
+## Карусели c5-c7 (18.11, версия 2 с графикой)
+Графика на слайдах (шкалы, схемы, углы, номера точек) нарисована кодом: content/carousels/build_18-11.py. Подсветка мышц: img/glow.py (маска MediaPipe Pose).
 | Файл | Где | Источник | Лицензия |
 |---|---|---|---|
-| src/c5_*.jpg, src/c6_cover.jpg, src/c6_gym_stand.jpg, src/c6_wall_phone.jpg, src/c6_cta.jpg, src/c7_phone.jpg, src/c7_side_stand.jpg | c5 почти все слайды, c6 слайды 1, 3, 7, 9, c7 слайды 3, 7 | фото Микаела со съёмки про осанку 12.11 (Google Диск, IMG_9686-9711), уменьшены | своё |
-| src/c7_cover.jpg, c7_bad.jpg, c7_good_side.jpg, c7_good_close.jpg, c7_good_top.jpg, c7_cta.jpg | c7 слайды 1, 2, 4, 5, 6, 8 | кадры из видео Микаела (IMG_9667, 9668, 9669, 9691, 9692), увеличены нейросетью Real-ESRGAN general x4v3 (лицензия BSD-3), люди на заднем плане размыты | своё |
+| src/c5_gym_phone.jpg, c5_smile.jpg, c6_cover.jpg, c6_cta.jpg, c7_phone.jpg | c5 слайды 7-8, c6 слайды 1 и 9, c7 слайд 3 | фото Микаела со съёмки про осанку 12.11 (Google Диск, IMG_9694, 9704, 9686, 9705, 9709) | своё |
+| src/c7_cover.jpg, c7_bad.jpg, c7_good_side.jpg, c7_good_close.jpg, c7_good_top.jpg, c7_protocol.jpg, c7_cta.jpg | c7 | кадры из видео Микаела (IMG_9691, 9668, 9669, 9667, 9673, 9692), увеличены Real-ESRGAN general x4v3 (BSD-3), люди на заднем плане размыты | своё |
+| src/mikael_bench.jpg, mikael_curl.jpg, mikael_pullup.jpg | c5 слайды 2-3, c6 слайд 4 | фото Микаела (прислал 26.10) | своё |
+| src/c5_night.jpg | c5 обложка | pexels.com/photo/light-dawn-sunset-man-6944004 | Pexels |
+| src/c5_tired_gym.jpg | c5 обложка | pexels.com/photo/tired-male-athlete-resting-on-bench-during-weightlifting-workout-in-gym-3838706 | Pexels |
+| src/c5_clock.jpg | c5 слайд 4 | pexels.com/photo/old-style-alarm-clock-in-a-dark-room-18542702 | Pexels |
+| src/c5_bedroom.jpg | c5 слайд 5 | pexels.com/photo/books-bed-stack-standing-9615255 | Pexels |
 | src/c6_scoop.jpg | c6 слайд 2 | pexels.com/photo/photo-of-a-white-powder-and-a-scoop-lying-on-the-blue-background-12625114 | Pexels |
-| src/c6_shaker_gym.jpg | c6 слайд 4 | pexels.com/photo/a-man-drinking-at-the-gym-5327555 | Pexels |
-| src/c6_shaker_sit.jpg | c6 слайд 5 | pexels.com/photo/a-man-sitting-at-the-gym-while-holding-a-protein-shaker-5327558 | Pexels |
-| src/c6_shaker_drink.jpg | c6 слайд 6 | pexels.com/photo/man-drinking-from-a-gym-shaker-bottle-in-studio-28455336 | Pexels |
-| src/mikael_bench.jpg, mikael_curl.jpg, mikael_pullup.jpg, mikael_challenge_stand.jpg | c5 слайды 2, 3, c6 слайд 8 | фото Микаела (см. выше) | своё |
+| src/c6_container.jpg | c6 слайды 3 и 8 | pexels.com/photo/a-white-container-and-a-pile-of-dry-food-with-a-clear-spoon-13779116 | Pexels |
+| src/px_1640777.jpg | c6 слайд 5 | см. c3 выше | Pexels |
+| src/bg_grid.jpg | c5 слайд 6, c6 слайды 6-7 | чертёжная сетка, нарисована кодом | своё |

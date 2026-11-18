@@ -65,8 +65,10 @@ function marksSvg(marks, t) {
     if (m.type === 'line') return `<polyline points="${m.points.map(p => p.join(',')).join(' ')}" fill="none" stroke="${t.accent}" class="mk" stroke-dasharray="${m.dash ? '2 1.5' : 'none'}"/>`;
     return '';
   }).join('');
-  const labels = marks.filter(m => m.type === 'label').map(m => `<div class="mlabel" style="left:${m.x}%;top:${m.y}%">${esc(m.text)}</div>`).join('');
-  return `<div class="marks"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="${t.accent}"/></marker></defs>${els}</svg>${labels}</div>`;
+  const labels = marks.filter(m => m.type === 'label').map(m => `<div class="mlabel${m.small ? ' sm' : ''}" style="left:${m.x}%;top:${m.y}%">${esc(m.text)}</div>`).join('');
+  // {type:'svg', w, h, svg}: готовая векторная графика (схемы, углы, шкалы) в пикселях блока w x h
+  const raw = marks.filter(m => m.type === 'svg').map(m => `<svg class="raw" viewBox="0 0 ${m.w} ${m.h}" preserveAspectRatio="xMidYMid meet">${m.svg}</svg>`).join('');
+  return `<div class="marks"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="${t.accent}"/></marker></defs>${els}</svg>${raw}${labels}</div>`;
 }
 
 function slideHtml(s, i, total, t) {
@@ -94,8 +96,8 @@ function slideHtml(s, i, total, t) {
     inner = `<div class="ph${s.photo2 ? ' duo' : ''}"><img src="${photo}" style="object-position:${focus};${s.fit ? 'object-fit:' + s.fit + ';' : ''}${s.bw ? 'filter:grayscale(1) contrast(1.12) brightness(.92)' : ''}">${second}${marksSvg(s.marks, t)}</div>
   ${head}<div class="txt"><div class="bar"></div>${title}${body}</div>${foot}`;
   } else if (layout === 'big-number') {
-    inner = `<img class="bg" src="${photo}" style="object-position:${focus}"><div class="shade"></div>
-  ${head}<div class="txt"><div class="num">${esc(s.number || '')}</div>${title}${body}</div>${foot}`;
+    inner = `<img class="bg" src="${photo}" style="object-position:${focus}"><div class="shade"></div>${marksSvg(s.marks, t)}
+  ${head}<div class="txt">${s.number ? `<div class="num">${esc(s.number)}</div>` : ''}${title}${body}</div>${foot}`;
   } else {
     // cover-photo, photo-full-card, cta-photo: фото на весь слайд, текст снизу
     inner = `<img class="bg" src="${photo}" style="object-position:${focus}"><div class="shade"></div>${marksSvg(s.marks, t)}
@@ -135,6 +137,8 @@ function slideHtml(s, i, total, t) {
   .marks{position:absolute;inset:0;z-index:2}
   .marks svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .marks .mk{stroke-width:10px;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+  .marks svg.raw{z-index:1}
+  .mlabel.sm{font-size:28px;padding:6px 14px}
   .mlabel{position:absolute;font:800 34px/1.2 '${t.head}',sans-serif;color:${t.onAccent};background:${t.accent};padding:8px 18px;border-radius:12px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.35)}
   .txt{position:relative;z-index:3;margin-top:auto;display:flex;flex-direction:column}
   .txt .bar{margin:0 0 34px}
