@@ -272,7 +272,7 @@ def c6():
     tlp = [panel(70, 150, 940, 640), line(170, 230, 170, 710, MUTED, 6)]
     for i, (lab, val) in enumerate([('до тренировки', 'протеин'), ('во время', 'EAA 10-15 г'), ('после', 'протеин и креатин 5 г'), ('выходной', 'креатин 5 г')]):
         y = 240 + i * 155
-        tlp += [dot(170, y, 26, A if i < 3 else SOFT), text(230, y - 8, lab, 28, MUTED, 700), text(230, y + 38, val, 40, TXT, 800)]
+        tlp += [dot(170, y, 26, A if i < 3 else SOFT), text(230, y - 10, lab, 30, SOFT, 800), text(230, y + 38, val, 40, TXT, 800)]
     day = svg(W, F, *tlp)
     return [
         {'layout': 'photo-top', 'photoHeight': 66, 'big': True, 'photo': 'src/c6_cover.jpg', 'focus': '50% 8%',
