@@ -53,7 +53,7 @@
 Графика на слайдах (шкалы, схемы, углы, номера точек) нарисована кодом: content/carousels/build_18-11.py. Подсветка мышц: img/glow.py (маска MediaPipe Pose).
 | Файл | Где | Источник | Лицензия |
 |---|---|---|---|
-| src/c5_gym_phone.jpg, c5_smile.jpg, c6_cover.jpg, c6_cta.jpg, c7_phone.jpg | c5 слайды 7-8, c6 слайды 1 и 9, c7 слайд 3 | фото Микаела со съёмки про осанку 12.11 (Google Диск, IMG_9694, 9704, 9686, 9705, 9709) | своё |
+| src/c5_gym_phone.jpg (IMG_9694), c5_smile.jpg (IMG_9704), c6_cover.jpg (IMG_9686), c6_cta.jpg (IMG_9695), c7_phone.jpg (IMG_9709) | c5 слайды 7-8, c6 слайды 1 и 9, c7 слайд 3 | фото Микаела со съёмки про осанку 12.11 (Google Диск) | своё |
 | src/c7_cover.jpg, c7_bad.jpg, c7_good_side.jpg, c7_good_close.jpg, c7_good_top.jpg, c7_protocol.jpg, c7_cta.jpg | c7 | кадры из видео Микаела (IMG_9691, 9668, 9669, 9667, 9673, 9692), увеличены Real-ESRGAN general x4v3 (BSD-3), люди на заднем плане размыты | своё |
 | src/mikael_bench.jpg, mikael_curl.jpg, mikael_pullup.jpg | c5 слайды 2-3, c6 слайд 4 | фото Микаела (прислал 26.10) | своё |
 | src/c5_night.jpg | c5 обложка | pexels.com/photo/light-dawn-sunset-man-6944004 | Pexels |

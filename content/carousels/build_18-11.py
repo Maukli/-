@@ -318,7 +318,7 @@ def c7():
     p0, p1 = P(50, 83, *b5), P(27, 88, *b5)
     q = P(39, 74, *b5)
     side = svg(*b5, f'<path d="M{p0[0]:.0f} {p0[1]:.0f} Q{q[0]:.0f} {q[1]:.0f} {p1[0]:.0f} {p1[1]:.0f}" fill="none" stroke="{A}" stroke-width="9" stroke-linecap="round" stroke-dasharray="18 12" {SH}/>',
-               pill(*P(52, 42, *b5), 'сгибание грудного отдела', A, BG, 30), arrow(*P(62, 52, *b5), *P(42, 77, *b5), A, 7, 26),
+               pill(*P(52, 42, *b5), 'сгибание грудного отдела', A, BG, 30), arrow(*P(64, 52, *b5), *P(43.3, 79.7, *b5), A, 7, 26),
                pill(*P(2, 52, *b5), 'прямая мышца живота', A, BG, 30), arrow(*P(16, 62, *b5), *P(23, 86, *b5), A, 7, 26))
     ticks = []
     for i in range(20):
@@ -341,7 +341,7 @@ def c7():
         pr += [text(28, yy, n, 30, A, 800), text(64, yy, s_, 30, col, 800)]
     proto = svg(*b7, *pr)
     b8 = (W, 1350)
-    cta = svg(*b8, pill(*P(66, 40, *b8), 'шея?', A, BG, 38), arrow(*P(67, 44.5, *b8), *P(54, 50.5, *b8), A, 7, 26))
+    cta = svg(*b8, pill(*P(66, 36, *b8), 'шея?', A, BG, 38), arrow(*P(67, 40.5, *b8), *P(54.2, 44.4, *b8), A, 7, 26))
     return [
         {'layout': 'photo-top', 'photoHeight': 66, 'big': True, 'photo': 'src/c7_cover.jpg', 'focus': '50% 50%',
          'title': 'Качаешь пресс,\nа устаёт шея?', 'body': 'Дело в руках за головой. Моё скручивание с блином.', 'marks': [cover]},
