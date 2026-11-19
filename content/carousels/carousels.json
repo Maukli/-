@@ -819,5 +819,145 @@
         ]
       }
     ]
+  },
+  {
+    "id": "c8_naklon_taza",
+    "slides": [
+      {
+        "layout": "photo-top",
+        "photoHeight": 66,
+        "big": true,
+        "photo": "src/c8_cover.jpg",
+        "focus": "50% 50%",
+        "photo2": "src/c8_cover_sch.jpg",
+        "focus2": "50% 45%",
+        "title": "Таз как ведро:\nкуда льётся вода?",
+        "body": "Передний, нейтральный, задний наклон. Как отличить и что делать при заднем.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 891,
+            "svg": "<g transform=\"rotate(-16 308 670)\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><path d=\"M203 610 L413 610 L386 732 L230 732 Z\" fill=\"#FF9F5A\" fill-opacity=\".18\" stroke=\"#FF9F5A\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M203 610 Q308 558 413 610\" fill=\"none\" stroke=\"#FF9F5A\" stroke-width=\"6\" stroke-dasharray=\"14 10\"/></g><path d=\"M178 660 q-9 16 0 24 q9 -8 0 -24z\" fill=\"#6FB7FF\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><path d=\"M158 700 q-9 16 0 24 q9 -8 0 -24z\" fill=\"#6FB7FF\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><path d=\"M180 736 q-9 16 0 24 q9 -8 0 -24z\" fill=\"#6FB7FF\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"150\" width=\"396\" height=\"46\" rx=\"18\" fill=\"#FF9F5A\"/><text x=\"758\" y=\"182\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">передний наклон таза</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"210\" width=\"114\" height=\"40\" rx=\"16\" fill=\"#102033\"/><text x=\"617\" y=\"238\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"26\" fill=\"#D5DCE4\" text-anchor=\"middle\">схема</text></g>"
+          }
+        ]
+      },
+      {
+        "layout": "photo-top",
+        "photoHeight": 62,
+        "photo": "src/c8_neutral.jpg",
+        "focus": "50% 50%",
+        "title": "Ориентиры: две подвздошные ости",
+        "body": "Передняя верхняя прощупывается спереди на крыле таза, задняя под ямочками над крестцом. Угол между линией от задней ости к передней и горизонталью и есть наклон таза.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 837,
+            "svg": "<line x1=\"733\" y1=\"373\" x2=\"313\" y2=\"373\" stroke=\"#D5DCE4\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-dasharray=\"12 10\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"733\" y1=\"373\" x2=\"410\" y2=\"432\" stroke=\"#FF9F5A\" stroke-width=\"8\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><path d=\"M533 373 A200 200 0 0 0 536 409\" fill=\"none\" stroke=\"#FF9F5A\" stroke-width=\"6\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><circle cx=\"410\" cy=\"432\" r=\"15\" fill=\"#FF9F5A\" stroke=\"#102033\" stroke-width=\"5\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><circle cx=\"733\" cy=\"373\" r=\"15\" fill=\"#FF9F5A\" stroke=\"#102033\" stroke-width=\"5\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"155\" y=\"472\" width=\"630\" height=\"46\" rx=\"18\" fill=\"#FF9F5A\"/><text x=\"470\" y=\"504\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">передняя верхняя подвздошная ость</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"762\" y=\"223\" width=\"288\" height=\"46\" rx=\"18\" fill=\"#FF9F5A\"/><text x=\"906\" y=\"255\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">задняя верхняя</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"726\" y=\"278\" width=\"324\" height=\"46\" rx=\"18\" fill=\"#FF9F5A\"/><text x=\"888\" y=\"310\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">подвздошная ость</text></g><line x1=\"743\" y1=\"328\" x2=\"733\" y2=\"361\" stroke=\"#FF9F5A\" stroke-width=\"5\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"40\" y=\"263\" width=\"342\" height=\"46\" rx=\"18\" fill=\"#102033\"/><text x=\"211\" y=\"295\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"middle\">угол наклона таза</text></g><line x1=\"250\" y1=\"323\" x2=\"502\" y2=\"381\" stroke=\"#FF9F5A\" stroke-width=\"5\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"518,385 498,389 502,372\" fill=\"#FF9F5A\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/>"
+          }
+        ]
+      },
+      {
+        "layout": "big-number",
+        "photo": "src/bg_grid.jpg",
+        "focus": "50% 50%",
+        "title": "Лёгкий передний наклон это норма",
+        "body": "Данные по людям без боли (Herrington, 2011). Тазы разные по форме кости, поэтому сравнивай себя с собой, а не с чужой цифрой.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 1350,
+            "svg": "<rect x=\"70\" y=\"150\" width=\"940\" height=\"330\" rx=\"28\" fill=\"#102033\" fill-opacity=\"0.72\"/><text x=\"110\" y=\"215\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">угол наклона таза, градусов</text><rect x=\"110\" y=\"250\" width=\"791\" height=\"70\" rx=\"16\" fill=\"#FF9F5A\" fill-opacity=\".22\"/><text x=\"506\" y=\"297\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">разброс по форме таза 0-23</text><line x1=\"110\" y1=\"360\" x2=\"970\" y2=\"360\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"110\" y1=\"350\" x2=\"110\" y2=\"370\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><text x=\"110\" y=\"405\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">0</text><line x1=\"282\" y1=\"350\" x2=\"282\" y2=\"370\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><text x=\"282\" y=\"405\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">5</text><line x1=\"454\" y1=\"350\" x2=\"454\" y2=\"370\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><text x=\"454\" y=\"405\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">10</text><line x1=\"626\" y1=\"350\" x2=\"626\" y2=\"370\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><text x=\"626\" y=\"405\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">15</text><line x1=\"798\" y1=\"350\" x2=\"798\" y2=\"370\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><text x=\"798\" y=\"405\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">20</text><line x1=\"970\" y1=\"350\" x2=\"970\" y2=\"370\" stroke=\"#8597AB\" stroke-width=\"4\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><text x=\"970\" y=\"405\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">25</text><circle cx=\"440\" cy=\"360\" r=\"16\" fill=\"#FF9F5A\" stroke=\"#102033\" stroke-width=\"5\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><circle cx=\"512\" cy=\"360\" r=\"16\" fill=\"#D5DCE4\" stroke=\"#102033\" stroke-width=\"5\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"173\" y=\"420\" width=\"247\" height=\"50\" rx=\"19\" fill=\"#FF9F5A\"/><text x=\"297\" y=\"454\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">мужчины 9,6</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"532\" y=\"420\" width=\"266\" height=\"50\" rx=\"19\" fill=\"#D5DCE4\"/><text x=\"666\" y=\"454\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">женщины 11,7</text></g><rect x=\"70\" y=\"500\" width=\"455\" height=\"175\" rx=\"28\" fill=\"#102033\" fill-opacity=\"0.72\"/><text x=\"100\" y=\"555\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">передний наклон</text><text x=\"100\" y=\"603\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"34\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">85% мужчин</text><text x=\"100\" y=\"650\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"34\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">75% женщин</text><rect x=\"555\" y=\"500\" width=\"455\" height=\"175\" rx=\"28\" fill=\"#102033\" fill-opacity=\"0.72\"/><text x=\"585\" y=\"555\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">задний наклон</text><text x=\"585\" y=\"603\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"34\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">6-7%</text><text x=\"585\" y=\"650\" font-family=\"Manrope\" font-weight=\"700\" font-size=\"28\" fill=\"#8597AB\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">люди без боли</text>"
+          }
+        ]
+      },
+      {
+        "layout": "photo-top",
+        "photoHeight": 64,
+        "photo": "src/c8_three.jpg",
+        "focus": "50% 50%",
+        "title": "Сбоку: лордоз, живот, ягодицы",
+        "body": "Передний: поясничный лордоз усилен, выступающий живот, ягодичная область отведена назад. Задний: лордоз сглажен, поясница плоская, ягодичная область уплощена.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 864,
+            "svg": "<defs><linearGradient id=\"tf\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#102033\" stop-opacity=\".85\"/><stop offset=\"1\" stop-color=\"#102033\" stop-opacity=\"0\"/></linearGradient></defs><rect x=\"0\" y=\"0\" width=\"1080\" height=\"200\" fill=\"url(#tf)\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"85\" y=\"650\" width=\"190\" height=\"50\" rx=\"19\" fill=\"#FF9F5A\"/><text x=\"180\" y=\"684\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">передний</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"416\" y=\"650\" width=\"247\" height=\"50\" rx=\"19\" fill=\"#D5DCE4\"/><text x=\"540\" y=\"684\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">нейтральный</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"824\" y=\"650\" width=\"151\" height=\"50\" rx=\"19\" fill=\"#FF9F5A\"/><text x=\"900\" y=\"684\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">задний</text></g>"
+          }
+        ]
+      },
+      {
+        "layout": "photo-top",
+        "photoHeight": 70,
+        "photo": "src/c8_wall.jpg",
+        "focus": "50% 50%",
+        "title": "Самотест у стены",
+        "body": "Пятки, ягодичная область и лопатки у стены. Больше ладони под поясницей: лордоз усилен. Ладонь не проходит: лордоз сглажен. Сравнивай себя с собой по фото в одних условиях.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 945,
+            "svg": "<defs><linearGradient id=\"tf\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#102033\" stop-opacity=\".85\"/><stop offset=\"1\" stop-color=\"#102033\" stop-opacity=\"0\"/></linearGradient></defs><rect x=\"0\" y=\"0\" width=\"1080\" height=\"230\" fill=\"url(#tf)\"/><line x1=\"324\" y1=\"662\" x2=\"658\" y2=\"785\" stroke=\"#FF9F5A\" stroke-width=\"8\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"680,794 651,797 660,772\" fill=\"#FF9F5A\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"32\" y=\"576\" width=\"362\" height=\"50\" rx=\"19\" fill=\"#FF9F5A\"/><text x=\"214\" y=\"611\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">ладонь в просвете</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"713\" y=\"246\" width=\"306\" height=\"46\" rx=\"18\" fill=\"#102033\"/><text x=\"866\" y=\"278\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"middle\">пятки, ягодицы,</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"713\" y=\"321\" width=\"306\" height=\"46\" rx=\"18\" fill=\"#102033\"/><text x=\"866\" y=\"353\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"middle\">лопатки у стены</text></g>"
+          }
+        ]
+      },
+      {
+        "layout": "photo-top",
+        "photoHeight": 66,
+        "photo": "src/c8_force.jpg",
+        "focus": "50% 50%",
+        "title": "Задний наклон: у кого и почему",
+        "body": "Чаще у активных: бег, прыжки, игровые виды, спорт с детства. Укороченные мышцы тянут лобок вверх, а седалищный бугор вниз.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 891,
+            "svg": "<defs><linearGradient id=\"tf\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#102033\" stop-opacity=\".85\"/><stop offset=\"1\" stop-color=\"#102033\" stop-opacity=\"0\"/></linearGradient></defs><rect x=\"0\" y=\"0\" width=\"1080\" height=\"220\" fill=\"url(#tf)\"/><line x1=\"466\" y1=\"645\" x2=\"441\" y2=\"265\" stroke=\"#FF5A4E\" stroke-width=\"12\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"454\" y1=\"475\" x2=\"447\" y2=\"369\" stroke=\"#FF5A4E\" stroke-width=\"9\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"446,345 461,371 435,373\" fill=\"#FF5A4E\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"643\" y1=\"724\" x2=\"633\" y2=\"790\" stroke=\"#FF5A4E\" stroke-width=\"12\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"639\" y1=\"764\" x2=\"636\" y2=\"850\" stroke=\"#FF5A4E\" stroke-width=\"9\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"635,874 623,847 649,847\" fill=\"#FF5A4E\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"777\" y1=\"447\" x2=\"705\" y2=\"585\" stroke=\"#FF5A4E\" stroke-width=\"12\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"455\" y1=\"487\" x2=\"473\" y2=\"790\" stroke=\"#6FB7FF\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-dasharray=\"18 12\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><line x1=\"752\" y1=\"367\" x2=\"712\" y2=\"40\" stroke=\"#6FB7FF\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-dasharray=\"18 12\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"38\" y=\"345\" width=\"378\" height=\"46\" rx=\"18\" fill=\"#FF5A4E\"/><text x=\"227\" y=\"377\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"middle\">прямая мышца живота</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"646\" y=\"640\" width=\"414\" height=\"46\" rx=\"18\" fill=\"#FF5A4E\"/><text x=\"853\" y=\"672\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"middle\">двуглавая мышца бедра</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"718\" y=\"480\" width=\"342\" height=\"46\" rx=\"18\" fill=\"#FF5A4E\"/><text x=\"889\" y=\"512\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"middle\">большая ягодичная</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"55\" y=\"640\" width=\"360\" height=\"46\" rx=\"18\" fill=\"#6FB7FF\"/><text x=\"235\" y=\"672\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">прямая мышца бедра</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"654\" y=\"200\" width=\"396\" height=\"46\" rx=\"18\" fill=\"#6FB7FF\"/><text x=\"852\" y=\"232\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">разгибатели поясницы</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"40\" y=\"165\" width=\"198\" height=\"46\" rx=\"18\" fill=\"#FF5A4E\"/><text x=\"139\" y=\"197\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"middle\">укорочены</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"40\" y=\"230\" width=\"198\" height=\"46\" rx=\"18\" fill=\"#6FB7FF\"/><text x=\"139\" y=\"262\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">ослаблены</text></g>"
+          }
+        ]
+      },
+      {
+        "layout": "big-number",
+        "photo": "src/bg_grid.jpg",
+        "focus": "50% 50%",
+        "title": "Мой протокол при заднем наклоне",
+        "body": "Укрепляю ослабленные, растягиваю укороченные.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 1350,
+            "svg": "<rect x=\"60\" y=\"150\" width=\"960\" height=\"720\" rx=\"28\" fill=\"#102033\" fill-opacity=\"0.72\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"100\" y=\"180\" width=\"190\" height=\"50\" rx=\"19\" fill=\"#FF9F5A\"/><text x=\"195\" y=\"214\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">укрепляю</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"180\" width=\"228\" height=\"50\" rx=\"19\" fill=\"#D5DCE4\"/><text x=\"674\" y=\"214\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#102033\" text-anchor=\"middle\">растягиваю</text></g><text x=\"100\" y=\"290\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">1</text><text x=\"135\" y=\"290\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">разгибание ног</text><text x=\"100\" y=\"342\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">2</text><text x=\"135\" y=\"342\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">сведение бёдер</text><text x=\"100\" y=\"394\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">3</text><text x=\"135\" y=\"394\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">становая тяга</text><text x=\"100\" y=\"446\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"></text><text x=\"135\" y=\"446\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">(гиперэкстензия)</text><text x=\"100\" y=\"498\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">4</text><text x=\"135\" y=\"498\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">тяга горизонтального</text><text x=\"100\" y=\"550\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"></text><text x=\"135\" y=\"550\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">блока широким</text><text x=\"100\" y=\"602\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"></text><text x=\"135\" y=\"602\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">хватом</text><text x=\"560\" y=\"290\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">5</text><text x=\"605\" y=\"290\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">проводки с палкой</text><text x=\"560\" y=\"342\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"></text><text x=\"605\" y=\"342\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">2 по 10</text><text x=\"560\" y=\"394\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">6</text><text x=\"605\" y=\"394\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">собака мордой вниз</text><text x=\"560\" y=\"446\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">7</text><text x=\"605\" y=\"446\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">кошка</text><text x=\"560\" y=\"498\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">8</text><text x=\"605\" y=\"498\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">ягодичные</text><text x=\"560\" y=\"550\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">9</text><text x=\"605\" y=\"550\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">наклоны</text><text x=\"560\" y=\"602\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">10</text><text x=\"605\" y=\"602\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">икроножная</text>"
+          }
+        ]
+      },
+      {
+        "layout": "big-number",
+        "photo": "src/bg_grid.jpg",
+        "focus": "50% 50%",
+        "title": "Поэтому цель не \"растянуть\"",
+        "body": "Цель протокола: сила, подвижность и контроль таза в движении.",
+        "marks": [
+          {
+            "type": "svg",
+            "w": 1080,
+            "h": 1350,
+            "svg": "<rect x=\"60\" y=\"150\" width=\"960\" height=\"620\" rx=\"28\" fill=\"#102033\" fill-opacity=\"0.72\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"100\" y=\"185\" width=\"378\" height=\"46\" rx=\"18\" fill=\"#8597AB\"/><text x=\"289\" y=\"217\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">добавлено по данным</text></g><text x=\"100\" y=\"320\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"34\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">растяжка</text><text x=\"100\" y=\"370\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">растит прежде всего терпимость</text><text x=\"100\" y=\"415\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">к растяжению, а не длину мышцы</text><text x=\"100\" y=\"460\" font-family=\"Manrope\" font-weight=\"700\" font-size=\"28\" fill=\"#8597AB\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">Weppler, Magnusson 2010</text><text x=\"100\" y=\"560\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"34\" fill=\"#FF9F5A\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">сила пресса и длина мышц бедра</text><text x=\"100\" y=\"610\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"32\" fill=\"#F4F1EA\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">с углом таза почти не связаны</text><text x=\"100\" y=\"655\" font-family=\"Manrope\" font-weight=\"700\" font-size=\"28\" fill=\"#8597AB\" text-anchor=\"start\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\">Walker 1987, Youdas 1996</text>"
+          }
+        ]
+      },
+      {
+        "layout": "cta-photo",
+        "photo": "src/c8_cta.jpg",
+        "focus": "50% 50%",
+        "title": "Какой наклон у тебя?",
+        "body": "Сделай тест у стены и напиши в комментариях: больше ладони, ладонь или меньше."
+      }
+    ]
   }
 ]
