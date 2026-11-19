@@ -814,7 +814,7 @@
             "type": "svg",
             "w": 1080,
             "h": 1350,
-            "svg": "<g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"756\" y=\"540\" width=\"127\" height=\"59\" rx=\"23\" fill=\"#FF9F5A\"/><text x=\"820\" y=\"581\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"38\" fill=\"#102033\" text-anchor=\"middle\">шея?</text></g><line x1=\"767\" y1=\"601\" x2=\"631\" y2=\"630\" stroke=\"#FF9F5A\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"610,634 631,619 635,641\" fill=\"#FF9F5A\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/>"
+            "svg": "<g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"756\" y=\"540\" width=\"127\" height=\"59\" rx=\"23\" fill=\"#FF9F5A\"/><text x=\"820\" y=\"581\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"38\" fill=\"#102033\" text-anchor=\"middle\">шея?</text></g><line x1=\"767\" y1=\"601\" x2=\"630\" y2=\"646\" stroke=\"#FF9F5A\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"610,652 629,634 636,656\" fill=\"#FF9F5A\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/>"
           }
         ]
       }

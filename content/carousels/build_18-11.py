@@ -345,7 +345,7 @@ def c7():
         pr += [text(28, yy, n, 30, A, 800), text(64, yy, s_, 30, col, 800)]
     proto = svg(*b7, *pr)
     b8 = (W, 1350)
-    cta = svg(*b8, pill(*P(70, 40, *b8), 'шея?', A, BG, 38), arrow(*P(71, 44.5, *b8), *P(56.5, 47, *b8), A, 7, 26))
+    cta = svg(*b8, pill(*P(70, 40, *b8), 'шея?', A, BG, 38), arrow(*P(71, 44.5, *b8), *P(56.5, 48.3, *b8), A, 7, 26))
     return [
         {'layout': 'photo-top', 'photoHeight': 66, 'big': True, 'photo': 'src/c7_cover.jpg', 'focus': '50% 50%',
          'title': 'Качаешь пресс,\nа устаёт шея?', 'body': 'Дело в руках за головой. Моё скручивание с блином.', 'marks': [cover]},
