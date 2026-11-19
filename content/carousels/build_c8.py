@@ -14,11 +14,11 @@ SEL = f'{SP}/car/sel8'
 POSTURE = f'{SP}/posture'  # gfx.py и pelvis.py со шрифтами (копия tools/posture_reel)
 
 
-def portrait(src, out, ratio, top, blur=22):
+def portrait(src, out, ratio, top, blur=14):
     """Фон размыт по маске человека (MediaPipe), чтобы убрать людей на заднем плане."""
     sys.path.insert(0, f'{DIR}/img'); import glow
     im = Image.open(src).convert('RGB'); mask, _ = glow.pose(im)
-    m = Image.fromarray((mask.clip(0, 1) * 255).astype('uint8')).resize(im.size, Image.BILINEAR).filter(ImageFilter.GaussianBlur(6))
+    m = Image.fromarray((mask.clip(0, 1) * 255).astype('uint8')).resize(im.size, Image.BILINEAR).filter(ImageFilter.GaussianBlur(14))
     im = Image.composite(im, im.filter(ImageFilter.GaussianBlur(blur)), m)
     W, H = im.size; ch = int(W / ratio); t = max(0, min(int(H * top), H - ch))
     im.crop((0, t, W, t + ch)).resize((1620, int(1620 / ratio)), Image.LANCZOS).save(out, quality=90)
@@ -110,14 +110,14 @@ def slides():
     fc = [line(*pub, pub[0] - 25, pub[1] - 380, RED, 12), arrow(pub[0] - 12, pub[1] - 170, pub[0] - 20, pub[1] - 300, RED, 9, 30),
           line(*isch, 742, 768, RED, 12), arrow(isch[0] + 20, isch[1] + 4, isch[0] + 75, isch[1] + 28, RED, 9, 28),
           line(psis6[0] + 10, psis6[1] + 40, 705, 585, RED, 12),
-          f'<path d="M600 150 Q450 420 640 680" fill="none" stroke="{BLUE}" stroke-width="10" stroke-dasharray="18 12" stroke-linecap="round" {b.SH}/>',
+          line(*aiis, aiis[0] + 17, 760, BLUE, 10, '18 12'),
           line(psis6[0] - 15, psis6[1] - 40, 712, 40, BLUE, 10, '18 12'),
           pill(pub[0] - 50, pub[1] - 250, 'прямая мышца живота', RED, TXT, 30, 'end'),
           pill(1060, 600, 'двуглавая мышца бедра', RED, TXT, 30, 'end'), line(830, 650, 700, 748, RED, 4),
           pill(1060, 470, 'большая ягодичная', RED, TXT, 30, 'end'), line(800, 518, 745, 545, RED, 4),
-          pill(430, 700, 'подвздошно-поясничная', BLUE, BG, 30, 'end'), line(430, 724, 628, 676, BLUE, 4),
+          pill(400, 640, 'прямая мышца бедра', BLUE, BG, 30, 'end'), line(400, 664, aiis[0] + 10, 664, BLUE, 4),
           pill(1050, 200, 'выпрямляющая позвоночник', BLUE, BG, 30, 'end'),
-          pill(40, 165, 'укорочены', RED, TXT, 30), pill(40, 230, 'ослаблены', BLUE, BG, 30), pill(40, 295, 'клиническая модель', BG, SOFT, 30)]
+          pill(40, 165, 'укорочены', RED, TXT, 30), pill(40, 230, 'ослаблены', BLUE, BG, 30), pill(40, 295, 'по моей практике', BG, SOFT, 30)]
     force = svg(W, 891, topfade(W, 220), *fc)
     # 7. протокол Микаела (из базы, его слова)
     pr = [b.panel(60, 150, 960, 720), pill(100, 180, 'укрепляю', A, BG, 32), pill(560, 180, 'растягиваю', SOFT, BG, 32)]
@@ -150,7 +150,7 @@ def slides():
         {'layout': 'photo-top', 'photoHeight': 76, 'photo': 'src/c8_wall.jpg', 'focus': '50% 50%',
          'title': 'Самотест у стены: лордоз', 'body': 'Больше ладони под поясницей: лордоз усилен. Ладонь не проходит: лордоз сглажен.', 'marks': [wall]},
         {'layout': 'photo-top', 'photoHeight': 66, 'photo': 'src/c8_force.jpg', 'focus': '50% 50%',
-         'title': 'Задний наклон: у кого и почему', 'body': 'По моей практике чаще у активных: бег, прыжки, игровые виды, спорт с детства. Клиническая модель: укороченные мышцы тянут лобок вверх, а седалищный бугор вниз.', 'marks': [force]},
+         'title': 'Задний наклон: у кого и почему', 'body': 'По моей практике чаще у спортсменов (бег, прыжки, игровые виды) и у активных с детства. Укороченные мышцы тянут лобок вверх, а седалищный бугор вниз.', 'marks': [force]},
         {'layout': 'big-number', 'photo': 'src/bg_grid.jpg', 'focus': '50% 50%',
          'title': 'Мой протокол при заднем наклоне', 'body': 'Укрепляю ослабленные, растягиваю укороченные.', 'marks': [proto]},
         {'layout': 'big-number', 'photo': 'src/bg_grid.jpg', 'focus': '50% 50%',
