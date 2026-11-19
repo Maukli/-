@@ -71,7 +71,7 @@ def slides():
               f'<path d="M{cx - 105:.0f} {cy - 60:.0f} L{cx + 105:.0f} {cy - 60:.0f} L{cx + 78:.0f} {cy + 62:.0f} L{cx - 78:.0f} {cy + 62:.0f} Z" fill="{A}" fill-opacity=".18" stroke="{A}" stroke-width="8" stroke-linejoin="round"/>'
               f'<path d="M{cx - 105:.0f} {cy - 60:.0f} Q{cx:.0f} {cy - 112:.0f} {cx + 105:.0f} {cy - 60:.0f}" fill="none" stroke="{A}" stroke-width="6" stroke-dasharray="14 10"/></g>')
     drops = ''.join(f'<path d="M{x:.0f} {y:.0f} q-9 16 0 24 q9 -8 0 -24z" fill="{BLUE}" {b.SH}/>' for x, y in ((cx - 130, cy - 10), (cx - 150, cy + 30), (cx - 128, cy + 66)))
-    cover = svg(*b1, bucket, drops, pill(560, 150, 'передний наклон таза', A, BG, 30), pill(560, 210, 'схема', BG, SOFT, 30))
+    cover = svg(*b1, pill(560, 150, 'утка: передний наклон', A, BG, 30), pill(560, 210, 'доска: задний наклон', SOFT, BG, 30), pill(560, 270, 'схема', BG, SOFT, 30))
     # 2. ориентиры на нейтральном тазу (блок 1080x837, схема y 640-1477)
     b2 = (W, 837)
     s = lambda x, y: (x, (y - 640))
@@ -140,7 +140,7 @@ def slides():
     added = svg(W, 1350, *ad)
     return [
         {'layout': 'photo-top', 'photoHeight': 66, 'big': True, 'photo': 'src/c8_cover.jpg', 'focus': '50% 50%', 'photo2': 'src/c8_cover_sch.jpg', 'focus2': '50% 45%',
-         'title': 'Таз как ведро:\nкуда льётся вода?', 'body': 'Передний, нейтральный, задний наклон. Как отличить и что делать при заднем.', 'marks': [cover]},
+         'title': 'Утка или доска:\nкакой у тебя таз?', 'body': 'Норма, тест у стены и протокол при заднем наклоне.', 'marks': [cover]},
         {'layout': 'photo-top', 'photoHeight': 62, 'photo': 'src/c8_neutral.jpg', 'focus': '50% 50%',
          'title': 'Ориентиры: две подвздошные ости', 'body': 'Передняя верхняя подвздошная ость прощупывается спереди на крыле таза, задняя верхняя под ямочками над крестцом. Угол между линией от задней ости к передней и горизонталью и есть наклон таза.', 'marks': [lm]},
         {'layout': 'big-number', 'photo': 'src/bg_grid.jpg', 'focus': '50% 50%',

@@ -831,14 +831,14 @@
         "focus": "50% 50%",
         "photo2": "src/c8_cover_sch.jpg",
         "focus2": "50% 45%",
-        "title": "Таз как ведро:\nкуда льётся вода?",
-        "body": "Передний, нейтральный, задний наклон. Как отличить и что делать при заднем.",
+        "title": "Утка или доска:\nкакой у тебя таз?",
+        "body": "Норма, тест у стены и протокол при заднем наклоне.",
         "marks": [
           {
             "type": "svg",
             "w": 1080,
             "h": 891,
-            "svg": "<g transform=\"rotate(-16 308 670)\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><path d=\"M203 610 L413 610 L386 732 L230 732 Z\" fill=\"#FF9F5A\" fill-opacity=\".18\" stroke=\"#FF9F5A\" stroke-width=\"8\" stroke-linejoin=\"round\"/><path d=\"M203 610 Q308 558 413 610\" fill=\"none\" stroke=\"#FF9F5A\" stroke-width=\"6\" stroke-dasharray=\"14 10\"/></g><path d=\"M178 660 q-9 16 0 24 q9 -8 0 -24z\" fill=\"#6FB7FF\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><path d=\"M158 700 q-9 16 0 24 q9 -8 0 -24z\" fill=\"#6FB7FF\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><path d=\"M180 736 q-9 16 0 24 q9 -8 0 -24z\" fill=\"#6FB7FF\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"150\" width=\"396\" height=\"46\" rx=\"18\" fill=\"#FF9F5A\"/><text x=\"758\" y=\"182\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">передний наклон таза</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"210\" width=\"126\" height=\"46\" rx=\"18\" fill=\"#102033\"/><text x=\"623\" y=\"242\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\">схема</text></g>"
+            "svg": "<g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"150\" width=\"414\" height=\"46\" rx=\"18\" fill=\"#FF9F5A\"/><text x=\"767\" y=\"182\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">утка: передний наклон</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"210\" width=\"396\" height=\"46\" rx=\"18\" fill=\"#D5DCE4\"/><text x=\"758\" y=\"242\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#102033\" text-anchor=\"middle\">доска: задний наклон</text></g><g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"560\" y=\"270\" width=\"126\" height=\"46\" rx=\"18\" fill=\"#102033\"/><text x=\"623\" y=\"302\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"30\" fill=\"#D5DCE4\" text-anchor=\"middle\">схема</text></g>"
           }
         ]
       },
