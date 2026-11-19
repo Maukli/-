@@ -131,6 +131,10 @@ def prep():
     glow(f'{B}/c7_bad2.jpg', f'{SRC}/c7_bad.jpg', [[57, 52, 59, 62, 4.5]], RED, 0.6)
     for n in ('c7_phone', 'c7_good_side', 'c7_good_close', 'c7_protocol', 'c7_cta', 'c7_good_top'):
         Image.open(f'{B}/{n}.jpg' if os.path.exists(f'{B}/{n}.jpg') else f'{SRC}/{n}.jpg').save(f'{SRC}/{n}.jpg', quality=90)
+    # c7 финал (19.11): спокойный кадр IMG_9673 13,9 с вместо ухмылки, фон размыт по маске
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('b8', f'{DIR}/build_c8.py'); b8 = importlib.util.module_from_spec(spec); spec.loader.exec_module(b8)
+    b8.portrait(f'{SP}/car/sel9/9673_13.9_sr.png', f'{SRC}/c7_cta_calm.jpg', 0.8, 0.06)
 
 
 # ---------- слайды ----------
@@ -341,7 +345,7 @@ def c7():
         pr += [text(28, yy, n, 30, A, 800), text(64, yy, s_, 30, col, 800)]
     proto = svg(*b7, *pr)
     b8 = (W, 1350)
-    cta = svg(*b8, pill(*P(66, 36, *b8), 'шея?', A, BG, 38), arrow(*P(67, 40.5, *b8), *P(54.2, 44.4, *b8), A, 7, 26))
+    cta = svg(*b8, pill(*P(70, 40, *b8), 'шея?', A, BG, 38), arrow(*P(71, 44.5, *b8), *P(56.5, 47, *b8), A, 7, 26))
     return [
         {'layout': 'photo-top', 'photoHeight': 66, 'big': True, 'photo': 'src/c7_cover.jpg', 'focus': '50% 50%',
          'title': 'Качаешь пресс,\nа устаёт шея?', 'body': 'Дело в руках за головой. Моё скручивание с блином.', 'marks': [cover]},
@@ -357,7 +361,7 @@ def c7():
          'title': 'Повторений, задержка в последнем', 'body': 'На тренажёре для пресса под углом, голова ниже таза. Нет тренажёра: на полу, ноги согнуты в коленях.', 'marks': [rep]},
         {'layout': 'photo-top', 'photoHeight': 74, 'photo': 'src/c7_protocol.jpg', 'focus': '50% 50%',
          'title': 'Пресс у меня последний', 'body': 'Протокол при переднем наклоне таза идёт сверху вниз.', 'marks': [proto]},
-        {'layout': 'cta-photo', 'photo': 'src/c7_cta.jpg', 'focus': '50% 50%',
+        {'layout': 'cta-photo', 'photo': 'src/c7_cta_calm.jpg', 'focus': '50% 50%',
          'title': 'Проверь на себе', 'body': 'Сделай 20 скручиваний с блином. Где почувствовал: в прессе или в шее? Пиши в комментариях.', 'marks': [cta]},
     ]
 

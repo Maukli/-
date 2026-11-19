@@ -805,7 +805,7 @@
       },
       {
         "layout": "cta-photo",
-        "photo": "src/c7_cta.jpg",
+        "photo": "src/c7_cta_calm.jpg",
         "focus": "50% 50%",
         "title": "Проверь на себе",
         "body": "Сделай 20 скручиваний с блином. Где почувствовал: в прессе или в шее? Пиши в комментариях.",
@@ -814,7 +814,7 @@
             "type": "svg",
             "w": 1080,
             "h": 1350,
-            "svg": "<g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"713\" y=\"486\" width=\"127\" height=\"59\" rx=\"23\" fill=\"#FF9F5A\"/><text x=\"776\" y=\"527\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"38\" fill=\"#102033\" text-anchor=\"middle\">шея?</text></g><line x1=\"724\" y1=\"547\" x2=\"605\" y2=\"592\" stroke=\"#FF9F5A\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"585,599 603,580 611,602\" fill=\"#FF9F5A\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/>"
+            "svg": "<g style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"><rect x=\"756\" y=\"540\" width=\"127\" height=\"59\" rx=\"23\" fill=\"#FF9F5A\"/><text x=\"820\" y=\"581\" font-family=\"Manrope\" font-weight=\"800\" font-size=\"38\" fill=\"#102033\" text-anchor=\"middle\">шея?</text></g><line x1=\"767\" y1=\"601\" x2=\"631\" y2=\"630\" stroke=\"#FF9F5A\" stroke-width=\"7\" stroke-linecap=\"round\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/><polygon points=\"610,634 631,619 635,641\" fill=\"#FF9F5A\" style=\"filter:drop-shadow(0 3px 8px rgba(0,0,0,.55))\"/>"
           }
         ]
       }
