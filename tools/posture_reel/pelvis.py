@@ -102,7 +102,8 @@ def draw_skeleton(L, th, a=1.0, frac=1.0, labels=True):
         av = a * ph(frac, 0.5, 0.5)
         for i, (c, phi) in enumerate(g['verts']):
             draw_vertebra(L, c, phi, av, BONE, f'L{5 - i}' if labels else None)
-        text(L, (g['t12'][0] - 70, g['t12'][1] - 10), 'Th12', 24, BONE, av * 0.7, 'rm', 0)
+        if labels:
+            text(L, (g['t12'][0] - 70, g['t12'][1] - 10), 'Th12', 24, BONE, av * 0.7, 'rm', 0)
     return g
 
 

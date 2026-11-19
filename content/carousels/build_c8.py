@@ -31,15 +31,24 @@ def schematics():
     import pelvis as Pv
     out = {}
     for th in (20, 7, -6):
-        L = Layer(); Pv.draw_skeleton(L, th, 1.0, 1.0, labels=True); Pv.body_outline(L, th, 1.0)
+        L = Layer(); Pv.draw_skeleton(L, th, 1.0, 1.0, labels=False); Pv.body_outline(L, th, 1.0)
         im = L.out(); bgim = Image.new('RGBA', im.size, (13, 27, 43, 255)); bgim.alpha_composite(im)
         out[th] = bgim.convert('RGB')
     return out
 
 
+def wall_prep():
+    """Тест у стены: колонна должна остаться резкой, размываем только людей слева от Микаела."""
+    im = Image.open(f'{SEL}/wall_7.3_sr.png').convert('RGB'); W, H = im.size
+    box = (0, int(H * 0.38), int(W * 0.36), int(H * 0.95))
+    im.paste(im.crop(box).filter(ImageFilter.GaussianBlur(24)), box[:2])
+    r = 1080 / 1026; ch = int(W / r); t = int(H * 0.31)
+    im.crop((0, t, W, t + ch)).resize((1620, int(1620 / r)), Image.LANCZOS).save(f'{SRC}/c8_wall.jpg', quality=90)
+
+
 def prep():
     portrait(f'{SEL}/side_2.5_sr.png', f'{SRC}/c8_cover.jpg', 0.5625, 0.0)
-    portrait(f'{SEL}/wall_7.3_sr.png', f'{SRC}/c8_wall.jpg', 1080 / 945, 0.35)
+    wall_prep()
     portrait(f'{SEL}/calm_9.6_sr.png', f'{SRC}/c8_cta.jpg', 0.8, 0.244)
     sc = schematics()
     # нейтральный таз крупно: кадр 1080x837 из схемы 1080x1920, y 640-1477
@@ -62,7 +71,7 @@ def slides():
               f'<path d="M{cx - 105:.0f} {cy - 60:.0f} L{cx + 105:.0f} {cy - 60:.0f} L{cx + 78:.0f} {cy + 62:.0f} L{cx - 78:.0f} {cy + 62:.0f} Z" fill="{A}" fill-opacity=".18" stroke="{A}" stroke-width="8" stroke-linejoin="round"/>'
               f'<path d="M{cx - 105:.0f} {cy - 60:.0f} Q{cx:.0f} {cy - 112:.0f} {cx + 105:.0f} {cy - 60:.0f}" fill="none" stroke="{A}" stroke-width="6" stroke-dasharray="14 10"/></g>')
     drops = ''.join(f'<path d="M{x:.0f} {y:.0f} q-9 16 0 24 q9 -8 0 -24z" fill="{BLUE}" {b.SH}/>' for x, y in ((cx - 130, cy - 10), (cx - 150, cy + 30), (cx - 128, cy + 66)))
-    cover = svg(*b1, bucket, drops, pill(560, 150, 'передний наклон таза', A, BG, 30), pill(560, 210, 'схема', BG, SOFT, 26))
+    cover = svg(*b1, bucket, drops, pill(560, 150, 'передний наклон таза', A, BG, 30), pill(560, 210, 'схема', BG, SOFT, 30))
     # 2. ориентиры на нейтральном тазу (блок 1080x837, схема y 640-1477)
     b2 = (W, 837)
     s = lambda x, y: (x, (y - 640))
@@ -85,28 +94,28 @@ def slides():
     nm += [dot(sx(9.6), 360, 16, A, BG), dot(sx(11.7), 360, 16, SOFT, BG),
            pill(sx(9.6) - 20, 420, 'мужчины 9,6', A, BG, 32, 'end'), pill(sx(11.7) + 20, 420, 'женщины 11,7', SOFT, BG, 32),
            b.panel(70, 500, 455, 175), text(100, 555, 'передний наклон', 32, TXT, 800), text(100, 603, '85% мужчин', 34, A, 800), text(100, 650, '75% женщин', 34, A, 800),
-           b.panel(555, 500, 455, 175), text(585, 555, 'задний наклон', 32, TXT, 800), text(585, 603, '6-7%', 34, A, 800), text(585, 650, 'Herrington 2011', 28, MUTED, 700)]
+           b.panel(555, 500, 455, 175), text(585, 555, 'задний наклон', 32, TXT, 800), text(585, 603, '6-7%', 34, A, 800), text(585, 650, 'Herrington 2011', 30, MUTED, 800)]
     norm = svg(W, 1350, *nm)
     # 4. три таза (блок 1080x864, картинка 1620x1296: панели y 230-950 в пикселях картинки)
     k = 1080 / 1620
     tri = [pill((i * 540 + 270) * k, 975 * k, n, A if i != 1 else SOFT, BG, 32, 'middle') for i, n in enumerate(('передний', 'нейтральный', 'задний'))]
     three = svg(W, 864, topfade(W, 200), *tri)
     # 5. тест у стены
-    b5 = (W, 945)
-    wall = svg(*b5, topfade(W), arrow(*P(30, 70, *b5), *P(63, 84, *b5), A, 8, 30), pill(*P(3, 61, *b5), 'ладонь в просвете', A, BG, 32),
+    b5 = (W, 1026)
+    wall = svg(*b5, topfade(W), arrow(*P(31, 71, *b5), *P(70.5, 83.5, *b5), A, 8, 30), pill(*P(3, 63, *b5), 'ладонь в просвете', A, BG, 32),
                pill(*P(66, 26, *b5), 'пятки, ягодицы,', BG, TXT, 30), pill(*P(66, 34, *b5), 'лопатки у стены', BG, TXT, 30))
     # 6. пара сил при заднем наклоне (схема -6, кадр y 330-1680 в 1080x1350)
     f = lambda x, y: (x, y - 640)
     pub, isch, aiis, psis6 = f(466, 1285), f(643, 1364), f(455, 1127), f(767, 1047)
     fc = [line(*pub, pub[0] - 25, pub[1] - 380, RED, 12), arrow(pub[0] - 12, pub[1] - 170, pub[0] - 20, pub[1] - 300, RED, 9, 30),
-          line(*isch, isch[0] - 9, 760, RED, 12), arrow(isch[0] - 3, isch[1] - 10, isch[0] - 6, isch[1] + 80, RED, 9, 30),
+          line(*isch, 742, 768, RED, 12), arrow(isch[0] + 20, isch[1] + 4, isch[0] + 75, isch[1] + 28, RED, 9, 28),
           line(psis6[0] + 10, psis6[1] + 40, 705, 585, RED, 12),
           f'<path d="M600 150 Q450 420 640 680" fill="none" stroke="{BLUE}" stroke-width="10" stroke-dasharray="18 12" stroke-linecap="round" {b.SH}/>',
           line(psis6[0] - 15, psis6[1] - 40, 712, 40, BLUE, 10, '18 12'),
-          pill(pub[0] - 50, pub[1] - 300, 'прямая мышца живота', RED, TXT, 30, 'end'),
-          pill(1060, 640, 'двуглавая мышца бедра', RED, TXT, 30, 'end'),
-          pill(1060, 480, 'большая ягодичная', RED, TXT, 30, 'end'),
-          pill(430, 560, 'подвздошно-поясничная', BLUE, BG, 30, 'end'),
+          pill(pub[0] - 50, pub[1] - 250, 'прямая мышца живота', RED, TXT, 30, 'end'),
+          pill(1060, 600, 'двуглавая мышца бедра', RED, TXT, 30, 'end'), line(830, 650, 700, 748, RED, 4),
+          pill(1060, 470, 'большая ягодичная', RED, TXT, 30, 'end'), line(800, 518, 745, 545, RED, 4),
+          pill(430, 700, 'подвздошно-поясничная', BLUE, BG, 30, 'end'), line(430, 724, 628, 676, BLUE, 4),
           pill(1050, 200, 'выпрямляющая позвоночник', BLUE, BG, 30, 'end'),
           pill(40, 165, 'укорочены', RED, TXT, 30), pill(40, 230, 'ослаблены', BLUE, BG, 30), pill(40, 295, 'клиническая модель', BG, SOFT, 30)]
     force = svg(W, 891, topfade(W, 220), *fc)
@@ -125,9 +134,9 @@ def slides():
     # 8. добавлено по данным
     ad = [b.panel(60, 150, 960, 600), pill(100, 185, 'добавлено по данным', MUTED, BG, 30),
           text(100, 320, 'растяжка', 34, A, 800), text(100, 370, 'в программах до 8 недель растит', 32, TXT, 800),
-          text(100, 415, 'терпимость к растяжению, а не длину', 32, TXT, 800), text(100, 460, 'Weppler, Magnusson 2010', 28, MUTED, 700),
+          text(100, 415, 'терпимость к растяжению, а не длину', 32, TXT, 800), text(100, 462, 'Weppler, Magnusson 2010', 30, MUTED, 800),
           text(100, 560, 'сила мышц живота и длина', 34, A, 800), text(100, 610, 'сгибателей бедра объясняют угол', 32, TXT, 800), text(100, 655, 'таза слабо', 32, TXT, 800),
-          text(100, 700, 'Walker 1987, Youdas 1996', 28, MUTED, 700)]
+          text(100, 702, 'Walker 1987, Youdas 1996', 30, MUTED, 800)]
     added = svg(W, 1350, *ad)
     return [
         {'layout': 'photo-top', 'photoHeight': 66, 'big': True, 'photo': 'src/c8_cover.jpg', 'focus': '50% 50%', 'photo2': 'src/c8_cover_sch.jpg', 'focus2': '50% 45%',
@@ -135,17 +144,17 @@ def slides():
         {'layout': 'photo-top', 'photoHeight': 62, 'photo': 'src/c8_neutral.jpg', 'focus': '50% 50%',
          'title': 'Ориентиры: две подвздошные ости', 'body': 'Передняя верхняя подвздошная ость прощупывается спереди на крыле таза, задняя верхняя под ямочками над крестцом. Угол между линией от задней ости к передней и горизонталью и есть наклон таза.', 'marks': [lm]},
         {'layout': 'big-number', 'photo': 'src/bg_grid.jpg', 'focus': '50% 50%',
-         'title': 'Лёгкий передний наклон это норма', 'body': 'Молодые люди без боли. Средний угол: 9,6 градуса у мужчин, 11,7 у женщин (McKeon, 2009). Нейтраль по форме кости у всех разная (Preece, 2008), поэтому сравнивай себя с собой.', 'marks': [norm]},
+         'title': 'Лёгкий передний наклон это норма', 'body': 'Молодые люди без боли. Средний угол: 9,6 градуса у мужчин, 11,7 у женщин (Medina McKeon, Hertel, 2009). Нейтраль по форме кости у всех разная (Preece, 2008), поэтому сравнивай себя с собой.', 'marks': [norm]},
         {'layout': 'photo-top', 'photoHeight': 64, 'photo': 'src/c8_three.jpg', 'focus': '50% 50%',
          'title': 'Сбоку: лордоз, живот, ягодицы', 'body': 'Передний наклон часто сочетается с усиленным поясничным лордозом: выступающий живот, ягодичная область отведена назад. Задний: лордоз сглажен, поясница плоская, ягодичная область уплощена.', 'marks': [three]},
-        {'layout': 'photo-top', 'photoHeight': 70, 'photo': 'src/c8_wall.jpg', 'focus': '50% 50%',
-         'title': 'Самотест у стены: лордоз', 'body': 'Пятки, ягодичная область и лопатки у стены. Больше ладони под поясницей: лордоз усилен. Ладонь не проходит: лордоз сглажен. Сравнивай себя с собой по фото в одних условиях.', 'marks': [wall]},
+        {'layout': 'photo-top', 'photoHeight': 76, 'photo': 'src/c8_wall.jpg', 'focus': '50% 50%',
+         'title': 'Самотест у стены: лордоз', 'body': 'Больше ладони под поясницей: лордоз усилен. Ладонь не проходит: лордоз сглажен.', 'marks': [wall]},
         {'layout': 'photo-top', 'photoHeight': 66, 'photo': 'src/c8_force.jpg', 'focus': '50% 50%',
          'title': 'Задний наклон: у кого и почему', 'body': 'По моей практике чаще у активных: бег, прыжки, игровые виды, спорт с детства. Клиническая модель: укороченные мышцы тянут лобок вверх, а седалищный бугор вниз.', 'marks': [force]},
         {'layout': 'big-number', 'photo': 'src/bg_grid.jpg', 'focus': '50% 50%',
          'title': 'Мой протокол при заднем наклоне', 'body': 'Укрепляю ослабленные, растягиваю укороченные.', 'marks': [proto]},
         {'layout': 'big-number', 'photo': 'src/bg_grid.jpg', 'focus': '50% 50%',
-         'title': 'Поэтому цель не "растянуть"', 'body': 'Цель протокола: сила, подвижность и контроль таза в движении.', 'marks': [added]},
+         'title': 'Что добавляют данные', 'body': 'Протокол это не отменяет: он работает на силу, подвижность и контроль таза в движении.', 'marks': [added]},
         {'layout': 'cta-photo', 'photo': 'src/c8_cta.jpg', 'focus': '50% 50%',
          'title': 'Какой наклон у тебя?', 'body': 'Сделай тест у стены и напиши в комментариях: больше ладони, ладонь или меньше.'},
     ]
